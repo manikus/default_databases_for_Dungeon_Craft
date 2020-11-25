@@ -1,0 +1,13 @@
+\(BEGIN)
+name = IsBrave
+[Dispel] = $SA_REMOVE();
+[DoesSpellAttackSucceed] = $VAR sav; $VAR rdm;
+-sav = $SkillAdj($CharacterContext(),"Save Vs Spell","","F","") -# 4;
+-rdm = $RANDOM(20) +# 1;
+-$IF ($GET_SPELL_SA($SpellContext(),"DamageMagical") == "fear")
+-	{
+-		$IF (sav <# rdm) {$RETURN "Y";}
+-		$ELSE {$RETURN "N";};
+-	};
+\(END)
+

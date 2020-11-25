@@ -1,0 +1,10 @@
+\(BEGIN)
+name = IsDruidImmuneWoodlandCharm
+[DoesSpellAttackSucceed] = $VAR me;
+-me = $IndexOf($TargetContext());
+-$IF ($SA_SPELL_GET("DamageMagical") != "charm"){$RETURN;};
+-$IF ($GET_COMBATANT_SA($AttackerContext(),"IsWoodlandCreature") == "-?-?-") {$RETURN;};
+-$SET_HOOK_PARAM(5,$GET_CHAR_NAME(me) +" is unaffected" );
+-$RETURN "N";
+\(END)
+

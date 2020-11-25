@@ -1,0 +1,2 @@
+// illusionist level 2
+// Blindness, Blur, Detect Magic, Invisibility, Mirror Image

@@ -1,0 +1,9 @@
+\(BEGIN)
+name = monster_LightSusceptible
+[DoesAttackSucceed] = $VAR p5; $VAR p6; $VAR adj;
+-par5 = $GET_HOOK_PARAM(5); p6 = $GET_HOOK_PARAM(6); adj = "1";
+-$IF ($GET_CHARACTER_SA($Myself(), "light") == "-?-?-") {$RETURN;};
+-$IF (p5 ># (p6 -# adj)) {$RETURN "Y";}
+-$ELSE {$RETURN "N";};
+\(END)
+

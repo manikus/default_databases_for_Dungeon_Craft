@@ -1,0 +1,13 @@
+\(BEGIN)
+name = Global_CreateCharacter
+[PostCreateCharacter] = $VAR char;
+-char = $IndexOf($CharacterContext());
+-$SET_CHARACTER_SA($CharacterContext(), "pcSTR", $GET_CHAR_PERM_STR(char));
+-$SET_CHARACTER_SA($CharacterContext(), "pcSTRMOD", $GET_CHAR_PERM_STRMOD(char));
+-$SET_CHARACTER_SA($CharacterContext(), "pcINT", $GET_CHAR_PERM_INT(char));
+-$SET_CHARACTER_SA($CharacterContext(), "pcWIS", $GET_CHAR_PERM_WIS(char));
+-$SET_CHARACTER_SA($CharacterContext(), "pcDEX", $GET_CHAR_PERM_DEX(char));
+-$SET_CHARACTER_SA($CharacterContext(), "pcCON", $GET_CHAR_PERM_CON(char));
+-$SET_CHARACTER_SA($CharacterContext(), "pcCHA", $GET_CHAR_PERM_CHA(char));
+\(END)
+

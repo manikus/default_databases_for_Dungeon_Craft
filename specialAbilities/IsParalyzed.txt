@@ -1,0 +1,17 @@
+\(BEGIN)
+name = IsParalyzed
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Paralyzed");
+-$SET_HOOK_PARAM( 6,"");
+-$RETURN 1;
+[Dispel] = $SA_REMOVE();
+[DoesAttackSucceed] = $IF ($GET_COMBATANT_SA($TargetContext(),"IsParalyzed") != "-?-?-")
+-  {$SET_HOOK_PARAM(6,$GET_HOOK_PARAM(6) -# 30);};
+-$IF ($GET_HOOK_PARAM(5) >=# $GET_HOOK_PARAM(6)){$RETURN "Y";}
+-$ELSE {$RETURN "N";};
+[GetItemTargetHitBonus] = $RETURN $GET_CHAR_HITPOINTS($IndexOf($TargetContext())) +# 1;
+[IsCombatReady] = $RETURN "N";
+[StartCombatRound] = $VAR exp;
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() ># exp) {$RETURN $SA_REMOVE();};
+\(END)
+

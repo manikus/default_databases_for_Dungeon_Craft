@@ -1,0 +1,8 @@
+\(BEGIN)
+name = SymbolOfPain
+[InvokeSpellOnTarget] = $VAR atk; $VAR tgt; $VAR rndm; $VAR exp;
+-atk = $IndexOf($AttackerContext()); tgt = $IndexOf($TargetContext());
+-rndm = ($RANDOM(10) +# $RANDOM(10) +# 2) *# 10; exp = $GET_PARTY_TIME() +# rndm;
+-$AURA_Create("SymbolOfPainAURA","",atk,tgt,exp);
+\(END)
+

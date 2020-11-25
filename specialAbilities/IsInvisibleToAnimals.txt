@@ -1,0 +1,9 @@
+\(BEGIN)
+name = IsInvisibleToAnimals
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7, "Invisible to Animals"); $SET_HOOK_PARAM( 6, ""); $RETURN 1;
+[Dispel] = $SA_REMOVE();
+[IsValidTarget] = $IF ($GET_ISANIMAL($AttackerContext()) <# 0){$RETURN "Y";};
+-$IF ($SA_COMBATANT_GET("IsSeeingInvisible") != "-?-?-") {$RETURN "Y";}
+-$ELSE {$RETURN "N";};
+\(END)
+

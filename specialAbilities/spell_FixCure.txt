@@ -1,0 +1,12 @@
+\(BEGIN)
+name = spell_FixCure
+[FixCharacter] = $VAR chr; // character
+-$VAR HP; // hit points
+-$VAR maxHP; // maximum hit points
+-chr = $IndexOf($CharacterContext());
+-HP = $GET_CHAR_HITPOINTS(chr);
+-maxHP = $GET_CHAR_MAXHITPOINTS(chr);
+-$RETURN maxHP ># HP;
+Info = "cure light/serious/critical wounds, heal for FIX";
+\(END)
+

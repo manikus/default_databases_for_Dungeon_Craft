@@ -1,0 +1,637 @@
+\(BEGIN)
+name = ChangeClassBarbarian
+[CanChangeFromClass] = $RETURN "N";
+[CanChangeToClass] = $RETURN "N";
+\(END)
+
+\(BEGIN)
+name = ChangeClassBard
+[CanChangeFromClass] = $RETURN "N";
+[CanChangeToClass] = $VAR me; $VAR STR; $VAR INT; $VAR WIS; $VAR DEX; $VAR CON; $VAR CHA; $VAR race; $VAR pf; $VAR pt;
+-me = $IndexOf($CharacterContext());
+-STR = $GET_CHAR_LIMITED_STR(me); INT = $GET_CHAR_LIMITED_INT(me);
+-WIS = $GET_CHAR_LIMITED_WIS(me); DEX = $GET_CHAR_LIMITED_DEX(me);
+-CON = $GET_CHAR_LIMITED_CON(me); CHA = $GET_CHAR_LIMITED_CHA(me);
+-race = $GET_CHAR_RACE(me);
+-$IF ((race != "Human") || (race != "Half-Elf")) {$RETURN "N";};
+-pf = $GET_CHARACTER_SA($CharacterContext(),"preBard");
+-$IF (pf == "-?-?-") {$RETURN "N";};
+-pt = $GET_CHAR_Lvl(me,"thief");
+-$IF (pt <# 5) || (pt ># 9) {$RETURN "N";};
+-$IF ((STR >=# 15) && (INT >=# 12) && (WIS >=# 15) && (DEX >=# 15) && (CON >=# 10) && (CHA >=# 15))
+-	{$RETURN "Y";};
+[ChangeClassTo] = $SET_CHARACTER_SA($CharacterContext(),"class_Backstab","bard");
+-$SET_CHARACTER_SA($CharacterContext(),"class_BardCasterLevel","$17$10$0");
+-$SET_CHARACTER_SA($CharacterContext(),"class_BardPoetics","bard");
+-$SET_CHARACTER_SA($CharacterContext(),"class_BardSong","bard");
+-$SET_CHARACTER_SA($CharacterContext(),"class_baseName","$bard");
+\(END)
+
+\(BEGIN)
+name = ChangeClassCavalier
+[CanChangeFromClass] = $RETURN "Y";
+[CanChangeToClass] = $VAR me; $VAR STR; $VAR INT; $VAR WIS; $VAR DEX; $VAR CON; $VAR race;
+-me = $IndexOf($CharacterContext());
+-STR = $GET_CHAR_LIMITED_STR(me); INT = $GET_CHAR_LIMITED_INT(me);
+-WIS = $GET_CHAR_LIMITED_WIS(me); DEX = $GET_CHAR_LIMITED_DEX(me); 
+-CON = $GET_CHAR_LIMITED_CON(me); race = $GET_CHAR_RACE(me);
+-$IF (race != "Human") {$RETURN "N";};
+-$IF ((STR >=# 17) && (DEX >=# 15) && (CON >=# 15) && (INT >=# 10) && (WIS >=# 10)) {$RETURN "Y";};
+[ChangeClassFrom] = $DELETE_CHARACTER_SA($CharacterContext(),"class_NoSpells");
+-$DELETE_CHARACTER_SA($CharacterContext(),"class_Sweep");
+-$DELETE_CHARACTER_SA($CharacterContext(),"class_AttacksPerRound");
+-$DELETE_CHARACTER_SA($CharacterContext(),"class_baseName");
+[ChangeClassTo] = $SET_CHARACTER_SA($CharacterContext(),"class_NoSpells","cavalier");
+-$SET_CHARACTER_SA($CharacterContext(),"class_Sweep","cavalier");
+-$SET_CHARACTER_SA($CharacterContext(),"class_AttacksPerRound","cavalier");
+-$SET_CHARACTER_SA($CharacterContext(),"class_baseName","$cavalier");
+\(END)
+
+\(BEGIN)
+name = ChangeClassIllusionist
+[CanChangeFromClass] = $RETURN "Y";
+[CanChangeToClass] = $VAR me; $VAR INT; $VAR DEX; $VAR race;
+-me = $IndexOf($CharacterContext());
+-$DEBUG($SA_NAME()+" - CanChangeToClass");
+-INT = $GET_CHAR_LIMITED_INT(me); INT = $GET_CHAR_LIMITED_DEX(me);
+-race = $GET_CHAR_RACE(me);
+-$IF (race != "Human") {$RETURN "N";};
+-$IF ((INT >=# 17) && (DEX >=# 17)) {$RETURN "Y";};
+[ChangeClassFrom] = $DELETE_CHARACTER_SA($CharacterContext(),"class_IllusionistScribe");
+-$DELETE_CHARACTER_SA($CharacterContext(),"class_baseName");
+-$SA_REMOVE();
+-$DEBUG($SA_NAME()+" - ChangeClassFrom");
+[ChangeClassTo] = $SET_CHARACTER_SA($CharacterContext(),"class_IllusionistScribe","illusionist");
+-$SET_CHARACTER_SA($CharacterContext(),"class_baseName","$illusionist");
+-$KNOW_SPELL($CharacterContext(),"Detect Illusion|illusionist","1");
+-$KNOW_SPELL($CharacterContext(),"Color Spray|illusionist","1");
+-$KNOW_SPELL($CharacterContext(),"Gaze Reflection|illusionist","1");
+[TrainingCharacter] = $VAR me; $VAR cls; $VAR lvl;
+-me = $IndexOf($CharacterContext()); cls = $SA_PARAM_GET(); lvl = $GET_CHAR_Lvl(me,cls);
+$IF (lvl ==# 14)
+-	{
+-		$KNOW_SPELL($CharacterContext(),"Detect Magic|MagicUser-illusionist","1");
+-		$KNOW_SPELL($CharacterContext(),"Magic Missile|illusionist","1");
+-		$KNOW_SPELL($CharacterContext(),"Read Magic|illusionist","1");
+-		$KNOW_SPELL($CharacterContext(),"Sleep|illusionist","1");
+-	};
+$IF (lvl ==# 15) {$KNOW_SPELL($CharacterContext(),"Charm Person|illusionist","1");};
+$IF (lvl ==# 16) {$KNOW_SPELL($CharacterContext(),"Protection From Evil|illusionist","1");};
+$IF (lvl ==# 17) {$KNOW_SPELL($CharacterContext(),"Friends|illusionist","1");};
+$IF (lvl ==# 18) {$KNOW_SPELL($CharacterContext(),"Burning Hands|illusionist","1");};
+$IF (lvl ==# 19) {$KNOW_SPELL($CharacterContext(),"Enlarge|illusionist","1");};
+$IF (lvl ==# 20) {$KNOW_SPELL($CharacterContext(),"Shield|illusionist","1");};
+$IF (lvl ==# 21) {$KNOW_SPELL($CharacterContext(),"Shocking Grasp|illusionist","1");};
+$IF (lvl ==# 22) {$KNOW_SPELL($CharacterContext(),"Protection From Good|illusionist","1");};
+$IF (lvl ==# 23) {$KNOW_SPELL($CharacterContext(),"Reduce|illusionist","1");};
+\(END)
+
+\(BEGIN)
+name = ChangeClassMonk
+[CanChangeFromClass] = $RETURN "Y";
+[CanChangeToClass] = $VAR me; $VAR STR; $VAR WIS; $VAR DEX; $VAR CON; $VAR race; $VAR align;
+-me = $IndexOf($CharacterContext());
+-STR = $GET_CHAR_LIMITED_STR(me); WIS = $GET_CHAR_LIMITED_WIS(me);
+-DEX = $GET_CHAR_LIMITED_DEX(me); CON = $GET_CHAR_LIMITED_CON(me);
+-align = $GET_CHAR_ALIGNMENT(me); race = $GET_CHAR_RACE(me);
+-$IF (race != "Human") {$RETURN "N";};
+-$IF ((STR >=# 15) && (WIS >=# 15) && (DEX >=# 15) && (CON >=# 10) && (align %# 3 ==# 0)) {$RETURN "Y";};
+[ChangeClassFrom] = $DELETE_CHARACTER_SA($CharacterContext(),"class_Monk");
+-$DELETE_CHARACTER_SA($CharacterContext(),"class_baseName");
+-$DELETE_CHARACTER_SA($CharacterContext(),"class_AttacksPerRound");
+[ChangeClassTo] = $SET_CHARACTER_SA($CharacterContext(),"class_Monk","monk");
+-$SET_CHARACTER_SA($CharacterContext(),"class_baseName","$monk");
+-$SET_CHARACTER_SA($CharacterContext(),"class_AttacksPerRound","$monk");
+\(END)
+
+\(BEGIN)
+name = ChangeClassThiefAcrobat
+[CanChangeFromClass] = $RETURN "N";
+[CanChangeToClass] = $VAR me; $VAR STR; $VAR DEX; $VAR cls;
+-me = $IndexOf($CharacterContext());
+-STR = $GET_CHAR_LIMITED_STR(me);
+-DEX = $GET_CHAR_LIMITED_DEX(me);
+-cls = $GET_CHAR_Lvl(me,"thief");
+-$IF ((STR >=# 15) && (DEX >=# 16) && (cls ==# 6)) {$RETURN "Y";};
+[ChangeClassTo] = $VAR me; $VAR XP;
+-me = $IndexOf($CharacterContext());
+-$SET_CHARACTER_SA($CharacterContext(),"class_NoSpells","acrobat");
+-$SET_CHARACTER_SA($CharacterContext(),"class_AcrobaticSkills","$acrobat");
+-$SET_CHARACTER_SA($CharacterContext(),"class_ThievingSkills","$acrobat");
+-$SET_CHARACTER_SA($CharacterContext(),"class_baseName","$acrobat");
+-XP = $GET_CHARACTER_SA($CharacterContext(),"preAcrobat");
+-$SET_CHAR_Lvl(me,"acrobat","6");
+-$SET_CHAR_Exp(me,"acrobat",XP);
+\(END)
+
+\(BEGIN)
+name = class_BardCasterLevel
+[SpellCasterLevel] = $VAR atk; $VAR adj; $VAR lvl; // level
+-atk = $IndexOf($AttackerContext());
+-adj = $DelimitedStringSubstring( $SA_PARAM_GET(),0);//2nd prm 0, 1, or 2
+-lvl = $GET_CHAR_Lvl(atk,"bard") -# adj;
+-$IF (lvl >=# 12){$RETURN lvl = 12;};
+-$RETURN lvl;
+\(END)
+
+\(BEGIN)
+name = class_BardPoetics
+[CanCureOrWhatever] = $VAR atk; $VAR adj; $VAR lvl;
+-atk = $IndexOf($AttackerContext());
+-adj = $DelimitedStringSubstring( $SA_PARAM_GET(),0);//2nd prm 0, 1, or 2
+-lvl = $GET_CHAR_Lvl(atk,"bard") -# adj;
+-$IF (lvl <=# 0){$RETURN;};
+-$IF ($GET_CHARACTER_SA($AttackerContext(),"WaxingPoetc") != "-?-?-"){$RETURN;};
+-$SET_HOOK_PARAM( 5,"POETICS");
+-$SET_HOOK_PARAM( 6,"0");
+[CureOrWhatever] = $SET_HOOK_PARAM(1,"bardPoetics");
+-$RETURN "CastSpell";
+\(END)
+
+\(BEGIN)
+name = class_BardSong
+[CanLayOrWhatever] = $VAR atk; $VAR adj; $VAR lvl;
+-atk = $IndexOf($AttackerContext());
+-adj = $DelimitedStringSubstring( $SA_PARAM_GET(),0);//2nd prm 0, 1, or 2
+-lvl = $GET_CHAR_Lvl(atk,"bard") -# adj;
+-$IF (lvl <=# 0){$RETURN;};
+-$IF ($GET_CHARACTER_SA($AttackerContext(),"Singing") != "-?-?-"){$RETURN;};
+-$SET_HOOK_PARAM( 5,"SING");
+-$SET_HOOK_PARAM( 6,"0");
+[LayOrWhatever] = $SET_HOOK_PARAM(1,"bardSong");
+-$RETURN "CastSpell";
+\(END)
+
+\(BEGIN)
+name = class_Druid
+[CharDisplayStatus] = $SET_HOOK_PARAM(7,"Immune to Woodland Creature Charm");
+-$SET_HOOK_PARAM(6,"");
+-$RETURN 1;
+TrainingCharacter $VAR me;
+-me = $IndexOf($CharacterContext());
+-$IF ($GET_CHARACTER_SA($CharacterContext(),"IsDruidImmuneWoodlandCharm") != "-?-?-") {$RETURN;};
+-$IF ($GET_CHAR_Lvl(me,"druid") ># 6)
+-	{
+-		$SET_CHARACTER_SA($CharacterContext(),"IsDruidImmuneWoodlandCharm","");
+-		$SET_CHARACTER_SA($CharacterContext(),"IsDruidShapeChanger","");
+-	};
+\(END)
+
+\(BEGIN)
+name = class_IllusionistScribe
+[CanScribeOrWhatever] = $SET_HOOK_PARAM(5,"SCRIBE");
+-$SET_HOOK_PARAM(6,0);
+[KnowableSpells] = $RETURN "100";
+[AD&DKnowableSpells] = $VAR me; $VAR par; $VAR lvl; $VAR spLvl; $VAR spCls;
+-me = $IndexOf($CharacterContext());
+-par = $SA_PARAM_GET(); lvl = $GET_CHAR_Lvl(me,par);
+-spLvl = $GET_HOOK_PARAM(6); spCls = $SA_SPELL_GET("spellClass");
+-$IF (lvl ># 15){lvl =# 15;};
+-$IF (spCls != par){$RETURN "0";};
+-$IF (spLvl ># $IntegerTable("class_Spells","illusionistLvl",lvl -# 1,"Index")){$RETURN "0";}
+-$ELSE{$RETURN $IntegerTable("AbilityAdjustments","IntSpellsSuccess",$GET_HOOK_PARAM(5) -# 9,"Index");};
+[KnowableSpellsMinMax] = $SET_HOOK_PARAM(7,"999999");
+-$SET_HOOK_PARAM(8,"999999");
+-$SET_HOOK_PARAM(9,"999999");
+[AD&DKnowableSpellsMinMax] = $VAR param; $VAR par4; $VAR par5; $VAR par6;
+-$VAR intMin; $VAR intMax; $VAR char; $VAR illLvl;
+-param = $SA_PARAM_GET(); par4 = $GET_HOOK_PARAM(4);
+-par5 = $GET_HOOK_PARAM(5); par6 = $GET_HOOK_PARAM(6);
+-intMin = $IntegerTable("AbilityAdjustments","IntSpellsMin",par5 -# 9,"Index");
+-intMax = $IntegerTable("AbilityAdjustments","IntSpellsMax",par5 -# 9,"Index");
+-char = $IndexOf($CharacterContext());
+-illLvl = $GET_CHAR_Lvl(char,param);
+-$IF (par4 == "I")
+-	{
+-		$IF (par6 !=# 1)
+-			{
+-				$SET_HOOK_PARAM(7, intMin);
+-				$SET_HOOK_PARAM(8, intMax);
+-				$SET_HOOK_PARAM(9, "2");
+-				$RETURN "2";
+-			}
+-		$ELSE
+-			{
+-				$SET_HOOK_PARAM(7, intMin -# 2);
+-				$SET_HOOK_PARAM(8, intMax -# 2);
+-				$SET_HOOK_PARAM(9, "0");
+-				$RETURN "1";
+-			};
+-	};
+-$IF (par4 == "L")
+-	{
+-		$IF (illLvl ># 15){illLvl = 15;};
+-		$IF (par6 !=# $IntegerTable("class_Spells","illusionistTrain",illLvl -# 1,"Index"))
+-			{
+-				$SET_HOOK_PARAM(7, 0);
+-				$SET_HOOK_PARAM(8, 0);
+-				$SET_HOOK_PARAM(9, "0");
+-				$RETURN "0";
+-			}
+-		$ELSE
+-			{
+-				$SET_HOOK_PARAM(7, intMin);
+-				$SET_HOOK_PARAM(8, intMax);
+-				$SET_HOOK_PARAM(9, "2");
+-				$RETURN "2";
+-			};
+-	};
+[LearnSpells] = $VAR spl;
+-spl = $GET_SPELL_SA($SpellContext(),"spellClass");
+-$IF (spl != "-?-?-"){$RETURN "100";}
+-$ELSE {$RETURN "0";};
+[AD&DLearnSpells] = $VAR int;
+-int  = $GET_HOOK_PARAM(5);
+-$IF (int ># 18) {$RETURN "95";};
+-$IF (int ># 17) {$RETURN "85";};
+-$IF (int ># 16) {$RETURN "75";};
+-$IF (int ># 14) {$RETURN "65";};
+-$IF (int ># 12) {$RETURN "55";};
+-$IF (int ># 9) {$RETURN "45";}
+-$ELSE {$RETURN "35";};
+[LearnSpellsNum] = $VAR char; $VAR par; $VAR illLvl; $VAR canKnow; $VAR lvl; $VAR spl; $VAR par4; $VAR par6;
+-char = $IndexOf($CharacterContext());
+-par = $SA_PARAM_GET(); illLvl = $GET_CHAR_Lvl(char,par);
+-canKnow = "#$2$0$0$0$0$0$0#$3$0$0$0$0$0$0#$3$2$0$0$0$0$0#$4$3$0$0$0$0$0#$4$3$2$0$0$0$0#$5$3$3$0$0$0$0#$5$4$3$2$0$0$0#$5$4$4$3$0$0$0#$5$5$4$3$2$0$0#$6$5$4$3$3$0$0#$6$6$5$4$4$0$0#$6$6$5$5$5$2$0#$7$6$6$5$5$3$0#$7$7$6$5$5$3$2#$8$7$6$6$6$4$2#$8$8$6$6$6$4$3#$8$8$6$6$6$4$4#$8$8$6$6$6$4$4#$8$8$7$6$6$4$4#$8$8$7$6$6$5$4#$8$8$7$6$6$5$5#$8$8$7$6$6$6$5#$8$8$7$6$6$6$6#$9$8$7$6$6$6$6#$9$9$7$6$6$6$6#$9$9$8$7$6$6$6#$9$9$8$7$7$7$7#$10$9$8$7$7$7$7#$10$10$9$8$7$7$7#$10$10$9$8$8$8$8#$11$10$9$8$8$8$8#$11$11$10$9$8$8$8#$12$11$10$9$9$9$9#$12$12$11$10$9$9$9#$12$12$12$11$9$9$9#$12$12$12$11$10$10$10#$13$12$12$11$10$10$10#$13$13$12$11$10$10$10#$13$13$12$11$11$11$11#$13$13$12$11$11$11$11";
+-lvl = $DelimitedStringSubstring(canKnow,illLvl -# 1);
+-par4 = $GET_HOOK_PARAM(4); par6 = $GET_HOOK_PARAM(6);
+-spl = $DelimitedStringSubstring(lvl,par6 -# 1);
+-$IF (par4 == "I")
+-	{
+-		$IF (par6 ==# 0) {$SET_HOOK_PARAM(8,0); $RETURN;};
+-		$SET_HOOK_PARAM(8,spl);
+-		$SET_HOOK_PARAM(9,1);
+-		$RETURN "1";
+-	};
+-$IF (par4 != "I")
+-	{
+-		$IF (par6 ==# 0) {$SET_HOOK_PARAM(8,1); $RETURN;};
+-		$IF (par6 <=# sLvl)
+-			{$SET_HOOK_PARAM(8,1);$SET_HOOK_PARAM(9,1);}
+-		$ELSE
+-			{$SET_HOOK_PARAM(8,0);};
+-		$RETURN "1";
+-	};
+[ScribeOrWhatever] = $SET_HOOK_PARAM(5, "Scribe");
+\(END)
+
+\(BEGIN)
+name = class_Spells
+<illusionistLvl> = 1
+-1
+-2
+-2
+-3
+-3
+-3
+-4
+-4
+-5
+-5
+-6
+-6
+-7
+-7
+<illusionistTrain> = 1
+-0
+-2
+-0
+-3
+-0
+-0
+-4
+-0
+-5
+-0
+-6
+-0
+-7
+-0
+<magicUserLvl> = 1
+-1
+-2
+-2
+-3
+-3
+-4
+-4
+-5
+-5
+-5
+-6
+-6
+-7
+-7
+-8
+-8
+-9
+-9
+<magicUserTrain> = 1
+-0
+-2
+-0
+-3
+-0
+-4
+-0
+-5
+-0
+-0
+-6
+-0
+-7
+-0
+-8
+-0
+-9
+-0
+\(END)
+
+\(BEGIN)
+name = IsBlurred
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Blurred");
+-$SET_HOOK_PARAM( 6,"");
+-$RETURN 1;
+[DoesAttackSucceed] = $VAR par5;
+-$VAR par6;
+-$IF ($GET_COMBATANT_SA($TargetContext(),"blurFirst") == "-?-?-")
+-	{
+-		$SET_COMBATANT_SA($TargetContext(),"blurFirst",1);
+-		par5 = $GET_HOOK_PARAM(5) -# 4;
+-	};
+-par5 = $GET_HOOK_PARAM(5) -# 2;
+-par6 = $GET_HOOK_PARAM(6);
+-$IF (par5 >=# par6){$RETURN "Y";}
+-$ELSE {$RETURN "N";};
+\(END)
+
+\(BEGIN)
+name = IsMassmorphed
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Morphed");
+-$SET_HOOK_PARAM( 6,"");
+-$RETURN 1;
+[Dispel] = $SA_REMOVE();
+\(END)
+
+\(BEGIN)
+name = IsParalyzationed
+[CanCastSpells] = $RETURN "N";
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Paralyzed");
+-$SET_HOOK_PARAM( 6,"");
+-$RETURN 1;
+[Dispel] = $SA_REMOVE();
+[DoesAttackSucceed] = $IF ($GET_COMBATANT_SA($TargetContext(),"IsParalyzationed") != "-?-?-")
+-  {$SET_HOOK_PARAM(6,$GET_HOOK_PARAM(6) -# 30);};
+-$IF ($GET_HOOK_PARAM(5) >=# $GET_HOOK_PARAM(6)){$RETURN "Y";}
+-$ELSE {$RETURN "N";};
+[GetAdjMaxMovement] = $RETURN "0";
+[GetItemTargetHitBonus] = $RETURN $GET_CHAR_HITPOINTS($IndexOf($TargetContext())) +# 1;
+[IsCombatReady] = $RETURN "N";
+\(END)
+
+\(BEGIN)
+name = IsSeeingIllusion
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Sees illusions");
+-$SET_HOOK_PARAM( 6,"");
+-$RETURN 1;
+[Dispel] = $SA_REMOVE();
+\(END)
+
+\(BEGIN)
+name = item_BardUseFighter
+[CanReady] = $VAR me; me = $MyIndex();
+-$IF ($GET_CHAR_Lvl(me,"bard") ># 7){$RETURN "N";};
+\(END)
+
+\(BEGIN)
+name = item_BardUseThief
+[CanReady] = $VAR me; me = $MyIndex();
+-$IF ($GET_CHAR_Lvl(me,"bard") <# 8){$RETURN "N";};
+-$IF ($GET_CHAR_Lvl(me,"bard") ># 12){$RETURN "N";};
+\(END)
+
+\(BEGIN)
+name = item_LanceMountedDamage
+[ComputeDamage] = $VAR p5, $VAR mnt;
+-p5 = $GET_HOOK_PARAM(5);
+-mnt = $GET_CHARACTER_SA($AttackerContext(),"IsMounted");
+-$IF (mnt != "-?-?-") {$RETURN p5 x# 2;};
+\(END)
+
+\(BEGIN)
+name = spell_Blur
+[InvokeSpellOnTarget] = $SET_COMBATANT_SA($TargetContext(),"IsBlurred","");
+\(END)
+
+\(BEGIN)
+name = spell_ColorSpray
+[InvokeSpellOnTarget] = $VAR tgt; // target
+-$VAR atk; // attacker (spellcaster)
+-$VAR param;
+-$VAR cls; // target's level
+-$VAR cstr; // spellcaster's level
+-$VAR saved;
+-$VAR rndm;
+-$VAR time;
+-
+-tgt = $IndexOf($TargetContext());
+-atk = $IndexOf($AttackerContext());
+-param = $SA_PARAM_GET();
+-cstr = $GET_CHAR_Lvl(atk,param);
+-
+-$IF ($GET_MONSTERTYPE_SA(tgt,"IsImmuneIllusions") != "-?-?-"){$RETURN;};
+-$IF ($GET_MONSTERTYPE_SA(tgt,"monsterLevel") != "-?-?-"){cls = $GET_MONSTERTYPE_SA(tgt,"monsterLevel")}
+$ELSE {cls = $GetHighestBaseclassLevel(tgt)};
+-saved = $GET_COMBATANT_SA($TargetContext(),"savedCS");
+-$IF (saved != "-?-?-" && (cls ># cstr || cls ># 5)){$RETURN $DELETE_COMBATANT_SA($TargetContext(),"savedCS");}
+-$ELSE {$DELETE_COMBATANT_SA($TargetContext(),"savedCS");};
+-$IF (cstr >=# cls)
+-	{
+-		rndm = $RANDOM(7) +# 2;
+-		time = $GET_PARTY_TIME() +# rndm;
+-		$SET_CHARACTER_SA($TargetContext()"IsColorSleep",time);
+-	};
+-$IF (cstr +# 2 >= cls)
+-	{
+-		rndm = $RANDOM(4) +# 1;
+-		time = $GET_PARTY_TIME() +# rndm;
+-		$SET_CHARACTER_SA($TargetContext()"IsColorBlind",time);
+-	};
+-$ELSE
+-	{
+-		time = $GET_PARTY_TIME() +# 1;
+-		$SET_CHARACTER_SA($TargetContext()"IsColorStun",time);
+-	};
+\(END)
+
+\(BEGIN)
+name = spell_ConjureAnimals
+[InvokeSpellOnTarget] = $VAR list;
+-$VAR count;
+-$VAR n;
+-$VAR caster;
+-$VAR class;
+-$VAR hd;
+-$VAR string;
+-$VAR monster;
+-$VAR sCount;
+-list = "#$Owl$1#$Wolf$2#$Brown Bear$5";
+-count = $DelimitedStringCount(list);
+-n = $RANDOM(count);
+-caster = $IndexOf($AttackerContext());
+-class = $SA_PARAM_GET();
+-string = $DelimitedStringSubstring(list,n);
+-monster = $DelimitedStringSubstring(string,0);
+-hd = $DelimitedStringSubstring(string,1);
+-sCount = $GET_CHAR_Lvl(caster,class) /# hd;
+-$WHILE (sCount >=# 0)
+-	{
+-		$AddCombatant(monster,"1");
+-		sCount = sCount -# 1;
+-	};
+\(END)
+
+\(BEGIN)
+name = spell_DemiShadowMagic
+[OverrideSpellSelection] = $RETURN "$Demi-Shadow Magic Missile$Demi-Shadow Fireball$Demi-Shadow Lightning Bolt$Demi-Shadow Cone of Cold$Demi-Shadow Cloudkill";
+\(END)
+
+\(BEGIN)
+name = spell_GazeReflection
+[InvokeSpellOnTarget] = $SET_CHARACTER_SA($CharacterContext(), "IsReflecting", "1");
+\(END)
+
+\(BEGIN)
+name = spell_Massmorph
+[InvokeSpellOnTarget] = $SET_CHARACTER_SA($CharacterContext(),"IsMassmorphed",$GET_PARTY_TIME());
+\(END)
+
+\(BEGIN)
+name = spell_Paralyzation
+[InvokeSpellOnTarget] = $SET_CHARACTER_SA($CharacterContext(),"IsParalyzationed",$GET_PARTY_TIME());
+\(END)
+
+\(BEGIN)
+name = spell_SeeIllusion
+[InvokeSpellOnTarget] = $SET_CHARACTER_SA($TargetContext(),"IsSeeingIllusion","");
+\(END)
+
+\(BEGIN)
+name = spell_ShadowDoor
+[AutoAction] = $RETURN "F + $IndexOf($LEAST_DAMAGED_ENEMY())";
+[IsValidTarget] = $RETURN "N";
+\(END)
+
+\(BEGIN)
+name = spell_ShadowMagic
+[OverrideSpellSelection] = $RETURN "$Shadow Magic Missile$Shadow Fireball$Shadow Lightning Bolt$Shadow Cone of Cold";
+\(END)
+
+\(BEGIN)
+name = spell_SummonDemiShadowMonsters
+[InvokeSpellOnTarget] = $VAR list;
+-$VAR count;
+-$VAR n;
+-$VAR caster;
+-$VAR class;
+-$VAR hd;
+-$VAR string;
+-$VAR monster;
+-$VAR sCount;
+-list = "#$Demi-Shadow Orc$1#$Demi-Shadow Wolf$2#$Demi-Shadow Yeti$4";
+-count = $DelimitedStringCount(list);
+-n = $RANDOM(count);
+-caster = $IndexOf($AttackerContext());
+-class = $SA_PARAM_GET();
+-string = $DelimitedStringSubstring(list,n);
+-monster = $DelimitedStringSubstring(string,0);
+-hd = $DelimitedStringSubstring(string,1);
+-sCount = $GET_CHAR_Lvl(caster,class) /# hd;
+-$WHILE (sCount >=# 0)
+-	{
+-		$AddCombatant(monster,"1");
+-		sCount = sCount -# 1;
+-	};
+\(END)
+
+\(BEGIN)
+name = spell_SummonShades
+[InvokeSpellOnTarget] = $VAR list;
+-$VAR count;
+-$VAR n;
+-$VAR caster;
+-$VAR class;
+-$VAR hd;
+-$VAR string;
+-$VAR monster;
+-$VAR sCount;
+-list = "#$Shade Hobgoblin$2#$Shade Imp$1#$Shade Worg$4";
+-count = $DelimitedStringCount(list);
+-n = $RANDOM(count);
+-caster = $IndexOf($AttackerContext());
+-class = $SA_PARAM_GET();
+-string = $DelimitedStringSubstring(list,n);
+-monster = $DelimitedStringSubstring(string,0);
+-hd = $DelimitedStringSubstring(string,1);
+-sCount = $GET_CHAR_Lvl(caster,class) /# hd;
+-$WHILE (sCount >=# 0)
+-	{
+-		$AddCombatant(monster,"1");
+-		sCount = sCount -# 1;
+-	};
+\(END)
+
+\(BEGIN)
+name = spell_SummonShadow
+[InvokeSpellOnTarget] = $VAR list;
+-$VAR caster;
+-$VAR class;
+-$VAR sCount;
+-list = "$Shadow";
+-caster = $IndexOf($AttackerContext());
+-class = $SA_PARAM_GET();
+-sCount = $GET_CHAR_Lvl(caster,class") /# 3;
+-$WHILE (sCount >=# 0)
+-	{
+-		$AddCombatant("Shadow","1");
+-		sCount = sCount -# 1;
+-	};
+\(END)
+
+\(BEGIN)
+name = spell_SummonShadowMonsters
+[InvokeSpellOnTarget] = $VAR list;
+-$VAR count;
+-$VAR n;
+-$VAR caster;
+-$VAR class;
+-$VAR hd;
+-$VAR string;
+-$VAR monster;
+-$VAR sCount;
+-list = "#$Shadow Gnoll$2#$Shadow Goblin$1#$Shadow Ogre$4";
+-count = $DelimitedStringCount(list);
+-n = $RANDOM(count);
+-caster = $IndexOf($AttackerContext());
+-class = $SA_PARAM_GET();
+-string = $DelimitedStringSubstring(list,n);
+-monster = $DelimitedStringSubstring(string,0);
+-hd = $DelimitedStringSubstring(string,1);
+-sCount = $GET_CHAR_Lvl(caster,class) /# hd;
+-$WHILE (sCount >=# 0)
+-	{
+-		$AddCombatant(monster,"1");
+-		sCount = sCount -# 1;
+-	};
+\(END)
+
+\(BEGIN)
+name = spell_TransmuteRockToMud
+[Dispel] = $SA_REMOVE();
+-$RUN_CHAR_SE_SCRIPTS($TargetContext(),"Dispel SE");
+[Dispel SE] = $REMOVE_SPELL_EFFECT($CharacterContext(),$GET_HOOK_PARAM(5));
+[InvokeSpellOnTarget] = $SET_CHARACTER_SA($TargetContext(),"IsStuckInMud","");
+[RemoveLinger] = $RETURN "AREA";
+[SpellLingerBlockage] = $RETURN "Y";
+\(END)
+

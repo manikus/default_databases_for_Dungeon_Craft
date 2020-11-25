@@ -1,0 +1,31 @@
+\(BEGIN)
+name = Remorhaz
+icon file = icon_Remorhaz.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathLarge.wav
+intelligence = 1
+armor class = 0
+movement rate = 12
+hit dice = 11.000000
+treat HD as hit points = yes
+hit dice bonus = 0
+THAC0 = 10
+magic resistance = 75
+size = large
+morale = 35
+experience point value = 2404
+Special Ability = monsterLevel,11
+Class = Fighter
+Race = Monster
+form = large
+penalty = none
+immunity = none
+Misc Options = can be held/charmed
+item = none
+attack = 6,6,0,attacks,monsterRemorhazSwallow
+Undead = none
+\(END)
+// MM p82
+

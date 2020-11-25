@@ -1,0 +1,19 @@
+\(BEGIN)
+name = spell_SummonAnimal1
+[InvokeSpellOnTarget] = $VAR list;
+-$VAR count;
+-$VAR n;
+-$VAR monster1;
+-$VAR sCount;
+-list = "$Wild Dog$Owl";
+-count = $DelimitedStringCount(list);
+-n = $RANDOM(count);
+-monster1 = $DelimitedStringSubstring(list,n);
+-sCount = $RANDOM(8);
+-$WHILE (sCount >=# 0)
+-	{
+-		$AddCombatant(monster1,"1");
+-		sCount = sCount -# 1;
+-	};
+\(END)
+

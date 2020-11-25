@@ -1,0 +1,12 @@
+\(BEGIN)
+name = IsFumbling
+[CharDisplayStatus] = $IF ($GET_PARTY_TIME() ># $SA_PARAM_GET())
+-  {$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7,"Fumbling ");
+-$SET_HOOK_PARAM( 6,"");
+-$RETURN 1;
+[Dispel] = $SA_REMOVE();
+[GetAdjMaxMovement] = $RETURN "0";
+[IsCombatReady] = $RETURN "N";
+\(END)
+

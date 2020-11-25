@@ -1,0 +1,35 @@
+\(BEGIN)
+name = ChangeClassCleric
+[CanChangeFromClass] = $VAR me; $VAR WIS;
+-me = $IndexOf($CharacterContext());
+-WIS = $GET_CHAR_LIMITED_WIS(me);
+-$IF (WIS >=# 15) {$RETURN "Y";};
+[CanChangeToClass] = $VAR me; $VAR WIS; $VAR race;
+-me = $IndexOf($CharacterContext());
+-WIS = $GET_CHAR_LIMITED_WIS(me); race = $GET_CHAR_RACE(me);
+-$IF (race != "Human") {$RETURN "N";};
+-$IF (WIS >=# 17) {$RETURN "Y";};
+[ChangeClassFrom] = $VAR me; $VAR cls; $VAR lvl; $VAR toHit;
+-me = $IndexOf($CharacterContext());
+-cls = $GET_CHAR_CLASS(me); lvl = $GET_CHAR_Lvl(me,"cleric"); toHit = $GET_CHAR_THAC0(me);
+-$DELETE_CHARACTER_SA($CharacterContext(),"class_baseName");
+-$SET_CHARACTER_SA($CharacterContext(),"prevSaveVsPPDM",$SkillAdj($CharacterContext(),"Save Vs PPDM","","F",""));
+-$SET_CHARACTER_SA($CharacterContext(),"prevSaveVsPP",$SkillAdj($CharacterContext(),"Save Vs PP","","F",""));
+-$SET_CHARACTER_SA($CharacterContext(),"prevSaveVsRSW",$SkillAdj($CharacterContext(),"Save Vs RSW","","F",""));
+-$SET_CHARACTER_SA($CharacterContext(),"prevSaveVsBR",$SkillAdj($CharacterContext(),"Save Vs BR","","F",""));
+-$SET_CHARACTER_SA($CharacterContext(),"prevSaveVsSP",$SkillAdj($CharacterContext(),"Save Vs SP","","F",""));
+-$SET_CHARACTER_SA($CharacterContext(),"prevTHAC0",toHit);
+-$SET_CHARACTER_SA($CharacterContext(),"preDualClass","$"+cls+"$"+lvl);
+-$SET_CHARACTER_SA($CharacterContext(),"DualClassedCleric","$"+cls+"$"+lvl);
+[ChangeClassTo] = $SET_CHARACTER_SA($CharacterContext(),"class_baseName","$cleric");
+-$SET_CHARACTER_SA($CharacterContext(),"DualClassedCleric","$cleric");
+[TrainingCharacter] = $VAR me; $VAR bc; $VAR lvl; $VAR pdc; $VAR prv; $VAR cls;
+-me = $IndexOf($CharacterContext());
+-bc = $GetHighestLevelBaseclass(me);
+-lvl = $GET_CHAR_Lvl(me,bc);
+-pdc = $GET_CHARACTER_SA($CharacterContext(),"preDualClass");
+-prv = $DelimitedStringSubstring(pdc,1); cls = $DelimitedStringSubstring(pdc,0);
+-$IF (pdc == "-?-?-") {$RETURN;};
+-$IF (lvl ># prv) {$RUN_CHAR_SCRIPTS(me,"DualClassAchieved"+cls);};
+\(END)
+

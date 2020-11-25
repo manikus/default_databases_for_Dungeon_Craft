@@ -1,0 +1,5 @@
+\(BEGIN)
+name = TeleporterDestinations
+[/1/0/0] = $RETURN $GET_PARTY_ASL("spot");
+\(END)
+

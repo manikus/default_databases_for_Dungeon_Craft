@@ -1,0 +1,19 @@
+\(BEGIN)
+name = spell_Darkness15RadiusMage
+[OverrideSpellTargeting] = $VAR p5; $VAR p6; $VAR lst; $VAR loc;
+-p5 = $GET_HOOK_PARAM(5); p6 = $GET_HOOK_PARAM(6);
+-$SET_HOOK_PARAM(1,"Select one of the following;");
+-loc = "$"+p5+"$"+p6;
+-lst = "$Map$Combatant";
+-$SET_COMBATANT_SA($AttackerContext(),"Darkness15RadiusMageTargetXY",loc);
+-$RETURN lst;
+[ProcessSpellTargetOverride] = $VAR p5; $VAR atk; $VAR tgt;
+-$VAR cls; $VAR lvl; $VAR adj; $VAR exp;
+-p5 = $GET_HOOK_PARAM(5);
+-atk = $IndexOf($AttackerContext()); tgt = $IndexOf($TargetContext());
+-cls = $GET_CHAR_CLASS(atk); lvl = $GET_CHAR_Lvl(atk,cls) +# 10;
+-adj = $DelimitedStringSubstring($SA_SPELL_GET("casterLevel"),1);
+-exp = $GET_PARTY_TIME() +# lvl -# adj;
+-$AURA_Create("spell_Darkness15RadiusMageAURA",p5,atk,tgt,exp);
+\(END)
+

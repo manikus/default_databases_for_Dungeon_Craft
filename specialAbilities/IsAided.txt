@@ -1,0 +1,31 @@
+\(BEGIN)
+name = IsAided
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Aided");$SET_HOOK_PARAM( 6,"");$RETURN 1;
+[Dispel] = $VAR ohp; $VAR mhp; $VAR tgt; $VAR hit; $VAR max;
+-tgt = $IndexOf($TargetContext());
+-ohp = $GET_CHARACTER_SA($TargetContext(),"tempAidOldHP");
+-mhp = $GET_CHARACTER_SA($TargetContext(),"tempAidOldMaxHP");
+-hit = $GET_CHAR_HITPOINTS(tgt);
+-max = $GET_CHAR_MAXHITPOINTS(tgt);
+-$SA_REMOVE();
+-$IF (max ># mhp) {$SET_CHAR_MAXHITPOINTS(tgt,mhp);};
+-$IF (hit ># ohp) {$SET_CHAR_HITPOINTS(tgt,ohp);};
+[DoesAttackSucceed] = $IF ($GET_COMBATANT_SA($AttackerContext(),"IsAided") != "-?-?-")
+-  {$SET_HOOK_PARAM(6,$GET_HOOK_PARAM(6) -# 1);};
+-$IF ($GET_HOOK_PARAM(5) >=# $GET_HOOK_PARAM(6)){$RETURN "Y";}
+-$ELSE {$RETURN "N";};
+[StartCombatRound] = $VAR exp; $VAR ohp; $VAR mhp; $VAR tgt; $VAR hit; $VAR max;
+-exp = $SA_PARAM_GET();
+-tgt = $IndexOf($TargetContext());
+-ohp = $GET_CHARACTER_SA($TargetContext(),"tempAidOldHP");
+-mhp = $GET_CHARACTER_SA($TargetContext(),"tempAidOldMaxHP");
+-hit = $GET_CHAR_HITPOINTS(tgt);
+-max = $GET_CHAR_MAXHITPOINTS(tgt);
+-$IF ($GET_PARTY_TIME() ># exp)
+-	{
+-		$SA_REMOVE();
+-		$IF (max ># mhp) {$SET_CHAR_MAXHITPOINTS(tgt,mhp);};
+-		$IF (hit ># ohp) {$SET_CHAR_HITPOINTS(tgt,ohp);};
+-	};
+\(END)
+

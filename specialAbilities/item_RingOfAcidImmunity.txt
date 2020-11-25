@@ -1,0 +1,8 @@
+\(BEGIN)
+name = item_RingOfAcidImmunity
+[OnReady] = $SET_CHARACTER_SA($CharacterContext(),"elemental_ImmuneAcid", "");
+-$SET_CHARACTER_SA($CharacterContext(),"DispelLevelItem","12");
+[OnUnReady] = $DELETE_CHARACTER_SA($CharacterContext(), "elemental_ImmuneAcid");
+-$DELETE_CHARACTER_SA($CharacterContext(),"DispelLevelItem");
+\(END)
+

@@ -1,0 +1,25 @@
+\(BEGIN)
+name = monster_GiantSlugSpit
+[CheckProximity] = $VAR tgt; // target
+-$VAR myself;
+-$VAR range;
+-$VAR distance;
+-tgt = $GET_HOOK_PARAM(6);
+-myself = $GET_HOOK_PARAM(5);
+-range = $SA_PARAM_GET();
+-distance = $VisualDistance(tgt, myself);
+-$SA_PARAM_SET(distance);
+[DAS bak] = $VAR random;
+-$VAR distance;
+-random = $RANDOM(100);
+-distance = $SA_PARAM_GET();
+-$IF ($GetCombatRound() ==# 1)
+-	{
+-		$IF (random <# 10){$RETURN "Y";}
+-		$ELSE{$RETURN "N";};
+-	};
+-$IF (random <# 110 -# (10 *# distance)){$RETURN "Y";}
+-$ELSE{$RETURN "N";};
+[DoesSpellAttackSucceed] = 
+\(END)
+

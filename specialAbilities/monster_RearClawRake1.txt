@@ -1,0 +1,5 @@
+\(BEGIN)
+name = monster_RearClawRake1
+[InvokeSpellOnTarget] = $SET_COMBATANT_SA($AttackerContext(),"CombatRoundStart",1);
+\(END)
+

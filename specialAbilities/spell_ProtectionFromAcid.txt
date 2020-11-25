@@ -1,0 +1,30 @@
+\(BEGIN)
+name = spell_ProtectionFromAcid
+[Dispel] = $SA_REMOVE();
+-$RUN_CHAR_SE_SCRIPTS($TargetContext(),"Dispel SE");
+[Dispel SE] = $REMOVE_SPELL_EFFECT($CharacterContext(),$GET_HOOK_PARAM(5));
+[InvokeSpellOnTarget] = $VAR atk; // attacker
+-$VAR tgt; // target
+-$VAR cls;
+-$VAR adj;
+-$VAR lvl;
+-$VAR exp; // expiration time
+-atk = $IndexOf($AttackerContext());
+-tgt = $IndexOf($TargetContext());
+-cls = $SA_PARAM_GET();
+-adj = $GET_CHARACTER_SA($AttackerContext(),"casterLevel");
+-lvl = $GET_CHAR_Lvl(atk,cls) -# adj;
+-$SET_CHARACTER_SA($CharacterContext(),"DispelLevel",lvl);
+-exp = $GET_PARTY_TIME() +# lvl *# 10;
+-$IF (atk ==# tgt)
+-	{
+-		$SET_CHARACTER_SA($TargetContext(),"IsProtectedAcidCaster",exp);
+-		$SET_CHARACTER_SA($TargetContext(),"AcidPoints",lvl *# 12);
+-	}
+-$ELSE{$SET_CHARACTER_SA($TargetContext(),"IsProtectedAcidTarget",exp);};
+-$SkillAdj($TargetContext(),"Save Vs BR","protectionAcid","-","4");
+-$SkillAdj($TargetContext(),"Save Vs RSW","protectionAcid","-","4");
+-$SkillAdj($TargetContext(),"Save Vs SP","protectionAcid","-","4");
+[RemoveLinger] = $RETURN "TARGETS";
+\(END)
+

@@ -1,0 +1,38 @@
+\(BEGIN)
+name = Unicorn
+icon file = icon_Unicorn.png,0,2,48,48,0,1,0
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathLarge.wav
+intelligence = 9
+armor class = 3
+movement rate = 24
+hit dice = 4.000000
+treat HD as hit points = yes
+hit dice bonus = 4
+THAC0 = 15
+magic resistance = 0
+size = large
+morale = 40
+experience point value = 500
+Special Ability = monsterLevel,6
+Special Ability = monster_ImmuneCharm,monster
+Special Ability = monster_ImmuneHold,monster
+Special Ability = monster_CombatantAlignment,good
+Special Ability = monster_UnicornSavingThrows
+Special Ability = IsWoodlandCreature
+Class = Fighter
+Race = Monster
+form = mammal
+penalty = none
+immunity = death magic
+Misc Options = none
+item = none
+attack = 6,1,0,attacks,
+attack = 6,1,0,attacks,
+attack = 12,1,0,attacks,
+Undead = none
+\(END)
+// MM p98
+

@@ -1,0 +1,24 @@
+\(BEGIN)
+name = spell_Web
+[Dispel] = $SA_REMOVE();
+-$RUN_CHAR_SE_SCRIPTS($TargetContext(),"Dispel SE");
+[Dispel SE] = $REMOVE_SPELL_EFFECT($CharacterContext(),$GET_HOOK_PARAM(5));
+[InvokeSpellOnTarget] = $VAR atk; $VAR tgt; $VAR cls; $VAR adj; $VAR lvl;
+-$VAR exp; $VAR time;
+-atk = $IndexOf($AttackerContext());
+-tgt = $IndexOf($TargetContext());
+-cls = $SA_PARAM_GET();
+-adj = $GET_CHARACTER_SA($AttackerContext(),"casterLevel");
+-lvl = $GET_CHAR_Lvl(atk,cls) -# adj;
+-exp = $GET_PARTY_TIME() +# 10;
+-time = $GET_PARTY_TIME();
+-$SET_CHARACTER_SA($TargetContext(),"DispelLevel",lvl);
+-$IF ($GET_CHARACTER_SA($TargetContext(),"webSaveFailed") != "-?-?-")
+-	{
+-		$SET_CHARACTER_SA($TargetContext(),"IsWebbed",exp);
+-		$SET_CHARACTER_SA($TargetContext(),"IsWebbedTime",time);
+-		$DELETE_CHARACTER_SA($TargetContext(),"webSaveFailed");
+-	};
+[RemoveLinger] = $RETURN "AREA";
+\(END)
+

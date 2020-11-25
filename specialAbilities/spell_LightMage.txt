@@ -1,0 +1,12 @@
+\(BEGIN)
+name = spell_LightMage
+[InvokeSpellOnTarget] = $VAR X; $VAR Y; $VAR atk; $VAR tgt; $VAR cls; $VAR lvl; $VAR adj; $VAR exp;
+-X = $GET_HOOK_PARAM(5); Y = $GET_HOOK_PARAM(6);
+-$SET_COMBATANT_SA($AttackerContext(),"LightMageTargetXY","$"+X+"$"+Y);
+-atk = $IndexOf($AttackerContext()); tgt = $IndexOf($TargetContext());
+-cls = $GET_CHAR_CLASS(atk); lvl = $GET_CHAR_Lvl(atk,cls) *# 10;
+-adj = $DelimitedStringSubstring($SA_SPELL_GET("casterLevel"),1) *# 10;
+-exp = $GET_PARTY_TIME() +# lvl -# adj;
+-$AURA_Create("spell_LightMageAURA","",atk,tgt,exp);
+\(END)
+

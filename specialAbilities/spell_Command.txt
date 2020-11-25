@@ -1,0 +1,34 @@
+\(BEGIN)
+name = spell_Command
+[Dispel] = $SA_REMOVE();
+-$RUN_CHAR_SE_SCRIPTS($TargetContext(),"Dispel SE");
+[Dispel SE] = $REMOVE_SPELL_EFFECT($CharacterContext(),$GET_HOOK_PARAM(5));
+[InvokeSpellOnTarget] = $VAR atk; $VAR cls; $VAR adj; $VAR lvl;
+-$VAR tgt; $VAR eLvl; $VAR sav; $VAR rdm; $VAR eIQ; $VAR eCls;
+-atk = $IndexOf($AttackerContext()); cls = $SA_PARAM_GET();
+-adj =  $GET_CHARACTER_SA($AttackerContext(),"casterLevel");
+-lvl = $GET_CHAR_Lvl(atk,cls) -# adj;
+-tgt = $IndexOf($TargetContext());
+-eLvl = $GET_COMBATANT_SA($TargetContext(),"monsterLevel");
+-sav = $SkillAdj($CombatantContext(), "Save Vs SP", "", "F", "");
+-rdm = $RANDOM(20) +# 1;
+-eIQ = $GET_CHAR_LIMITED_INT(tgt);
+-eCls = $GET_CHAR_CLASS(tgt);
+-$IF ($GET_CHAR_UNDEAD(tgt) != "none") {$RETURN;};
+-$IF (eLvl != "-?-?-")
+-	{
+-		$IF (eLvl ># 6){$IF (rdm >=# sav) {$RETURN;};};
+-	}
+-$ELSE
+-	{
+		eLvl = $GET_CHAR_Lvl(tgt,eCls);
+-		$IF (eLvl ># 6){$IF (rdm >=# sav) {$RETURN;};};
+-	};
+-$IF (eIQ ># 12)
+-	{
+-		$IF (rdm >=# sav) {$RETURN;};
+-	};
+-$SET_CHARACTER_SA($TargetContext(),"DispelLevel",lvl);
+-$SET_CHARACTER_SA($TargetContext(),"IsCommanded",atk);
+\(END)
+

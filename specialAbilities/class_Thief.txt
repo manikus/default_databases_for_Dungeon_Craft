@@ -1,0 +1,4 @@
+\(BEGIN)
+name = class_Thief
+\(END)
+

@@ -1,0 +1,10 @@
+\(BEGIN)
+name = spell_Wither
+[InvokeSpellOnTarget]= $VAR tgt; $VAR rndm; $VAR hp;
+-tgt = $IndexOf($TargetContext()); rndm = $RANDOM(20); hp = $GET_CHAR_HITPOINTS(tgt);
+-$IF (rndm ==# 19){$SET_CHAR_HITPOINTS(tgt,"-11");$SET_CHAR_STATUS(tgt,"5");$RETURN;};
+-$IF (rndm >=# 9){$SET_CHAR_HITPOINTS(tgt,hp /# 3);$SET_CHAR_STATUS(tgt,"9");$SET_CHARACTER_SA($TargetContext(),"IsWithered","");$RETURN;};
+-$SET_CHAR_HITPOINTS(tgt,hp /# 2);$SET_CHAR_STATUS(tgt,"1");
+-$RETURN;
+\(END)
+

@@ -1,0 +1,11 @@
+\(BEGIN)
+name = IsSleeping
+[CanCastSpells] = $RETURN "N";
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7,$SA_PARAM_GET()); $SET_HOOK_PARAM( 6,""); $RETURN 1;
+[Dispel] = $SA_REMOVE();
+[DoesAttackSucceed] = $RETURN "Y";
+[GetAdjMaxMovement] = $RETURN 0;
+[GetItemTargetHitBonus] = $RETURN $GET_CHAR_HITPOINTS($IndexOf($TargetContext())) +# 15;
+[IsCombatReady] = $RETURN "N";
+\(END)
+

@@ -1,0 +1,39 @@
+\(BEGIN)
+name = Skeletal Dog
+icon file = icon_SkeletalDog.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 0
+armor class = 8
+movement rate = 6
+hit dice = 0.800000
+treat HD as hit points = yes
+hit dice bonus = 0
+THAC0 = 20
+magic resistance = 0
+size = medium
+morale = 50
+experience point value = 13
+Special Ability = monsterLevel,1
+Special Ability = elemental_ImmuneCold
+Special Ability = monster_ImmuneCharm,monster
+Special Ability = monster_ImmuneFear,monster
+Special Ability = monster_ImmuneHold,monster
+Special Ability = monster_ImmuneSleep,monster
+Special Ability = monster_Swept,1
+Special Ability = monster_VulnerableToHolyWater,monster
+Special Ability = monster_WeaponResistanceType,slashing
+Class = Fighter
+Race = Monster
+form = none
+penalty = none
+immunity = poison + death magic + vorpal weapon
+Misc Options = none
+item = none
+attack = 4,1,0,attacks,
+Undead = Skeleton
+\(END)
+// MMII p109
+

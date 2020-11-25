@@ -1,0 +1,18 @@
+\(BEGIN)
+name = spell_IncendiaryCloud
+[Dispel] = $SA_REMOVE(); $RUN_CHAR_SE_SCRIPTS($TargetContext(),"Dispel SE");
+[Dispel SE] = $REMOVE_SPELL_EFFECT($CharacterContext(),$GET_HOOK_PARAM(5));
+[InvokeSpellOnTarget] = $VAR atk; $VAR cls; $VAR adj; $VAR lvl; $VAR rnd;
+-$IF ($GET_CHARACTER_SA($TargetContext(),"elemental_ImmuneFire") != "-?-?-"){$RETURN;};
+-$IF($GET_CHARACTER_SA($TargetContext(),"IsProtectedFireCaster") != "-?-?-"){$RETURN;};
+-$IF($GET_CHARACTER_SA($TargetContext(),"IsProtectedFireTarget") != "-?-?-"){$RETURN;};
+-atk = $IndexOf($AttackerContext()); cls = $SA_PARAM_GET(); rnd = $GetCombatRound();
+-adj = $GET_CHARACTER_SA($AttackerContext(),"casterLevel"); lvl = $GET_CHAR_Lvl(atk,cls) -# adj;
+-$SET_CHARACTER_SA($TargetContext(),"DispelLevel",lvl);
+-$SET_CHARACTER_SA($TargetContext(),"FierySave",$SkillAdj($TargetContext(), "Save Vs Spell", "", "F", ""));
+-$SET_CHARACTER_SA($TargetContext(),"IsFieryCloudy",rnd); $SET_CHARACTER_SA($TargetContext(),"FieryLevel",lvl);
+[RemoveLinger] = $RETURN "AREA";
+[SpellLingerBlockage] = $IF ($GET_CHARACTER_SA($CharacterContext(),"elemental_ImmuneFire") != "-?-?-" || $SA_CHARACTER_GET("IsProtectedFireCaster") != "-?-?-" || $SA_CHARACTER_GET("IsProtectedFireTarget") != "-?-?-"){$RETURN;};
+-$IF ($GET_CHARACTER_SA($CombatantContext(),"FierySave") != "-?-?-") {$RETURN "N";};
+\(END)
+

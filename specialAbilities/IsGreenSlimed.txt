@@ -1,0 +1,19 @@
+\(BEGIN)
+name = IsGreenSlimed
+[StartCombatRound] = $VAR round;
+-$VAR tgt;
+-$VAR rnd;
+-$VAR nRound;
+-$IF ($GET_CHARACTER_SA($CharacterContext(),"IsGreenSlimed") != "-?-?-"){$RETURN;};
+-round = $SA_PARAM_GET();
+-rnd = $RANDOM(4) +# 1;
+-nRound = $GetCombatRound();
+-tgt = $IndexOf($TargetContext());
+-$IF (nRound >=# (round +# rnd))
+-	{
+-		$SET_CHAR_HITPOINTS(tgt,-11);
+-		$SET_CHAR_STATUS(tgt,5);
+-		$AddCombatant("Green Slime",1);
+-	};
+\(END)
+

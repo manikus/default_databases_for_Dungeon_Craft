@@ -1,0 +1,8 @@
+\(BEGIN)
+name = IsSymbolHopelessnessedDone
+[StartCombatRound] = $VAR exp;
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() ># exp)
+-	{$SA_REMOVE(); $DELETE_COMBATANT_SA($CombatantContext(),"IsSymbolHopelessnessed");};
+\(END)
+

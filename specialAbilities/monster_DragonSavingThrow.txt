@@ -1,0 +1,22 @@
+\(BEGIN)
+name = monster_DragonSavingThrow
+[CreateMonsterCombatant] = $VAR param;
+-param = $SA_PARAM_GET();
+-$IF (param == "second")
+-	{
+-		$SkillAdj($CharacterContext(), "Save Vs BR", "", "F", "13");
+-		$SkillAdj($CharacterContext(), "Save Vs PP", "", "F", "11");
+-		$SkillAdj($CharacterContext(), "Save Vs PPDM", "", "F", "13");
+-		$SkillAdj($CharacterContext(), "Save Vs RSW", "", "F", "9");
+-		$SkillAdj($CharacterContext(), "Save Vs SP", "", "F", "10");
+-	};
+-$IF (param == "rhitd")
+-	{
+-		$SkillAdj($CharacterContext(), "Save Vs BR", "", "F", "11");
+-		$SkillAdj($CharacterContext(), "Save Vs PP", "", "F", "9");
+-		$SkillAdj($CharacterContext(), "Save Vs PPDM", "", "F", "11");
+-		$SkillAdj($CharacterContext(), "Save Vs RSW", "", "F", "7");
+-		$SkillAdj($CharacterContext(), "Save Vs SP", "", "F", "8");
+-	};
+\(END)
+

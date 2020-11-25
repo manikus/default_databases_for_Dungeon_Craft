@@ -1,0 +1,5 @@
+\(BEGIN)
+name = spell_RemoveDisease
+[InvokeSpellOnTarget] = $DELETE_CHARACTER_SA($TargetContext(),"IsDiseased");
+\(END)
+

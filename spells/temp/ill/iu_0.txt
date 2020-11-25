@@ -1,0 +1,4 @@
+// spells called by illusionist spells
+// Demi-Shadow Cloudkill, Demi-Shadow Cone of Cold, Demi-Shadow Fireball, 
+// Demi-Shadow Lightning Bolt, Demi-Shadow Magic Missile, Shadow Cone of Cold, 
+// Shadow Fireball, Shadow Lightning Bolt, Shadow Magic Missile

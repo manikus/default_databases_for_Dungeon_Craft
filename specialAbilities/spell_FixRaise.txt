@@ -1,0 +1,10 @@
+\(BEGIN)
+name = spell_FixRaise
+[FixCharacter] = $VAR chr; // character
+-$VAR status;
+-chr = $IndexOf($CharacterContext());
+-status = $GET_CHAR_STATUS(chr);
+-$RETURN status ==# 2;
+Info = "raise dead, resurrection for FIX";
+\(END)
+

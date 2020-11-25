@@ -1,0 +1,38 @@
+\(BEGIN)
+name = JoinParty
+[JoinParty] = $VAR spellbook; $VAR schoolBook;
+-$FUNC MemorizeLevel(levelBook)
+-	{
+-		$VAR spellName;
+-		levelBook = $DelimitedStringTail(levelBook);
+-		$WHILE (levelBook)
+-			{
+-				spellName = $DelimitedStringHead(levelBook);
+-				levelBook = $DelimitedStringTail(levelBook);
+-				spellName = $DelimitedStringHead(spellName);
+-				$SelectSpell($CharacterContext(),spellName);
+-			};
+-	} MemorizeLevel;
+-$FUNC MemorizeSchool(schoolBook)
+-	{
+-		$VAR levelBook;
+-		$DEBUG("school spells = " + schoolBook);
+-		// Discard the school ID
+-		schoolBook = $DelimitedStringTail(schoolBook);
+-		$WHILE (schoolBook)
+-			{
+-				levelBook = $DelimitedStringHead(schoolBook);
+-				MemorizeLevel(levelBook);
+-				schoolBook = $DelimitedStringTail(schoolBook);
+-			};
+-	} MemorizeSchool;
+-spellbook = $GET_SPELLBOOK($CharacterContext(),"%@#&");
+-$WHILE (spellbook)
+-	{
+-		schoolBook = $DelimitedStringHead(spellbook);
+-		MemorizeSchool(schoolBook);
+-		spellbook = $DelimitedStringTail(spellbook);
+-	};
+-$Memorize($CharacterContext());
+\(END)
+

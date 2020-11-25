@@ -1,0 +1,38 @@
+\(BEGIN)
+name = Flesh Golem
+icon file = icon_FleshGolem.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathLarge.wav
+intelligence = 3
+armor class = 9
+movement rate = 8
+hit dice = 40.000000
+treat HD as hit points = no
+hit dice bonus = 0
+THAC0 = 12
+magic resistance = 0
+size = large
+morale = 50
+experience point value = 2380
+Special Ability = monsterLevel,9
+Special Ability = elemental_GrowthElectricity
+Special Ability = elemental_ImmuneFire
+Special Ability = elemental_SlowingFire
+Special Ability = elemental_SlowingCold
+Special Ability = monster_WeaponImmunity,1
+Special Ability = IsSeeingInvisible,flesh golem
+Class = Fighter
+Race = Monster
+form = none
+penalty = none
+immunity = poison + death magic + confusion + vorpal weapon
+Misc Options = none
+item = none
+attack = 8,2,0,attacks,
+attack = 8,2,0,attacks,
+Undead = none
+\(END)
+// MM p48
+

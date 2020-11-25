@@ -1,0 +1,45 @@
+\(BEGIN)
+name = Drider|Male
+icon file = icon_Drider.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathLarge.wav
+intelligence = 14
+armor class = 3
+movement rate = 12
+hit dice = 6
+treat HD as hit points = yes
+hit dice bonus = 6
+THAC0 = 13
+magic resistance = 15
+size = large
+morale = 30
+experience point value = 1145
+Special Ability = monsterLevel,8
+Special Ability = monster_CombatantAlignment,evil
+Special Ability = race_CharmResistant,drow
+Special Ability = race_ElvenAttackBonus,drow
+Special Ability = race_SleepResistant,drow
+Class = Fighter
+Race = Monster
+form = none
+penalty = none
+immunity = none
+Misc Options = can be held/charmed
+item = monsterMageMagicMissile
+item = monsterMageMagicMissile
+item = monsterMageSleep
+item = monsterMageStinkingCloud
+item = monsterMageFireball
+item = monsterMageHoldPerson
+item = monsterMageCharmMonster
+item = monsterMageIceStorm
+item = Drow Long Sword|1
+item = Long Bow
+item = Arrow,20
+attack = 4,1,0,bites,monsterDriderParalyzingBite
+Undead = none
+\(END)
+// MMII p60
+

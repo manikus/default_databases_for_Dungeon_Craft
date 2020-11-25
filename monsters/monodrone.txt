@@ -1,0 +1,37 @@
+\(BEGIN)
+name = Monodrone
+icon file = icon_ModronMonodrone.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 3
+armor class = 7
+movement rate = 6
+hit dice = 1.000000
+treat HD as hit points = yes
+hit dice bonus = 1
+THAC0 = 18
+magic resistance = 0
+size = medium
+morale = 40
+experience point value = 38
+Special Ability = monsterLevel,2
+Special Ability = Summoned,plane
+Special Ability = monster_ImmuneCharm,modron
+Special Ability = monster_ImmuneFear,modron
+Special Ability = monster_ImmuneHold,modron
+Special Ability = monster_ImmuneSleep,modron
+Special Ability = monster_ModronElementalResistance,1
+Class = Fighter
+Race = Monster
+form = none
+penalty = none
+immunity = confusion + vorpal weapon
+Misc Options = none
+item = none
+attack = 4,1,0,attacks,
+Undead = none
+\(END)
+// MMII p87
+

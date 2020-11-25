@@ -1,0 +1,6 @@
+\(BEGIN)
+name = Dexterity
+Abbreviation = DEX
+Roll = 3 |< 3d6 |< 3d6 + (Race_Elf*1) + (Race_Halfling*1) >| 19
+\(END)
+

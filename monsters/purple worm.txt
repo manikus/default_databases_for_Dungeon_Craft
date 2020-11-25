@@ -1,0 +1,31 @@
+\(BEGIN)
+name = Purple Worm
+icon file = icon_PurpleWorm.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathLarge.wav
+intelligence = 0
+armor class = 6
+movement rate = 9
+hit dice = 15.000000
+treat HD as hit points = yes
+hit dice bonus = 0
+THAC0 = 8
+magic resistance = 0
+size = large
+morale = 30
+experience point value = 6100
+Special Ability = monsterLevel,15
+Class = Fighter
+Race = Monster
+form = large
+penalty = none
+immunity = none
+Misc Options = can be held/charmed
+item = none
+attack = 12,2,0,bites,monsterPurpleWormSwallow
+Undead = none
+\(END)
+// MM p80
+

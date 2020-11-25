@@ -1,0 +1,32 @@
+\(BEGIN)
+name = Giant Crocodile
+icon file = icon_GiantCrocodile.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathLarge.wav
+intelligence = 1
+armor class = 4
+movement rate = 6
+hit dice = 7.000000
+treat HD as hit points = yes
+hit dice bonus = 0
+THAC0 = 13
+magic resistance = 0
+size = large
+morale = 35
+experience point value = 624
+Special Ability = monsterLevel,7
+Class = Fighter
+Race = Monster
+form = animal + large
+penalty = none
+immunity = none
+Misc Options = can be held/charmed
+item = none
+attack = 6,3,0,attacks,
+attack = 10,2,0,attacks,
+Undead = none
+\(END)
+// MM p15
+

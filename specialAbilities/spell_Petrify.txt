@@ -1,0 +1,5 @@
+\(BEGIN)
+name = spell_Petrify
+[InvokeSpellOnTarget] = $SET_CHARACTER_SA($TargetContext(),"IsPetrified","Petrified");
+\(END)
+

@@ -1,0 +1,429 @@
+\(BEGIN)
+name = Global_Display
+[FacingText] = $VAR sWidth;
+-sWidth = $GET_CONFIG("Screen_Width");
+-$SET_HOOK_PARAM(5,650);
+-$SET_HOOK_PARAM(6,490);
+-$IF (sWidth ==# 1024)
+-	{
+-		$SET_HOOK_PARAM(5,1030);
+-		$SET_HOOK_PARAM(6,490);
+-	};
+-$RETURN;
+[LocationText] = $VAR sWidth;
+-sWidth = $GET_CONFIG("Screen_Width");
+-$SET_HOOK_PARAM(5,440);
+-$SET_HOOK_PARAM(6,275);
+-$IF (sWidth ==# 1024)
+-	{
+-		$SET_HOOK_PARAM(5,620);
+-		$SET_HOOK_PARAM(6,542);
+-	};
+-$SET_HOOK_PARAM(8,"Yellow");
+-$RETURN;
+[SearchingText] = $VAR look; $VAR sWidth;
+-look = $GET_HOOK_PARAM(1);
+-sWidth = $GET_CONFIG("Screen_Width");
+-$SET_HOOK_PARAM(5,360);
+-$SET_HOOK_PARAM(6,275);
+-$IF (sWidth ==# 1024)
+-	{
+-		$SET_HOOK_PARAM(5,620);
+-		$SET_HOOK_PARAM(6,522);
+-	};
+-$IF (look !=# "0"){$SET_HOOK_PARAM( 7,"Searching...");};
+-$SET_HOOK_PARAM( 8, "Yellow" );
+-$RETURN;
+[TimeText] = $VAR p1; $VAR p2; $VAR p3; $VAR day; $VAR dayList; $VAR dow; $VAR sWidth;
+-sWidth = $GET_CONFIG("Screen_Width");
+-$SET_HOOK_PARAM(5,480);
+-$SET_HOOK_PARAM(6,275);
+-$IF (sWidth ==# 1024)
+-	{
+-		$SET_HOOK_PARAM(5,660);
+-		$SET_HOOK_PARAM(6,542);
+-	};
+-p1 = $GET_HOOK_PARAM(1);
+-p2 = $GET_HOOK_PARAM(2);
+-p3 = $GET_HOOK_PARAM(3);
+-dow = p1 %# 7;
+-dayList = "$Sunday$Monday$Tuesday$Wednesday$Thursday$Friday$Saturday";
+-day = $DelimitedStringSubstring(dayList, dow);
+-$SET_HOOK_PARAM(8,"Yellow");
+-$IF (p2 <# 13)
+-	{
+-		$IF (p2 ==# 0)
+-			{
+-				$IF (p3 <# 10)
+-					{$SET_HOOK_PARAM(7,"12" + ":" + "0" + p3 + " am" + "  " + day);}
+-				$ELSE
+-					{$SET_HOOK_PARAM(7,"12" + ":" + p3 + " am" + "  " + day);};
+-				$RETURN;
+-			};
+-		$IF (p2 <# 10)
+-			{
+-				$IF (p3 <# 10)
+-					{$SET_HOOK_PARAM(7," " + p2 + ":" + "0" + p3 + " am" + "  " + day);}
+-				$ELSE
+-					{$SET_HOOK_PARAM(7," " + p2 + ":" + p3 + " am" + "  " + day);};
+-				$RETURN;
+-			};
+-		$IF (p2 <# 12)
+-			{
+-				$IF (p3 <# 10)
+-					{$SET_HOOK_PARAM(7,p2 + ":" + "0" + p3 + " am" + "  " + day);}
+-				$ELSE
+-					{$SET_HOOK_PARAM(7,p2 + ":" + p3 + " am" + "  " + day);};
+-				$RETURN;
+-			}
+-		$ELSE
+-			{
+-				$IF (p3 <# 10)
+-					{$SET_HOOK_PARAM(7,p2 + ":" + "0" + p3 + " pm" + "  " + day);}
+-				$ELSE
+-					{$SET_HOOK_PARAM(7,p2 + ":" + p3 + " pm" + "  " + day);};
+-				$RETURN;
+-			};
+-	}
+-$ELSE
+-	{
+-		$IF (p2 <# 22)
+-			{
+-				$IF (p3 <# 10)
+-					{$SET_HOOK_PARAM(7," " + p2 %# 12 + ":" + "0" + p3 + " pm" + "  " + day);}
+-				$ELSE
+-					{$SET_HOOK_PARAM(7," " + p2 %# 12 + ":" + p3 + " pm" + "  " + day);};
+-				$RETURN;
+-			}
+-		$ELSE
+-			{
+-				$IF (p3 <# 10)
+-					{$SET_HOOK_PARAM(7,p2 %# 12 + ":" + "0" + p3 + " pm" + "  " + day);}
+-				$ELSE
+-					{$SET_HOOK_PARAM(7,p2 %# 12 + ":" + p3 + " pm" + "  " + day);};
+-				$RETURN;
+-			};
+-	};
+[CharacterViewScreen] = $VAR char; // character
+-$VAR nm;
+-$VAR age; $VAR sex;
+-$VAR align; $VAR alignList; $VAR alignName;
+-$VAR class;
+-$VAR cbnList; // class_baseName parameter
+-$VAR cbnCount; // number of baseclasses
+-$VAR cbn; // first baseclass
+-$VAR cbn2; // second baseclass
+-$VAR cbn3; // third baseclass
+-$VAR hbl; // highest baseclass level
+-$VAR hbn; // highest baseclass name
+-$VAR lvl; $VAR lvl2; $VAR lvl3;
+-$VAR xp; $VAR xp2; $VAR xp3;
+-$VAR status;
+-$VAR hp; $VAR maxHp;
+-$VAR race;
+-$VAR ac; $VAR acEff; $VAR acAdj;
+-$VAR thac0; $VAR thac0Adj;
+-$VAR str; $VAR strMod; $VAR int; $VAR wis; $VAR dex; $VAR con; $VAR cha;
+-$VAR dmgList; // weapon
+-$VAR dmg1; $VAR dmg2; $VAR dmg3;
+-$VAR dmgPlus; // weapon plus if applicable
+-$VAR dmgBns; // damage bonus
+-$VAR enc;	// encumbrance
+-$VAR mvmt;
+-$VAR weight; $VAR height;
+-$VAR wpn; $VAR shield; $VAR armor;
+-$VAR sWidth; // screen width
+-$VAR psnd; // Poisoned
+-$VAR skilled;
+-$VAR mpc; $VAR mp;
+-char = $IndexOf($CharacterContext());
+-nm = $GET_CHAR_NAME(char);
+-age = $GET_CHAR_AGE(char); sex = $GET_CHAR_SEX(char);
+-align = $GET_CHAR_ALIGNMENT(char);
+-alignList = "$LAWFUL GOOD$NEUTRAL GOOD$CHAOTIC GOOD$LAWFUL NEUTRAL$TRUE NEUTRAL$CHAOTIC NEUTRAL$LAWFUL EVIL$NEUTRAL EVIL$CHAOTIC EVIL";
+-alignName = $DelimitedStringSubstring(alignList,align);		
+-class = $GET_CHAR_CLASS(char);
+-cbnList = $DAT_Class_Baseclasses(class);
+-cbnCount = $DelimitedStringCount(cbnList);
+-cbn = $DelimitedStringSubstring(cbnList,0);
+-cbn2 = $DelimitedStringSubstring(cbnList,1);
+-cbn3 = $DelimitedStringSubstring(cbnList,2);
+-hbn = $GetHighestLevelBaseclass(char);
+-hbl = $GetBaseclassLevel(char,hbn);
+-xp = $GET_CHAR_Exp(char,cbn); xp2 = $GET_CHAR_Exp(char,cbn2); xp3 = $GET_CHAR_Exp(char,cbn3);
+-lvl = $GetBaseclassLevel(char,cbn); lvl2 = $GetBaseclassLevel(char,cbn2); lvl3 = $GetBaseclassLevel(char,cbn3);
+-status = $GET_CHAR_STATUS(char);
+-hp = $GET_CHAR_HITPOINTS(char); maxHp = $GET_CHAR_MAXHITPOINTS(char);
+-race = $GET_CHAR_RACE(char);
+-ac = $GET_CHAR_AC(char); acEff = $GET_CHAR_EFFAC(char); acAdj = $GET_CHAR_ADJAC (char);
+-thac0 = $GET_CHAR_THAC0(char);
+-thac0Adj = $GET_CHAR_ADJTHAC0(char);
+-str = $GET_CHAR_LIMITED_STR(char); strMod = $GET_CHAR_LIMITED_STRMOD(char);
+-int = $GET_CHAR_LIMITED_INT(char); wis = $GET_CHAR_LIMITED_WIS(char);
+-dex = $GET_CHAR_LIMITED_DEX(char); con = $GET_CHAR_LIMITED_CON(char);
+-cha = $GET_CHAR_LIMITED_CHA(char);
+-wpn = $GET_CHAR_Ready($CharacterContext(),"WEAPON",0);
+-shield = $GET_CHAR_Ready($CharacterContext(),"SHIELD",0);
+-armor = $GET_CHAR_Ready($CharacterContext(),"ARMOR",0);
+-sWidth = $GET_CONFIG("Screen_Width");
+-psnd = $GET_CHARACTER_SA($CharacterContext(),"IsPoisoned");
+-dmgList = $DAT_Item_DamageSmall(wpn);
+-dmg1 = $DelimitedStringSubstring(dmgList,0);
+-dmg2 = $DelimitedStringSubstring(dmgList,1);
+-dmg3 = $DelimitedStringSubstring(dmgList,2);
+-dmgPlus = $DAT_Item_AttackBonus(wpn);
+-dmgBns = $GET_CHAR_DAMAGEBONUS(char);
+-enc = $GET_CHAR_ENC(char);
+-mvmt = $GET_CHAR_MAXMOVE(char);
+-weight = $GET_CHARACTER_SA($CharacterContext(),"charWeight");
+-height = $GET_CHARACTER_SA($CharacterContext(),"charHeight");
+-$IF (weight == "-?-?-")
+-	{
+-		$SET_CHARACTER_SA($CharacterContext(),"charWeight",$DAT_Race_Weight($CharacterContext()));
+-		weight = $GET_CHARACTER_SA($CharacterContext(),"charWeight");
+-	};
+-$IF (height == "-?-?-")
+-	{
+-		$SET_CHARACTER_SA($CharacterContext(),"charHeight",$DAT_Race_Height($CharacterContext()));
+-		height = $GET_CHARACTER_SA($CharacterContext(),"charHeight");
+-	};
+-mpc = $GET_CHARACTER_SA($CharacterContext(),"charManaPointsCurrent");
+-mp = $GET_CHARACTER_SA($CharacterContext(),"charManaPoints");
+-//mp = $GET_CLASS_SA($ClassContext(),"charManaPoints");
+-
+-$GrSet("LeftCol",18, 18);
+-$GrSet("RightCol", 220, 18);
+-$GrSet("Skills", 417, 270);
+-$GrSet("Ability", 50, 0);
+-$GrSet("StatusTab", 105, 0);
+-$GrSet("SkillsTab", 125, 0);
+-$GrSet("EncumbTab",125, 0);
+-$GrSet("TextHeight", 0, 18);
+-$GrSet("ManaPool",425,270);
+-$GrSetLinefeed("TextHeight");
+-
+-$IF ($GET_CHAR_TYPE(char) != "@PC@" && $GET_CHAR_TYPE(char) != "@NPC@")
+-	{
+-		$GrMoveTo("LeftCol");
+-		$GrFormat("SL");
+-		$GrColor("YELLOW");
+-		$GrPrtLF($UpCase(nm));
+-		$GrMark("Level");
+-		$GrMoveTo("RightCol");
+-		$GrColor("WHITE");
+-		$GrPrint("STATUS");
+-		$IF (status >=# 9) {$GrColor("RED"); $GrTab("StatusTab"); $GrPrtLF("DYING");};
+-		$IF (status ==# 8) {$GrColor("RED"); $GrTab("StatusTab"); $GrPrtLF("RUNNING");};
+-		$IF (status ==# 7) {$GrColor("RED"); $GrTab("StatusTab"); $GrPrtLF("TEMPGONE");};
+-		$IF (status ==# 6) {$GrColor("RED"); $GrTab("StatusTab"); $GrPrtLF("ANIMATED");};
+-		$IF (status ==# 5) {$GrColor("RED"); $GrTab("StatusTab"); $GrPrtLF("GONE");};
+-		$IF (status ==# 4) {$GrColor("RED"); $GrTab("StatusTab"); $GrPrtLF("PETRIFIED");};
+-		$IF (status ==# 3) {$GrColor("RED"); $GrTab("StatusTab"); $GrPrtLF("FLED");};
+-		$IF (status ==# 2) {$GrColor("RED"); $GrTab("StatusTab"); $GrPrtLF("DEAD");};
+-		$IF (status ==# 1) {$GrColor("ORANGE"); $GrTab("StatusTab"); $GrPrtLF("UNCONSCIOUS");};
+-		$IF (status ==# 0) {$GrColor("GREEN"); $GrTab("StatusTab"); $GrPrtLF("OKAY");};
+-		$GrColor("WHITE");
+-		$GrPrint("HIT POINTS");
+-		$IF (hp <=# 0) {$GrColor("RED");};
+-		$IF ((hp >=# 1) && (hp <# maxHp)) {$GrColor("ORANGE");};
+-		$IF (hp ==# maxHp) {$GrColor("GREEN");};
+-		$GrTab("StatusTab");
+-		$GrPrint(hp);
+-		$GrColor("GREEN");
+-		$GrPrtLF(" / " + maxHp);
+-		$GrColor("WHITE");
+-		$GrPrtLF($UpCase(race));
+-		$GrMoveTo("Level");
+-		$GrMove("TextHeight"); 
+-		$GrMove("TextHeight"); 
+-		$GrMove("TextHeight"); 
+-		$GrMove("TextHeight"); 
+-		$GrColor("WHITE");
+-		$GrMark("Strength");
+-		$GrPrtLF(" ");
+-		$GrPrtLF("INT");
+-		$GrPrtLF(" ");
+-		$GrPrtLF(" ");
+-		$GrPrtLF(" ");
+-		$GrPrtLF(" ");
+-		$GrMark("Armor");
+-		$GrMoveTo("Strength");
+-		$GrMove("Ability");
+-		$GrColor("GREEN");
+-		$GrPrtLF(" ");
+-		$GrPrtLF(int);
+-		$GrPrtLF(" ");
+-		$GrPrtLF(" ");
+-		$GrPrtLF(" ");
+-		$GrPrtLF(" ");
+-		$GrMoveTo("Armor");
+-		$GrMove("TextHeight"); 
+-		$GrColor("WHITE");
+-		$GrPrint("ARMOR CLASS");
+-		$IF (ac !=# acEff) {$GrColor("ORANGE"); $GrTab("StatusTab"); $GrPrtLF(acEff);};
+-		$IF (ac ==# acEff) {$GrColor("GREEN"); $GrTab("StatusTab"); $GrPrtLF(ac);};
+-		$GrColor("WHITE");
+-		$GrPrint("THAC0");
+-		$IF (thac0 !=# thac0Adj) {$GrColor("ORANGE"); $GrTab("StatusTab"); $GrPrtLF(thac0Adj);};
+-		$IF (thac0 ==# thac0Adj) {$GrColor("GREEN"); $GrTab("StatusTab"); $GrPrtLF(thac0);};
+-		$RETURN;
+-	};
+-
+-$GrMoveTo("LeftCol");
+-$GrFormat("SL");
+-$GrColor("YELLOW");
+-$GrPrtLF($UpCase(nm));
+-$GrColor("WHITE");
+-$GrPrint($UpCase(sex));
+-$GrTab("StatusTab");
+-$GrColor("GREEN");
+-$GrPrint(age);
+-$GrColor("WHITE");
+-$GrPrtLF(" YEARS");
+-$GrPrtLF(alignName);
+-$GrPrtLF($UpCase(class));
+-$GrPrint("LEVEL/XP ");
+-$GrColor("GREEN");
+-$IF (cbnCount ==# 3)
+-	{
+-		$GrPrint(lvl + " / " + xp);
+-		$GrPrint(" " + lvl2 + " / " + xp2);
+-		$GrPrtLF(" " + lvl3 + " / " + xp3);
+-	};
+-$IF (cbnCount ==# 2 && cbnList != "-?-?-")
+-	{
+-		$GrPrint(lvl + " / " + xp);
+-		$GrPrtLF(" " + lvl2 + " / " + xp2);
+-	};
+-$IF (cbnCount ==# 1)
+-	{
+-		$GrPrtLF(lvl + " / " + xp);
+-	};
+-$GrMark("Level");
+-
+-$GrMoveTo("RightCol");
+-$GrColor("WHITE");
+-$GrPrint("STATUS");
+-$IF (status >=# 9) {$GrColor("RED"); $GrTab("StatusTab"); $GrPrtLF("DYING");};
+-$IF (status ==# 8) {$GrColor("RED"); $GrTab("StatusTab"); $GrPrtLF("RUNNING");};
+-$IF (status ==# 7) {$GrColor("RED"); $GrTab("StatusTab"); $GrPrtLF("TEMPGONE");};
+-$IF (status ==# 6) {$GrColor("RED"); $GrTab("StatusTab"); $GrPrtLF("ANIMATED");};
+-$IF (status ==# 5) {$GrColor("RED"); $GrTab("StatusTab"); $GrPrtLF("GONE");};
+-$IF (status ==# 4) {$GrColor("RED"); $GrTab("StatusTab"); $GrPrtLF("PETRIFIED");};
+-$IF (status ==# 3) {$GrColor("RED"); $GrTab("StatusTab"); $GrPrtLF("FLED");};
+-$IF (status ==# 2) {$GrColor("RED"); $GrTab("StatusTab"); $GrPrtLF("DEAD");};
+-$IF (status ==# 1) {$GrColor("ORANGE"); $GrTab("StatusTab"); $GrPrtLF("UNCONSCIOUS");};
+-$IF (status ==# 0) {$GrColor("GREEN"); $GrTab("StatusTab"); $GrPrtLF("OKAY");};
+-$GrColor("WHITE");
+-$GrPrint("HIT POINTS");
+-$IF (hp <=# 0) {$GrColor("RED"); $GrTab("StatusTab"); $GrPrint(hp);};
+-$IF ((hp >=# 1) && (hp <# maxHp)) {$GrColor("ORANGE"); $GrTab("StatusTab"); $GrPrint(hp);};
+-$IF (hp ==# maxHp) {$GrColor("GREEN"); $GrTab("StatusTab"); $GrPrint(hp);};
+-$GrColor("GREEN");
+-$GrPrtLF(" / " + maxHp);
+-$GrColor("WHITE");
+-$GrPrtLF($UpCase(race));
+-$GrColor("GREEN");
+-$GrPrint(weight);
+-$GrColor("WHITE");
+-$GrPrint(" LBS");
+-$GrColor("GREEN");
+-$GrTab("StatusTab");
+-$GrPrint(height /# 12);
+-$GrColor("WHITE");
+-$GrPrint("'");
+-$GrColor("GREEN");
+-$GrPrint(height %# 12);
+-$GrColor("WHITE");
+-$GrPrtLF("\"");
+-$GrMoveTo("Level");
+-$GrMove("TextHeight"); 
+-$GrColor("WHITE");
+-$GrMark("Strength");
+-$GrPrtLF("STR");
+-$GrPrtLF("INT");
+-$GrPrtLF("WIS");
+-$GrPrtLF("DEX");
+-$GrPrtLF("CON");
+-$GrPrtLF("CHA");
+-$GrMark("Armor");
+-$GrMoveTo("Strength");
+-$GrMove("Ability");
+-$GrColor("GREEN");
+-$IF (strMod >=# 1){$GrPrtLF(str + "(" + strMod + ")");}
+-$ELSE{$GrPrtLF(str);};
+-$GrPrtLF(int);
+-$GrPrtLF(wis);
+-$GrPrtLF(dex);
+-$GrPrtLF(con);
+-$GrPrtLF(cha);
+-
+-$GrMoveTo("Armor");
+-$GrMove("TextHeight"); 
+-$GrColor("WHITE");
+-$GrPrint("ARMOR CLASS");
+-$IF (ac !=# acEff) {$GrColor("ORANGE"); $GrTab("StatusTab"); $GrPrtLF(acEff);}
+-$ELSE {$GrColor("GREEN"); $GrTab("StatusTab"); $GrPrtLF(ac);};
+-$GrColor("WHITE");
+-$GrPrint("THAC0");
+-$IF (thac0 !=# thac0Adj) {$GrColor("ORANGE"); $GrTab("StatusTab"); $GrPrtLF(thac0Adj);}
+-$ELSE {$GrColor("GREEN"); $GrTab("StatusTab"); $GrPrtLF(thac0);};
+-$GrColor("WHITE");
+-$GrPrint("DAMAGE");
+-$GrColor("GREEN");
+-$GrTab("StatusTab");
+-$IF (wpn == ""){$GrPrtLF("1D2+" + dmgBns);};
+-$IF (wpn != "") {$GrPrtLF(dmg1 + "d" + dmg2 + "+" + (dmgBns +# dmgPlus +# dmg3));};
+-$GrColor("WHITE");
+-$GrMove("TextHeight"); 
+-
+-$IF ((wpn == "") && (shield == "") && (armor == "")){$GrPrtLF("NONE");};
+-$IF (wpn != ""){$GrPrtLF($UpCase($DAT_Item_IDName(wpn)));};
+-$IF (shield != ""){$GrPrtLF($UpCase($DAT_Item_IDName(shield)));};
+-$IF (armor != ""){$GrPrtLF($UpCase($DAT_Item_IDName(armor)));};
+-$GrSet("Encumbrance", "RightCol", "Armor");
+-$GrMoveTo("Encumbrance");
+-$GrMove("TextHeight");
+-$GrColor("WHITE");
+-$GrPrint("ENCUMBRANCE");
+-$GrColor("GREEN");
+-$GrTab("EncumbTab");
+-$GrPrtLF(enc);
+-$GrColor("WHITE");
+-$GrPrint("MOVEMENT");
+-$GrColor("GREEN");
+-$GrTab("EncumbTab");
+-$GrPrtLF(mvmt);
+-
+-skilled = $GET_CHARACTER_SA($CharacterContext(),"class_ThievingSkills");
+-$IF (skilled != "-?-?-")
+-	{
+-		$GrMoveTo("Skills");
+-		$GrColor("WHITE");
+-		$GrPrtLF("SKILLS");
+-		$GrMark("Pick");
+-		$GrPrtLF("Pick Pockets");
+-		$GrPrtLF("Open Locks");
+-		$GrPrtLF("Find Traps");
+-		$GrPrtLF("Move Silently");
+-		$GrPrtLF("Hide in Shadows");
+-		$GrPrtLF("Hear Noise");
+-		$GrPrtLF("Climb Walls");
+-		$GrPrtLF("Read Languages");
+-		$GrMoveTo("Pick");
+-		$GrMove("SkillsTab");
+-		$GrColor("GREEN");
+-		$GrPrtLF($SkillAdj($CharacterContext(),"PickPockets","","F",""));
+-		$GrPrtLF($SkillAdj($CharacterContext(),"OpenLocks","","F",""));
+-		$GrPrtLF($SkillAdj($CharacterContext(),"FindTraps","","F",""));
+-		$GrPrtLF($SkillAdj($CharacterContext(),"MoveSilent","","F",""));
+-		$GrPrtLF($SkillAdj($CharacterContext(),"HideInShadows","","F",""));
+-		$GrPrtLF($SkillAdj($CharacterContext(),"HearNoise","","F",""));
+-		$GrPrtLF($SkillAdj($CharacterContext(),"ClimbWalls","","F",""));
+-		$GrPrtLF($SkillAdj($CharacterContext(),"ReadLanguages","","F",""));
+-	};
+-
+-//$GrMoveTo("ManaPool");
+-//$GrColor("GREEN");$GrPrint("Mana Pool ");$GrColor("YELLOW");$GrPrint(mpc);$GrColor("GREEN");$GrPrint(" / ");$GrColor("YELLOW");$GrPrtLF(mp);
+\(END)
+

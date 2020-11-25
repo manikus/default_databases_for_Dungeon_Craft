@@ -1,0 +1,14 @@
+\(BEGIN)
+name = IsBarkskinned
+[CharDisplayStatus] = $IF ($GET_PARTY_TIME() ># $SA_PARAM_GET())
+-  {$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7, "Barkskin");
+-$SET_HOOK_PARAM( 6, "");
+-$RETURN 1;
+[Dispel] = $SA_REMOVE();
+[DoesAttackSucceed] = $IF ($GET_COMBATANT_SA($TargetContext(),"IsBarkskinned") != "-?-?-")
+-  {$SET_HOOK_PARAM(6,$GET_HOOK_PARAM(6) +# 1);};
+-$IF ($GET_HOOK_PARAM(5) >=# $GET_HOOK_PARAM(6)){$RETURN "Y";}
+-$ELSE {$RETURN "N";};
+\(END)
+

@@ -1,0 +1,24 @@
+\(BEGIN)
+name = monster_FireBatDrainee
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7,$SA_PARAM_GET());
+-$SET_HOOK_PARAM( 6,"");
+-$RETURN 1;
+[OnStartCombatantAction] = $VAR atk; // attacker
+-$VAR i; $VAR foes; $VAR alive;
+-foes = $GET_COMBATANT_SA($CombatantContext(),"monster_FireBatLink");
+-i = $DelimitedStringCount(foes);
+-alive = "0";
+-$WHILE (i >=# 0)
+-	{
+-		atk = $DelimitedStringSubstring(foes,i);
+-		$IF ($GET_CHAR_STATUS(atk) ==# 0){alive = alive +# 1;};
+-		i = i -# 1;
+-	};
+-$IF (alive <# 1)
+-	{
+-		$DELETE_COMBATANT_SA($CombatantContext(),"monster_FireBatDrainee");
+-		$DELETE_COMBATANT_SA($CombatantContext(),"monster_FireBatLink");
+-		$DELETE_CHARACTER_SA($CombatantContext(),"IsHugged");
+-	};
+\(END)
+

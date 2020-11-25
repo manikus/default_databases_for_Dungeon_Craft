@@ -1,0 +1,25 @@
+\(BEGIN)
+name = IsProtectedAcidTarget
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7, "Protected from Acid");
+-$SET_HOOK_PARAM( 6, "");
+-$RETURN 1;
+[Dispel] = $SA_REMOVE();
+-$SkillAdj($TargetContext(),"Save Vs BR","protectionAcid","D","");
+-$SkillAdj($TargetContext(),"Save Vs RSW","protectionAcid","D","");
+-$SkillAdj($TargetContext(),"Save Vs SP","protectionAcid","D","");
+[DoesSpellAttackSucceed] = $IF ($SA_SPELL_GET("DamageNonMagical") == "acid")
+-	{
+-		$SET_HOOK_PARAM(5,$GET_CHAR_NAME($IndexOf($TargetContext())) +" is unaffected.");
+-		$RETURN "N";
+-	};
+[spawn] = $SET_COMBATANT_SA($Myself(),"IsProtectedAcidTarget1",1);
+[StartCombatRound] = $IF ($GET_PARTY_TIME() ># $SA_PARAM_GET())
+-	{
+-		$DELETE_COMBATANT_SA($CharacterContext(),"IsProtectedAcidTarget1");
+-		$SA_REMOVE();
+-		$SkillAdj($TargetContext(),"Save Vs BR","protectionAcid","D","");
+-		$SkillAdj($TargetContext(),"Save Vs RSW","protectionAcid","D","");
+-		$SkillAdj($TargetContext(),"Save Vs SP","protectionAcid","D","");
+-	};
+\(END)
+

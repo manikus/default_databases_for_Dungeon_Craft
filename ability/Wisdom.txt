@@ -1,0 +1,6 @@
+\(BEGIN)
+name = Wisdom
+Abbreviation = WIS
+Roll = 3 |< 3d6 |< 3d6 >| 18
+\(END)
+

@@ -1,0 +1,38 @@
+\(BEGIN)
+name = IsDiseasedSpell
+[CanCastSpells] = $VAR chr; // character
+-$VAR t10;
+-$VAR t60;
+-$VAR str;
+-chr = $IndexOf($CharacterContext());
+-$IF ($GET_CHARACTER_SA($CharacterContext(),"IDSTimer10") == "-?-?-")
+-	{
+-		$SET_CHARACTER_SA($CharacterContext(),"IDSTimer10",$GET_PARTY_TIME() +# 10);
+-		$SET_CHARACTER_SA($CharacterContext(),"IDSTimer60",$GET_PARTY_TIME() +# 60);
+-	};
+-t10 = $GET_CHARACTER_SA($CharacterContext(),"IDSTimer10");
+-t60 = $GET_CHARACTER_SA($CharacterContext(),"IDSTimer60");
+-$IF ($GET_CHAR_HITPOINTS(chr) ># $GET_CHARACTER_SA($CharacterContext(),"minhp"))
+-	{
+-		$IF ($GET_PARTY_TIME() ># t10)
+-			{
+-				$SET_CHARACTER_SA($CharacterContext(),"IDSTimer10",$GET_PARTY_TIME() +# 10);
+-				$SET_CHAR_HITPOINTS(chr,$GET_CHAR_HITPOINTS(chr) -# 1);
+-			};
+-	};
+-str = $GET_CHAR_LIMITED_STR(chr);
+-$IF (str ># 3)
+-	{
+-		$IF ($GET_PARTY_TIME() ># t60)
+-			{
+-				$SET_CHARACTER_SA($CharacterContext(),"IDSTimer60",$GET_PARTY_TIME() +# 60);
+-				$MODIFY_CHAR_ATTRIBUTE(chr,"STR",-1,"MINUTES",999999999,"Diseased STR reduction","SPELL Disease");
+-				$IF (str <# 4) {$SET_CHAR_MAXMOVE(chr,2);};
+-			};
+-	};
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Diseased ");
+-$SET_HOOK_PARAM( 6,"");
+-$RETURN 1;
+[IsCombatReady] = $IF ($GET_CHAR_LIMITED_STR($IndexOf($CharacterContext())) <# 4){$RETURN "N";};
+\(END)
+

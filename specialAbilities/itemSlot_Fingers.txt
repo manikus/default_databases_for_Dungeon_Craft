@@ -1,0 +1,6 @@
+\(BEGIN)
+name = itemSlot_Fingers
+[CanReady] = $IF ($GET_HOOK_PARAM( 5 ) <# 2){$RETURN "Y";}
+-$ELSE {$SET_HOOK_PARAM(6, "Sorry, you can't do that.");$RETURN "N";};
+\(END)
+

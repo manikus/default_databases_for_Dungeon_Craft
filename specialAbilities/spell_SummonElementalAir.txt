@@ -1,0 +1,5 @@
+\(BEGIN)
+name = spell_SummonElementalAir
+[InvokeSpellOnTarget] = $AddCombatant("Air Elemental","1");
+\(END)
+

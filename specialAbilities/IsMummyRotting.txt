@@ -1,0 +1,18 @@
+\(BEGIN)
+name = IsMummyRotting
+[CanCastSpells] = $VAR me;
+-me = $IndexOf($CharacterContext());
+-$IF ($GET_PARTY_TIME() ># $SA_PARAM_GET())
+-	{
+-		$DELETE_CHARACTER_SA($CharacterContext(),"IsMummyDiseased");
+-		$SA_REMOVE();
+-		$SET_CHAR_HITPOINTS(me,0);
+-		$SET_CHAR_STATUS(me,5);
+-	};
+[DoesSpellAttackSucceed] = $IF ($GET_COMBATANT_SA($TargetContext(),"IsMummyDiseased") == "-?-?-" && $SA_SPELL_GET("DamageMagical") == "raise")
+-	{
+-		$SA_REMOVE();
+-		$RETURN "Y";
+-	};
+\(END)
+

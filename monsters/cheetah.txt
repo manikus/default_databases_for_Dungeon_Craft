@@ -1,0 +1,34 @@
+\(BEGIN)
+name = Cheetah
+icon file = icon_Cheetah.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 1
+armor class = 5
+movement rate = 15
+hit dice = 3
+treat HD as hit points = yes
+hit dice bonus = 0
+THAC0 = 18
+magic resistance = 0
+size = medium
+morale = 35
+experience point value = 127
+Special Ability = monsterLevel,3
+Special Ability = monster_CheetahNotSurprised
+Class = Fighter
+Race = Monster
+form = mammal + animal
+penalty = none
+immunity = none
+Misc Options = can be held/charmed
+item = none
+attack = 2,1,0,claws,monsterRearClawRakeCat1
+attack = 2,1,0,claws,monsterRearClawRakeCat2
+attack = 4,2,0,bites,
+Undead = none
+\(END)
+// MMII p25
+

@@ -1,0 +1,56 @@
+\(BEGIN)
+name = Cloudkill
+casting sound = sound_Cast.wav
+cast msg = /c casts cloudkill
+missile sound = none
+coverage sound = none
+hit sound = none
+linger sound = none
+cast art = spell_cast_MU.png,210,2,48,48,0,1,0,1,0,0
+missile art = spell_missile_MU.png,100,4,48,48,0,1,0,1,0,0
+target cover art = spell_linger_Cloudkill.png,250,4,48,48,0,1,0,1,0,0
+target hit art = spell_linger_Cloudkill.png,250,4,48,48,0,1,0,1,0,0
+target linger art = spell_linger_Cloudkill.png,250,4,48,48,0,1,4,1,0,0
+school = Magic User
+cast by = magicUser
+can target friend = yes
+can target enemy = yes
+cumulative = yes
+can memorize = yes
+allow scribe = yes
+auto scribe = no
+in camp = no
+in combat = yes
+can be dispelled = yes
+lingers = yes
+linger affects once = yes
+save versus = Par/Pois/DM
+save result = negates
+Special Ability = DamageMagical,poison
+Special Ability = StandardDisplaySpellEffect
+Special Ability = casterLevel,$magicUser$0
+Special Ability = spellClass,magicUser
+Special Ability = spell_Attack,1
+Special Ability = spell_Cloudkill,magicUser
+targeting type = areasquare
+target width = 4
+target height = 2
+target range = 1
+level = 5
+casting time = 5
+casting time units = initiative
+duration = level
+duration units = rounds
+target duration = 0
+price = 0
+priority = 500
+spell effect 1 = $CHAR_HITPOINTS,0,delta,target,yes
+activate script 1 = $VAR tgt;$VAR nm;$VAR monLvl;$VAR lvl;$VAR tlvl;$VAR list;$VAR i;$IF ($GET_HASPOISONIMMUNITY($TargetContext())){$RETURN;};tgt \= $IndexOf($TargetContext());nm \= $GET_CHAR_NAME(tgt);lvl \= 0;monLvl \= $GET_MONSTERTYPE_SA(nm,"monsterlevel");$IF (monLvl !\= "-?-?-")   {lvl \= monLvl;}$ELSE  {   list \= "$fighter$cleric$ranger$paladin$magicUser$thief$druid";   i \= 0;   $WHILE (i <# 7)     {      tlvl \= $GET_CHAR_Lvl(tgt,$DelimitedStringSubstring(list,i));      $IF (tlvl ># lvl){lvl \= tlvl;};      i \= i +# 1;     };  };$SET_COMBATANT_SA($TargetContext(),"cloudkill",$GET_PARTY_TIME());$IF (lvl <\=# 4)  {   $SkillAdj($TargetContext(),"Save Vs PPDM","Cloudkill","-","20");   $RETURN 1;  };$IF (lvl \=\=# 5)  {   $SkillAdj($TargetContext(),"Save Vs PPDM","Cloudkill","-","4");   $RETURN 1;  };$IF (lvl \=\=# 6)  {$RETURN 1;}$ELSE {$RETURN;};
+modify script 1 = $RETURN -# $GET_CHAR_HITPOINTS($IndexOf($TargetContext()));
+savingThrowScript = 
+savingThrowSucceededScript = $SET_HOOK_PARAM(5,"/t is unaffected by the spell.");$SET_CHARACTER_SA($TargetContext(),"saved",1);
+savingThrowFailedScript = $SET_CHARACTER_SA($TargetContext(),"saved",0);
+begin script = 
+end script = 
+\(END)
+

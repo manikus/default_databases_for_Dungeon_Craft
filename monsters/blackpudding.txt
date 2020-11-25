@@ -1,0 +1,34 @@
+\(BEGIN)
+name = Black Pudding
+icon file = icon_BlackPudding.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveSuction.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 0
+armor class = 6
+movement rate = 6
+hit dice = 10.000000
+treat HD as hit points = yes
+hit dice bonus = 0
+THAC0 = 10
+magic resistance = 0
+size = medium
+morale = 50
+experience point value = 1910
+Special Ability = monsterLevel,10
+Special Ability = elemental_ImmuneCold
+Special Ability = elemental_ImmuneElectricity
+Special Ability = monster_WeaponImmunity,999
+Class = Fighter
+Race = Monster
+form = none
+penalty = none
+immunity = vorpal weapon
+Misc Options = none
+item = none
+attack = 8,3,0,attacks,monsterBlackPuddingAttack
+Undead = none
+\(END)
+// MM p10
+

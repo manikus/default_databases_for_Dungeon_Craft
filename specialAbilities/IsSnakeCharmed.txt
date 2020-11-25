@@ -1,0 +1,12 @@
+\(BEGIN)
+name = IsSnakeCharmed
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Charmed"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
+[Dispel] = $SA_REMOVE();
+[GetAdjMaxMovement] = $RETURN "0";
+[GetItemTargetHitBonus] = $RETURN $GET_CHAR_HITPOINTS($IndexOf($TargetContext())) +# 15;
+[IsCombatReady] = $VAR exp;
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp){$SA_REMOVE();};
+-$RETURN "N";
+\(END)
+

@@ -1,0 +1,7 @@
+\(BEGIN)
+name = monster_SummonSlaad
+[StartCombatRound] = $VAR round;
+-round = $GetCombatRound();
+-$IF (round ==# 3) {$AddCombatant("Red Slaad","1");};
+\(END)
+

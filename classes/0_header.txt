@@ -1,0 +1,64 @@
+// Class database file
+// The above line **Must** be the first line in the classes database. "// Class database file"
+//
+//	Each class is defined by the following fields:
+//	
+// name = (text)
+//	Names should not conflict with any of the names in the baseclass database,
+//	items database, spells database, races database, or abilities database,
+//	all baseclasses start with a lower case letter and classes with an upper case letter.
+//	eg:		name = Gray Elf
+//
+// HitDiceBonus (baseclass name, ability name, bonus1 - bonus25) 
+//	If a baseclass receives a Hit Point bonus for an ability, it is noted with this keyword
+//	If the class has more than one baseclass, each may have it's own
+//	bonus listed and that bonus will apply as levels are gained
+//	with that particular baseclass
+//	eg:		HitDiceBonus = fighter,Constitution,0,0,-2,-1,-1,-1,0,0,0,0,0,0,0,0,1,2,3,4,5,5,6,6,6,7,7
+//
+// HitDiceBaseclass (*Average*/*Maximum*)
+//	HitDiceBaseclass may have a value of *Average* or *Maximum* and
+//	applies when more than one baseclass is part of a class. *Average* means
+//	that the average of all hit dice is taken, *Maximum* means the max number
+//	for that level is given.
+//	Default: *Average*
+//	eg:		HitDiceBaseclass = *Average*
+//
+// StrengthBonusDice (nDm)
+//	If the class allows a bonus for Strength of 18, it is determined here in the
+//	format of nDm, where n is the number of dice and m is the number of sides.
+//	default:	blank
+//	eg:		StrengthBonusDice = 1D100
+//
+// Starting Equipment (item name)
+//	If the class starts with any items they are listed with this keyword.
+//  Multiple items require multiple instances of the keyword
+//	eg:		Starting Equipment = Awl Pike
+//
+// baseclass (baseclass name)
+//	This is the baseclass that the class is based upon. There
+//	ust have at least one per class and there may be up to three.
+//	eg:		baseclass = fighter
+//
+// Special Ability (special ability name)
+//	Each Special Ability corresponds to the Special Ability
+//	database and list the name and parameter.
+//	One Special Ability per instance of the keyword, which
+//	may be listed multiple times.
+//	eg:		Special Ability = class_NoSpells,fighter
+//
+//	*****NOTES*****
+// Valid Classes per 1e rulebooks
+//  Dwarf: Assassin, Fighter, Thief, Fighter/Thief	
+//  Elf: Assassin, Cleric, Fighter, Magic User, Ranger, Thief Fighter/MU, Fighter/Thief, Fighter/MU/Thief, MU/Thief
+//  Gnome: Assassin, Cleric, Fighter, Magic User, Thief, Fighter/Thief, FighterMU, MU/Thief
+//  Half-elf: Assassin, Cleric, Druid, Fighter, Magic User, Ranger, Thief, Cleric/Fighter, Cleric/Ranger, Cleric/MU, Fighter/MU, Fighter/Thief, Fighter/MU/Cleric, Fighter/MU/Thief, Thief/MU    
+//  Halfling: Assassin, Cleric, Fighter, Thief, Fighter/Thief
+//	Half-orc: Assassin, Cleric, Fighter, Thief, Cleric/Assassin, Cleric/Fighter, Cleric/Thief, Fighter/Assassin, Fighter/Thief
+//  Human: Assassin, Cleric, Druid, Fighter, MU, Paladin, Ranger, Thief
+//
+// To suppress a class name at time of Character Creation, remove the "//" from:
+// // Special Ability = class_ClassSuppress,"Y"
+// in each Class as desired.
+//
+

@@ -1,0 +1,21 @@
+\(BEGIN)
+name = IsProtectedPoisonTarget
+[Dispel] = $SA_REMOVE();
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7, "Protected from Poison");
+-$SET_HOOK_PARAM( 6, "");
+-$RETURN 1;
+[DoesSpellAttackSucceed] = $VAR tgt; // target
+-tgt = $IndexOf($TargetContext());
+-$IF ($SA_SPELL_GET("DamageNonMagical") == "poison")
+-	{
+-		$SET_HOOK_PARAM(5,$GET_CHAR_NAME(tgt) +" is unaffected.");
+-		$RETURN "N";
+-	};
+[spawn] = $SET_COMBATANT_SA($Myself(),"IsProtectedPoisonTarget1",1);
+[StartCombatRound] = $IF ($GET_PARTY_TIME() ># $SA_PARAM_GET())
+-	{
+-		$DELETE_COMBATANT_SA($CharacterContext(),"IsProtectedPoisonTarget1");
+-		$SA_REMOVE();
+-	};
+\(END)
+

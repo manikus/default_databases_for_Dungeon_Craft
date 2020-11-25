@@ -1,0 +1,24 @@
+\(BEGIN)
+name = IsSweeping
+[CombatSpecialAction] = $VAR damage;
+-$VAR distance;
+-$VAR atk; // attacker
+-$VAR tgt; // target
+-atk = $IndexOf($AttackerContext());
+-tgt = $IndexOf($TargetContext());
+-$IF ($GET_COMBATANT_SA($AttackerContext(),"IsInvisible") != "-?-?-")
+-	{
+-		$DELETE_COMBATANT_SA($AttackerContext(),"IsInvisibleSpell");
+-		$DELETE_COMBATANT_SA($AttackerContext(),"IsInvisible");
+-	};
+-$IF (tgt ==# -#2){$SET_HOOK_PARAM(5,"Sweeps");$RETURN;}; // first call
+-$IF (tgt ==# -#1){$SET_HOOK_PARAM(5,"Sweeps");$RETURN;}; // last call
+-distance = $VisualDistance(atk, tgt);
+-damage = $ComputeAttackDamage(atk, tgt);
+-$IF(distance ># 1) {$RETURN;};
+-$IF ($GET_MONSTERTYPE_SA($GET_CHAR_NAME(tgt),"monster_Swept") != "-?-?-" && $GET_COMBATANT_SA($TargetContext(),"side") != 1)
+-	{
+-		$SET_CHAR_HITPOINTS(tgt, $GET_CHAR_HITPOINTS(tgt) -# damage);
+-	};
+\(END)
+

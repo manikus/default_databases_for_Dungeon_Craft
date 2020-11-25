@@ -1,0 +1,47 @@
+\(BEGIN)
+name = Lich
+icon file = icon_Lich.png,0,2,48,48,0,1,0
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 19
+armor class = 0
+movement rate = 6
+hit dice = 11
+treat HD as hit points = yes
+hit dice bonus = 0
+THAC0 = 10
+magic resistance = 0
+size = medium
+morale = 40
+experience point value = 11204
+Special Ability = monsterLevel,11
+Special Ability = monster_CombatantAlignment,evil
+Special Ability = monster_ImmuneFear,monster
+Special Ability = monster_ImmuneHold,monster
+Special Ability = monster_ImmuneSleep,monster
+Special Ability = elemental_ImmuneCold
+Special Ability = elemental_ImmuneElectricity
+Special Ability = monster_VulnerableToHolyWater,monster
+Special Ability = monster_WeaponImmunity,1
+Special Ability = rangeUndead,Lich
+Class = Magic User
+Race = Monster
+form = none
+penalty = none
+immunity = poison + death magic + confusion
+Misc Options = none
+item = monsterMageCharmMonster
+item = monsterMageCharmPerson
+item = monsterMageFireball
+item = monsterMageHoldMonster
+item = monsterMageHoldPerson
+item = monsterMageIceStorm
+item = monsterMageMagicMissile
+item = monsterMageSleep
+attack = 10,1,0,attacks,monsterParalysis
+Undead = Lich
+\(END)
+// MM p61
+

@@ -1,0 +1,8 @@
+\(BEGIN)
+name = SymbolOfHopelessness
+[InvokeSpellOnTarget] = $VAR atk; $VAR tgt; $VAR rndm; $VAR exp;
+-atk = $IndexOf($AttackerContext()); tgt = $IndexOf($TargetContext());
+-rndm = ($RANDOM(4) +# $RANDOM(4) +# $RANDOM(4) +# 3) *# 10; exp = $GET_PARTY_TIME() +# rndm;
+-$AURA_Create("SymbolOfHopelessnessAURA","",atk,tgt,exp);
+\(END)
+

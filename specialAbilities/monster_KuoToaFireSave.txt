@@ -1,0 +1,6 @@
+\(BEGIN)
+name = monster_KuoToaFireSave
+[DoesSpellAttackSucceed] = $IF ($GET_SPELL_SA($SpellContext(), "DamageMagical") == "fire")
+-	{$SkillAdj($CombatantContext(), "Save Vs SP", "", "+", "2");};
+\(END)
+

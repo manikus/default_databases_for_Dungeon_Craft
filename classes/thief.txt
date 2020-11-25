@@ -1,0 +1,16 @@
+\(BEGIN)
+name = Thief
+HitDiceLevelBonus = thief,Constitution,0,0,-2,-1,-1,-1,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2,2,2
+HitDiceBaseclass = *Average*
+StrengthBonusDice = 
+Starting Equipment = Sling
+Starting Equipment = Leather Armor
+Starting Equipment = Brooad Sword
+baseclass = thief
+Special Ability = class_NoSpells,thief
+Special Ability = class_baseName,$thief
+Special Ability = class_ThievingSkills,$thief
+Special Ability = ChangeClassThief
+// Special Ability = class_ClassSuppress,"Y"
+\(END)
+

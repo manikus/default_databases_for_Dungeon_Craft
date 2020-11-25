@@ -1,0 +1,15 @@
+(BEGIN)
+name = IsBlackPuddingDissolving
+StartCombatRound = $VAR param;
+-$VAR time;
+-param = $SA_PARAM_GET();
+-time = $GetCombatRound();
+-$IF ((param +# 1) > time) {}; // chain mail, elfin chain, ring mail, scale mail, Svirfneblin Chain Mail, quarter staff and buckler
+-$IF ((param +# 2) > time) {}; // banded mail, drow chain, plate mail, great helm, helm, drow buckler, shield and silver shield
+-$IF ((param +# 3) > time) {};
+-$IF ((param +# 4) > time) {};
+-$IF ((param +# 5) > time) {};
+-$IF ((param +# 6) > time) {};
+-$IF ((param +# 7) > time) {};
+\(END)
+

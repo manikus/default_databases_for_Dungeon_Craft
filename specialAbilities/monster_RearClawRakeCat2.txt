@@ -1,0 +1,35 @@
+\(BEGIN)
+name = monster_RearClawRakeCat2
+[InvokeSpellOnTarget] = $VAR atk; // attacker
+-$VAR tgt; // target
+-$VAR HP; // hit points
+-$VAR nom;
+-$VAR dmg;
+-$VAR i;
+-$VAR AC;
+-$VAR TH;
+-atk = $IndexOf($AttackerContext());
+-tgt = $IndexOf($TargetContext());
+-HP = $GET_CHAR_HITPOINTS(tgt);
+-$IF (HP <# 1) {$RETURN;};
+-$IF ($GET_COMBATANT_SA($AttackerContext(),"CombatRoundStart") ==# 1)
+-	{
+- 		i = 0;
+-		AC = $GET_CHAR_AC(tgt);
+-		TH = $GET_CHAR_THAC0(atk);
+-		$IF($RANDOM(20) +# 1 >=# TH -# AC)
+-			{
+-				nom = $GET_CHAR_NAME(atk);
+-				$IF (nom == "Cat"){dmg = ($RANDOM(2) +# 1);};
+-				$IF (nom == "Wild Cat"){dmg = ($RANDOM(2) +# $RANDOM(2) +# 2);};
+-				$IF (nom == "Cheetah"){dmg = ($RANDOM(2) +# $RANDOM(2) +# 2);};
+-				$SET_CHAR_HITPOINTS(tgt,HP -# dmg);
+-			};
+-		$IF (HP<# 1)
+-			{
+-				$IF (HP <# "-9"){$SET_CHAR_STATUS(tgt,2);}
+-				$ELSE{$SET_CHAR_STATUS(tgt,9);};
+-			};
+-	};
+\(END)
+

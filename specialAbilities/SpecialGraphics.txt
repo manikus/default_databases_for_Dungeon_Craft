@@ -1,0 +1,28 @@
+\(BEGIN)
+name = SpecialGraphics
+[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijkl$CompassDisplay] = $VAR sWidth; $VAR face;
+-$IF ($GET_EVENT_Attribute(0,"NoCompass") != "-?-?-") {$RETURN;};
+-sWidth = $GET_CONFIG("Screen_Width");
+-face = $GET_PARTY_FACING();
+-$IF (sWidth ==# 640)
+-	{
+-		$SET_HOOK_PARAM( 3, "border_Compass.png" );
+-		$SET_HOOK_PARAM( 4, 272 );
+-		$SET_HOOK_PARAM( 5, 263 );
+-		$SET_HOOK_PARAM( 6, 78 *# face );
+-		$SET_HOOK_PARAM( 7, 0 );
+-		$SET_HOOK_PARAM( 8, 78 );
+-		$SET_HOOK_PARAM( 9, 46 );
+-	};
+-$IF (sWidth ==# 1024)
+-	{
+-		$SET_HOOK_PARAM( 3, "border_Compass.png" );
+-		$SET_HOOK_PARAM( 4, 512 );
+-		$SET_HOOK_PARAM( 5, 520 );
+-		$SET_HOOK_PARAM( 6, 78 *# face );
+-		$SET_HOOK_PARAM( 7, 0 );
+-		$SET_HOOK_PARAM( 8, 78 );
+-		$SET_HOOK_PARAM( 9, 46 );
+-	};
+\(END)
+

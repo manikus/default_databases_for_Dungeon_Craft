@@ -1,0 +1,5 @@
+\(BEGIN)
+name = spell_RemoveBlindness
+[InvokeSpellOnTarget] = $DELETE_CHARACTER_SA($TargetContext(),"IsBlind");
+\(END)
+

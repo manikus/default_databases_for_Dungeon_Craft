@@ -1,0 +1,15 @@
+\(BEGIN)
+name = monster_ModronElementalResistance
+[ComputeDamage] = $VAR element;
+-element = $SA_ITEM_GET("DamageMagical");
+-$IF (element == ("acid" || "cold" || "fire")){$RETURN $GET_HOOK_PARAM(5) /# 6 *# 5;};
+[ComputeSpellDamage] = $VAR element;
+-element = $SA_SPELL_GET("DamageMagical");
+-$IF (element == ("acid" || "cold" || "fire")){$RETURN $GET_HOOK_PARAM(5) /# 6 *# 5;};
+[DoesAttackSucceed] = $VAR par5;
+-$VAR ele;
+-par5 = $GET_HOOK_PARAM(5);
+-ele = $SA_SPELL_GET("DamageMagical");
+-$IF (ele == ("acid" || "cold" || "fire")){$SET_HOOK_PARAM(5,par5 -# 1);};
+\(END)
+

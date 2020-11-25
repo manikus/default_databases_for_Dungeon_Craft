@@ -1,0 +1,44 @@
+\(BEGIN)
+name = Halfling
+height = 2d4+28+((3+1d3)*Male)
+weight = 2d9+40+((10+1d4)*Male)
+age = 3d4+20
+maxage = 1d100+100
+BaseMovement = 6
+AbilityRequirement = Strength 6/17
+AbilityRequirement = Intelligence 6/18
+AbilityRequirement = Wisdom 3/17
+AbilityRequirement = Dexterity 8/19
+AbilityRequirement = Constitution 10/18
+AbilityRequirement = Charisma 3/18
+AllowedMultiClass = Fighter/Thief
+Special Ability = race_ShortSaveBonus,10
+ChangeClass = yes
+DwarfResistance = no
+GnomeResistance = no
+FindSecretDoor = 0
+FindSecretDoorSearching = 1
+Skill = DetectGrade,75
+Skill = Infravision,60
+Skill = DetermineDirection,50
+Skill = Surprise,67
+Skill = MaxLevel$SYS$,40
+SkillAdjAbility = FighterLevelCaps,Strength,+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2
+SkillAdjRace = PickPockets,Halfling,%,105
+SkillAdjRace = OpenLocks,Halfling,%,105
+SkillAdjRace = FindTraps,Halfling,%,105
+SkillAdjRace = MoveSilent,Halfling,%,110
+SkillAdjRace = HideInShadows,Halfling,%,115
+SkillAdjRace = HearNoise,Halfling,%,105
+SkillAdjRace = ClimbWalls,Halfling,%,85
+SkillAdjRace = ReadLanguages,Halfling,%,95
+SkillAdjRace = PoleVault,Halfling,-,2
+SkillAdjRace = HighJump,Halfling,-,1
+SkillAdjRace = BroadJump,Halfling,-,1
+SkillAdjRace = RunningBroadJump,Halfling,-,4
+SkillAdjRace = TumblingAttack,Halfling,%,105
+SkillAdjRace = TumblingEvasion,Halfling,%,110
+SkillAdjRace = TumblingFalling,Halfling,%,105
+// Special Ability = race_RaceSuppress,"Y"
+\(END)
+

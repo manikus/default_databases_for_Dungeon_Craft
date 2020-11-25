@@ -1,0 +1,7 @@
+\(BEGIN)
+name = IsSymbolHopelessnessed
+[AutoAction] = $VAR atk;
+-atk = $SA_PARAM_GET();
+-$RETURN "F" + atk;
+\(END)
+

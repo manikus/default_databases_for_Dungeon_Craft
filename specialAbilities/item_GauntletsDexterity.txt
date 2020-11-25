@@ -1,0 +1,18 @@
+\(BEGIN)
+name = item_GauntletsDexterity
+[OnReady] = $VAR tgt; $VAR dex; $VAR num;
+-tgt = $IndexOf($CharacterContext());
+-dex = $GET_CHAR_LIMITED_DEX(tgt);
+-$IF (dex >=# 1) {num = 4;};
+-$IF (dex >=# 7) {num = 2;};
+-$IF (dex >=# 14) {num = 1;};
+-$MODIFY_CHAR_ATTRIBUTE(tgt,"DEX",num, "MINUTES", 999999999, "gauntlets","ITEM Gauntlets Dexterity");
+-$IF ($SkillAdj($CharacterContext(),"PickPockets","","F","") ># 0)
+-	{$SkillAdj($CharacterContext(),"PickPockets","ITEM Gauntlets Dexterity","%","110");}
+-$ELSE {$SkillAdj($CharacterContext(),"PickPockets","ITEM Gauntlets Dexterity","+","45");};
+[OnUnReady] = $VAR tgt;
+-tgt = $IndexOf($CharacterContext());
+-$REMOVE_CHAR_MODIFICATION(tgt,"ITEM Gauntlets Dexterity");
+-$SkillAdj($CharacterContext(),"PickPockets","ITEM Gauntlets Dexterity","D","");
+\(END)
+

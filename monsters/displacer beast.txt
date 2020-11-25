@@ -1,0 +1,34 @@
+\(BEGIN)
+name = Displacer Beast
+icon file = icon_DisplacerBeast.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 3
+armor class = 4
+movement rate = 15
+hit dice = 6.000000
+treat HD as hit points = yes
+hit dice bonus = 0
+THAC0 = 13
+magic resistance = 0
+size = large
+morale = 50
+experience point value = 667
+Special Ability = monsterLevel,6
+Special Ability = monster_CombatantAlignment,evil
+Special Ability = monster_Displacement,monster
+Class = Fighter
+Race = Monster
+form = large
+penalty = none
+immunity = none
+Misc Options = can be held/charmed
+item = none
+attack = 4,2,0,attacks,
+attack = 4,2,0,attacks,
+Undead = none
+\(END)
+// MM p28
+

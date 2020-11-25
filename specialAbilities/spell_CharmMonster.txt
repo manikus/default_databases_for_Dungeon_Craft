@@ -1,0 +1,60 @@
+\(BEGIN)
+name = spell_CharmMonster
+[InvokeSpellOnTarget] = $VAR side;  // caster's side
+-$VAR atk; // attacker/caster
+-$VAR tgt; // target
+-$VAR cLvl;  // caster level
+-$VAR tNom;  // target name
+-$VAR tLvl;   // target level
+-$VAR mLvl;  // temporary target level
+-$VAR cls; // caster baseclass
+-$VAR tcls; // target baseclass
+-$VAR opr;   // once per round
+-$VAR rnd; // value of point pool
+-$VAR tgtnum;// target number
+-$IF ($GET_CANBEHELDORCHARMED($TargetContext()) !=# 1){$RETURN;};
+-$IF ($GET_CHARACTER_SA($TargetContext(),"saved")){$RETURN;};
+-$IF ($GET_COMBATANT_SA($TargetContext(),"monster_ImmuneCharm") != "-?-?-"){$RETURN;};
+-atk = $IndexOf($AttackerContext());
+-tgt = $IndexOf($TargetContext());
+-opr = $GET_COMBATANT_SA($AttackerContext(),"CombatRoundStart");
+-$IF (opr == "-?-?-" || opr == 0)
+-	{
+-		$SET_CHARACTER_SA($AttackerContext(),"CombatRoundStart",5);
+-		$SET_CHARACTER_SA($AttackerContext(),"tgtnum",0);
+-		$SET_CHARACTER_SA($AttackerContext(),"PointPool",$RANDOM(4) +# $RANDOM(4) +# 2);
+-	};
+-rnd = $GET_CHARACTER_SA($AttackerContext(), "PointPool");
+-$IF (rnd <# 1){$RETURN;};
+-cls = $SA_PARAM_GET();
+-cLvl = $GET_CHAR_Lvl(atk,cls);
+-side = $GET_CHARACTER_SA($AttackerContext(), "side");
+-tNom = $GET_CHAR_NAME(tgt);
+-mLvl = $GET_MONSTERTYPE_SA(tNom,"monsterLevel");
+-$IF (mLvl != "-?-?-"){tLvl = mLvl;}
+-$ELSE
+-	{
+-		tcls = $GetHighestLevelBaseclass(tgt);
+-		tLvl = $GetBaseclassLevel(tgt, tcls);
+-	};
+-$SET_CHARACTER_SA($AttackerContext(), "tgtnum",$GET_COMBATANT_SA($AttackerContext(),"tgtnum") +# 1);
+-tgtnum = $GET_CHARACTER_SA($AttackerContext(),"tgtnum");
+-$IF (tgtnum != "-?-?-")
+-	{
+-		$IF (tLvl ># 3)
+-			{
+-				$SET_CHARACTER_SA($AttackerContext(),"PointPool",0);
+-				$SetFriendly(tgt,side);
+-				$SET_CHARACTER_SA($TargetContext(),"IsCharmed",cLvl);
+-				$RETURN;
+-			};
+-	};
+-$IF (tLvl ># rnd){$RETURN;}
+-$ELSE
+-	{
+-		$SET_CHARACTER_SA($AttackerContext(),"PointPool",rnd -# tLvl);
+-		$SetFriendly(tgt,side);
+-		$SET_CHARACTER_SA($TargetContext(),"IsCharmed",cLvl);
+-	};
+\(END)
+

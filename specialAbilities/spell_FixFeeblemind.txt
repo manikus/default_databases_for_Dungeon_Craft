@@ -1,0 +1,8 @@
+\(BEGIN)
+name = spell_FixFeeblemind
+[FixCharacter] = $VAR feeblemind;
+-feeblemind = $GET_CHARACTER_SA($CharacterContext(),"IsFeebleminded");
+-$RETURN feeblemind != "-?-?-";
+Info = "heal for FIX";
+\(END)
+

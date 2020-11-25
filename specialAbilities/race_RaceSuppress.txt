@@ -1,0 +1,5 @@
+\(BEGIN)
+name = race_RaceSuppress
+[SelectCharacterRace] = $RETURN "Y";
+\(END)
+

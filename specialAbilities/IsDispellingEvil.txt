@@ -1,0 +1,26 @@
+\(BEGIN)
+name = IsDispellingEvil
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7, "Dispelling Evil");
+-$SET_HOOK_PARAM( 6, "");
+-$RETURN 1;
+[Dispel] = $SA_REMOVE();
+[DoesAttackSucceed] = $IF ($GET_COMBATANT_SA($TargetContext(),"IsDispellingEvil") != "-?-?-")
+-	{
+-		$IF ($AlignmentGood($AttackerContext()) == "" && $GET_COMBATANT_SA($AttackerContext(),"Summoned") != "-?-?-")
+-			{
+-				$SET_HOOK_PARAM(6,$GET_HOOK_PARAM(6) +# 7);
+-			};
+-	}
+-$ELSE
+-	{
+-		$IF ($AlignmentGood($TargetContext()) == "" && $GET_COMBATANT_SA($TargetContext(),"Summoned") != "-?-?-" && $GET_HOOK_PARAM(6) <# $GET_HOOK_PARAM(5) && $GET_COMBATANT_SA($AttackerContext(),"CanDispel") != "-?-?-")
+-			{
+-				$CastSpellOnTargetAs($TargetContext(),"Banish",$AttackerContext());
+-				$DELETE_COMBATANT_SA($AttackerContext(),"CanDispel");
+-				$RETURN;
+-			};
+-	};
+-$IF ($GET_HOOK_PARAM(5) >=# $GET_HOOK_PARAM(6)){$RETURN "Y";}
+-$ELSE {$RETURN "N";};
+\(END)
+

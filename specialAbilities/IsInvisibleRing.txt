@@ -1,0 +1,10 @@
+\(BEGIN)
+name = IsInvisibleRing
+[CharDisplayStatus] = $IF ($GET_HOOK_PARAM(5) == "DISPLAY")
+-	{$SET_HOOK_PARAM(7,"Invisible, Ring"); $SET_HOOK_PARAM(6,""); $RETURN 1;};
+[Dispel] = $SA_REMOVE();
+[OnStartCombatantAction] = $SET_COMBATANT_SA($CharacterContext(),"IsInvisible",1);
+[spawn] = $SET_COMBATANT_SA($CharacterContext(),"IsInvisibleRing",1);
+-$SET_COMBATANT_SA($CharacterContext(),"IsInvisible",1);
+\(END)
+

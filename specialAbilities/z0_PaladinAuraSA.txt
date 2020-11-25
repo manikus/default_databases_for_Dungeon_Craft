@@ -1,0 +1,23 @@
+\(BEGIN)
+name = _PaladinAuraSA
+[AURA_Create] = $VAR rnd;
+-$VAR time;
+-rnd = $GetCombatRound();
+-time = rnd +# 6;
+-$AURA_Attach("CombatantFacing");
+-$AURA_Combatant($IndexOf($Myself()));
+-$AURA_Size(0,2,0,360);
+-$AURA_Shape("AnnularSector");
+-$AURA_Spell("PaladinAura");
+-$AURA_Wavelength("Neutrino");
+-$SET_COMBATANT_SA($Myself(),"PaladinAura",time);
+[AURA_Effect] = $IF ($GetCombatRound() ># 6){$AURA_Destroy();};
+[AURA_Round] = $VAR exp; // expiration time
+-exp = $GET_COMBATANT_SA($Myself(),"PaladinAura");
+-$IF ($GetCombatRound() ># exp)
+-	{
+-		$AURA_Destroy();
+-		$DELETE_COMBATANT_SA($Myself(),"PaladinAura");
+-	};
+\(END)
+

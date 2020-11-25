@@ -1,0 +1,32 @@
+\(BEGIN)
+name = monster_AuraDragon
+[CreateMonsterCombatant] = $VAR me; // sa's parameter
+-me = $IndexOf($CharacterContext());
+-$AURA_Create("monster_AuraDragon","",me,"","");
+[AURA_Create] = $VAR chr; // character
+-chr = $AURA_GetData(0);
+-$AURA_Attach("Combatant");
+-$AURA_Combatant(chr);
+-$AURA_Size(0,10,0,360);
+-$AURA_Shape("AnnularSector");
+-$AURA_Wavelength("Xray");
+[AURA_Enter] = $VAR com; // comabtant
+-$VAR race; // combatant's race
+-$VAR cLvl; // combatant's level
+-$VAR mLvl; // monster level
+-$VAR rndm;
+-$VAR prm; // sa's parameter
+-com = $IndexOf($CombatantContext());
+-race = $GET_CHAR_NAME(com);
+-cLvl = $GetHighestLevelBaseclass(com);
+-mLvl = $GET_COMBATANT_SA($CombatantContext(),"monsterLevel");
+-rndm = $RANDOM(2);
+-prm = $SA_PARAM_GET();
+-$IF (race == "Dragon"){$RETURN;};
+-$IF (cLvl >=# 6){$RETURN;};
+-$IF (mLvl >=# 6){$RETURN;};
+-$IF (cLvl >=# 3){$RETURN $SET_COMBATANT_SA($CombatantContext(),"IsDragonAdj","");};
+-$IF (rndm ==# 0){$SET_COMBATANT_SA($CombatantContext(),"IsDragonFear","");};
+-$IF (rndm ==# 1){$SET_COMBATANT_SA($CombatantContext(),"IsDragonFlee",prm);};
+\(END)
+

@@ -1,0 +1,5 @@
+\(BEGIN)
+name = monster_ImmuneSpellsGreenSlime
+[ComputeDamage] = $IF (($SA_SPELL_GET("DamageMagical") != "cold") || ($SA_SPELL_GET("DamageMagical") != "fire")){ $RETURN "0";};
+\(END)
+

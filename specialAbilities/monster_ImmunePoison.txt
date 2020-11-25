@@ -1,0 +1,5 @@
+\(BEGIN)
+name = monster_ImmunePoison
+[InvokeSpellOnTarget] = $SET_CHARACTER_SA($TargetContext(),"IsImmunePoison","");
+\(END)
+

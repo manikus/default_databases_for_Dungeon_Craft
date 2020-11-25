@@ -1,0 +1,10 @@
+\(BEGIN)
+name = IsPeriaptImmuneDisease
+[CharDisplayStatus] = $SET_HOOK_PARAM(7,"Immune to Disease"); $SET_HOOK_PARAM(6,""); $RETURN 1;
+[DoesSpellAttackSucceed] = $VAR spell;
+-$VAR periapt;
+-spell = $SA_SPELL_GET("DamageMagical");
+-periapt = $GET_COMBATANT_SA($TargetContext(), "IsPeriaptImmuneDisease");
+-$IF (spell == "electricity") {$IF (periapt == "immune") {$RETURN "N"; };};
+\(END)
+

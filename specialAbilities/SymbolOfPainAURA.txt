@@ -1,0 +1,13 @@
+\(BEGIN)
+name = SymbolOfPainAURA
+[AURA_Create] = $AURA_Attach("XY");
+-$AURA_Shape("AnnularSector");
+-$AURA_Size(0,15,0,360);
+-$AURA_Spell("Symbol Of Pain");
+-$AURA_Wavelength("Visible");
+[AURA_Enter] = $VAR tgt; $VAR exp; $VAR sd;
+-tgt = $AURA_GetData(1); exp = $AURA_GetData(2);
+-$SET_COMBATANT_SA($CombatantContext(),"IsSymbolPained",exp);
+-$SetFriendly(tgt,$GET_COMBATANT_SA($Myself(),"side"));
+\(END)
+

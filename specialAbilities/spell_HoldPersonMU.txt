@@ -1,0 +1,22 @@
+\(BEGIN)
+name = spell_HoldPersonMU
+[InvokeSpellOnTarget] = $VAR atk; // attacker
+-$VAR tgt; // target
+-$VAR nomTgt;
+-$VAR cls;
+-$VAR lvl;
+-$VAR exp; // expiration time
+-$VAR type;
+-$IF ($GET_CHARACTER_SA($TargetContext(),"saved") ==# 1){$RETURN;};
+-$IF ($GET_CANBEHELDORCHARMED($TargetContext()) !=# 1){$RETURN;};
+-atk = $IndexOf($AttackerContext());
+-tgt = $IndexOf($TargetContext());
+-nomTgt = $GET_CHAR_NAME(tgt);
+-type = $GET_CHAR_TYPE(tgt);
+-$IF (type != "@PC@" && type != "@NPC@") {$IF ($GET_MONSTERTYPE_SA(nomTgt,"IsPerson") == "-?-?-") {$RETURN;};};
+-cls = $SA_PARAM_GET();
+-lvl = $GET_CHAR_Lvl(atk,cls);
+-exp = $GET_PARTY_TIME() +# (lvl *# 2);
+-$SET_CHARACTER_SA($TargetContext(),"IsHeld",exp);
+\(END)
+

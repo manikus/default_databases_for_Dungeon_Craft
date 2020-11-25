@@ -1,0 +1,73 @@
+\(BEGIN)
+name = class_Paladin
+[CanCureOrWhatever] = $VAR tgt;
+-$VAR prevTime; // hours
+-$VAR curTime;
+-$VAR elapsedTime;
+-$VAR waitTime;
+-$VAR paladinLvl;
+-$VAR paladinDiv;
+-tgt = $IndexOf($CharacterContext());
+-prevTime = $GET_CHARACTER_SA($CharacterContext(),"paladinCureTime");
+-curTime = $GET_PARTY_TIME();
+-$IF(prevTime != "-?-?-"){elapsedTime = curTime -# prevTime;}
+-$ELSE{elapsedTime = 999;};
+-paladinLvl = $GET_CHAR_Lvl(tgt,"paladin");
+-paladinDiv = (paladinLvl +#4) /# 5;
+-$IF (paladinDiv <# 1){paladinDiv = 1;};
+-$IF (paladinDiv ># 8){paladinDiv = 8;};
+-waitTime = 10080 /# paladinDiv;
+-$IF ((elapsedTime >= 0) && (elapsedTime <# waitTime)) {$RETURN;};
+-$SET_HOOK_PARAM( 5, "CURE DISEASE" );
+-$SET_HOOK_PARAM( 6, "0");
+[CanLayOrWhatever] = $VAR prevTime;
+-$VAR curTime;
+-$VAR elapsedTime;
+-prevTime = $GET_CHARACTER_SA($CharacterContext(),"paladinLayTime");
+-curTime = $GET_PARTY_TIME();
+-$IF(prevTime)  // First time fudge.
+-{elapsedTime = curTime -# prevTime;}
+-$ELSE{elapsedTime = 999;};
+-$IF ((elapsedTime >= 0) && (elapsedTime <# 1440)) {$RETURN;};
+-$SET_HOOK_PARAM( 5, "LAY ON HANDS" );
+-$SET_HOOK_PARAM( 6, "0");
+[CreateMonsterCombatant] = $VAR char; // character being created
+-$VAR cls;
+-char = $IndexOf($CharacterContext());
+-cls = $GET_CHAR_Lvl(char,"paladin");
+-$IF (cls ># 0)
+-	{
+-		$SET_CHARACTER_SA($CharacterContext(),"IsPaladinImmuneDisease","paladin");
+-		$SET_CHARACTER_SA($CharacterContext(),"IsPaladinProtectedFromEvil","paladin");
+-		$SkillAdj($CharacterContext(),"Save Vs BR","paladinProtEvil","-","2");
+-		$SkillAdj($CharacterContext(),"Save Vs PP","paladinProtEvil","-","2");
+-		$SkillAdj($CharacterContext(),"Save Vs PPDM","paladinProtEvil","-","2");
+-		$SkillAdj($CharacterContext(),"Save Vs RSW","paladinProtEvil","-","2");
+-		$SkillAdj($CharacterContext(),"Save Vs SP","paladinProtEvil","-","2");
+-	};
+[CureOrWhatever] = $VAR curTime;
+-curTime = $GET_PARTY_TIME();
+-$SET_CHARACTER_SA($CharacterContext(),"paladinCureTime",curTime);
+-$SET_HOOK_PARAM(1,"paladinCureDisease");
+-$RETURN "CastSpell";
+[LayOrWhatever] = $VAR curTime;
+-curTime = $GET_PARTY_TIME();
+-$SET_CHARACTER_SA($Myself(),"paladinLayTime",curTime);
+-$SET_HOOK_PARAM(1,"paladinLayOnHands");
+-$RETURN "CastSpell";
+[PostCreateCharacter] = $SET_CHARACTER_SA($CharacterContext(),"IsPaladinImmuneDisease","paladin");
+-$SET_CHARACTER_SA($CharacterContext(),"IsPaladinProtectedFromEvil","paladin");
+-$SkillAdj($CharacterContext(),"Save Vs BR","paladinProtEvil","-","2");
+-$SkillAdj($CharacterContext(),"Save Vs PP","paladinProtEvil","-","2");
+-$SkillAdj($CharacterContext(),"Save Vs PPDM","paladinProtEvil","-","2");
+-$SkillAdj($CharacterContext(),"Save Vs RSW","paladinProtEvil","-","2");
+-$SkillAdj($CharacterContext(),"Save Vs SP","paladinProtEvil","-","2");
+[SpellCasterLevel] = $VAR atk; // attacker
+-$VAR cls;
+-$VAR lvl;
+-atk = $IndexOf($AttackerContext());
+-cls = $GetHighestLevelBaseclass(atk);
+-lvl = $GetBaseclassLevel(atk,cls);
+-$RETURN lvl;
+\(END)
+

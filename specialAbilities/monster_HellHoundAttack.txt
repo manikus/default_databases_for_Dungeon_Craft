@@ -1,0 +1,5 @@
+\(BEGIN)
+name = monster_HellHoundAttack
+[StartCombatRound] = $GIVE_CHAR_ITEM( $CombatantContext(), "monsterHellHoundBreath" );
+\(END)
+

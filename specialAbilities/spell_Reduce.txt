@@ -1,0 +1,39 @@
+\(BEGIN)
+name = spell_Reduce
+[Dispel SE] = $REMOVE_SPELL_EFFECT($CharacterContext(),$GET_HOOK_PARAM(5 ));
+[InvokeSpellOnTarget] = $VAR atk; // attacker/caster
+-$VAR tgt; // target
+-$VAR cls;
+-$VAR adj;
+-$VAR lvl;
+-$VAR str;
+-$VAR strMod;
+-$VAR adjStr;
+-$IF (($GET_CHARACTER_SA($TargetContext(),"enlarged")  != "-?-?-") || ($GET_MONSTERTYPE_SA($MonsterTypeContext(),"enlarged") != "-?-?-"))
+-	{$RETURN $RUN_CHAR_SCRIPTS(tgt,"Dispel enlarged");};
+-atk = $IndexOf($AttackerContext());
+-tgt = $IndexOf($TargetContext());
+-cls = $SA_PARAM_GET();
+-adj = $GET_CHARACTER_SA($AttackerContext(),"casterLevel");
+-lvl = $GET_CHAR_Lvl(atk,cls) -# adj;
+-str = $GET_CHAR_LIMITED_STR(tgt);
+-strMod = $GET_CHAR_LIMITED_STRMOD(tgt);
+-adjStr = str -# 6;
+-$IF (lvl ># 10) {lvl =# 10;};
+-$IF ($GET_CHARACTER_SA($TargetContext(),"myStr") == "-?-?-")
+-	{
+-		$SET_CHARACTER_SA($TargetContext(),"myStr", str);
+-		$SET_CHARACTER_SA($TargetContext(),"myStrMod", strMod);
+-	};
+-$IF ($GET_CHARACTER_SA($TargetContext(),"mySize") == "-?-?-")
+-	{$SET_CHARACTER_SA($TargetContext(),"mySize", $GET_CHAR_SIZE(tgt));};
+-$IF ($GET_CHAR_SIZE(tgt) ># 0){$SET_CHAR_SIZE(tgt, 0);};
+-$IF ($GET_CHAR_LIMITED_STR(tgt) ># 6)
+-	{
+-		$MODIFY_CHAR_ATTRIBUTE(tgt,"STR",adjStr,"MINUTES",10 *# lvl,"Reduce STR","SPELL Reduce STR");
+-		$MODIFY_CHAR_ATTRIBUTE(tgt,"STRMOD",-#strMod,"MINUTES",10 *# lvl,"Reduce STRMOD","SPELL Reduce STRMOD");
+-	};
+-$SET_CHARACTER_SA($TargetContext(),"IsReduced",lvl);
+-$SET_CHARACTER_SA($TargetContext(),"reduced",1);
+\(END)
+

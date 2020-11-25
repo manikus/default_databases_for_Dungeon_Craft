@@ -1,0 +1,38 @@
+\(BEGIN)
+name = Wraith
+icon file = icon_Wraith.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 12
+armor class = 4
+movement rate = 12
+hit dice = 5.000000
+treat HD as hit points = yes
+hit dice bonus = 3
+THAC0 = 15
+magic resistance = 0
+size = medium
+morale = 37
+experience point value = 713
+Special Ability = elemental_ImmuneCold
+Special Ability = monsterLevel,6
+Special Ability = monster_CombatantAlignment,evil
+Special Ability = monster_ImmuneCharm
+Special Ability = monster_ImmuneFear,monster
+Special Ability = monster_ImmuneSleep
+Special Ability = monster_VulnerableToHolyWater,monster
+Special Ability = monster_WeaponImmunity,1
+Class = Fighter
+Race = Monster
+form = none
+penalty = none
+immunity = poison + death magic + vorpal weapon
+Misc Options = none
+item = none
+attack = 6,1,0,attacks,monsterUndeadDrainLevel
+Undead = Wraith
+\(END)
+// MM p102
+

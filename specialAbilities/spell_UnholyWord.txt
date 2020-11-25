@@ -1,0 +1,19 @@
+\(BEGIN)
+name = spell_UnholyWord
+[InvokeSpellOnTarget] = $VAR pln; $VAR good; $VAR tgt; $VAR lvl; $VAR rD; $VAR rS; $VAR rP;
+-pln = $GET_COMBATANT_SA($TargetContext(),"Summoned");
+-good = $GET_COMBATANT_SA($TargetContext(),"monster_CombatantAlignment");
+-$IF (pln != "plane"){$RETURN;};
+-$IF (good != "good"){$RETURN;};
+-tgt = $IndexOf($TargetContext());
+-lvl = $GetHighestLevelBaseclass(tgt);
+-rD = $RANDOM(4) +# 1;
+-rD = $RANDOM(4) +#$RANDOM(4) +# 2;
+-rD = ($RANDOM(4) +# 1) *# 10;
+-$IF (lvl ># 11){$RETURN $SET_COMBATANT_SA($TargetContext(),"IsHolyDeafened",rD);};
+-$IF (lvl ># 7){$RETURN $SET_COMBATANT_SA($TargetContext(),"IsHolyStunned",rS);};
+-$IF (lvl ># 3){$RETURN $SET_COMBATANT_SA($TargetContext(),"IsParalyzed",rP);};
+-$SET_CHAR_HITPOINTS(tgt,-11); $SET_CHAR_STATUS(tgt,5);
+\(END)
+
+

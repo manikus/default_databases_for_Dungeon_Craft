@@ -1,0 +1,31 @@
+\(BEGIN)
+name = spell_RaiseDead
+[InvokeSpellOnTarget] = $VAR tgt; // target
+-$VAR type;
+-$VAR CON; // Constitution
+-$VAR raised;
+-$VAR list;
+-$VAR pct; // percent
+-tgt = $IndexOf($TargetContext());
+-$IF ($GET_CHARACTER_SA($TargetContext(),"mummy") == 1)
+-	{ // Mummy Swap
+-		$AddCombatant("Ancient Fighter",0);
+-		$TeleportCombatant($IndexOf($Name("Ancient Fighter")),$GET_HOOK_PARAM(5),$GET_HOOK_PARAM(6));
+-		$DELETE_CHARACTER_SA($TargetContext(),"mummy");
+-		$RETURN;
+-	};
+-$IF ($GET_CHAR_STATUS(tgt) !=# 2){$RETURN;};
+-CON = $GET_CHAR_LIMITED_CON(tgt);
+-raised = $GET_CHARACTER_SA($TargetContext(),"raised");
+-$IF (raised == "-?-?-"){raised = CON;}
+-$ELSE {raised = raised -# 1;};
+-$IF (raised <# 1 || $GET_CHAR_RACE(tgt) == "Elf"){$RETURN $SET_CHAR_STATUS(tgt,5);};
+-$SET_CHARACTER_SA($TargetContext(),"raised",raised);
+-list = "$0$30$35$40$45$50$55$60$65$70$75$80$85$90$92$94$96$98$100$100$100$100$100$100$100$100";
+-pct = $DelimitedStringSubstring(list,CON);
+-$IF (pct <# $RANDOM(100) +# 1){$RETURN $SET_CHAR_STATUS(tgt,5);};
+-$MODIFY_CHAR_ATTRIBUTE(tgt,"CON", -1, "MINUTES", 999999999, "Raise Dead CON reduction", "SPELL Raise Dead");
+-$SET_CHAR_HITPOINTS(tgt,1);
+-$SET_CHAR_STATUS(tgt,1);
+\(END)
+

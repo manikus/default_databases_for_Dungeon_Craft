@@ -1,0 +1,50 @@
+\(BEGIN)
+name = IsElf
+[CreateMonsterCombatant] = $VAR chr; // character
+-chr = $IndexOf($CharacterContext());
+-$SET_CHARACTER_SA($CharacterContext(),"IsElf",$SA_PARAM_GET());
+-$SET_CHAR_RACE(chr,"Elf");
+[DoesAttackSucceed] = $VAR wpn;
+-wpn = $GET_CHAR_Ready($AttackerContext(),"WEAPON",0);
+-$IF ($GET_COMBATANT_SA($AttackerContext(),"IsElf") != "-?-?-" && $GET_ITEM_SA(wpn,"item_ElfBonus") != "-?-?-")
+-	{
+-		$SET_HOOK_PARAM(6,$GET_HOOK_PARAM(6) -# 1);
+-	};
+-$IF ($GET_HOOK_PARAM(5) >=# $GET_HOOK_PARAM(6)){$RETURN "Y";}
+-$ELSE {$RETURN "N";};
+[DoesSpellAttackSucceed] = $VAR atk;
+-$VAR caster;
+-$VAR caster1;
+-$VAR caster2;
+-$VAR level;
+-$VAR base;
+-$IF ($SA_SPELL_GET("DamageMagical") != "charm"){$RETURN;};
+-atk = $IndexOf($AttackerContext());
+-caster = $SA_SPELL_GET("Caster");
+-caster1 = $DelimitedStringSubstring(caster,0);
+-caster2 = $DelimitedStringSubstring(caster,1);
+-$IF (caster1 == "monster")
+-	{
+-		level =  $GET_MONSTERTYPE_SA($GET_CHAR_NAME(atk),"monsterLevel");
+-		base = 11;
+-	}
+-$ELSE
+-	{
+-		$IF (caster1 == "item")
+-			{
+-				level = caster2;
+-				base = 11;
+-			}
+-		$ELSE
+-			{
+-				level = $GET_CHAR_Lvl(atk,caster1);
+-				base = caster2;
+-			};
+-	};
+-$IF ($RANDOM(100) <# 90 -# 5 *# (level -# base))
+-	{
+-		$SET_HOOK_PARAM(5,$GET_CHAR_NAME($IndexOf($TargetContext())) +" is unaffected" );
+-		$RETURN "N";
+-	};
+\(END)
+

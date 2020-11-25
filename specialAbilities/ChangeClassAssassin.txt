@@ -1,0 +1,45 @@
+\(BEGIN)
+name = ChangeClassAssassin
+[CanChangeFromClass] = $RETURN "Y";
+[CanChangeToClass] = $VAR me; $VAR align; $VAR race;
+-me = $IndexOf($CharacterContext());
+-align = $GET_CHAR_ALIGNMENT(me);
+-$IF (align >=# 6) {$RETURN "Y";};
+[ChangeClassFrom] = $VAR me; $VAR cls; $VAR bc; $VAR lvl; $VAR XP; $VAR toHit;
+-me = $IndexOf($CharacterContext());
+-cls = $GET_CHAR_CLASS(me); bc = $GetHighestLevelBaseclass(me);
+-lvl = $GET_CHAR_Lvl(me,bc); XP = $GET_CHAR_Exp(me,bc); toHit = $GET_CHAR_THAC0(me);
+-$DELETE_CHARACTER_SA($CharacterContext(),"class_NoSpells");
+-$DELETE_CHARACTER_SA($CharacterContext(),"class_ThievingSkills");
+-$DELETE_CHARACTER_SA($CharacterContext(),"class_baseName");
+-$SET_CHARACTER_SA($CharacterContext(),"prevSklPP",$SkillAdj($CharacterContext(),"PickPockets","","F",""));
+-$SET_CHARACTER_SA($CharacterContext(),"prevSklOL",$SkillAdj($CharacterContext(),"OpenLocks","","F",""));
+-$SET_CHARACTER_SA($CharacterContext(),"prevSklFT",$SkillAdj($CharacterContext(),"FindTraps","","F",""));
+-$SET_CHARACTER_SA($CharacterContext(),"prevSklMS",$SkillAdj($CharacterContext(),"MoveSilent","","F",""));
+-$SET_CHARACTER_SA($CharacterContext(),"prevSklHIS",$SkillAdj($CharacterContext(),"HideInShadows","","F",""));
+-$SET_CHARACTER_SA($CharacterContext(),"prevSklHN",$SkillAdj($CharacterContext(),"HearNoise","","F",""));
+-$SET_CHARACTER_SA($CharacterContext(),"prevSklCW",$SkillAdj($CharacterContext(),"ClimbWalls","","F",""));
+-$SET_CHARACTER_SA($CharacterContext(),"prevSklRL",$SkillAdj($CharacterContext(),"ReadLanguages","","F",""));
+-$SET_CHARACTER_SA($CharacterContext(),"prevBackstab",$SkillAdj($CharacterContext(),"BackstabMultiplier","","F",""));
+-$SET_CHARACTER_SA($CharacterContext(),"prevSaveVsPPDM",$SkillAdj($CharacterContext(),"Save Vs PPDM","","F",""));
+-$SET_CHARACTER_SA($CharacterContext(),"prevSaveVsPP",$SkillAdj($CharacterContext(),"Save Vs PP","","F",""));
+-$SET_CHARACTER_SA($CharacterContext(),"prevSaveVsRSW",$SkillAdj($CharacterContext(),"Save Vs RSW","","F",""));
+-$SET_CHARACTER_SA($CharacterContext(),"prevSaveVsBR",$SkillAdj($CharacterContext(),"Save Vs BR","","F",""));
+-$SET_CHARACTER_SA($CharacterContext(),"prevSaveVsSP",$SkillAdj($CharacterContext(),"Save Vs SP","","F",""));
+-$SET_CHARACTER_SA($CharacterContext(),"preDualClass","$"+cls+"$"+lvl);
+-$SET_CHARACTER_SA($CharacterContext(),"DualClassedAssassin","$"+cls+"$"+lvl);
+-$SET_CHARACTER_SA($CharacterContext(),"prevTHAC0",toHit);
+[ChangeClassTo] = $SET_CHARACTER_SA($CharacterContext(),"class_NoSpells","assassin");
+-$SET_CHARACTER_SA($CharacterContext(),"class_ThievingSkills","assassin");
+-$SET_CHARACTER_SA($CharacterContext(),"class_baseName","$assassin");
+-$SET_CHARACTER_SA($CharacterContext(),$SA_NAME(),"$assassin");
+[TrainingCharacter] = $VAR me; $VAR bc; $VAR lvl; $VAR pdc; $VAR prv; $VAR cls;
+-me = $IndexOf($CharacterContext());
+-bc = $GetHighestLevelBaseclass(me);
+-lvl = $GET_CHAR_Lvl(me,bc);
+-pdc = $GET_CHARACTER_SA($CharacterContext(),"prevDualClass");
+-$IF (pdc == "-?-?-") {$RETURN;};
+-prv = $DelimitedStringSubstring(pdc,1); cls = $DelimitedStringSubstring(pdc,0);
+-$IF (prv ># lvl) {$RUN_CHAR_SCRIPTS(me,"DualClassAchieved"+cls);};
+\(END)
+

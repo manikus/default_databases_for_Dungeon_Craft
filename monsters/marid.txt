@@ -1,0 +1,42 @@
+\(BEGIN)
+name = Marid
+icon file = icon_Marid.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathLarge.wav
+intelligence = 16
+armor class = 0
+movement rate = 24
+hit dice = 13
+treat HD as hit points = yes
+hit dice bonus = 0
+THAC0 = 7
+magic resistance = 25
+size = large
+morale = 40
+experience point value = 5000
+Special Ability = monsterLevel,13
+Special Ability = elemental_ImmuneWater
+Special Ability = IsDetectingEvil
+Special Ability = IsDetectingGood
+Special Ability = IsDetectingMagic
+Special Ability = IsInvisible
+Special Ability = IsSeeingInvisible
+Special Ability = monster_MaridColdResistance,2
+Special Ability = monster_MaridFireVulnerability,1
+Special Ability = Summoned,inner
+Class = Fighter
+Race = Genie
+form = large
+penalty = none
+immunity = none
+Misc Options = none
+item = monsterMaridWaterJet
+item = monsterMaridWaterJet
+item = monsterMaridWaterJet
+attack = 4,8,0,attacks,
+Undead = none
+\(END)
+// MMII p84
+

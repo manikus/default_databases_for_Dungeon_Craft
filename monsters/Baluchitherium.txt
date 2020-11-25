@@ -1,0 +1,32 @@
+\(BEGIN)
+name = Baluchitherium
+icon file = icon_Baluchitherium.png,0,2,48,48,0,1,0
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathLarge.wav
+intelligence = 3
+armor class = 5
+movement rate = 12
+hit dice = 14.000000
+treat HD as hit points = yes
+hit dice bonus = 0
+THAC0 = 8
+magic resistance = 0
+size = large
+morale = 35
+experience point value = 5008
+Special Ability = monsterLevel,14
+Class = Fighter
+Race = Monster
+form = mammal + animal
+penalty = none
+immunity = none
+Misc Options = can be held/charmed
+item = none
+attack = 4,5,0,attacks,
+attack = 4,5,0,attacks,
+Undead = none
+\(END)
+// MM p9
+

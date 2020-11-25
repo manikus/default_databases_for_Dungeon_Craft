@@ -1,0 +1,17 @@
+\(BEGIN)
+name = spell_Barkskin
+[InvokeSpellOnTarget] = $VAR cls;
+-$VAR atk; // attacker
+-$VAR lvl;
+-cls = $SA_PARAM_GET();
+-atk = $IndexOf($AttackerContext());
+-lvl = $GET_CHAR_Lvl(atk,cls);
+-$IF (cls == "ranger") {lvl = lvl -# 7;};
+-$SET_CHARACTER_SA($TargetContext(),"IsBarkskinned",$GET_PARTY_TIME() +# lvl +# 4);
+-$SkillAdj($TargetContext(),"Save Vs BR","Barkskin","-","1");
+-$SkillAdj($TargetContext(),"Save Vs PP","Barkskin","-","1");
+-$SkillAdj($TargetContext(),"Save Vs PPDM","Barkskin","-","1");
+-$SkillAdj($TargetContext(),"Save Vs RSW","Barkskin","-","1");
+-$SkillAdj($TargetContext(),"Save Vs SP","Barkskin","-","1");
+\(END)
+

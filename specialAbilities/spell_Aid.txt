@@ -1,0 +1,26 @@
+\(BEGIN)
+name = spell_Aid
+[Dispel] = $SA_REMOVE();
+-$RUN_CHAR_SE_SCRIPTS($TargetContext(),"Dispel SE");
+[Dispel SE] = $REMOVE_SPELL_EFFECT($CharacterContext(),$GET_HOOK_PARAM(5));
+[InvokeSpellOnTarget] = $VAR atk; $VAR cls; $VAR adj; $VAR lvl; $VAR exp;
+-$VAR tgt; $VAR rdm; $VAR ohp; $VAR mhp; $VAR dif;
+-atk = $IndexOf($AttackerContext());
+-cls = $SA_PARAM_GET();
+-adj = $GET_MONSTERTYPE_SA($AttackerContext(),"casterLevel");
+-lvl = $GET_CHAR_Lvl(atk,cls) -# adj;
+-$SET_CHARACTER_SA($TargetContext(),"DispelLevel",lvl);
+-exp = $GET_PARTY_TIME() +# lvl +# 1;
+-$SET_CHARACTER_SA($TargetContext(),"IsAided",exp);
+-tgt = $IndexOf($TargetContext()); rdm = $RANDOM(8) +# 1;
+-ohp = $GET_CHAR_HITPOINTS(tgt);
+-mhp = $GET_CHAR_MAXHITPOINTS(tgt);
+-$SET_CHARACTER_SA($TargetContext(),"tempAidOldHP",ohp);
+-$SET_CHAR_HITPOINTS(tgt,ohp + rdm);
+-$IF ((ohp +# rdm) ># mhp)
+-	{
+-		$SET_CHARACTER_SA($TargetContext(),"tempAidOldMaxHP",mhp);
+-		$SET_CHAR_MAXHITPOINTS(tgt,ohp +# rdm);
+-	};
+\(END)
+

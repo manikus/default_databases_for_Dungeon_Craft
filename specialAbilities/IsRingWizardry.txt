@@ -1,0 +1,5 @@
+\(BEGIN)
+name = IsRingWizardry
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7, "Wearing Wizard Ring"); $SET_HOOK_PARAM( 6, ""); $RETURN 1;
+\(END)
+

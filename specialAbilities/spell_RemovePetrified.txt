@@ -1,0 +1,5 @@
+\(BEGIN)
+name = spell_RemovePetrified
+[InvokeSpellOnTarget] = $DELETE_CHARACTER_SA($TargetContext(),"IsPetrified");
+\(END)
+

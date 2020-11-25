@@ -1,0 +1,8 @@
+\(BEGIN)
+name = spell_GeasFlee
+[InvokeSpellOnTarget] = $VAR tgt; $VAR iq; $VAR me;
+-tgt = $IndexOf($TargetContext()); iq = $GET_CHAR_LIMITED_INT(tgt); 
+-me = $IndexOf($AttackerContext());
+-$IF (iq ># 1) {$SET_COMBATANT_SA($TargetContext(),"IsGeasFlee",me);};
+\(END)
+

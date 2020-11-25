@@ -1,0 +1,9 @@
+\(BEGIN)
+name = IsStuckInMud
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Stuck in Mud"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
+[ComputeDamage] = $RETURN $GET_CHAR_HITPOINTS($IndexOf($TargetContext())) +# 1;
+[Dispel] = $SA_REMOVE();
+[GetAdjMaxMovement] = $RETURN "0";
+[IsCombatReady] = $RETURN "N";
+\(END)
+

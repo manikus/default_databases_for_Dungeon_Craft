@@ -1,0 +1,40 @@
+\(BEGIN)
+name = Elf
+height = 2d6+48+(6*Male)
+weight = 3d11+67+((14+1d6)*Male)
+age = 5d6+100
+maxage = 4d100+350
+BaseMovement = 12
+AbilityRequirement = Strength 3/18(75)
+AbilityRequirement = Intelligence 8/18
+AbilityRequirement = Wisdom 3/18
+AbilityRequirement = Dexterity 7/19
+AbilityRequirement = Constitution 6/17
+AbilityRequirement = Charisma 8/18
+AllowedMultiClass = Fighter/Magic User
+AllowedMultiClass = Fighter/Thief
+AllowedMultiClass = Fighter/Magic User/Thief
+AllowedMultiClass = Magic User/Thief
+Special Ability = race_Elf,Elf
+ChangeClass = yes
+DwarfResistance = no
+GnomeResistance = no
+FindSecretDoor = 1
+FindSecretDoorSearching = 2
+Skill = Infravision,60
+Skill = SleepResistant,90
+Skill = MaxLevel$SYS$,40
+SkillAdjAbility = FighterLevelCaps,Strength,+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2
+SkillAdjAbility = MageLevelCaps,Intelligene,+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2
+SkillAdjRace = PickPockets,Elf,%,105
+SkillAdjRace = OpenLocks,Elf,%,95
+SkillAdjRace = MoveSilent,Elf,%,105
+SkillAdjRace = HideInShadows,Elf,%,110
+SkillAdjRace = HearNoise,Elf,%,105
+SkillAdjRace = TightropeWalking,Elf,%,110
+SkillAdjRace = RunningBroadJump,Elf,-,1
+SkillAdjRace = TumblingEvasion,Elf,%,105
+SkillAdjRace = TumblingFalling,Elf,%,105
+// Special Ability = race_RaceSuppress,"Y"
+\(END)
+

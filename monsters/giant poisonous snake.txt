@@ -1,0 +1,32 @@
+\(BEGIN)
+name = Giant Poisonous Snake
+icon file = icon_PoisonousSnake.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 1
+armor class = 5
+movement rate = 15
+hit dice = 4
+treat HD as hit points = yes
+hit dice bonus = 2
+THAC0 = 15
+magic resistance = 0
+size = large
+morale = 35
+experience point value = 480
+Special Ability = IsSnake,1
+Special Ability = monsterLevel,5
+Class = Fighter
+Race = Monster
+form = animal + snake + large
+penalty = none
+immunity = none
+Misc Options = none
+item = none
+attack = 3,1,0,bites,monsterPoisonSnake
+Undead = none
+\(END)
+// MM p88
+

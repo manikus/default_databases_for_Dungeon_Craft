@@ -1,0 +1,5 @@
+\(BEGIN)
+name = item_Noisy
+[CanReady] = $IF ($GET_COMBATANT_SA($CharacterContext(),"IsSilenced") != "-?-?-"){$RETURN "N";};
+\(END)
+

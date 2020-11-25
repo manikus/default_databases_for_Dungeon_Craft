@@ -1,0 +1,8 @@
+\(BEGIN)
+name = IsWithered
+[DoesAttackSucceed]= $VAR p5;
+-p5 = $GET_HOOK_PARAM(5);
+-$RETURN p5 -# 4;
+\(END)
+// this represents the withering of the weapon hand or arm
+

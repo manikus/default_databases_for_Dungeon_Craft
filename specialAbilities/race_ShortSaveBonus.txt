@@ -1,0 +1,22 @@
+\(BEGIN)
+name = race_ShortSaveBonus
+[CreateMonsterCombatant] = $VAR chr; // character
+-$VAR adj;
+-chr = $IndexOf($CharacterContext());
+-adj = $GET_CHAR_LIMITED_CON(chr) *# 2 /# 7;
+-$SkillAdj($CharacterContext(),"Save Vs BR","shortSaveBonus","-",adj);
+-$SkillAdj($CharacterContext(),"Save Vs PP","shortSaveBonus","-",adj);
+-$SkillAdj($CharacterContext(),"Save Vs PPDM","shortSaveBonus","-",adj);
+-$SkillAdj($CharacterContext(),"Save Vs RSW","shortSaveBonus","-",adj);
+-$SkillAdj($CharacterContext(),"Save Vs SP","shortSaveBonus","-",adj);
+[PostCreateCharacter] = $VAR chr; // character
+-$VAR adj;
+-chr = $IndexOf($CharacterContext());
+-adj = $GET_CHAR_LIMITED_CON(chr) *# 2 /# 7;
+-$SkillAdj($CharacterContext(),"Save Vs BR","shortSaveBonus","-",adj);
+-$SkillAdj($CharacterContext(),"Save Vs PP","shortSaveBonus","-",adj);
+-$SkillAdj($CharacterContext(),"Save Vs PPDM","shortSaveBonus","-",adj);
+-$SkillAdj($CharacterContext(),"Save Vs RSW","shortSaveBonus","-",adj);
+-$SkillAdj($CharacterContext(),"Save Vs SP","shortSaveBonus","-",adj);
+\(END)
+

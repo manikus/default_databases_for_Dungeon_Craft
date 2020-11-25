@@ -1,0 +1,11 @@
+\(BEGIN)
+name = IsConfused
+[CanCastSpells] = $RETURN "N";
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Confused");
+-$SET_HOOK_PARAM( 6,"");
+-$RETURN 1;
+[Dispel] = $SA_REMOVE();
+[GetAdjMaxMovement] = $RETURN "0";
+[IsCombatReady] = $RETURN "N";
+\(END)
+

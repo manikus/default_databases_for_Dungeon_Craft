@@ -1,0 +1,5 @@
+\(BEGIN)
+name = IsFastBoots
+[GetAdjMaxMovement] = $RETURN $GET_HOOK_PARAM(5) *# 2;
+\(END)
+

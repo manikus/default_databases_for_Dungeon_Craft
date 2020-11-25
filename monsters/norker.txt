@@ -1,0 +1,34 @@
+\(BEGIN)
+name = Norker
+icon file = icon_Norker.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 10
+armor class = 3
+movement rate = 9
+hit dice = 1.000000
+treat HD as hit points = yes
+hit dice bonus = 1
+THAC0 = 18
+magic resistance = 0
+size = medium
+morale = 30
+experience point value = 32
+Special Ability = IsPerson,monster
+Special Ability = monsterLevel,2
+Special Ability = monster_CombatantAlignment,evil
+Class = Fighter
+Race = Monster
+form = mammal
+penalty = DwarfTHAC0 + RangerDmg
+immunity = none
+Misc Options = can be held/charmed
+item = Club
+attack = 6,1,0,attacks,
+attack = 3,1,0,bites,
+Undead = none
+\(END)
+// FF p68
+

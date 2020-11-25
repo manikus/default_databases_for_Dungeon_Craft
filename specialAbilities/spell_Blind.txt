@@ -1,0 +1,11 @@
+\(BEGIN)
+name = spell_Blind
+[InvokeSpellOnTarget] = $VAR atk; // attacker
+-$VAR tgt; // target
+-atk = $IndexOf($AttackerContext());
+-tgt = $IndexOf($TargetContext());
+-$IF ($GET_CHARACTER_SA($TargetContext(),"saved")){$RETURN;};
+-$IF ($RANDOM(20) +# 1 <# $GET_CHAR_THAC0(atk) -# $GET_CHAR_AC(tgt)){$RETURN;};
+-$SET_CHARACTER_SA($TargetContext(),"IsBlind","Blind");
+\(END)
+

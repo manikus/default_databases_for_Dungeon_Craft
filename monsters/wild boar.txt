@@ -1,0 +1,31 @@
+\(BEGIN)
+name = Wild Boar
+icon file = icon_WildBoar.png,0,2,48,48,0,1,0
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 3
+armor class = 7
+movement rate = 15
+hit dice = 3.000000
+treat HD as hit points = yes
+hit dice bonus = 3
+THAC0 = 16
+magic resistance = 0
+size = medium
+morale = 35
+experience point value = 145
+Special Ability = monsterLevel,4
+Class = Fighter
+Race = Monster
+form = mammal + animal
+penalty = none
+immunity = none
+Misc Options = can be held/charmed
+item = none
+attack = 4,3,0,attacks,
+Undead = none
+\(END)
+// MM p11
+

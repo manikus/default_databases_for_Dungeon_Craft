@@ -1,0 +1,41 @@
+\(BEGIN)
+name = monster_RearClawRake2
+[InvokeSpellOnTarget] = $VAR atk; // attacker
+-$VAR tgt; // target
+-$VAR HP; // hit points
+-$VAR nm;
+-$VAR dmg;
+-$VAR i;
+-$VAR AC;
+-$VAR TH;
+-atk = $IndexOf($AttackerContext());
+-tgt = $IndexOf($TargetContext());
+-HP = $GET_CHAR_HITPOINTS(tgt);
+-$IF (HP <# 1) {$RETURN;};
+-$IF ($GET_COMBATANT_SA($AttackerContext(),"CombatRoundStart") ==# 1)
+-	{
+- 		i = 0;
+-		AC = $GET_CHAR_AC(tgt);
+-		TH = $GET_CHAR_THAC0(atk);
+-		$WHILE (i <# 2)
+-			{
+-				$IF($RANDOM(20) +# 1 >=# TH -# AC)
+-					{
+-						nm = $GET_CHAR_NAME(atk);
+-						$IF (nm == "Giant Lynx"){dmg = ($RANDOM(3) +# 1);};
+-						$IF (nm == "Leopard"||nm == "Mountain Lion"){dmg = ($RANDOM(4) +# 1);};
+-						$IF (nm == "Jaguar"||nm == "Weretiger"){dmg = ($RANDOM(4) +# 2);};
+-						$IF (nm == "Lion"){dmg = ($RANDOM(6) +# 2);};
+-						$IF (nm == "Spotted Lion"||nm == "Tiger"||nm == "Sabre-tooth Tiger"){dmg = ($RANDOM(4) +# $RANDOM(4) +# 2);};
+-						$SET_CHAR_HITPOINTS(tgt,HP -# dmg);
+-					};
+-				i = i +# 1;
+-			};
+-		$IF (HP<# 1)
+-			{
+-				$IF (HP <# "-9"){$SET_CHAR_STATUS(tgt,2);}
+-				$ELSE{$SET_CHAR_STATUS(tgt,9);};
+-			};
+-	};
+\(END)
+

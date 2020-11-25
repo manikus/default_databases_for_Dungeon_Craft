@@ -1,0 +1,4 @@
+\(BEGIN)
+name = spell_DeathSpell
+\(END)
+

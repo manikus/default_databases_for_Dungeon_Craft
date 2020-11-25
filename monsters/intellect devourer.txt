@@ -1,0 +1,38 @@
+\(BEGIN)
+name = Intellect Devourer
+icon file = icon_IntellectDevourer.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 13
+armor class = 4
+movement rate = 15
+hit dice = 6.000000
+treat HD as hit points = yes
+hit dice bonus = 6
+THAC0 = 13
+magic resistance = 0
+size = medium
+morale = 35
+experience point value = 1750
+Special Ability = monsterLevel,8
+Special Ability = monster_CombatantAlignment,evil
+Special Ability = elemental_ImmuneFire
+Special Ability = monster_WeaponDamageOnlyOne,monster
+Special Ability = monster_WeaponImmunity,3
+Class = Fighter
+Race = Monster
+form = none
+penalty = none
+immunity = vorpal weapon
+Misc Options = none
+item = none
+attack = 4,1,0,attacks,
+attack = 4,1,0,attacks,
+attack = 4,1,0,attacks,
+attack = 4,1,0,attacks,
+Undead = none
+\(END)
+// MM p54
+

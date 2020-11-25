@@ -1,0 +1,5 @@
+\(BEGIN)
+name = class_ClassSuppress
+[SelectCharacterClass] = $RETURN "Y";
+\(END)
+

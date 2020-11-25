@@ -1,0 +1,10 @@
+\(BEGIN)
+name = IsEnfeebled
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7, "Enfeebled"); $SET_HOOK_PARAM( 6, ""); $RETURN 1;
+[DoesAttackSucceed] = $VAR time; $VAR exp;
+-time = $GET_PARTY_TIME(); exp = $SA_PARAM_GET();
+-$IF (time ># exp) {$RETURN $SA_REMOVE();};
+-$IF ($GET_COMBATANT_SA($AttackerContext(),"IsEnfeebled") != "-?-?-")
+-	{$SET_COMBATANT_SA($TargetContext(),"IsEnfeebledHit",1);};
+\(END)
+

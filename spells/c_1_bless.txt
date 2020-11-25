@@ -1,0 +1,53 @@
+\(BEGIN)
+name = Bless
+casting sound = sound_Cast.wav
+cast msg = /c blesses /t.
+missile sound = none
+coverage sound = none
+hit sound = sound_hit_Bless.wav
+linger sound = none
+cast art = spell_cast_Priest.png,210,2,48,48,0,1,4,1,0,0
+missile art = none
+target cover art = none
+target hit art = spell_hit_Bless.png,150,2,48,48,0,1,4,1,0,0
+target linger art = none
+school = Cleric
+cast by = cleric
+can target friend = yes
+can target enemy = yes
+cumulative = no
+can memorize = yes
+allow scribe = yes
+auto scribe = yes
+in camp = yes
+in combat = yes
+can be dispelled = yes
+lingers = no
+linger affects once = no
+save versus = spell
+save result = none
+Special Ability = DamageMagical,spell
+Special Ability = StandardDisplaySpellEffect
+Special Ability = casterLevel,$cleric$0
+Special Ability = spell_Bless,cleric
+targeting type = areasquare
+target width = 5
+target height = 5
+target range = 6
+level = 1
+casting time = 10
+casting time units = initiative
+duration = 6
+duration units = rounds
+target duration = 0
+price = 0
+priority = 500
+spell effect 1 = $CHAR_MORALE,1,delta,target,yes
+activate script 1 = $VAR mySide;mySide \= $GET_COMBATANT_SA($AttackerContext(),"side");$IF (mySide !\= "-?-?-")  {   $IF (mySide !\=# $GET_COMBATANT_SA($TargetContext(),"side"))     {$RETURN;};   $IF ($VisualDistance($IndexOf($TargetContext()),$IndexOf($NEAREST_ENEMY_TO($TargetContext()))) <# 2)     {$RETURN;};  };$RETURN 1;
+savingThrowScript = 
+savingThrowSucceededScript = 
+savingThrowFailedScript = 
+begin script = 
+end script = 
+\(END)
+

@@ -1,0 +1,98 @@
+// cleric spell items by level
+// level 1
+//	monsterClericBless
+//	monsterClericCauseLightWounds
+//	monsterClericCureLightWounds
+//	monsterClericCurse
+//	monsterClericProtectionfromEvil
+//	monsterClericProtectionFromGood
+//	monsterClericResistCold
+// level 2
+//	monsterClericFindTraps
+//	monsterClericHoldPerson
+//	monsterClericResistFire
+//	monsterClericSilence
+// level 3
+//	monsterClericCauseBlindness
+//	monsterClericCauseDisease
+//	monsterClericDispelMagic
+//	monsterClericPrayer
+// level 4
+//	monsterClericCauseSeriousWounds
+//	monsterClericCureSeriousWounds
+//	monsterClericPoison
+//	monsterClericSticksToSnakes
+// level 5
+//	monsterClericCauseCriticalWounds
+//	monsterClericCureCriticalWounds
+//	monsterClericFlameStrike
+//	monsterClericSlayLiving
+// level 6
+//	monsterClericBladeBarrier
+//	monsterClericHarm
+//	monsterClericHeal
+// level 7
+//	monsterClericDestruction
+//	monsterClericEnergyDrain
+//
+// druid spell items by level
+// level 1
+//	monsterDruidEntangle
+//	monsterDruidFaerieFire
+//
+// magic user spell items by level
+// level 1
+//	monsterMageBurningHands
+//	monsterMageCharmPerson
+//	monsterMageDetectMagic
+//	monsterMageEnlarge
+//	monsterMageMagicMissile
+//	monsterMageReduce
+//	monsterMageShield
+//	monsterMageShockingGrasp
+//	monsterMageSleep
+// level 2
+//	monsterMageDetectInvisibility
+//	monsterMageInvisibility
+//	monsterMageKnock
+//	monsterMageMirrorImage
+//	monsterMageRayofEnfeeblement
+//	monsterMageStinkingCloud
+// level 3
+//	monsterMageDispelMagic
+//	monsterMageFireball
+//	monsterMageHaste
+//	monsterMageHoldPerson
+//	monsterMageLightningBolt
+//	monsterMageProtectionfromEvil10Radius
+//	monsterMageSlow
+// level 4
+//	monsterMageBestowCurse
+//	monsterMageCharmMonster
+//	monsterMageConfusion
+//	monsterMageFear
+//	monsterMageFireShield
+//	monsterMageFumble
+//	monsterMageIceStorm
+//	monsterMageMinGlobeofInvulnerability
+// level 5
+//	monsterMageCloudkill
+//	monsterMageConeofCold
+//	monsterMageFeeblemind
+//	monsterMageFireTouch
+//	monsterMageHoldMonster
+// level 6
+//	monsterMageDeath
+//	monsterMageDisintegrate
+//	monsterMageFleshtoStone
+//	monsterMageGlobeofInvulnerability
+// level 7
+//	monsterMageDelayedBlastFireball
+// level 8
+//	monsterMageMassCharm
+//	monsterMageMindBlank
+//	monsterMageOttosIrresistibleDance
+// level 9
+//	monsterMageMeteorSwarm
+//	monsterMagePowerWordKill
+

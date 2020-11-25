@@ -1,0 +1,5 @@
+\(BEGIN)
+name = spell_Unlock
+[OpenLocks] = $RETURN "Y";
+\(END)
+

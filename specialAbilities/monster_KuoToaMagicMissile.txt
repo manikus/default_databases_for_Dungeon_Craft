@@ -1,0 +1,7 @@
+\(BEGIN)
+name = monster_KuoToaMagicMissile
+[ComputeSpellDamage] = $IF ($SpellContext() == "Magic Missile"){$RETURN "1";};
+-$IF ($SpellContext() == "Magic Missile|Ranger"){$RETURN "1";};
+-$IF ($SpellContext() == "monsterMageMagicMissile"){$RETURN "1";};
+\(END)
+

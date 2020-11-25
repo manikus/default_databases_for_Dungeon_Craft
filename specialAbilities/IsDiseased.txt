@@ -1,0 +1,24 @@
+\(BEGIN)
+name = IsDiseased
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7,$SA_PARAM_GET());
+-$SET_HOOK_PARAM( 6,"");
+-$RETURN 1;
+[ComputeDamage] = $VAR tgt; // target
+-$VAR CHA;
+-$VAR spell;
+-$VAR spellCount;
+-tgt = $IndexOf($CharacterContext());
+-CHA = $GET_CHAR_LIMITED_CHA(tgt);
+-spell = "$Cure Light Wounds$Cure Serious Wounds$Cure Critical Wounds$Cure Light Wounds|Druid$Cure Serious Wounds|Druid$Cure Critical Wounds|Druid";
+-spellCount = $DelimitedStringCount(spell);
+-$SET_CHARACTER_SA($TargetContext(),"diseasedCHA", CHA);
+-$MODIFY_CHAR_ATTRIBUTE(tgt, "CHA", CHA -# 2, "MINUTES", 999999999, "Reduction caused by Disease", "SPELL Disease");
+-$IF ($SpellContext() == $DelimitedStringSubstring(spell,spellCount)){$RETURN 0;};
+-$IF ($SpellContext() == "Cure Disease")
+-	{
+-		$DELETE_CHARACTER_SA($TargetContext(), "IsDiseased");
+-		$MODIFY_CHAR_ATTRIBUTE(tgt, CHA, $SA_CHARACTER_GET("diseasedCHA"), "MINUTES", 999999999, "reset due to Cure Diease", "SPELL Cure Disease");
+-		$DELETE_CHARACTER_SA($TargetContext(), "diseasedCHA");
+-	};
+\(END)
+

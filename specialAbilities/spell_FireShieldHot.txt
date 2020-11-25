@@ -1,0 +1,20 @@
+\(BEGIN)
+name = spell_FireShieldHot
+[Dispel] = $SA_REMOVE();
+-$RUN_CHAR_SE_SCRIPTS($TargetContext(),"Dispel SE");
+[Dispel SE] = $REMOVE_SPELL_EFFECT($CharacterContext(),$GET_HOOK_PARAM(5));
+[InvokeSpellOnTarget] = $VAR exp; // expiration time
+-$VAR atk; // attacker
+-$VAR cls;
+-$VAR lvl;
+-atk = $IndexOf($AttackerContext());
+-cls = $SA_PARAM_GET();
+-lvl = $GET_CHAR_Lvl(atk,cls);
+-$SET_CHARACTER_SA($TargetContext(),"DispelLevel",lvl);
+-exp = $GET_PARTY_TIME();
+-exp = exp +# 2 +# lvl;
+-$RETURN $SET_CHARACTER_SA($TargetContext(),"IsFireShieldedHot", exp);
+[RemoveLinger] = $RETURN "TARGETS";
+[SpellDuration] = $SA_PARAM_SET($GET_HOOK_PARAM(5));
+\(END)
+

@@ -1,0 +1,119 @@
+// BaseClass database file
+// The above line must appear exactly as shown."// BaseClass database file"
+//
+// name (text)
+//	Names should not conflict with any of the names in the
+//	class database, items database, spells database, races
+//	database, or abilities database, all baseclasses start
+//	with a lower case letter and classes with an upper case letter.
+//	eg:		name = gnome
+//
+// BonusXP (ability name, mod, bonus1-bonus25)
+//	BonusXP is used to determine if a baseclass gains a bonus
+//	to Experience Points depending on the score for the listed
+//	ability. Ability name is the name of an ability, mod is how
+//	to change the XP such as %, bonus1 through bonus25 are the
+//	values at each ability score.
+//	default is blank
+//	eg:		BonusXP = Intelligence,%,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,10,10,10,10,10,10,10,10
+//
+// THAC0 (level1-level40)
+//	THAC0 stands for "to hit armor class 0" and is a list of 40
+//	integers representing that number at each level of the baseclass
+//	eg:		THAC0 = 20,20,20,18,18,18,16,16,16,14,14,14,12,12,12,10,10,10,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9
+//
+// AbilityRequirement (ability name, min/max)
+//	AbilityRequirement is the name of an ability and the minimum
+//	and maximum numbers allowed for the baseclass.
+//	A separate instance is used for each ability.
+//	eg:		AbilityRequirement = Wisdom 9/18
+//
+// Allowed Race (race name)
+//	The Allowed Race is the name of the race or races from the
+//	races database that is allowed for this baseclass.
+//	Each race is listed with a different instance of the keyword
+//	eg:		Allowed Race = Monkey
+//			Allowe Race = Dog
+//
+// Allowed Alignment (alignment, any)
+//	Possible Allowed Alignment options are Lawful Good, Neutral Good,
+//	Chaotic Good, Lawful Neutral, True Neutral, Chaotic Neutral,
+//	Lawful Evil, Neutral Evil, Chaotic Evil; or any if all are allowed
+//	eg:		Allowed Alignment = Lawful Good
+//			Allowed Alignment = Lawful Evil
+//
+// ExpLevel (integer)
+//	Minimum number of experience points for each character level,
+//	starting with level 1, up to level 40, in order.
+//	One level per line.
+//	eg:		ExpLevel = 65420
+//
+// Base Spell Levels (level, spell school name, spell level1-spell level 9)
+//	The keyword Base Spell Level are the spells at a given level
+//	for a given spell school allowed. After name of school, up
+//	to 9 integers may be used
+//	eg:		Base Spell Levels = 4,Cleric,3,2,1
+//
+// MaxNumSpellsByPrime (spell school name, ability name, spell-spell25)
+//	MaxSpellLevelByPrime determines the highest spell level a
+//	spellcaster may learn based on an ability score. Spell school,
+//	ability, 25 integers are the order for this keyword
+//	eg:		MaxSpellLevelByPrime = Cleric,Wisdom,0,0,0,0,0,0,0,0,5,5,5,5,5,5,5,5,6,7,7,7,7,7,7,7,7
+//
+// MaxSpellLevelByPrime (spell school name, ability name, level1-level25)
+//	MaxSpellLevelByPrime determines the maximum spell level
+//	that a baseclass may have for a paritcular score of the
+//	listed ability.
+//	eg		MaxSpellLevelByPrime = Cleric,Wisdom,0,0,0,0,0,0,0,0,5,5,5,5,5,5,5,5,6,7,7,7,7,7,7,7,7
+//
+// HitDice (level, # of die, # of sides per die, bonus)
+//	HitDice determines the Hit Points given to a baseclass at
+//	a particular level. The first number is the level, the second
+//	is the number of dice, the third number is the sides per dice,
+//	the fourth number is the set number of points (bonus)
+//	eg:		HitDice = 1,1,10,0
+//
+//	Skill (text)
+//	Skills consist of the skill name and the score at which
+//	the skill starts.
+//	eg:		Skill = Swim,20
+//
+// SkillAdjAbility (skill name,ability name, mod, num1-num25)
+//	SkillAdjAbility allows modification of a skill based upon
+//	an ability. Name, ability, type of modifier, score
+//	modifier for each of the 25 ability scores
+//	eg:		SkillAdjAbility = Read,Intelligence,%,0,0,0,0,0,0,0,0,85,90,95,100,100,100,100,100,105,110,115,115,115,115,115,115,115
+//
+// SkillAdjBaseclass (skill name, mod, adj1-adj40)
+//	SkillAdjBaseclass asjusts the named skill for this database.
+//	For each entry, skill name, type of modification and 
+//	modification values for level 1 through 40 are listed.
+//	eg:		SkillAdjBaseclass = Save Vs RSW,cleric,-,0,0,0,1,1,1,3,3,3,4,4,4,5,5,5,6,6,6,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8
+//
+// SkillAdjRace (skill name, race name, mod, value)
+//	SkillAdjRace allows modification of skills per each
+//	race, by listing the name of the skill, name of the
+//	race, percentage sign and number to modify it by
+//	eg:		SkillAdjRace = MaxLevel$SYS$,Half-Elf,\=,5
+//
+// SpellBonusAbility (ability name)
+//	If the baseclass gets bonus spells, this is the ability
+//	used to determine the bonus. If blank, no bonus spells.
+//	default is blank.
+//	eg:		SpellBonusAbility = Wisdom
+//
+// BonusSpells (ability #, bonus#, level #,2nd bonus #, 2nd level #)
+//	If bonus spells are allowed for the baseclass, this keyword
+//	determines the score and the bonus spells for that ability
+//	score using integer pairs. In the integer pairs, the first
+//	is the level of the spell, the second is the quantity.
+//	eg:		BonusSpells = 13,1,1
+//
+// Special Ability (SA name)
+//	each listed Special Ability corresponds to
+//	the Special Ability database.
+//	Each Special Ability is listed on a new line
+//	with a separate instance of the keyword.
+//	eg:		Special Ability = baseclass_NameSuppress,"Y"
+//
+

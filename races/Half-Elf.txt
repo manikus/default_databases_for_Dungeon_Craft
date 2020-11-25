@@ -1,0 +1,43 @@
+\(BEGIN)
+name = Half-Elf
+height = 2d7+54+(4*Male)
+weight = 3d10+85+((22+1d12)*Male)
+age = 1d6+15
+maxage = 3d20+125
+BaseMovement = 12
+AbilityRequirement = Strength 3/18(90)
+AbilityRequirement = Intelligence 4/18
+AbilityRequirement = Wisdom 3/18
+AbilityRequirement = Dexterity 6/18
+AbilityRequirement = Constitution 6/18
+AbilityRequirement = Charisma 3/18
+AllowedMultiClass = Cleric/Fighter
+AllowedMultiClass = Cleric/Fighter/Magic User
+AllowedMultiClass = /#Cleric/Ranger
+AllowedMultiClass = Cleric/Magic User
+AllowedMultiClass = Fighter/Magic User
+AllowedMultiClass = Fighter/Thief
+AllowedMultiClass = Fighter/Magic User/Thief
+AllowedMultiClass = Magic User/Thief
+Special Ability = race_HalfElf,Half-Elf
+ChangeClass = yes
+DwarfResistance = no
+GnomeResistance = no
+FindSecretDoor = 1
+FindSecretDoorSearching = 2
+Skill = Infravision,60
+Skill = SleepResistant,30
+Skill = MaxLevel$SYS$,40
+SkillAdjAbility = ClericLevelCaps,Wisdom,+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2
+SkillAdjAbility = FighterLevelCaps,Strength,+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2
+SkillAdjAbility = MageLevelCaps,Intelligence,+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2
+SkillAdjAbility = RangerLevelCaps,Strength,+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2
+SkillAdjAbility = RangerLevelCaps,Intelligence,+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2
+SkillAdjAbility = RangerLevelCaps,Wisdom,+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2
+SkillAdjRace = PickPocketsm,Half-Elf,%,110
+SkillAdjRace = HideInShadows,Half-Elf,%,105
+SkillAdjRace = TightropeWalking,Half-Elf,%,105
+SkillAdjRace = TumblingAttack,Half-Elf,%,105
+// Special Ability = race_RaceSuppress,"Y"
+\(END)
+

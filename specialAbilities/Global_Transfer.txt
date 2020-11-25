@@ -1,0 +1,9 @@
+\(BEGIN)
+name = Global_Transfer
+[EachPartyMember] = $ForEachPossession($CharacterContext(), "item_DrowEquipment");
+-$RETURN "1";
+[TransferModule] = $ForEachPartyMember("Global_Transfer", "EachPartyMember");
+-$IF ($GET_HOOK_PARAM(5) ==# "1"){$SET_HOOK_PARAM(6,"Your drow equipment dissolves.");};
+-$RETURN;
+\(END)
+

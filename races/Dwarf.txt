@@ -1,0 +1,41 @@
+\(BEGIN)
+name = Dwarf
+weight = 4d9+100+((30+1d4)*Male)
+height = 2d5+40+(2d2*Male)
+age = 5d6+40
+maxage = 2d100+250
+BaseMovement = 6
+AbilityRequirement = Strength 8/18(99)
+AbilityRequirement = Intelligence 3/18
+AbilityRequirement = Wisdom 3/18
+AbilityRequirement = Dexterity 3/17
+AbilityRequirement = Constitution 11/19
+AbilityRequirement = Charisma 3/16
+AllowedMultiClass = Fighter/Thief
+Special Ability = race_ShortSaveBonus,12
+ChangeClass = yes
+DwarfResistance = yes
+GnomeResistance = no
+FindSecretDoor = 0
+FindSecretDoorSearching = 1
+Skill = DetectGrade,75
+Skill = DetectApproxDepth,50
+Skill = Infravision,60
+Skill = DetectNewConstruction,75
+Skill = DetectSliding,67
+Skill = MaxLevel$SYS$,40
+SkillAdjAbility = FighterLevelCaps,Strength,+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2
+SkillAdjRace = OpenLocks,Dwarf,%,110
+SkillAdjRace = FindTraps,Dwarf,%,115
+SkillAdjRace = ClimbWalls,Dwarf,%,90
+SkillAdjRace = ReadLanguages,Dwarf,%,95
+SkillAdjRace = TightropeWalking,Dwarf,%,105
+SkillAdjRace = PoleVault,Dwarf,-,2
+SkillAdjRace = HighJump,Dwarf,-,1
+SkillAdjRace = BroadJump,Dwarf,-,2
+SkillAdjRace = RunningBroadJump,Dwarf,-,3
+SkillAdjRace = TumblingAttack,Dwarf,%,110
+SkillAdjRace = TumblingEvasion,Dwarf,%,105
+// Special Ability = race_RaceSuppress,"Y"
+\(END)
+

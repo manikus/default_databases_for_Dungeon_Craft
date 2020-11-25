@@ -1,0 +1,8 @@
+\(BEGIN)
+name = IsFeebleminded
+[CanCastSpells] = $RETURN "N";
+[CanKnowSpell] = $RETURN "N";
+[CanMemorizeSpells] = $RETURN "N";
+[IsCombatReady] = $RETURN "N";
+\(END)
+

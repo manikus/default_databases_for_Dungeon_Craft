@@ -1,0 +1,18 @@
+\(BEGIN)
+name = Magic User/Thief
+HitDiceBonus = Constitution,0,0,-2,-1,-1,-1,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2,2,2
+HitDiceLevelBonus = magicUser,Constitution,0,0,-2,-1,-1,-1,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2,2,2
+HitDiceLevelBonus = thief,Constitution,0,0,-2,-1,-1,-1,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2,2,2
+HitDiceBaseclass = *Average*
+StrengthBonusDice = 
+Starting Equipment = Sling
+Starting Equipment = Leather Armor
+Starting Equipment = Brooad Sword
+baseclass = magicUser
+baseclass = thief
+Special Ability = class_MageScribe,magicUser
+Special Ability = class_baseName,$magicUser$thief
+Special Ability = class_ThievingSkills,$thief
+// Special Ability = class_ClassSuppress,"Y"
+\(END)
+

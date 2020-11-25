@@ -1,0 +1,40 @@
+\(BEGIN)
+name = Green Dragon
+icon file = icon_GreenDragon.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathLarge.wav
+intelligence = 11
+armor class = 2
+movement rate = 9
+hit dice = 40.000000
+treat HD as hit points = no
+hit dice bonus = 0
+THAC0 = 12
+magic resistance = 0
+size = large
+morale = 40
+experience point value = 1400
+Special Ability = IsSeeingInvisible,dragon
+Special Ability = monsterLevel,8
+Special Ability = monster_AuraDragon,Green Dragon
+Special Ability = monster_CombatantAlignment,evil
+Special Ability = IsImmuneDragonBreathWeapon,$poison
+Special Ability = monster_DragonSavingThrow,second
+Class = Fighter/Magic User
+Race = Monster
+form = large
+penalty = none
+immunity = vorpal weapon
+Misc Options = can be held/charmed
+item = monsterDragonBreathPoison
+item = monsterDragonBreathPoison
+item = monsterDragonBreathPoison
+attack = 6,1,0,attacks,
+attack = 6,1,0,attacks,
+attack = 10,2,0,bites,
+Undead = none
+\(END)
+// MM p33
+

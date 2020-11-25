@@ -1,0 +1,55 @@
+\(BEGIN)
+name = Death Spell|MonsterMage
+casting sound = sound_Cast.wav
+cast msg = 
+missile sound = none
+coverage sound = none
+hit sound = none
+linger sound = none
+cast art = spell_cast_MU.png,210,2,48,48,0,1,0,1,0,0
+missile art = spell_missile_MU.png,100,4,48,48,0,1,0,1,0,0
+target cover art = none
+target hit art = none
+target linger art = none
+school = Monster
+cast by = magicUser
+can target friend = yes
+can target enemy = yes
+cumulative = yes
+can memorize = no
+allow scribe = no
+auto scribe = no
+in camp = no
+in combat = yes
+can be dispelled = no
+lingers = no
+linger affects once = no
+save versus = spell
+save result = none
+Special Ability = DamageMagical,death
+Special Ability = StandardDisplaySpellEffect
+Special Ability = casterLevel,$magicUser$0
+Special Ability = spellClass,magicUser
+Special Ability = spell_Attack,1
+Special Ability = spell_DeathSpell,magicUser
+targeting type = areasquare
+target width = level/2
+target height = level/2
+target range = level
+level = 6
+casting time = 6
+casting time units = initiative
+duration = 0
+duration units = instantaneous
+target duration = 0
+price = 0
+priority = 500
+spell effect 1 = $CHAR_HITPOINTS,-10,absolute,target,yes
+activate script 1 = $VAR tgt;$VAR status;$VAR opr;$VAR rnd;$VAR tNom;$VAR tlvl;$VAR lvl;$VAR i;$VAR bclass;$VAR cls;$VAR pv;$VAR pvList;tgt \= $IndexOf($TargetContext());status \= $GET_CHAR_STATUS(tgt);$IF (status ># 1) {$RETURN;};$IF ($GET_HASDEATHIMMUNITY($TargetContext())) {$RETURN;};opr \= $GET_COMBATANT_SA($AttackerContext(),"CombatRoundStart1");$IF (opr  \=\= "-?-?-")  {   $SET_COMBATANT_SA($AttackerContext(),"CombatRoundStart1", 5);   rnd \= $RANDOM(20) +# $RANDOM(20) +# $RANDOM(20) +# $RANDOM(20) +# 4;   $SET_COMBATANT_SA($AttackerContext(),"PointPool", rnd);  };rnd \= $GET_COMBATANT_SA($AttackerContext(),"PointPool");$IF (rnd <# 1) {$RETURN;};tNom \= $GET_CHAR_NAME(tgt);tlvl \= $GET_MONSTERTYPE_SA(tNom,"monsterlevel");$IF (tlvl !\= "-?-?-") {lvl \= tlvl;}$ELSE  {   lvl \= 0;   i \= 0;   bclass \= "$fighter$cleric$ranger$paladin$magicUser$thief$druid";   cls \= 0;   $WHILE (cls !\= "")     {      cls \= $DelimitedStringSubstring(bclass,i);      tlvl \= $GET_CHAR_Lvl(tgt,cls);      $IF (tlvl ># lvl) {lvl \= tlvl;};      i \= i +# 1;     };  };$IF (lvl ># 9 ){$RETURN;};pvList \= "$1$1$3$3$3$10$10$10$20$20";pv \= $DelimitedStringSubstring(pvList,lvl);$IF (rnd >\=# pv)  {   rnd \= rnd -# pv;   $SET_COMBATANT_SA($AttackerContext(),"PointPool",rnd);   $RETURN 1;  };
+savingThrowScript = 
+savingThrowSucceededScript = 
+savingThrowFailedScript = 
+begin script = 
+end script = 
+\(END)
+

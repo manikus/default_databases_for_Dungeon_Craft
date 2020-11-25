@@ -1,0 +1,5 @@
+\(BEGIN)
+name = CombatRoundStart
+[StartCombatRound] = $SA_PARAM_SET("0");
+\(END)
+

@@ -1,0 +1,33 @@
+\(BEGIN)
+name = Grizzly Bear
+icon file = icon_GrizzlyBear.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 3
+armor class = 6
+movement rate = 12
+hit dice = 5.000000
+treat HD as hit points = yes
+hit dice bonus = 5
+THAC0 = 13
+magic resistance = 0
+size = large
+morale = 45
+experience point value = 450
+Special Ability = monsterLevel,7
+Class = Fighter
+Race = Monster
+form = mammal + animal
+penalty = none
+immunity = none
+Misc Options = can be held/charmed
+item = none
+attack = 6,1,0,attacks,monsterBearHug1
+attack = 6,1,0,attacks,monsterBearHug2
+attack = 8,1,0,bites,
+Undead = none
+\(END)
+// MM p9
+

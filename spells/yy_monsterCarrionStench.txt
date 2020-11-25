@@ -1,0 +1,46 @@
+\(BEGIN)
+name = monsterCarrionStench
+casting sound = none
+cast msg = 
+missile sound = none
+coverage sound = none
+hit sound = none
+linger sound = none
+cast art = none
+missile art = none
+target cover art = none
+target hit art = none
+target linger art = none
+school = Monster
+cast by = magicUser
+can target friend = yes
+can target enemy = yes
+cumulative = yes
+can memorize = no
+allow scribe = no
+auto scribe = no
+in camp = no
+in combat = yes
+can be dispelled = no
+lingers = no
+linger affects once = no
+save versus = Par/Pois/DM
+save result = negates
+Special Ability = DamageNonMagical,poison
+targeting type = self
+level = 1
+casting time = 0
+casting time units = immediate
+duration = 0
+duration units = instantaneous
+target duration = 0
+price = 0
+priority = 500
+spell effect 1 = none
+savingThrowScript = 
+savingThrowSucceededScript = 
+savingThrowFailedScript = $SET_COMBATANT_SA($TargetContext(),"IsCarrionStenchable",1);
+begin script = 
+end script = 
+\(END)
+

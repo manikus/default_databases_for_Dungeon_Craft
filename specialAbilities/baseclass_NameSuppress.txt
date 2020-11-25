@@ -1,0 +1,11 @@
+\(BEGIN)
+name = baseclass_NameSuppress
+[DisplayCharacterBaseclass] = $VAR par;
+-par = $SA_PARAM_GET();
+-$IF (par != "-?-?-")
+-	{
+-		$SET_HOOK_PARAM(5,"Level/XP");
+-		$RETURN;
+-	};
+\(END)
+

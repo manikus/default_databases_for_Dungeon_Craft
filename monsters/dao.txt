@@ -1,0 +1,39 @@
+\(BEGIN)
+name = Dao
+icon file = icon_Dao.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 12
+armor class = 3
+movement rate = 9
+hit dice = 8
+treat HD as hit points = yes
+hit dice bonus = 3
+THAC0 = 12
+magic resistance = 0
+size = large
+morale = 35
+experience point value = 1242
+Special Ability = monsterLevel,9
+Special Ability = elemental_ImmuneStone
+Special Ability = IsDetectingGood
+Special Ability = IsDetectingMagic
+Special Ability = IsInvisible
+Special Ability = monster_CombatantAlignment,evil
+Special Ability = monster_DaoDoubleHolyWater
+Special Ability = Summoned,inner
+Class = Fighter
+Race = Monster
+form = none
+penalty = none
+immunity = none
+Misc Options = can be held/charmed
+item = monsterWallOfStone
+item = monsterTransmuteRockToMud
+attack = 6,3,0,attacks,
+Undead = none
+\(END)
+// MMII p32
+

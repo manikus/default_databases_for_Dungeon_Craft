@@ -1,0 +1,11 @@
+\(BEGIN)
+name = monster_CombatantAlignment
+[CreateMonsterCombatant] = $VAR param;
+-$VAR char;
+-param = $SA_PARAM_GET();
+-char = $IndexOf($CharacterContext());
+-$IF (param == "good"){$SET_CHAR_ALIGNMENT(char,1);};
+-$IF (param == "neutral"){$SET_CHAR_ALIGNMENT(char,4);};
+-$IF (param == "evil"){$SET_CHAR_ALIGNMENT(char,7);};
+\(END)
+

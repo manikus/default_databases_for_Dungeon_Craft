@@ -1,0 +1,8 @@
+\(BEGIN)
+name = _IsAuraed
+[CharDisplayStatus] = $DEBUG ("IsAuraed");
+-$SET_HOOK_PARAM( 7, "Auraed");
+-$SET_HOOK_PARAM( 6, "");
+-$RETURN 1;
+\(END)
+

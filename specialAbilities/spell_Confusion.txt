@@ -1,0 +1,64 @@
+\(BEGIN)
+name = spell_Confusion
+[Dispel] = $SA_REMOVE();
+-$RUN_CHAR_SE_SCRIPTS($TargetContext(),"Dispel SE");
+[Dispel SE] = $REMOVE_SPELL_EFFECT($CharacterContext(),$GET_HOOK_PARAM(5));
+[InvokeSpellOnTarget] = $VAR atk; // attacker
+-$VAR tgt; // target
+-$VAR monName;
+-$VAR monLvl;
+-$VAR opr; // once per round
+-$VAR rnd;
+-$VAR rnd2;
+-$VAR cls;
+-atk = $IndexOf($AttackerContext());
+-tgt = $IndexOf($TargetContext());
+-cls = $SA_PARAM_GET();
+-$SET_CHARACTER_SA($TargetContext(),"DispelLevel", $GET_CHAR_Lvl(atk,cls));
+-$IF ($GET_CHAR_STATUS(tgt) != 0){$RETURN;};
+-monName = $GET_CHAR_NAME(tgt);
+-$IF ($GET_MONSTERTYPE_SA(monName,"IsConfused") != "-?-?-" ||
+-$GET_CHARACTER_SA($TargetContext(),"IsConfused") != "-?-?-"){$RETURN;};
+-monLvl = $GET_MONSTERTYPE_SA(monName,"monsterLevel");
+-$IF (monLvl != "-?-?-")
+-	{
+-		$IF (monLvl >=# 1){$SkillAdj($TargetContext(), "Save Vs SP", "spell", "B", 17 );};
+-		$IF (monLvl >=# 3){$SkillAdj($TargetContext(), "Save Vs SP", "spell", "B", 16 );};
+-		$IF (monLvl >=# 5){$SkillAdj($TargetContext(), "Save Vs SP", "spell", "B", 14 );};
+-		$IF (monLvl >=# 7){$SkillAdj($TargetContext(), "Save Vs SP", "spell", "B", 13 );};
+-		$IF (monLvl >=# 9){$SkillAdj($TargetContext(), "Save Vs SP", "spell", "B", 11 );};
+-		$IF (monLvl >=# 11){$SkillAdj($TargetContext(), "Save Vs SP", "spell", "B", 10 );};
+-		$IF (monLvl >=# 13){$SkillAdj($TargetContext(), "Save Vs SP", "spell", "B", 8 );};
+-		$IF (monLvl >=# 15){$SkillAdj($TargetContext(), "Save Vs SP", "spell", "B", 7 );};
+-		$IF (monLvl >=# 17){$SkillAdj($TargetContext(), "Save Vs SP", "spell", "B", 6 );};
+-	};
+-opr = $GET_CHARACTER_SA($AttackerContext(), "CombatRoundStart");
+-$IF (opr  == "-?-?-")
+-	{
+-		$SET_CHARACTER_SA( $AttackerContext(), "CombatRoundStart",5);
+-		rnd = (($RANDOM(4) +# 1) +# ($RANDOM(4) +# 1));
+-		$SET_CHARACTER_SA( $AttackerContext(), "PointPool", rnd);
+-	};
+-opr = $GET_COMBATANT_SA($AttackerContext(), "CombatRoundStart");
+-$IF (opr  <# 2)
+-	{
+-		$SET_CHARACTER_SA( $AttackerContext(), "CombatRoundStart", 3);
+-		rnd = (($RANDOM(4) +# 1) +# ($RANDOM(4) +# 1));
+-		$SET_CHARACTER_SA( $AttackerContext(), "PointPool", rnd);
+-	};
+-rnd = $GET_COMBATANT_SA( $AttackerContext(), "PointPool");
+-$IF (rnd <# 1) {$RETURN;};
+-rnd2 = ($RANDOM(20) +# 1);
+-$IF ($SkillAdj($TargetContext(), "Save Vs SP", "spell", "F", "") ># rnd2)
+-	{
+-		$SET_CHARACTER_SA($TargetContext(),"IsConfusedExtended",1);
+-		$SET_CHARACTER_SA($TargetContext(),"CombatRoundStart",1);
+-	};
+-rnd = $RANDOM(10) +# 1;
+-$IF (rnd ==# 1){$SetFriendly(tgt,1);$RETURN;};
+-$IF (rnd <=# 6){$SET_CHARACTER_SA($TargetContext(),"IsConfused","Confused");$RETURN;};
+-$IF (rnd ==# 7){$SetFriendly(tgt,1);$RETURN;};
+-$IF (rnd ==# 8){$SetFriendly(tgt,2);$RETURN;};
+-$SetFriendly(tgt,2);
+\(END)
+

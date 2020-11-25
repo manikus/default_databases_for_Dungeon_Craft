@@ -1,0 +1,7 @@
+\(BEGIN)
+name = monster_ImmuneSpellsIronGolem
+[DoesSpellAttackSucceed] = $IF ($SA_SPELL_GET("DamageMagical") == "electricity")
+-  {$SET_COMBATANT_SA($TargetContext(),"IsSlow",$GET_PARTY_TIME() +# 3);}
+-$ELSE {$RETURN "N";};
+\(END)
+

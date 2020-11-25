@@ -1,0 +1,46 @@
+\(BEGIN)
+name = spell_MassCharm
+[InvokeSpellOnTarget] = $VAR side;  // caster's side
+-$VAR atk; // attacker
+-$VAR tgt; // target
+-$VAR clvl;  // caster level
+-$VAR nm;  // target nm
+-$VAR lvl;   // target level
+-$VAR tlvl;  // temporary target level
+-$VAR bCls;
+-$VAR cls;
+-$VAR opr;   //once per round
+-$VAR rnd;
+-opr = $GET_CHARACTER_SA($AttackerContext(),"CombatRoundStart");
+-$IF (opr == "-?-?-" || opr ==# 0)
+-	{
+-		$SET_CHARACTER_SA($AttackerContext(),"CombatRoundStart",5);
+-		$SET_CHARACTER_SA($AttackerContext(),"PointPool",clvl *# 2);
+-	};
+-rnd = $GET_CHARACTER_SA($AttackerContext(),"PointPool");
+-$IF (rnd <# 1) {$RETURN;};
+-$IF ($GET_CANBEHELDORCHARMED($TargetContext()) != 1) {$RETURN;};
+-side = $GET_CHARACTER_SA($AttackerContext(), "side");
+-$IF ($GET_CHARACTER_SA($TargetContext(), "side") ==# side) {$RETURN;};
+-atk = $IndexOf($AttackerContext());
+-tgt = $IndexOf($TargetContext());
+-cls = $SA_PARAM_GET();
+-clvl = $GET_CHAR_Lvl(atk,cls);
+-nm = $GET_CHAR_NAME(tgt);
+-tlvl = $GET_MONSTERTYPE_SA(nm,"monsterLevel");
+-$IF (tlvl != "-?-?-") {lvl = tlvl;}
+-$ELSE
+-	{
+-		bCls = $GetHighestLevelBaseclass(tgt);
+-		lvl = $GetBaseclassLevel(tgt,bCls);
+-	};
+-$IF (lvl ># rnd) {$RETURN;}
+-$ELSE
+-	{
+-		$SET_CHARACTER_SA($AttackerContext(),"PointPool",rnd -# lvl);
+-		$IF ($GET_CHARACTER_SA($TargetContext(),"saved" )) {$RETURN;};
+-		$SetFriendly(tgt,side);
+-		$SET_CHARACTER_SA($TargetContext(),"IsCharmed",clvl);
+-	};
+\(END)
+

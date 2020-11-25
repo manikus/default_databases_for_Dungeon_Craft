@@ -1,0 +1,14 @@
+\(BEGIN)
+name = IsProtectedFireCaster
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7, "Protected from Fire"); $SET_HOOK_PARAM( 6, ""); $RETURN 1;
+[DoesSpellAttackSucceed] = $IF ($SA_SPELL_GET("DamageNonMagical") == "fire")
+-	{$SET_HOOK_PARAM(5,$GET_CHAR_NAME($IndexOf($TargetContext())) +" is unaffected."); $RETURN "N";};
+[spawn] = $SET_COMBATANT_SA($Myself(),"IsProtectedFireCaster1",1);
+[StartCombatRound] = $IF ($GET_PARTY_TIME() ># $SA_PARAM_GET())
+-	{
+-		$DELETE_CHARACTER_SA($CharacterContext(),"FirePoints");
+-		$DELETE_COMBATANT_SA($CharacterContext(),"IsProtectedFireCaster1");
+-		$RETURN $SA_REMOVE();
+-	};
+\(END)
+

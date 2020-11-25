@@ -1,0 +1,38 @@
+\(BEGIN)
+name = Shambling Mound
+icon file = icon_ShamblingMound.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathLarge.wav
+intelligence = 3
+armor class = 0
+movement rate = 6
+hit dice = 8.000000
+treat HD as hit points = yes
+hit dice bonus = 0
+THAC0 = 12
+magic resistance = 0
+size = large
+morale = 45
+experience point value = 2120
+Special Ability = IsPlant,1
+Special Ability = monsterLevel,8
+Special Ability = elemental_GrowthElectricity
+Special Ability = elemental_ImmuneFire
+Special Ability = monster_Engulf,monster
+Special Ability = monster_WeaponResistance,normal
+Special Ability = spell_ColdResistant,monster
+Class = Fighter
+Race = Monster
+form = large
+penalty = none
+immunity = vorpal weapon
+Misc Options = none
+item = none
+attack = 8,2,0,attacks,monsterEngulf1
+attack = 8,2,0,attacks,monsterEngulf2
+Undead = none
+\(END)
+// MM p87
+

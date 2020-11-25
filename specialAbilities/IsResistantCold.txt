@@ -1,0 +1,26 @@
+\(BEGIN)
+name = IsResistantCold
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7, "Cold Resistant"); $SET_HOOK_PARAM( 6, ""); $RETURN 1;
+[ComputeDamage] = $VAR item; $VAR itmNon; $VAR monster; $VAR monNon; $VAR resist; $VAR par5;
+-item = $SA_ITEM_GET("DamageMagical");
+-itmNon = $SA_ITEM_GET("DamageNonMagical");
+-monster = $SA_MONSTERTYPE_GET("DamageMagical");
+-monNon = $SA_MONSTERTYPE_GET("DamageNonMagical");
+-$IF ((item == "-?-?-") && (itmNon == "-?-?-") && (monster == "-?-?-") && (monNon == "-?-?-")) {$RETURN;};
+-$IF (item != "-?-?-") {resist = item;};
+-$IF (itmNon != "-?-?-") {resist = itmNon;};
+-$IF (monster != "-?-?-") {resist = monster;};
+-$IF (monNon != "-?-?-") {resist = monNon;};
+-par5 = $GET_HOOK_PARAM(5);
+-$IF (resist == "cold") {$RETURN par5 /# 2;};
+[ComputeSpellDamage] = $VAR spell; $VAR splNon; $VAR resist; $VAR par5;
+-spell = $SA_SPELL_GET("DamageMagical");
+-splNon = $SA_SPELL_GET("DamageNonMagical");
+-$IF ((spell == "-?-?-") && (splNon == "-?-?-")){$RETURN;};
+-$IF (spell != "-?-?-") {resist = spell;};
+-$IF (splNon != "-?-?-") {resist = splNon;};
+-par5 = $GET_HOOK_PARAM(5);
+-$IF (resist == "cold") {$RETURN par5 /# 2;};
+[Dispel] = $SA_REMOVE();
+\(END)
+

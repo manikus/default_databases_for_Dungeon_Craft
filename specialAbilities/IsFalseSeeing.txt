@@ -1,0 +1,15 @@
+\(BEGIN)
+name = IsFalseSeeing
+[CanCastSpells] = $VAR rndm;
+-rndm = $RANDOM(3);
+-$IF (rndm ==# 0){$RETURN "N";};
+[DoesAttackSucceed] = $VAR IFS; $VAR p5; $VAR p6;
+-IFS = $GET_CHARACTER_SA($AttackerContext(),"IsFalseSeeing");
+-p5 = $GET_HOOK_PARAM(5); p6 = $GET_HOOK_PARAM(6);
+-$IF (IFS == "-?-?-"){$RETURN;};
+-$IF ((p5 -# 5) ># p6){$RETURN "Y";};
+[StartCombatRound] = $VAR exp;
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() ># exp){$SA_REMOVE();};
+\(END)
+

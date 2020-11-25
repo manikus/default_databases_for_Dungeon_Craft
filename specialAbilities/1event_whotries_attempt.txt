@@ -1,0 +1,95 @@
+\(BEGIN)
+name = $EVENT_WhoTries_Attempt
+[Ability] = $VAR abLevel;
+-$VAR abName;
+-$VAR me; // character who is trying
+-$VAR abNeed;
+-$VAR abDie;
+-abName = $GET_HOOK_PARAM(5);
+-abNeed = $GET_HOOK_PARAM(6);
+-me = $IndexOf($CharacterContext());
+-$SWITCH (abName)
+-	{
+-		$CASE "Strength": abLevel = $GET_CHAR_LIMITED_STR(me);$BREAK;
+-		$CASE "Intelligence": abLevel = $GET_CHAR_LIMITED_INT(me);$BREAK;
+-		$CASE "Wisdom": abLevel = $GET_CHAR_LIMITED_WIS(me);$BREAK;
+-		$CASE "Dexterity": abLevel = $GET_CHAR_LIMITED_DEX(me);$BREAK;
+-		$CASE "Constitution": abLevel = $GET_CHAR_LIMITED_CON(me);$BREAK;
+-		$CASE "Charisma": abLevel = $GET_CHAR_LIMITED_CHA(me);$BREAK;
+-		$CASE "StrengthMod": abLevel = $GET_CHAR_LIMITED_STRMOD(me);$BREAK;
+-		$DEFAULT: $RETURN "N";
+-	} $ENDSWITCH;
+-$IF (abNeed <# 0)
+-	{
+-		abDie = $RANDOM (0 -# abNeed);
+-		$IF (abLevel <# abDie){$RETURN "N";};
+-	};
+-$IF (abLevel <# abNeed){$RETURN "N";};
+OldAbility = $VAR abLevel;
+-$VAR abName;
+-$VAR me; // character who is trying
+-$VAR abNeed;
+-$VAR abDie;
+-abName = $GET_HOOK_PARAM(5);
+-abNeed = $GET_HOOK_PARAM(6);
+-me = $IndexOf($CharacterContext());
+-$IF (abName == "Strength"){abLevel = $GET_CHAR_LIMITED_STR(me);};
+-$IF (abName == "Intelligence"){abLevel = $GET_CHAR_LIMITED_INT(me);};
+-$IF (abName == "Wisdom"){abLevel = $GET_CHAR_LIMITED_WIS(me);};
+-$IF (abName == "Dexterity"){abLevel = $GET_CHAR_LIMITED_DEX(me);};
+-$IF (abName == "Constitution"){abLevel = $GET_CHAR_LIMITED_CON(me);};
+-$IF (abName == "Charisma"){abLevel = $GET_CHAR_LIMITED_CHA(me);};
+-$IF (abName == "StrengthMod"){abLevel = $GET_CHAR_LIMITED_STRMOD(me);};
+-$IF (abLevel == "") {$RETURN "N";};
+-$IF (abNeed <# 0)
+-	{
+-		abDie = $RANDOM (0 -# abNeed);
+-		$IF (abLevel <# abDie){$RETURN "N";};
+-	};
+-$IF (abLevel <# abNeed){$RETURN "N";};
+[Experience] = $VAR me;
+-$VAR cls; // class
+-$VAR lvl; // level
+-$VAR par0;
+-$VAR par5;
+-$VAR par6;
+-me = $MyIndex();
+-cls = $GetHighestLevelBaseclass(me);
+-lvl = $GetBaseclassLevel(me,cls);
+-par0 = $GET_HOOK_PARAM(0);
+-par5 = $GET_HOOK_PARAM(5);
+-par6 = $GET_HOOK_PARAM(6);
+-$IF (lvl <# par6){$RETURN "N";};
+[NightSkill] = $VAR time;
+-$VAR par0;
+-$VAR skillName;
+-$VAR skillLevel;
+-$VAR skillNeed;
+-$VAR skillDie;
+-time = $GET_PARTY_HOURS();
+-par0 = $GET_HOOK_PARAM(0);
+-skillName = $GET_HOOK_PARAM(5);
+-skillLevel = $SkillAdj($CharacterContext(),skillName,"","F",0);
+-skillNeed = $GET_HOOK_PARAM(6);
+-$IF (skillNeed <# 0)
+-	{
+-		skillDie = $RANDOM (0 -# skillNeed);
+-		$IF (skillLevel <# skillDie){$RETURN "N";};
+-	};
+-$IF (time ># 6 && time <# 18){$RETURN "N";};
+-$IF (skillLevel <# skillNeed){$RETURN "N";};
+[Skill] = $VAR skillLevel;
+-$VAR skillName;
+-$VAR skillNeed;
+-$VAR skillDie;
+-skillName = $GET_HOOK_PARAM(5);
+-skillNeed = $GET_HOOK_PARAM(6);
+-skillLevel = $SkillAdj($CharacterContext(),skillName , "", "F", 0 );
+-$IF (skillNeed <# 0)
+-	{
+-		skillDie = $RANDOM (0 -# skillNeed);
+-		$IF (skillLevel <# skillDie){$RETURN "N";};
+-	};
+-$IF (skillLevel <# skillNeed){$RETURN "N";};
+\(END)
+

@@ -1,0 +1,14 @@
+\(BEGIN)
+name = IsProtectedAcidCaster
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7, "Protected from Acid"); $SET_HOOK_PARAM( 6, ""); $RETURN 1;
+[DoesSpellAttackSucceed] = $IF ($SA_SPELL_GET("DamageNonMagical") == "acid")
+-	{$SET_HOOK_PARAM(5,$GET_CHAR_NAME($IndexOf($TargetContext())) +" is unaffected."); $RETURN "N";};
+[spawn] = $SET_COMBATANT_SA($Myself(),"IsProtectedAcidCaster1",1);
+[StartCombatRound] = $IF ($GET_PARTY_TIME() ># $SA_PARAM_GET())
+-	{
+-		$DELETE_CHARACTER_SA($CharacterContext(),"AcidPoints");
+-		$DELETE_COMBATANT_SA($CharacterContext(),"IsProtectedAcidCaster1");
+-		$RETURN $SA_REMOVE();
+-	};
+\(END)
+

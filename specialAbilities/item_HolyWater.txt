@@ -1,0 +1,4 @@
+\(BEGIN)
+name = item_HolyWater
+\(END)
+

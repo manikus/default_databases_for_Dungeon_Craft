@@ -1,0 +1,38 @@
+\(BEGIN)
+name = Half-Orc
+height = 2d4+57+(5*Male)
+weight = 5d11+97+((30+1d8)*Male)
+age = 2d3+16
+maxage = 1d20+60
+BaseMovement = 12
+AbilityRequirement = Strength 6/19
+AbilityRequirement = Intelligence 3/17
+AbilityRequirement = Wisdom 3/14
+AbilityRequirement = Dexterity 3/17
+AbilityRequirement = Constitution 13/19
+AbilityRequirement = Charisma 3/12
+AllowedMultiClass = Fighter/Thief
+AllowedMultiClass = Cleric/Fighter
+AllowedMultiClass = Cleric/Thief
+AllowedMultiClass = Cleric/Assassin
+AllowedMultiClass = Fighter/Assassin
+ChangeClass = no
+DwarfResistance = no
+GnomeResistance = no
+FindSecretDoor = 0
+FindSecretDoorSearching = 1
+Skill = Infravision,60
+Skill = MaxLevel$SYS$,40
+SkillAdjAbility = AcrobatLevelCaps.Dexterity.+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,3,3,3,3,3,3,3,3,3,3
+SkillAdjAbility = FighterLevelCaps.Strength.+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2,2,2
+SkillAdjAbility = ThiefLevelCaps.Dexterity.+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2,2,2
+SkillAdjRace = PickPockets,Half-Orc,%,95
+SkillAdjRace = OpenLocks,Half-Orc,%,105
+SkillAdjRace = FindTraps,Half-Orc,%,105
+SkillAdjRace = HearNoise,Half-Orc,%,105
+SkillAdjRace = ClimbWalls,Half-Orc,%,105
+SkillAdjRace = ReadLanguages,Half-Orc,%,90
+SkillAdjRace = TumblingFalling,Half-Orc,%,110
+// Special Ability = race_RaceSuppress,"Y"
+\(END)
+

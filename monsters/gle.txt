@@ -1,0 +1,33 @@
+\(BEGIN)
+name = Eagle
+icon file = icon_Eagle.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 1
+armor class = 6
+movement rate = 30
+hit dice = 1
+treat HD as hit points = yes
+hit dice bonus = 3
+THAC0 = 19
+magic resistance = 0
+size = medium
+morale = 35
+experience point value = 49
+Special Ability = monsterLevel,2
+Class = Fighter
+Race = Monster
+form = animal
+penalty = none
+immunity = none
+Misc Options = can be held/charmed
+item = none
+attack = 2,1,0,attacks,
+attack = 2,1,0,attacks,
+attack = 2,1,0,attacks,
+Undead = none
+\(END)
+// MMII p62
+

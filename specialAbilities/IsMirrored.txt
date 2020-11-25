@@ -1,0 +1,27 @@
+\(BEGIN)
+name = IsMirrored
+[CanCastSpells] = $IF ($IS_AFFECTED_BY_SPELL($CharacterContext(),"Mirror Image") == "")
+-  {$SA_REMOVE();};
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7,$SA_PARAM_GET() + " mirror images"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
+[Dispel] = $SA_REMOVE();
+[DoesAttackSucceed] = $VAR remain;
+-$IF ($GET_COMBATANT_SA($TargetContext(),"IsMirrored") != "-?-?-")
+-	{
+-		remain = $SA_PARAM_GET();
+-		$IF ($RANDOM(remain +# 1) !=# 0)
+-			{  // Image targeted
+-				$IF ($GET_HOOK_PARAM(5) >=# $GET_HOOK_PARAM(6))
+-					{ // Removing image
+-						$SA_PARAM_SET(remain -# 1);
+-						$IF ($GET_COMBATANT_SA($TargetContext(),"IsMirrored") <# 1)
+-							{ // Images depleted
+-								$SA_REMOVE();
+-							};
+-					};
+-				$SET_HOOK_PARAM(6,$GET_HOOK_PARAM(6) +# 90);
+-			};
+-	};  // Caster targeted
+-$IF ($GET_HOOK_PARAM(5) >=# $GET_HOOK_PARAM(6)){$RETURN "Y";}
+-$ELSE {$RETURN "N";};
+\(END)
+

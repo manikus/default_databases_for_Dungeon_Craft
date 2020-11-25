@@ -1,0 +1,17 @@
+\(BEGIN)
+name = IsFieryCloudy
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7, "Partially blinded by smoke"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
+[Dispel] = $SA_REMOVE();
+[DoesAttackSucceed] = $VAR p5; $VAR p6;
+-p5 = $GET_HOOK_PARAM(5); p6 = $GET_HOOK_PARAM(6);
+-$IF (p5 ># (p6 -# 4)) {$RETURN "Y";};
+[OnEndCombat] = $SA_REMOVE();
+-$DELETE_CHARACTER_SA($CombatantContext(),"FieryLevel"); $DELETE_CHARACTER_SA($CombatantContext(),"FierySave");
+[StartCombatRound] = $VAR prm; $VAR rnd; $VAR lvl; $VAR tgt; $VAR hp; $VAR save; $VAR roll;
+-prm = $SA_PARAM_GET(); rnd = $GetCombatRound(); lvl = $SA_CHARACTER_GET("FieryLevel"); roll = $RANDOM(20) +# 1;
+-tgt = $IndexOf($TargetContext()); hp = $GET_CHAR_HITPOINTS(tgt); save = $SA_CHARACTER_GET("FierySave");
+-$IF ((rnd -# prm) ==# 3) {$RETURN $SET_CHAR_HITPOINTS(tgt,hp -# (lvl /# 2));};
+-$IF ((rnd -# prm) ==# 4) {$IF (roll <=# save) {$SA_REMOVE(); $RETURN $SET_CHAR_HITPOINTS(tgt,hp -# lvl);};};
+-$IF ((rnd -# prm) ==# 5) {$IF (roll <=# save) {$SA_REMOVE(); $RETURN $SET_CHAR_HITPOINTS(tgt,hp -# (lvl /# 2));};};
+\(END)
+

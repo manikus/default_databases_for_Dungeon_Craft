@@ -1,0 +1,17 @@
+\(BEGIN)
+name = monster_SpellImmunity
+Parameters = "parameter is delimited string";
+[DoesSpellAttackSucceed] = $VAR splList;
+-$VAR sNum;
+-$VAR spl;
+-$VAR count;
+-splList = $SA_PARAM_GET();
+-sNum = $DelimitedStringCount(splList);
+-$WHILE (count <=# sNum)
+-	{
+-		spl = $DelimitedStringSubstring(splList,count);
+-		$IF ($SpellContext() == spl){$RETURN "N";};
+-		count = count +# 1;
+-	};
+\(END)
+

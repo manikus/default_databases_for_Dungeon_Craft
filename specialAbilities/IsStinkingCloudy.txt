@@ -1,0 +1,11 @@
+\(BEGIN)
+name = IsStinkingCloudy
+[CanCastSpells] = $RUN_AREA_SE_SCRIPTS("StinkAdjust", $IndexOf($CharacterContext()));
+-$RETURN $GET_HOOK_PARAM(6);
+[CharDisplayStatus] = $RUN_AREA_SE_SCRIPTS("StinkingCloudy", $IndexOf($CharacterContext()));
+-$SET_HOOK_PARAM( 7, $GET_HOOK_PARAM(8));
+-$SET_HOOK_PARAM( 6,"");
+-$RETURN 1;
+[Dispel] = $SA_REMOVE();
+\(END)
+

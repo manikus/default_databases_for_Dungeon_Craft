@@ -1,0 +1,19 @@
+\(BEGIN)
+name = spell_CharmPerson
+[InvokeSpellOnTarget] = $VAR atk; // attacker
+-$VAR tgt; // target
+-$VAR cls;
+-$VAR lvl;
+-tgt = $IndexOf($TargetContext());
+-atk = $IndexOf($AttackerContext());
+-$IF ($GET_CHARACTER_SA($TargetContext(),"saved")){$RETURN;};
+-$IF ($GET_CANBEHELDORCHARMED($TargetContext()) != 1){$RETURN;};
+-$IF ($GET_COMBATANT_SA($TargetContext(),"monster_ImmuneCharm") != "-?-?-"){$RETURN;};
+-$IF ($GET_CHARACTER_SA($TargetContext(),"IsPerson") == "-?-?-"){$RETURN;};
+-cls = $SA_PARAM_GET();
+-lvl = $GET_CHAR_Lvl(atk,cls);
+-$SetFriendly(tgt,$GET_COMBATANT_SA($Myself(),"side"));
+-$SET_CHARACTER_SA($TargetContext(),"IsCharmed",lvl);
+-$SET_CHARACTER_SA($TargetContext(),"DispelLevel",lvl);
+\(END)
+

@@ -1,0 +1,9 @@
+\(BEGIN)
+name = IsDetectingMagic
+[StartCombatRound] = $VAR exp;
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() ># exp){$SA_REMOVE();};
+[CanCharacterDetectMagic] = $RETURN "Y";
+[Dispel] = $SA_REMOVE();
+\(END)
+

@@ -1,0 +1,10 @@
+\(BEGIN)
+name = spell_FalseSeeing
+[InvokeSpellOnTarget] = $VAR atk; $VAR cls; $VAR lvl; $VAR exp;
+-atk = $IndexOf($AttackerContext());
+-cls = $GetHighestLevelBaseclass(atk);
+-lvl = $GET_CHAR_Lvl(atk,cls);
+-exp = $GET_PARTY_TIME() +# lvl;
+-$SET_CHARACTER_SA($TargetContext(),"IsFalseSeeing",exp);
+\(END)
+

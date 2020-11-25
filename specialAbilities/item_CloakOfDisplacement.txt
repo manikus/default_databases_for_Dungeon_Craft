@@ -1,0 +1,16 @@
+\(BEGIN)
+name = item_CloakOfDisplacement
+[OnReady] = $SET_CHARACTER_SA($CharacterContext(),"IsCloakDisplaced",1);
+-$SkillAdj($CharacterContext(),"Save Vs BR","cloak","-","2");
+-$SkillAdj($CharacterContext(),"Save Vs PP","cloak","-","2");
+-$SkillAdj($CharacterContext(),"Save Vs PPDM","cloak","-","2");
+-$SkillAdj($CharacterContext(),"Save Vs RSW","cloak","-","2");
+-$SkillAdj($CharacterContext(),"Save Vs SP","cloak","-","2");
+[OnUnReady] = $DELETE_CHARACTER_SA($CharacterContext(),"IsCloakDisplaced");
+-$SkillAdj($CharacterContext(),"Save Vs BR","cloak","D","");
+-$SkillAdj($CharacterContext(),"Save Vs PP","cloak","D","");
+-$SkillAdj($CharacterContext(),"Save Vs PPDM","cloak","D","");
+-$SkillAdj($CharacterContext(),"Save Vs RSW","cloak","D","");
+-$SkillAdj($CharacterContext(),"Save Vs SP","cloak","D","");
+\(END)
+

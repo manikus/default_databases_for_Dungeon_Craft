@@ -1,0 +1,15 @@
+\(BEGIN)
+name = item_Poison
+DoesAttackSucceed = $VAR tgt; $VAR time; $VAR par5; $VAR par6;
+-tgt = $IndexOf($TargetContext()); time = $GET_PARTY_TIME(); par5 = $GET_HOOK_PARAM(5); par6 = $GET_HOOK_PARAM(6);
+-$IF ($GET_COMBATANT_SA($TargetContext(),"IsImmunePoison") != "-?-?-"){$RETURN;};
+-$IF ($GET_COMBATANT_SA($TargetContext(),"IsProtectedPoisonCaster") != "-?-?-"){$RETURN;};
+-$IF ($GET_COMBATANT_SA($TargetContext(),"IsProtectedPoisonTarget") != "-?-?-"){$RETURN;};
+-$IF (par5 ># par6)
+-	{
+-		$SET_COMBATANT_SA($TargetContext(),"IsPoisoned",time);
+-		$SET_CHAR_STATUS(tgt,2);
+-		$SET_CHAR_HITPOINTS(tgt,"-11");
+-	};
+\(END)
+

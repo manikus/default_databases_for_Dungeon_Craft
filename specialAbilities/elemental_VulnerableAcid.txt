@@ -1,0 +1,27 @@
+\(BEGIN)
+name = elemental_VulnerableAcid
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7, "Vulnerable to Acid");
+-$SET_HOOK_PARAM( 6, "");
+-$RETURN 1;
+[ComputeDamage] = $VAR item; $VAR itmNon; $VAR monster; $VAR monNon; $VAR vuln; $VAR par5;
+-item = $SA_ITEM_GET("DamageMagical");
+-itmNon = $SA_ITEM_GET("DamageNonMagical");
+-monster = $SA_MONSTERTYPE_GET("DamageMagical");
+-monNon = $SA_MONSTERTYPE_GET("DamageNonMagical");
+-$IF ((item == "-?-?-") && (itmNon == "-?-?-") && (monster == "-?-?-") && (monNon == "-?-?-")) {$RETURN;};
+-$IF (item != "-?-?-") {vuln = item;};
+-$IF (itmNon != "-?-?-") {vuln = itmNon;};
+-monster = $GET_CHARACTER_SA($AttackerContext(),"DamageMagical");
+-monNon = $GET_CHARACTER_SA($AttackerContext(),"DamageNonMagical");
+-par5 = $GET_HOOK_PARAM(5);
+-$IF (vuln == "acid") {$RETURN par5 *# 2;};
+[ComputeSpellDamage] = $VAR spell; $VAR splNon; $VAR vuln; $VAR par5;
+-spell = $SA_SPELL_GET("DamageMagical");
+-splNon = $SA_SPELL_GET("DamageNonMagical");
+-$IF ((spell == "-?-?-") && (splNon == "-?-?-")){$RETURN;};
+-$IF (spell != "-?-?-") {vuln = spell;};
+-$IF (splNon != "-?-?-") {vuln = splNon;};
+-par5 = $GET_HOOK_PARAM(5);
+-$IF (vuln == "acid") {$RETURN par5 *# 2;};
+\(END)
+

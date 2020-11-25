@@ -1,0 +1,22 @@
+\(BEGIN)
+name = turnUndead
+[CanTurn] = $VAR par5;
+-$VAR com;
+-$VAR clrc;
+-$VAR pldn;
+-par5 = $GET_HOOK_PARAM(5);
+-com = $IndexOf($CombatantContext());
+-clrc = $GET_CHAR_Lvl(com,"cleric");
+-pldn = $GET_CHAR_Lvl(com,"paladin");
+-$IF (clrc ># 0 || pldn ># 2){$RETURN par5;}; // turning undead table - DMG 25
+[TurnAttempt] = $VAR par5;
+-$VAR par6;
+-$VAR num;
+-$VAR turn;
+-par5 = $GET_HOOK_PARAM(5);
+-par6 = $GET_HOOK_PARAM(6);
+-num = $DelimitedStringCount(par5);
+-turn = $DelimitedStringSubstring(par5,num);
+-$RETURN par5;
+\(END)
+

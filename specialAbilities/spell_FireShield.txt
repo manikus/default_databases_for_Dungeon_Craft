@@ -1,0 +1,5 @@
+\(BEGIN)
+name = spell_FireShield
+[OverrideSpellSelection] = $RETURN "$Cold Fire Shield$Hot Fire Shield";
+\(END)
+

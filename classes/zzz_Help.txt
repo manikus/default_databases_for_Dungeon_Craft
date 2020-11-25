@@ -1,0 +1,17 @@
+\(BEGIN)
+name = $$Help
+Special Ability = Date,"January 11, 2018"
+Special Ability = Updates1_01,"added class_Druid SA to Druid"
+Special Ability = Updates1_02,"fixed class_MageScribe SA for all multi-class Magic Users"
+Special Ability = Updates1_03,"changed Cleric/Ranger to Ranger/Cleric to resolve display issue"
+Special Ability = Updates1_04,"added SA class_ThievingSkills to Assassin and Thief classes"
+Special Ability = Updates1_05,"added SA class_Unsurprised to Ranger classes"
+Special Ability = Updates1_06,"added SA class_Sweep to Fighter, Paladin and Ranger classes"
+Special Ability = Updates1_07,"added SA class_AttacksPerRound to Fighter, Paladin and Ranger classes, and class_AttacksPerRoundAdj to Ranger classes"
+Special Ability = Updates1_08,"added SA class_Leader to Paladin class"
+Special Ability = Updates1_09,"added starting equipment to all classes"
+Special Ability = Updates170920,"changed name of Ranger/Cleric to /#Cleric/Ranger"
+Special Ability = Updates170921,"added ChangeClassXXX SAs - where XXX is the name of a single class"
+Special Ability = Updates180111,"upated equipment for all classes per FRUA Average equipment"
+\(END)
+

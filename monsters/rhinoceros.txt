@@ -1,0 +1,31 @@
+\(BEGIN)
+name = Rhinoceros
+icon file = icon_Rhinoceros.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathLarge.wav
+intelligence = 3
+armor class = 6
+movement rate = 12
+hit dice = 9.000000
+treat HD as hit points = yes
+hit dice bonus = 0
+THAC0 = 12
+magic resistance = 0
+size = large
+morale = 35
+experience point value = 1332
+Special Ability = monsterLevel,9
+Class = Fighter
+Race = Monster
+form = mammal + animal
+penalty = none
+immunity = none
+Misc Options = can be held/charmed
+item = none
+attack = 6,2,0,attacks,
+Undead = none
+\(END)
+// MM p82
+

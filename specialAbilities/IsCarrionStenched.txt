@@ -1,0 +1,12 @@
+\(BEGIN)
+name = IsCarrionStenched
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7, "Retching");
+-$SET_HOOK_PARAM( 6, "");
+-$RETURN 1;
+[DoesAttackSucceed] = $IF ($GET_COMBATANT_SA($AttackerContext(),"IsCarrionStenched") != "-?-?-")
+-  {$SET_HOOK_PARAM(6,$GET_HOOK_PARAM(6) +# 2);};
+-$IF ($GET_HOOK_PARAM(5) >=# $GET_HOOK_PARAM(6))
+-  {$RETURN "Y";}
+-$ELSE {$RETURN "N";};
+\(END)
+

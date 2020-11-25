@@ -1,0 +1,36 @@
+\(BEGIN)
+name = Zombie
+icon file = icon_Zombie.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 0
+armor class = 8
+movement rate = 6
+hit dice = 2.000000
+treat HD as hit points = yes
+hit dice bonus = 0
+THAC0 = 16
+magic resistance = 0
+size = medium
+morale = 50
+experience point value = 36
+Special Ability = monsterLevel,2
+Special Ability = elemental_ImmuneCold
+Special Ability = monster_ImmuneCharm,monster
+Special Ability = monster_ImmuneHold,monster
+Special Ability = monster_ImmuneSleep,monster
+Special Ability = monster_VulnerableToHolyWater,monster
+Class = Fighter
+Race = Monster
+form = none
+penalty = none
+immunity = poison + death magic
+Misc Options = none
+item = none
+attack = 8,1,0,attacks,
+Undead = Zombie
+\(END)
+// MM p103
+

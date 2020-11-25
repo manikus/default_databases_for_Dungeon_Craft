@@ -1,0 +1,28 @@
+\(BEGIN)
+name = monster_StirgeDrainee
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7,$SA_PARAM_GET());
+-$SET_HOOK_PARAM( 6,"");
+-$RETURN 1;
+[OnStartCombatantAction] = $VAR atk; // attacker
+-$VAR i;
+-$VAR foes;
+-$VAR alive;
+-foes = $GET_COMBATANT_SA($Myself(),"monster_StirgeLink");
+-i = 1;
+-alive = "-1";
+-atk = $DelimitedStringSubstring(foes, i);
+-$WHILE (atk != "")
+-	{
+-		atk = $DelimitedStringSubstring(foes, i);
+-		$IF ($GET_CHAR_STATUS(atk) ==# 0){alive = alive +# 1;};
+-		i = i +# 1;
+-	};
+-// alive = alive -# 1;
+-$IF (alive <# 1)
+-	{
+-		$DELETE_COMBATANT_SA($CombatantContext(),"monster_StirgeDrainee");
+-		$DELETE_COMBATANT_SA($CombatantContext(),"monster_StirgeLink");
+-		$DELETE_COMBATANT_SA($Myself(),"IsHugged");
+-	};
+\(END)
+

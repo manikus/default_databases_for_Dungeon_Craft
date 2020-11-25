@@ -1,0 +1,8 @@
+\(BEGIN)
+name = item_RingOfAcidResistance
+[OnReady] = $SET_CHARACTER_SA($CharacterContext(),"elemental_ResistantAcid", "");
+-$SET_CHARACTER_SA($CharacterContext(),"DispelLevelItem","12");
+[OnUnReady] = $DELETE_CHARACTER_SA($CharacterContext(), "elemental_ResistantAcid");
+-$DELETE_CHARACTER_SA($CharacterContext(),"DispelLevelItem");
+\(END)
+

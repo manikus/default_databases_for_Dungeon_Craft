@@ -1,0 +1,51 @@
+\(BEGIN)
+name = Otto's Irresistible Dance|MonsterMage
+casting sound = sound_Cast.wav
+cast msg = /t is dancing maniacally.
+missile sound = none
+coverage sound = none
+hit sound = none
+linger sound = none
+cast art = spell_cast_MU.png,210,2,48,48,0,1,0,1,0,0
+missile art = spell_missile_MU.png,100,4,48,48,0,1,0,1,0,0
+target cover art = none
+target hit art = none
+target linger art = spell_linger_Otto.png,250,2,48,48,0,1,4,1,0,0
+school = Monster
+cast by = magicUser
+can target friend = no
+can target enemy = yes
+cumulative = yes
+can memorize = no
+allow scribe = no
+auto scribe = no
+in camp = no
+in combat = yes
+can be dispelled = yes
+lingers = yes
+linger affects once = yes
+save versus = spell
+save result = none
+Special Ability = DamageMagical,mind
+Special Ability = StandardDisplaySpellEffect
+Special Ability = casterLevel,$magicUser$0
+Special Ability = spellClass,magicUser
+Special Ability = spell_Attack,1
+targeting type = touch
+target quantity = 1
+level = 8
+casting time = 5
+casting time units = initiative
+duration = 1d4+1
+duration units = rounds
+target duration = 0
+price = 0
+priority = 500
+spell effect 1 = $CHAR_AC,4,delta,target,yes
+savingThrowScript = $SkillAdj($CharacterContext(), "Save Vs BR", "Otto", "=","20");$SkillAdj($CharacterContext(), "Save Vs PP", "Otto", "=","20");$SkillAdj($CharacterContext(), "Save Vs PPDM", "Otto", "=","20");$SkillAdj($CharacterContext(), "Save Vs RSW", "Otto", "=","20");$SkillAdj($CharacterContext(), "Save Vs SP", "Otto", "=","20");$RETURN "1";
+savingThrowSucceededScript = 
+savingThrowFailedScript = 
+begin script = 
+end script = 
+\(END)
+

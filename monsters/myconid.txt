@@ -1,0 +1,32 @@
+\(BEGIN)
+name = Myconid
+icon file = icon_Myconid.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 9
+armor class = 10
+movement rate = 9
+hit dice = 3.000000
+treat HD as hit points = yes
+hit dice bonus = 0
+THAC0 = 16
+magic resistance = 0
+size = medium
+morale = 35
+experience point value = 86
+Special Ability = IsPlant,1
+Special Ability = monsterLevel,3
+Class = Fighter
+Race = Monster
+form = none
+penalty = none
+immunity = none
+Misc Options = can be held/charmed
+item = none
+attack = 4,3,0,attacks,
+Undead = none
+\(END)
+// MMII 984
+

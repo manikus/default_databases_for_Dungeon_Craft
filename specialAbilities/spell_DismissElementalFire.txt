@@ -1,0 +1,8 @@
+\(BEGIN)
+name = spell_DismissElementalFire
+[InvokeSpellOnTarget] = $VAR tgt; $VAR mon;
+-tgt = $IndexOf($TargetContext()); mon = $GET_CHAR_NAME(tgt);
+-$IF ((mon == "Fire Elemental") || (mon == "Lesser Fire Elemental"))
+-	{$SET_CHAR_STATUS(tgt,"5");};
+\(END)
+

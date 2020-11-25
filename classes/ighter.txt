@@ -1,0 +1,19 @@
+\(BEGIN)
+name = Fighter
+HitDiceLevelBonus = fighter,Constitution,0,0,-2,-1,-1,-1,0,0,0,0,0,0,0,0,1,2,3,4,5,5,6,6,6,7,7
+HitDiceBaseclass = *Average*
+StrengthBonusDice = 1D100
+Starting Equipment = Long Sword
+Starting Equipment = Shield
+Starting Equipment = Arrow
+Starting Equipment = Long Bow
+Starting Equipment = Banded Mail
+baseclass = fighter
+Special Ability = class_NoSpells,fighter
+Special Ability = class_baseName,$fighter
+Special Ability = class_Sweep,fighter
+Special Ability = class_AttacksPerRound,fighter
+Special Ability = ChangeClassFighter
+// Special Ability = class_ClassSuppress,"Y"
+\(END)
+

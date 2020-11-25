@@ -1,0 +1,23 @@
+\(BEGIN)
+name = elemental_SlowingCold
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7, "Cold Causes Slowing");
+-$SET_HOOK_PARAM( 6, "");
+-$RETURN 1;
+[GetAdjMaxMovement] = $VAR item; $VAR itmNon; $VAR monster; $VAR monNon;
+-$VAR spell; $VAR splNon; $VAR slow;
+-item = $SA_ITEM_GET("DamageMagical");
+-itemNon = $SA_ITEM_GET("DamageNonMagical");
+-monster = $GET_CHARACTER_SA($AttackerContext(),"DamageMagical");
+-monNon = $GET_CHARACTER_SA($AttackerContext(),"DamageNonMagical");
+-spell = $SA_SPELL_GET("DamageMagical");
+-spellNon = $SA_SPELL_GET("DamageNonMagical");
+-$IF ((item == "-?-?-") && (itmNon == "-?-?-") && (monster == "-?-?-") && (monNon == "-?-?-") && (spell == "-?-?-") && (splNon == "-?-?-")) {$RETURN;};
+-$IF (item != "-?-?-") {slow = item;};
+-$IF (itmNon != "-?-?-") {slow = itmNon;};
+-$IF (monster != "-?-?-") {slow = monster;};
+-$IF (monNon != "-?-?-") {slow = monNon;};
+-$IF (spell != "-?-?-") {slow = spell;};
+-$IF (splNon != "-?-?-") {slow = splNon;};
+-$IF (slow == "cold") {$RETURN $GET_HOOK_PARAM(5) /# 2;};
+\(END)
+

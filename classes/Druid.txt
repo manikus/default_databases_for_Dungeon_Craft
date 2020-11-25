@@ -1,0 +1,15 @@
+\(BEGIN)
+name = Druid
+HitDiceLevelBonus = druid,Constitution,0,0,-2,-1,-1,-1,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2,2,2
+HitDiceBaseclass = *Average*
+StrengthBonusDice = 
+Starting Equipment = Quarterstaff
+Starting Equipment = Leather Armor
+Starting Equipment = Sling
+baseclass = druid
+Special Ability = class_baseName,$druid
+Special Ability = class_Druid,druid
+Special Ability = ChangeClassDruid
+// Special Ability = class_ClassSuppress,"Y"
+\(END)
+

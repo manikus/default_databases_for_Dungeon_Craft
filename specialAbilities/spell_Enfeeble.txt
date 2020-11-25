@@ -1,0 +1,12 @@
+\(BEGIN)
+name = spell_Enfeeble
+[InvokeSpellOnTarget] = $VAR atk; // attacker
+-$VAR lvl; // caster's level
+-$VAR cls; // caster's class
+-$IF ($GET_CHARACTER_SA($TargetContext(),"saved")){$RETURN;};
+-atk = $IndexOf($AttackerContext()); cls = $SA_PARAM_GET(); lvl = $GET_CHAR_Lvl(atk,cls);
+-$SET_CHARACTER_SA($TargetContext(),"enfeebled",25 +# (lvl -# 3) *# 2);
+-$SET_CHARACTER_SA($TargetContext(),"IsEnfeebled",$GET_PARTY_TIME() +# lvl);
+-$SET_CHARACTER_SA($TargetContext(),"DispelLevel",lvl);
+\(END)
+

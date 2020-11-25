@@ -1,0 +1,38 @@
+\(BEGIN)
+name = monsterPoisonCloud
+id name = monsterPoisonCloud
+launch sound = none
+hit sound = none
+miss sound = none
+missile sprite = none
+hit sprite = none
+ROF per round = 1
+combat range = 1
+cost = 0
+hands to carry = 1
+baseclass = fighter
+small/medium damage dice = 1D6 + 0
+large damage dice = 1D6 + 0
+AC base = 0
+AC bonus = 0
+attack bonus = 0
+experience = 0
+encumbrance = 0
+cursed = no
+non lethal = no
+readied location = WEAPON
+bundle quantity = 1
+weapon type = Spell-like Ability
+ammo type = 
+usable = no
+not magical = no
+scribtable = no
+can drop = no
+CanHalveJoin = no
+number of charges = 1
+Examine Event ID = 0
+Examine Label = EXAMINE
+recharge rate = never
+spell effect = monsterPoisonCloud
+\(END)
+

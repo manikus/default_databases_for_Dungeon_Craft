@@ -1,0 +1,16 @@
+\(BEGIN)
+name = item_MagicalWeapon
+[ComputeDamage] = $VAR wpn; $VAR atk; $VAR par5; $VAR adj;
+-wpn = $GET_CHAR_Ready($AttackerContext(), "WEAPON", 0); atk = $IndexOf($AttackerContext()); par5 = $GET_HOOK_PARAM(5); adj = 0;
+-$IF ($GET_ITEM_SA(wpn,"item_FineWeapon") != "-?-?-") {adj = $GET_CHAR_DAMAGEBONUS(atk);};
+-$RETURN par5 +# adj;
+[DoesAttackSucceed] = $VAR atk; $VAR adj; $VAR list; $VAR wpn;
+-atk = $IndexOf($AttackerContext()); list = "$-3$-3$-3$-3$-2$-1$0$0$0$0$0$0$0$0$0$0$1$2$3$3$3$4$4$4$5$5";
+-adj = $DelimitedStringSubstring(list, $GET_CHAR_LIMITED_DEX(atk)); wpn = $GET_CHAR_Ready($AttackerContext(), "WEAPON", 0);
+-$IF ($GET_ITEM_SA(wpn,"item_FineWeapon") != "-?-?-") {adj = adj +# $GET_CHAR_HITBONUS(atk);};
+-$SET_HOOK_PARAM(6, $GET_HOOK_PARAM(6) -# adj);
+-$IF ($GET_HOOK_PARAM(5) >=# $GET_HOOK_PARAM(6)){$RETURN "Y";}
+-$ELSE {$RETURN "N";};
+Parameters = "1 - arrow, 2 - bolt, 3 - dart, 4 - javelin/spear, 5 - other";
+\(END)
+

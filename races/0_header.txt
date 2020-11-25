@@ -1,0 +1,116 @@
+// Race database file
+// The line above **must** be the first line of the races file!!! "// Race database file"
+//
+// name (text)
+//	Names should not conflict with any of the names in the
+//	baseclass database, class database, items database, spells
+//	database, or abilities database, all baseclasses start
+//	with a lower case letter and classes with an upper case letter.
+//	eg:		name = Human
+//
+// wieght (equation or integer)
+//	Keyword weight lists the weight in pounds of the character
+//	eg:		weight = 6d10+100+40*Male
+//
+// height (equation or integer)
+//	Keyword height lists the height in inches of the character
+//	eg:		height = 2d10+59+1*Male
+//
+// age (equation or integer)
+//	Keyword age is the character's starting age
+//	eg:		age = 1d10+80+1*Male
+//
+// maxage (equation or integer)
+//	Keyword maxage is the maximum age that the character can reach
+//	eg:		maxage = 1d100 + 450
+//
+// BaseMovement (integer)
+//	BaseMovement is the distance a character of this race can
+//	move during combat while unencumbered.
+//	eg:		BaseMovement = 6
+//
+// AbilityRequirement (ability name, min/max)
+//	AbilityRequirement lists the ability name and the
+//	minimum and maximum numbers for the ability.
+//	One ability per instance of hte keyword.
+//	eg:		AbilityRequirement = Strength 8/18(99)
+//
+// AllowedMultiClass (class name)
+//	AllowedMultiClass lists the class name for each of the
+//	allowed multi-classes for the race.
+//	One multi-class per instance of the keyword.
+//	eg:		AllowedMultiClass = Fighter/Thief
+//
+// Special Ability (special ability name)
+//	Each Special Ability corresponds to the Special Ability
+//	database and list the name and parameter.
+//	One Special Ability per instance of the keyword, which
+//	may be listed multiple times.
+//	eg:		Special Ability = race_Infravision,60
+//
+// ChangeClass (yes/no)
+//	The ChangeClass keyword determines if a character
+//	of this race may change classes.
+//	eg:		//ChangeClass = no
+//
+// DwarfResistance (yes/no)
+//	Determines if the character of this race gets the Dwarf Resistance adjustments.
+//	Adjustments are to AC and HAC0 against monsters that have the penalty
+//	of Dwarf AC and/or Dwarf THAC0
+//	Cumulative with GnomeResistance
+//	eg:		DwarfResistance = yes
+//
+// GnomeResistance (yes/no)
+//	Determines if the character of this race gets the Gnome Resistance adjustments.
+//	Adjustments are to AC and HAC0 against monsters that have the penalty
+//	of Gnome AC and/or Gnome THAC0
+//	Cumulative with DwarfResistance
+//	eg:		GnomeResistance = no
+//
+// FindSecretDoor (integer)
+//	This keyword determines the chance of success of
+//	finding a secret door that a character of this
+//	race has.
+//	Values are the number needed for a 6-sided die
+//	eg:		FindSecretDoor = 0
+//
+// FindSecretDoorSearching (integer)
+//	This keyword determines the chance of success of
+//	finding a secret door that a character of this
+//	race has while searching.
+//	Values are the number needed for a 6-sided die
+//	eg:		FindSecretDoorSearching = 0
+
+// Skill (text)
+// Skills consist of the skill name and the score
+//	Eg:	Skill = DetectGrade,75
+//
+// SkillAdjAbility (skill name,ability name, mod, num1-num25)
+//	SkillAdjAbility allows modification of a skill based upon
+//	an ability. Name, ability, type of modifier, score
+//	modifier for each of the 25 ability scores
+//	eg:		SkillAdjAbility = Read,Intelligence,%,0,0,0,0,0,0,0,0,85,90,95,100,100,100,100,100,105,110,115,115,115,115,115,115,115
+//
+// SkillAdjRace (skill name, race name, mod, value)
+//	SkillAdjRace allows modification of skills per each
+//	race, by listing the name of the skill, name of the
+//	race, percentage sign and number to modify it by
+//	eg:		SkillAdjRace = MaxLevel$SYS$,Half-Elf,\=,5
+//
+//	*****Notes*****
+// Adjustments are of the form:
+//    +/-n*(characteristic-k)/d
+// For example to adjust, say, height.  Any of these are legal and equivalent.
+//		height  =  +1*(Level-0)/1  ; Means (+1*(level-0))/1
+//		height  =   1*(Level-0)/1
+//		height  =   1*level/1
+//		height  =   level/1
+//		height  =   1*level
+//		height  =   level
+// Division throws remainder away.  +1/2 = 0   -1/2 = 0
+//
+// To suppress a race name at time of Character Creation, remove the "//" from:
+// // Special Ability = class_RaceSuppress,"Y"
+// in each Race as desired.
+//
+

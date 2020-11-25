@@ -1,0 +1,32 @@
+\(BEGIN)
+name = Giant Centipede
+icon file = icon_GiantCentipede.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveInsect.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 0
+armor class = 9
+movement rate = 15
+hit dice = 0.250000
+treat HD as hit points = yes
+hit dice bonus = 0
+THAC0 = 20
+magic resistance = 0
+size = small
+morale = 45
+experience point value = 32
+Special Ability = monsterLevel,1
+Special Ability = monster_Swept,1
+Class = Fighter
+Race = Monster
+form = animal
+penalty = none
+immunity = none
+Misc Options = can be held/charmed
+item = none
+attack = 1,1,0,bites,monsterPoisonCentipede
+Undead = none
+\(END)
+// MM p14
+

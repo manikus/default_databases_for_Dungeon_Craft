@@ -1,0 +1,22 @@
+\(BEGIN)
+name = Human
+height = 2d8+58+((6+1d4)*Male)
+weight = 7d12+93+((45+1d12)*Male)
+age = 1d4+18
+maxage = 1d20+75
+BaseMovement = 12
+AbilityRequirement = Strength 3/18(100)
+AbilityRequirement = Intelligence 3/18
+AbilityRequirement = Wisdom 3/18
+AbilityRequirement = Dexterity 3/18
+AbilityRequirement = Constitution 3/18
+AbilityRequirement = Charisma 3/18
+ChangeClass = yes
+DwarfResistance = no
+GnomeResistance = no
+FindSecretDoor = 0
+FindSecretDoorSearching = 1
+Special Ability = race_DualClass
+// Special Ability = race_RaceSuppress,"Y"
+\(END)
+

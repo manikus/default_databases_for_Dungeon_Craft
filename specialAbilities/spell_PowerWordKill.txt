@@ -1,0 +1,9 @@
+\(BEGIN)
+name = spell_PowerWordKill
+[ComputeDamage] = $VAR tgt; // target
+-$VAR tgtHP;
+-tgt = $IndexOf($TargetContext());
+-tgtHP = $GET_CHAR_HITPOINTS(tgt);
+-$IF (tgtHP <=# 60){$RETURN tgtHP +# 11;};
+\(END)
+

@@ -1,0 +1,41 @@
+\(BEGIN)
+name = Vampiress
+icon file = icon_Vampiress.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathLarge.wav
+intelligence = 18
+armor class = 1
+movement rate = 15
+hit dice = 12
+treat HD as hit points = yes
+hit dice bonus = 5
+THAC0 = 9
+magic resistance = 0
+size = medium
+morale = 40
+experience point value = 5348
+Special Ability = monsterLevel,14
+Special Ability = monster_CombatantAlignment,evil
+Special Ability = elemental_ResistantElectricity
+Special Ability = elemental_ResistantCold
+Special Ability = monster_ImmuneFear,monster
+Special Ability = monster_ImmuneHold,monster
+Special Ability = monster_ImmuneSleep,monster
+Special Ability = monster_Regeneration,3
+Special Ability = monster_VulnerableToHolyWater,monster
+Special Ability = monster_WeaponImmunity,1
+Class = Fighter
+Race = Monster
+form = none
+penalty = none
+immunity = poison + death magic + confusion
+Misc Options = none
+item = none
+attack = 6,1,4,attacks,monsterVampireDrainLevel
+attack = 1,1,0,gazes,monsterVampireCharmGaze
+Undead = Lich
+\(END)
+// MM p99
+

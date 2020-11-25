@@ -1,0 +1,24 @@
+\(BEGIN)
+name = spell_CharmPlant
+[InvokeSpellOnTarget] = $VAR atk; // attacker
+-$VAR tgt; // target
+-$VAR tNom; // target name
+-$VAR cls;
+-$VAR lvl;
+-tgt = $IndexOf($TargetContext());
+-atk = $IndexOf($AttackerContext());
+-tNom = $GET_CHAR_NAME(tgt);
+-$IF ($GET_CHARACTER_SA($TargetContext(),"saved" )) {$RETURN;};
+-$IF ($GET_CANBEHELDORCHARMED($TargetContext()) != 1){$RETURN;};
+-$IF ($GET_COMBATANT_SA($TargetContext(),"monster_ImmuneCharm") != "-?-?-"){$RETURN;};
+-$IF ($GET_MONSTERTYPE_SA(tNom,"monsterLevel") != "-?-?-")
+-	{  //  MONSTERTYPE_SA checks go here
+-		$IF ($GET_MONSTERTYPE_SA(tNom,"IsPlant") == "-?-?-"){$RETURN;};
+-	};
+-cls = $SA_PARAM_GET();
+-lvl = $GET_CHAR_Lvl(atk,cls);
+-$SetFriendly(tgt,$GET_COMBATANT_SA($Myself(),"side"));
+-$SET_CHARACTER_SA($TargetContext(),"IsCharmed",lvl);
+-$SET_CHARACTER_SA($TargetContext(),"DispelLevel",lvl);
+\(END)
+

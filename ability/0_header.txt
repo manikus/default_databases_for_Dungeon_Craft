@@ -1,0 +1,15 @@
+// Ability database file
+// The line above **must** be the first line of the ability file!!! "// Ability database file"
+//
+// Names should not conflict with any of the names in the baseclass database, items 
+//	database, spells database, races database, or class database, all baseclasses start 
+//	with a lower case letter and classes with an upper case letter.
+//
+// Abbreviation is the three letter short form for an ability.
+//	eg:		Abbreviation = WIS
+//
+// Roll is the range and number and type of dice for ability. The first number is the 
+//	the minimum, the middle is the number and type of dice, and the final number is the max.
+//	eg:		Roll = 3 |< 3d6 >| 18
+//
+

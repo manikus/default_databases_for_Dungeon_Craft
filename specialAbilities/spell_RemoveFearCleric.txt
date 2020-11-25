@@ -1,0 +1,9 @@
+\(BEGIN)
+name = spell_RemoveFearCleric
+[InvokeSpellOnTarget] = $VAR exp; $VAR afr;
+-exp = $GET_PARTY_TIME() +# 10;
+-afr = $GET_COMBATANT_SA($TargetContext(),"IsAfraid");
+-$IF (afr != "-?-?-") {$RETURN $DELETE_COMBATANT_SA($TargetContext(),"IsAfraid");};
+-$SET_COMBATANT_SA($TargetContext(),"IsBrave",exp);
+\(END)
+

@@ -1,0 +1,35 @@
+\(BEGIN)
+name = Duergar
+weight = 4d9+100+((30+1d4)*Male)
+height = 2d5+40+(2d2*Male)
+age = 5d6+40
+maxage = 2d100+250
+BaseMovement = 6
+AbilityRequirement = Strength 8/18(99)
+AbilityRequirement = Intelligence 3/18
+AbilityRequirement = Wisdom 3/18
+AbilityRequirement = Dexterity 3/17
+AbilityRequirement = Constitution 11/19
+AbilityRequirement = Charisma 3/16
+AllowedMultiClass = Fighter/Thief
+Special Ability = race_ShortSaveBonus,12
+ChangeClass = no
+DwarfResistance = yes
+GnomeResistance = no
+FindSecretDoor = 0
+FindSecretDoorSearching = 1
+Skill = DetectGrade,75
+Skill = DetectApproxDepth,50
+Skill = Infravision,60
+Skill = DetectNewConstruction,75
+Skill = DetectSliding,67
+Skill = MaxLevel$SYS$,40
+SkillAdjAbility = MaxLevel$SYS$,Strength,+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2
+SkillAdjBaseclass = MaxLevel$SYS$,fighter,\=,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7
+SkillAdjRace = OpenLocks,Duergar,%,110
+SkillAdjRace = FindTraps,Duergar,%,115
+SkillAdjRace = ClimbWalls,Duergar,%,90
+SkillAdjRace = ReadLanguages,Duergar,%,95
+Special Ability = race_RaceSuppress,"Y"
+\(END)
+

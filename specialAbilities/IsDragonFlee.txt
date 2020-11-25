@@ -1,0 +1,23 @@
+\(BEGIN)
+name = IsDragonFlee
+[AutoAction] = $RETURN "F" + $SA_PARAM_GET();
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Fleeing Dragon");
+-$SET_HOOK_PARAM( 6,"");
+-$RETURN 1;
+[IsCombatReady] = $VAR me;
+-$VAR sideset;
+-$VAR foe;
+-$VAR i;
+-me = $IndexOf($CharacterContext());
+-$IF ($GET_CHAR_ASL(me,"side") == 1){sideset = 3;}
+-$ELSE {sideset = 5;};
+-foe = 0;
+-i = $NextCreatureIndex("",sideset);
+-$WHILE (i != "")
+-	{
+-		$IF ($GET_CHAR_ASL(i,"FearAdj")){foe = foe +# 1;};
+-		i = $NextCreatureIndex(i,sideset);
+-	};
+-$IF (foe == 0){$SA_REMOVE();};
+\(END)
+

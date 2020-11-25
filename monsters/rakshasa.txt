@@ -1,0 +1,48 @@
+\(BEGIN)
+name = Rakshasa
+icon file = icon_Rakshasa.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathLarge.wav
+intelligence = 14
+armor class = -4
+movement rate = 15
+hit dice = 7
+treat HD as hit points = yes
+hit dice bonus = 0
+THAC0 = 13
+magic resistance = 0
+size = medium
+morale = 25
+experience point value = 1149
+Special Ability = IsSeeingInvisible,rakshasa
+Special Ability = monsterLevel,7
+Special Ability = monster_CombatantAlignment,evil
+Special Ability = monster_RakshasaSpellImmunity
+Special Ability = monster_RakshasaVulnerability
+Special Ability = monster_WeaponImmunity,1
+Special Ability = monster_WeaponResistance,4
+Class = Cleric/Magic User
+Race = Monster
+form = none
+penalty = none
+immunity = confusion
+Misc Options = none
+item = monsterMageCharmPerson
+item = monsterMageFireball
+item = monsterMageHoldPerson
+item = monsterMageMagicMissile
+item = monsterMageMirrorImage
+item = monsterMageReduce
+item = monsterMageSleep
+item = monsterMageStinkingCloud
+item = monsterClericCauseLightWounds
+item = monsterClericProtectionFromGood
+attack = 3,1,0,hits,
+attack = 3,1,0,hits,
+attack = 4,1,1,bites,
+Undead = none
+\(END)
+// MM p81
+

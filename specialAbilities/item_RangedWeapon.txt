@@ -1,0 +1,24 @@
+\(BEGIN)
+name = item_RangedWeapon
+[DoesAttackSucceed] = $VAR par5;
+-$VAR par6;
+-$VAR parM; // short range number
+-$VAR parL; // medium range number
+-$VAR tgt;
+-$VAR atk;
+-$VAR dist;
+-$VAR hit;
+-par5 = $GET_HOOK_PARAM(5);
+-par6 = $GET_HOOK_PARAM(6);
+-parM = $DelimitedStringSubstring($SA_PARAM_GET(),0);
+-parL = $DelimitedStringSubstring($SA_PARAM_GET(),1);
+-tgt = $IndexOf($TargetContext());
+-atk = $IndexOf($AttackerContext());
+-dist = $VisualDistance(atk,tgt);
+-hit = par5;
+-$IF (dist ># parM){hit = par5 -# 2;};
+-$IF (dist ># parL){hit = par5 -# 5;};
+-$IF (hit ># par6){$RETURN "Y";}
+-$ELSE {$RETURN "N";};
+\(END)
+

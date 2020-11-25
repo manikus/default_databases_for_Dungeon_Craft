@@ -1,0 +1,25 @@
+\(BEGIN)
+name = spell_Sleep
+[Dispel] = $SA_REMOVE();
+-$RUN_CHAR_SE_SCRIPTS($TargetContext(),"Dispel SE");
+[Dispel SE] = $REMOVE_SPELL_EFFECT($CharacterContext(),$GET_HOOK_PARAM(5));
+[InvokeSpellOnTarget] = $VAR tgt; // target
+-$VAR type;
+-$VAR nomTgt;
+-$VAR index;
+-$VAR lvl;
+-$VAR monLvlMon;
+-$VAR bCls; // baseclass
+-tgt = $IndexOf($TargetContext());
+-type = $GET_CHAR_TYPE(tgt);
+-nomTgt = $GET_CHAR_NAME(tgt);
+-monLvlMon = $GET_MONSTERTYPE_SA(nomTgt,"monsterLevel");
+-$IF ($GET_CHAR_STATUS(tgt) != 0){$RETURN;};
+-$IF (type != "@PC@" || type != "@NPC@") {$IF ($GET_CHAR_UNDEAD(tgt) != "none") {$RETURN;};};
+-$IF ($GET_CHARACTER_SA($TargetContext(),"monster_ImmuneSleep") != "-?-?-") {$RETURN;};
+-$IF ($GET_CHARACTER_SA($TargetContext(),"IsSleeping") != "-?-?-") {$RETURN;};
+-$IF (monLvlMon != "-?-?-") {lvl = monLvlMon;}
+-$ELSE {bCls = $GetHighestLevelBaseclass(tgt);lvl = $GetBaseclassLevel(tgt,bCls);};
+-$IF (lvl <# 5) {$SET_CHARACTER_SA($TargetContext(),"IsSleeping","Sleeping");};
+\(END)
+

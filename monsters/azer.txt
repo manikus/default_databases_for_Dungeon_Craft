@@ -1,0 +1,34 @@
+\(BEGIN)
+name = Azer
+icon file = icon_Azer.png,0,2,48,48,0,1,0
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 9
+armor class = 2
+movement rate = 12
+hit dice = 3
+treat HD as hit points = yes
+hit dice bonus = 2
+THAC0 = 16
+magic resistance = 15
+size = medium
+morale = 45
+experience point value = 145
+Special Ability = monsterLevel,4
+Special Ability = elemental_ImmuneFire
+Special Ability = elemental_VulnerableCold
+Special Ability = Summoned,plane
+Class = Fighter
+Race = Monster
+form = none
+penalty = none
+immunity = none
+Misc Options = can be held/charmed + affected by dispel evil
+item = Azer Mallet
+attack = 4,1,0,attacks,
+Undead = none
+\(END)
+// MMII p12
+

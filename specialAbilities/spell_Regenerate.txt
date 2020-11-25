@@ -1,0 +1,9 @@
+\(BEGIN)
+name = spell_Regenerate
+[InvokeSpellOnTarget]= $VAR tgt; $VAR hp; $VAR maxHp;
+-tgt = $IndexOf($TargetContext()); hp = $GET_CHAR_HITPOINTS(tgt); maxHp = $GET_CHAR_MAXHITPOINTS(tgt);
+-$IF (hp <# maxHp) {$SET_CHAR_HITPOINTS(tgt,maxHp);};
+-$DELETE_CHARACTER_SA($TargetContext(),"IsWithered");
+-$DELETE_CHARACTER_SA($TargetContext(),"IsMissingFinger");
+\(END)
+

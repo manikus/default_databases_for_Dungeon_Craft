@@ -1,0 +1,60 @@
+\(BEGIN)
+name = spell_Resurrection
+[InvokeSpellOnTarget] = $VAR tgt; // target
+-$VAR monName;
+-$VAR monLvl;
+-$VAR CON; // Constitution
+-$VAR pct; // percent
+-tgt = $IndexOf($TargetContext());
+-$IF ($InParty($TargetContext())){$SET_CHAR_AGE(tgt, ($GET_CHAR_AGE(tgt) +# 3));};
+-monName = $GET_CHAR_NAME(tgt);
+-monLvl = $GET_MONSTERTYPE_SA(monName,"monsterLevel"); 
+-$IF (monLvl != "-?-?-") 
+-	{
+-		$IF (monName == "Ghast"||monName == "Ghoul"||monName == "Skeleton"||monName == "Wight"||monName == "Wraith"||monName == "Zombie")
+-			{
+-				$SET_CHAR_STATUS(tgt, 2);
+-				$SET_CHAR_HITPOINTS(tgt, "-11");
+-				$RETURN;
+-			};
+-		$IF (monName == "Mummy")
+-			{
+-				$SET_CHAR_HITPOINTS(tgt, "-11");
+-				$SET_CHAR_STATUS(tgt, 2);
+-				$AddCombatant("Ancient Fighter", 0 );
+-			};
+-	};
+-$IF (monLvl == "-?-?-")
+-	{
+-		$IF ($GET_CHAR_RACE(tgt) == "Elf"){$RETURN;};
+-		$IF ($GET_CHAR_STATUS(tgt) !=# 2){$RETURN;};
+-		CON = $GET_CHAR_LIMITED_CON(tgt);
+-		pct = 0;
+-		$IF (CON ># 0){pct = 30;};
+-		$IF (CON ># 1){pct = 35;};
+-		$IF (CON ># 2){pct = 40;};
+-		$IF (CON ># 3){pct = 45;};
+-		$IF (CON ># 4){pct = 50;};
+-		$IF (CON ># 5){pct = 55;};
+-		$IF (CON ># 6){pct = 60;};
+-		$IF (CON ># 7){pct = 65;};
+-		$IF (CON ># 8){pct = 70;};
+-		$IF (CON ># 9){pct = 75;};
+-		$IF (CON ># 10){pct = 80;};
+-		$IF (CON ># 11){pct = 85;};
+-		$IF (CON ># 12){pct = 90;};
+-		$IF (CON ># 13){pct = 92;};
+-		$IF (CON ># 14){pct = 94;};
+-		$IF (CON ># 15){pct = 96;};
+-		$IF (CON ># 16){pct = 98;};
+-		$IF (CON ># 17){pct = 100;};
+-		$IF (pct <# ($RANDOM(100) +# 1)){$SET_CHAR_STATUS(tgt, 5); $RETURN;}
+-		$ELSE
+-			{
+-				$SET_CHAR_HITPOINTS(tgt, $GET_CHAR_MAXHITPOINTS(tgt));
+-				$SET_CHAR_STATUS(tgt, 0);
+-				$RETURN;
+-			};
+-	};
+\(END)
+

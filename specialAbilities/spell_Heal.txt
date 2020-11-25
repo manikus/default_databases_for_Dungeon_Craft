@@ -1,0 +1,27 @@
+\(BEGIN)
+name = spell_Heal
+[InvokeSpellOnTarget] = $VAR tgt; // target
+-$VAR hp; // hit points
+-$VAR maxHP; // max hit points
+-tgt = $IndexOf($TargetContext());
+-hp = $GET_CHAR_HITPOINTS(tgt);
+-maxHP = $GET_CHAR_MAXHITPOINTS(tgt);
+-$IF ($GET_CHAR_UNDEAD(tgt) != "none") {$RETURN;};
+-$IF ($GET_CHAR_STATUS(tgt) ># 1) {$RETURN;};
+-$DELETE_CHARACTER_SA($TargetContext(),"IsBlind");
+-$DELETE_CHARACTER_SA($TargetContext(),"IsDiseased");
+-$DELETE_CHARACTER_SA($TargetContext(),"IsDiseasedSpell");
+-$DELETE_CHARACTER_SA($TargetContext(),"IsMummyDiseased");
+-$DELETE_CHARACTER_SA($TargetContext(),"IsFeebleminded");
+-$IF (hp <# (maxHP -# 4))
+-	{
+-		$SET_CHAR_STATUS(tgt,0);
+-		$SET_CHAR_HITPOINTS(tgt,(maxHP -# ($RANDOM(4)+#1)));
+-	}
+-$ELSE
+-	{
+-		$SET_CHAR_STATUS(tgt,0);
+-		$SET_CHAR_HITPOINTS(tgt,(maxHP));
+-	};
+\(END)
+

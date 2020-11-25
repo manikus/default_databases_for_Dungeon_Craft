@@ -1,0 +1,15 @@
+\(BEGIN)
+name = spell_HoldMonster
+[InvokeSpellOnTarget] = $VAR atk; // attacker
+-$VAR cls;
+-$VAR lvl;
+-$VAR exp; // expiration time
+-$IF ($GET_CHARACTER_SA($TargetContext(),"saved")){$RETURN;};
+-$IF ($GET_CANBEHELDORCHARMED($TargetContext()) !=# 1){$RETURN;};
+-atk = $IndexOf($AttackerContext());
+-cls = $SA_PARAM_GET();
+-lvl = $GET_CHAR_Lvl(atk,cls);
+-exp = $GET_PARTY_TIME() +# lvl;
+-$SET_CHARACTER_SA($TargetContext(),"IsHeld",exp);
+\(END)
+

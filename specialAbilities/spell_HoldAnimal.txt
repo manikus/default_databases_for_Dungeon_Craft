@@ -1,0 +1,18 @@
+\(BEGIN)
+name = spell_HoldAnimal
+[InvokeSpellOnTarget] = $VAR atk; // attacker
+-$VAR cls;
+-$VAR adj;
+-$VAR lvl;
+-$VAR exp; // expiration time
+-$IF ($GET_CHARACTER_SA($TargetContext(),"saved")){$RETURN;};
+-$IF($GET_CANBEHELDORCHARMED($TargetContext()) !=# 1){$RETURN;};
+-$IF ($GET_ISANIMAL($TargetContext()) !=# 1){$RETURN;};
+-atk = $IndexOf($AttackerContext());
+-cls = $SA_PARAM_GET();
+-adj = $GET_CHARACTER_SA($AttackerContext(),"casterLevel");
+-lvl = $GET_CHAR_Lvl(atk,cls) -# adj;
+-exp = $GET_PARTY_TIME() +# (lvl *# 2);
+-$SET_CHARACTER_SA($TargetContext(),"IsHeld",exp);
+\(END)
+

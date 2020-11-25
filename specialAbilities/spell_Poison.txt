@@ -1,0 +1,14 @@
+\(BEGIN)
+name = spell_Poison
+[InvokeSpellOnTarget] = $VAR tgt; // target
+-$VAR time;
+-tgt = $IndexOf($TargetContext());
+-time = $GET_PARTY_TIME();
+-$IF ($GET_CHARACTER_SA($TargetContext(),"IsImmunePoison") != "-?-?-"){$RETURN;};
+-$IF ($GET_CHARACTER_SA($TargetContext(),"IsProtectedPoisonCaster") != "-?-?-"){$RETURN;};
+-$IF ($GET_CHARACTER_SA($TargetContext(),"IsProtectedPoisonTarget") != "-?-?-"){$RETURN;};
+-$SET_CHARACTER_SA($TargetContext(),"IsPoisoned",time);
+-$SET_CHAR_STATUS(tgt,2);
+-$SET_CHAR_HITPOINTS(tgt,"-11");
+\(END)
+

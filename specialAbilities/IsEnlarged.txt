@@ -1,0 +1,30 @@
+\(BEGIN)
+name = IsEnlarged
+[CanCastSpells] = $VAR me;
+-me = $IndexOf($CharacterContext());
+-$IF ($GET_PARTY_TIME() ># $GET_CHARACTER_SA($CharacterContext(),"enlarged"))
+-	{
+-		$DELETE_CHARACTER_SA($CharacterContext(),"enlarged");
+-		$SET_CHAR_SIZE(me,$GET_CHARACTER_SA($CharacterContext(),"mySize"));
+-		$RUN_CHAR_SE_SCRIPTS($CharacterContext(),"Dispel SE");
+-		$SA_REMOVE();
+-	};
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7, "Enlarged");
+-$SET_HOOK_PARAM( 6, "");
+-$RETURN 1;
+[Dispel] = $VAR me;
+-me = $IndexOf($CharacterContext());
+-$DELETE_CHARACTER_SA($CharacterContext(),"enlarged");
+-$REMOVE_CHAR_MODIFICATION(me,"SPELL Enlarge *");
+-$SET_CHAR_SIZE(me,$GET_CHARACTER_SA($CharacterContext(),"mySize"));
+-$RUN_CHAR_SE_SCRIPTS($CharacterContext(),"Dispel SE");
+-$SA_REMOVE();
+[Dispel enlarged] = $VAR me;
+-me = $IndexOf($CharacterContext());
+-$DELETE_CHARACTER_SA($CharacterContext(),"enlarged");
+-$REMOVE_CHAR_MODIFICATION(me,"SPELL Enlarge *");
+-$SET_CHAR_SIZE(me,$GET_CHARACTER_SA($CharacterContext(),"mySize"));
+-$RUN_CHAR_SE_SCRIPTS($CharacterContext(),"Dispel SE");
+-$SA_REMOVE();
+\(END)
+

@@ -1,0 +1,44 @@
+\(BEGIN)
+name = DualClassedThief
+[DualClassAchievedThief] = $VAR sklPP; $VAR prevSklPP; 
+-$VAR sklOL; 	$VAR prevSklOL; $VAR sklFT;	 $VAR prevSklFT; 
+-$VAR sklMS; 	$VAR prevSklMS; $VAR sklHIS;	$VAR prevSklHIS; 
+-$VAR sklHN; 	$VAR prevSklHN; $VAR sklCW; 	$VAR prevSklCW; 
+-$VAR sklRL; 	$VAR prevSklRL; $VAR back; 	$VAR prevBack;
+-$VAR savePPDM; $VAR prevSavePPDM; $VAR savePP; 	$VAR prevSavePP;
+-$VAR saveRSW; 	$VAR prevSaveRSW; $VAR saveBR; 	$VAR prevSaveBR;
+-$VAR saveSP; 	$VAR prevSaveSP; $VAR toHit; 	$VAR prevToHit; $VAR me;
+-me = $IndexOf($CharacterContext());
+-sklPP = $SkillAdj($CharacterContext(),"PickPockets","","F",""); prevSklPP = $GET_CHARACTER_SA($CharacterContext(),"prevSklPP");
+-sklOL = $SkillAdj($CharacterContext(),"OpenLocks","","F",""); prevSklOL = $GET_CHARACTER_SA($CharacterContext(),"prevSklOL");
+-sklFT = $SkillAdj($CharacterContext(),"FindTraps","","F",""); prevSklFT = $GET_CHARACTER_SA($CharacterContext(),"prevSklFT");
+-sklMS = $SkillAdj($CharacterContext(),"MoveSilent","","F",""); prevSklMS = $GET_CHARACTER_SA($CharacterContext(),"prevSklMS");
+-sklHIS = $SkillAdj($CharacterContext(),"HideInShadows","","F",""); prevSklHIS = $GET_CHARACTER_SA($CharacterContext(),"prevSklHIS");
+-sklHN = $SkillAdj($CharacterContext(),"HearNoise","","F",""); prevSklHN = $GET_CHARACTER_SA($CharacterContext(),"prevSklHN");
+-sklCW = $SkillAdj($CharacterContext(),"ClimbWalls","","F",""); prevSklCW = $GET_CHARACTER_SA($CharacterContext(),"prevSklCW");
+-sklRL = $SkillAdj($CharacterContext(),"ReadLanguages","","F",""); prevSklRL = $GET_CHARACTER_SA($CharacterContext(),"prevSklRL");
+-back = $SkillAdj($CharacterContext(),"BackstabMultiplier","","F",""); prevBack = $GET_CHARACTER_SA($CharacterContext(),"prevBackstab");
+-savePPDM = $SkillAdj($CharacterContext(),"Save Vs PPDM","","F",""); prevSavePPDM = $GET_CHARACTER_SA($CharacterContext(),"prevSaveVsPPDM");
+-savePP = $SkillAdj($CharacterContext(),"Save Vs PP","","F",""); prevSavePP = $GET_CHARACTER_SA($CharacterContext(),"prevSaveVsPP");
+-saveRSW = $SkillAdj($CharacterContext(),"Save Vs RSW","","F",""); prevSaveRSW = $GET_CHARACTER_SA($CharacterContext(),"prevSaveVsRSW");
+-saveBR = $SkillAdj($CharacterContext(),"Save Vs BR","","F",""); prevSaveBR = $GET_CHARACTER_SA($CharacterContext(),"prevSaveVsBR");
+-saveSP = $SkillAdj($CharacterContext(),"Save Vs SP","","F",""); prevSaveSP = $GET_CHARACTER_SA($CharacterContext(),"prevSaveVsSP");
+-toHit = $GET_CHAR_THAC0(me); prevToHit = $GET_CHARACTER_SA($CharacterContext(),"prevTHAC0");
+-
+-$IF (prevSklPP ># sklPP){$SkillAdj($CharacterContext(),"PickPockets","postDualClass","+",prevSklPP);};
+-$IF (prevSklOL ># sklOL){$SkillAdj($CharacterContext(),"OpenLocks","postDualClass","+",prevSklOL);};
+-$IF (prevSklFT ># sklFT){$SkillAdj($CharacterContext(),"FindTraps","postDualClass","+",prevSklFT);};
+-$IF (prevSklMS ># sklMS){$SkillAdj($CharacterContext(),"MoveSilent","postDualClass","+",prevSklMS);};
+-$IF (prevSklHIS ># sklHIS){$SkillAdj($CharacterContext(),"HideInShadows","postDualClass","+",prevSklHIS);};
+-$IF (prevSklHN ># sklHN){$SkillAdj($CharacterContext(),"HearNoise","postDualClass","+",prevSklHN);};
+-$IF (prevSklCW ># sklCW){$SkillAdj($CharacterContext(),"ClimbWalls","postDualClass","+",prevSklCW);};
+-$IF (prevSklRL ># sklRL){$SkillAdj($CharacterContext(),"ReadLanguages","postDualClass","+",prevSklRL);};
+-$IF (prevBack ># back){$SkillAdj($CharacterContext(),"BackstabMultiplier","postDualClass","+",prevBack);};
+-$IF (savePPDM ># prevSavePPDM) {$SkillAdj($CharacterContext(),"Save Vs PPDM","postDualClass","=",prevSavePPDM);};
+-$IF (savePP ># prevSavePP) {$SkillAdj($CharacterContext(),"Save Vs PP","postDualClass","=",prevSavePP);};
+-$IF (saveRSW ># prevSaveRSW) {$SkillAdj($CharacterContext(),"Save Vs RSW","postDualClass","=",saveRSW);};
+-$IF (saveBR ># prevSaveBR) {$SkillAdj($CharacterContext(),"Save Vs BR","postDualClass","=",saveBR);};
+-$IF (saveSP ># prevSaveSP) {$SkillAdj($CharacterContext(),"Save Vs SP","postDualClass","=",saveSP);};
+-$IF (toHit ># prevToHit) {$SET_CHAR_THAC0(me,prevToHit);};
+\(END)
+

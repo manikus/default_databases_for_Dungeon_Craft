@@ -1,0 +1,25 @@
+\(BEGIN)
+name = IsConfusedExtended
+[Dispel] = $SA_REMOVE();
+[StartCombatRound] = $VAR save;
+-$VAR rnd;
+-$VAR opr; // once per round
+-$VAR com; // combatant
+-com = $IndexOf($CombatantContext());
+-opr = $GET_COMBATANT_SA($CombatantContext(),"oncePerRnd");
+-$IF (opr ==# 0)
+-	{
+-		$DELETE_COMBATANT_SA($CombatantContext(),"IsConfused");
+-		save = $SkillAdj($CombatantContext(), "Save Vs SP", "", "F", "");
+-		rnd = $RANDOM(20) -# 1;
+-		$IF (save <# rnd){$DELETE_COMBATANT_SA($CombatantContext(),"ConfusionSA");$RETURN;};
+-		rnd = $RANDOM(10) +# 1;
+-		$IF (rnd ==# 1){$SetFriendly(com,1);$RETURN;};
+-		$IF (rnd <=# 6){$SET_COMBATANT_SA($CombatantContext(),"IsConfused","Confused");$RETURN;};
+-		$IF (rnd ==# 7){$SetFriendly(com,1);$RETURN;};
+-		$IF (rnd ==# 8){$SetFriendly(com,2);$RETURN;};
+-		$SetFriendly(com,2);
+-		$RETURN;
+-	};
+\(END)
+

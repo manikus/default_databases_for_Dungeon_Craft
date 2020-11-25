@@ -1,0 +1,9 @@
+\(BEGIN)
+name = IsProtectedPoisonTarget1
+[ComputeSpellDamage] = $VAR adj;
+-$VAR dmg;
+-adj = $GET_HOOK_PARAM(0);
+-$IF (adj == ""){adj = $GET_HOOK_PARAM(5);};
+-$IF ($SA_SPELL_GET("DamageMagical") == "poison"){dmg = (adj -# 1) /# 2;$RETURN dmg;};
+\(END)
+

@@ -1,0 +1,44 @@
+\(BEGIN)
+name = OpenLocks
+casting sound = none
+cast msg = 
+missile sound = none
+coverage sound = none
+hit sound = none
+linger sound = none
+cast art = none
+missile art = none
+target cover art = none
+target hit art = none
+target linger art = none
+school = **UNLOCK**
+can target friend = yes
+can target enemy = yes
+cumulative = yes
+can memorize = yes
+allow scribe = no
+auto scribe = no
+in camp = yes
+in combat = yes
+can be dispelled = yes
+lingers = no
+linger affects once = no
+save versus = spell
+save result = none
+targeting type = self
+level = 1
+casting time = 0
+casting time units = initiative
+duration = 0
+duration units = instantaneous
+target duration = 0
+price = 0
+priority = 500
+spell effect 1 = none
+savingThrowScript = 
+savingThrowSucceededScript = 
+savingThrowFailedScript = 
+begin script = 
+end script = 
+\(END)
+

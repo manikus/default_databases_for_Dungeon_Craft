@@ -1,0 +1,38 @@
+\(BEGIN)
+name = Duodrone
+icon file = icon_ModronDuodrone.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 6
+armor class = 6
+movement rate = 9
+hit dice = 2.000000
+treat HD as hit points = yes
+hit dice bonus = 2
+THAC0 = 16
+magic resistance = 0
+size = medium
+morale = 50
+experience point value = 80
+Special Ability = monsterLevel,3
+Special Ability = Summoned,plane
+Special Ability = monster_ImmuneCharm,modron
+Special Ability = monster_ImmuneFear,modron
+Special Ability = monster_ImmuneHold,modron
+Special Ability = monster_ImmuneSleep,modron
+Special Ability = monster_ModronElementalResistance,1
+Class = Fighter
+Race = Monster
+form = none
+penalty = none
+immunity = confusion + vorpal weapon
+Misc Options = none
+item = none
+attack = 4,1,1,hits,
+attack = 4,1,1,hits,
+Undead = none
+\(END)
+// MMII p87
+

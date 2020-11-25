@@ -1,0 +1,31 @@
+\(BEGIN)
+name = Cockatrice
+icon file = icon_Cockatrice.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 1
+armor class = 6
+movement rate = 6
+hit dice = 5
+treat HD as hit points = yes
+hit dice bonus = 0
+THAC0 = 15
+magic resistance = 0
+size = small
+morale = 35
+experience point value = 415
+Special Ability = monsterLevel,5
+Class = Fighter
+Race = Monster
+form = none
+penalty = none
+immunity = none
+Misc Options = can be held/charmed
+item = none
+attack = 3,1,0,bites,Flesh to Stone
+Undead = none
+\(END)
+// MM p15
+

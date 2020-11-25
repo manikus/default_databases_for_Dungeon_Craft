@@ -1,0 +1,10 @@
+\(BEGIN)
+name = item_CombatAim
+[CanAim] = $VAR p5;
+-$IF ($GET_HOOK_PARAM(6))
+-	{
+-		p5 = $GET_HOOK_PARAM(5);
+-		$IF(p5 == "Bow" || p5 ==  "Crossbow" || p5 ==  "Sling (no ammo needed)"){$RETURN "N";};
+-	};
+\(END)
+

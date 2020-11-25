@@ -1,0 +1,3 @@
+// 1st level magic user spells as 7th level illusionist spells
+// Burning Hands, Charm Person, Enlarge, Friends, Magic Missile, Protection From Evil,
+// Protection from Good, Read Magic, Reduce, Shield, Shocking Grasp, Sleep

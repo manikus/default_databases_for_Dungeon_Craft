@@ -1,0 +1,8 @@
+\(BEGIN)
+name = IsFleeing
+[AutoAction] = $RETURN "F" + $IndexOf($LEAST_DAMAGED_FRIENDLY());
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7,$SA_PARAM_GET());
+-$SET_HOOK_PARAM( 6,"");
+-$RETURN 1;
+\(END)
+

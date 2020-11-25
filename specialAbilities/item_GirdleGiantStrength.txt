@@ -1,0 +1,11 @@
+\(BEGIN)
+name = item_GirdleGiantStrength
+[OnReady] = $VAR tgt; $VAR str; $VAR strMod;
+-tgt = $IndexOf($CharacterContext()); str = $GET_CHAR_LIMITED_STR(tgt); strMod = $GET_CHAR_LIMITED_STRMOD(tgt);
+-$MODIFY_CHAR_ATTRIBUTE(tgt,"STR",$SA_PARAM_GET() -# str,"MINUTES",999999999,"Giant Strength","ITEM Giant Strength");
+-$IF (strMod ># 0) {$MODIFY_CHAR_ATTRIBUTE(tgt,"STRMOD",100 -# strMod,"MINUTES",999999999,"","ITEM Giant Strength");};
+[OnUnReady] = $VAR tgt; // target
+-tgt = $IndexOf($Myself());
+-$REMOVE_CHAR_MODIFICATION(tgt,"ITEM Giant Strength");
+\(END)
+

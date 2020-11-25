@@ -1,0 +1,38 @@
+\(BEGIN)
+name = Drow
+height = 2d6+48+(6*Male)
+weight = 3d11+67+((14+1d6)*Male)
+age = 5d6+100
+maxage = 4d100+350
+BaseMovement = 12
+AbilityRequirement = Strength 3/18(75)
+AbilityRequirement = Intelligence 8/18
+AbilityRequirement = Wisdom 3/18
+AbilityRequirement = Dexterity 7/19
+AbilityRequirement = Constitution 6/17
+AbilityRequirement = Charisma 8/18
+AllowedMultiClass = Fighter/Magic User
+AllowedMultiClass = Fighter/Thief
+AllowedMultiClass = Fighter/Magic User/Thief
+AllowedMultiClass = Magic User/Thief
+Special Ability = race_Elf,Drow
+ChangeClass = no
+DwarfResistance = no
+GnomeResistance = no
+FindSecretDoor = 1
+FindSecretDoorSearching = 2
+Skill = Infravision,60
+Skill = SleepResistant,90
+Skill = MaxLevel$SYS$,40
+SkillAdjAbility = MaxLevel$SYS$,Strength,+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2
+SkillAdjAbility = MageLevelCaps,Intelligence,+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2
+SkillAdjBaseclass = MaxLevel$SYS$,fighter,\=,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+SkillAdjBaseclass = MageLevelCaps,magicUser,\=,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9
+SkillAdjRace = PickPockets,Drow,%,105
+SkillAdjRace = OpenLocks,Drow,%,95
+SkillAdjRace = MoveSilent,Drow,%,105
+SkillAdjRace = HideInShadows,Drow,%,110
+SkillAdjRace = HearNoise,Drow,%,105
+Special Ability = race_RaceSuppress,"Y"
+\(END)
+

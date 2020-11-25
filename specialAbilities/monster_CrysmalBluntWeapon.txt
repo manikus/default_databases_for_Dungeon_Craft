@@ -1,0 +1,9 @@
+\(BEGIN)
+name = monster_CrysmalBluntWeapon
+[DoesAttackSucceed] = $VAR par5; $VAR par6;
+-par5 = $GET_HOOK_PARAM(5); par6 = $GET_HOOK_PARAM(6);
+-$IF ($SA_ITEM_GET("item_WeaponType") == "blunt"){$SET_HOOK_PARAM(6,par6 -# 4);};
+-$IF (par5 >=# par6){$RETURN "Y";}
+-$ELSE {$RETURN "N";};
+\(END)
+

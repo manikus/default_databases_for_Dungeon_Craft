@@ -1,0 +1,15 @@
+\(BEGIN)
+name = item_HurledWeapon
+[ComputeDamage] = $VAR par0; $VAR par5; $VAR dmg; $VAR atk; $VAR tgt;
+-par0 = $GET_HOOK_PARAM(0); par5 = $GET_HOOK_PARAM(5); dmg = par0;
+-$IF (dmg == ""){dmg = par5;};
+-atk = $IndexOf($AttackerContext()); tgt = $IndexOf($TargetContext());
+-$IF ($VisualDistance(atk,tgt) <# 2) {dmg = dmg +# $GET_CHAR_DAMAGEBONUS(atk);};
+-$RETURN dmg;
+[DoesAttackSucceed] = $VAR atk; $VAR par5; $VAR par6; $VAR bonus;
+-atk = $IndexOf($AttackerContext()); par5 = $GET_HOOK_PARAM(5); par6 = $GET_HOOK_PARAM(6); bonus = $GET_CHAR_HITBONUS(atk);
+-$IF ($VisualDistance(atk,$IndexOf($TargetContext())) <# 2) {$SET_HOOK_PARAM(6,par6 +# bonus);};
+-$IF (par5 >=# par6){$RETURN "Y";}
+-$ELSE {$RETURN "N";};
+\(END)
+

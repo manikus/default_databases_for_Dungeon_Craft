@@ -1,0 +1,31 @@
+\(BEGIN)
+name = Global_CreateMonsterCombatant
+[CreateMonsterCombatant] = $VAR tbl;
+-$VAR levelTbl;
+-$VAR i;
+-$VAR monster;
+-$VAR level;
+-$VAR monRace;
+-tbl = "/$17$3$4$5$4$6/$15$4$5$6$4$7/$13$5$6$7$5$8/$11$7$8$9$8$10/$9$8$9$10$9$11/$7$10$11$12$12$13/$5$11$12$13$13$14/$3$13$14$15$16$16/$1$14$15$16$17$17/$0$16$17$18$20$19";
+-monster = $IndexOf($CharacterContext());
+-level = $SA_MONSTERTYPE_GET("monsterLevel");
+-$SET_CHARACTER_SA($CharacterContext(), "class_baseName", $SA_MONSTERTYPE_GET("class_baseName"));
+-$SET_CHAR_Lvl(monster,$GetHighestLevelBaseclass(monster),level);
+-i = 0;
+-$WHILE (1)
+-	{
+-		levelTbl = $DelimitedStringSubstring(tbl, i);
+-		$IF (levelTbl == "") {$RETURN;}; // Protects us from bad Special Saves
+-		$IF (level >=# $DelimitedStringSubstring(levelTbl, 0))
+-			{
+-				$SkillAdj($CharacterContext(), "Save Vs BR", "", "=", $DelimitedStringSubstring(levelTbl, 1));
+-				$SkillAdj($CharacterContext(), "Save Vs PP", "", "=", $DelimitedStringSubstring(levelTbl, 2));
+-				$SkillAdj($CharacterContext(), "Save Vs PPDM", "", "=", $DelimitedStringSubstring(levelTbl, 4));
+-				$SkillAdj($CharacterContext(), "Save Vs RSW", "", "=", $DelimitedStringSubstring(levelTbl, 3));
+-				$SkillAdj($CharacterContext(), "Save Vs SP", "", "=", $DelimitedStringSubstring(levelTbl, 5));
+-				$RETURN;
+-			};
+-		i = i +# 1;
+-	};
+\(END)
+

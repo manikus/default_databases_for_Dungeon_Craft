@@ -1,0 +1,41 @@
+\(BEGIN)
+name = Beholder
+icon file = icon_Beholder.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 16
+armor class = 0
+movement rate = 3
+hit dice = 65.000000
+treat HD as hit points = no
+hit dice bonus = 0
+THAC0 = 8
+magic resistance = 245
+size = large
+morale = 50
+experience point value = 14200
+Special Ability = monsterLevel,15
+Special Ability = monster_BeholderAttacks,5
+Special Ability = monster_CombatantAlignment,evil
+Class = Fighter/Magic User
+Race = Monster
+form = none
+penalty = none
+immunity = confusion + vorpal weapon
+Misc Options = none
+item = monsterBeholderCharm
+item = monsterBeholderFear
+item = monsterBeholderFleshToStone
+item = monsterBeholderSleep
+item = monsterBeholderSlow
+attack = 4,2,0,attacks,
+attack = 4,2,0,attacks,
+attack = 4,2,0,attacks,
+attack = 4,2,0,attacks,
+attack = 4,2,0,attacks,
+Undead = none
+\(END)
+// MM p10
+

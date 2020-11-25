@@ -1,0 +1,9 @@
+\(BEGIN)
+name = monster_BeholderAttacks
+[StartCombatRound] = $GIVE_CHAR_ITEM( $CombatantContext(), "monsterBeholderCharm" );
+-$GIVE_CHAR_ITEM( $CombatantContext(), "monsterBeholderSleep" );
+-$GIVE_CHAR_ITEM( $CombatantContext(), "monsterBeholderFleshToStone" );
+-$GIVE_CHAR_ITEM( $CombatantContext(), "monsterBeholderFear" );
+-$GIVE_CHAR_ITEM( $CombatantContext(), "monsterBeholderSlow" );
+\(END)
+

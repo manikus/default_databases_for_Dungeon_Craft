@@ -1,0 +1,8 @@
+\(BEGIN)
+name = $$Help
+Special Ability = Date,"October 13, 2016"
+Special Ability = Version,"2.53"
+Special Ability = Updates1_04,"fixed issue with Halfling DEX"
+Special Ability = Updates2_53,"corrected equations to allow for roll of 19"
+\(END)
+

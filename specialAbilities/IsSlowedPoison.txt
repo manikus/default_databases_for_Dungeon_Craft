@@ -1,0 +1,21 @@
+\(BEGIN)
+name = IsSlowedPoison
+[CanCastSpells] = $VAR exp; // expiratoin time
+-$VAR time;
+-$VAR chr; // character
+-$VAR hp;
+-exp = $SA_PARAM_GET();
+-time = $GET_PARTY_TIME();
+-chr = $IndexOf($CharacterContext());
+-hp = $GET_CHAR_HITPOINTS(chr);
+-$IF (time ># exp)
+-	{
+-		$SA_REMOVE();
+-		$SET_CHAR_STATUS(chr,2);
+-		$SET_CHAR_HITPOINTS(chr,-11);
+-		$RETURN;
+-	};
+-$SET_CHAR_STATUS(chr,1);
+-$IF  (hp <# 1){$SET_CHAR_HITPOINTS(chr,1);};
+\(END)
+

@@ -1,0 +1,59 @@
+\(BEGIN)
+name = monster_MummyFear
+[CheckProximity] = $VAR me;
+-$VAR it;
+-$VAR nmMe;
+-$VAR nmIt;
+-me = $IndexOf($CombatantContext());
+-it = $GET_HOOK_PARAM(5);
+-nmMe = $GET_CHAR_NAME(me);
+-nmIt = $GET_CHAR_NAME(it);
+-$IF ($GET_CHAR_ASL(me,"side") == $GET_CHAR_ASL(it,"side")){$RETURN;};
+-$IF (nmMe != "Mummy" && nmIt == "Mummy")
+-	{
+-		$IF ($VisualDistance(me,it) <# 7 || $GET_CHAR_ASL(me,"mummyfear") == 1)
+-			{
+-				$SET_COMBATANT_SA($CombatantContext(),"IsMummyFear",$GET_PARTY_TIME() +# $RANDOM(4) +# 1);
+-				$SET_CHAR_ASL(me,"mummyfear","");
+-				$RETURN $SA_REMOVE();
+-			};
+-	};
+-$IF (nmMe == "Mummy" && nmIt != "Mummy")
+-	{
+-		$IF ($VisualDistance(me,it) <# 7 && $GET_CHAR_NAME(it) != "Mummy"){$SET_CHAR_ASL(it,"mummyfear",1);};
+-	};
+[ComputeDamage] = $VAR tgt; // target
+-tgt = $IndexOf($TargetContext());
+-$IF ($GET_CHAR_ASL(tgt,"mummyfear") == 1 && $GET_COMBATANT_SA($TargetContext(),"monster_MummyFear") != "-?-?-")
+-	{
+-		$SET_CHAR_ASL(tgt,"mummyfear","");
+-		$RETURN $GET_HOOK_PARAM(5) +# ($GET_CHAR_HITPOINTS(tgt));
+-	};
+[DoesAttackSucceed] = $VAR tgt; // target
+-tgt = $IndexOf($TargetContext());
+-$IF ($GET_CHAR_ASL(tgt,"mummyfear") == 1 && $GET_COMBATANT_SA($TargetContext(),"monster_MummyFear") != "-?-?-")
+-  {$SET_HOOK_PARAM(6,$GET_HOOK_PARAM(6) +# 30);};
+-$IF ($GET_HOOK_PARAM(5) >=# $GET_HOOK_PARAM(6)){$RETURN "Y";}
+-$ELSE {$RETURN "N";};
+[IsCombatReady] = $VAR me;
+-$VAR i;
+-$VAR sideset;
+-$VAR set;
+-me = $IndexOf($CombatantContext());
+-set = $GET_CHAR_ASL(me,"mummyfear");
+-$IF ($GET_CHAR_ASL(me,"side") == 1){sideset = 3;}
+-$ELSE{sideset = 5;};
+-i = $NextCreatureIndex("",sideset);
+-$WHILE (i != "")
+-	{
+-		$IF ($GET_CHAR_NAME(i) == "Mummy" && $VisualDistance(me,i) <# 7){set = 1;};
+-		$IF (set == 1)
+-			{
+-				$SET_COMBATANT_SA($CombatantContext(),"IsMummyFear",$GET_PARTY_TIME() +# $RANDOM(4) +# 1);
+-				$SET_CHAR_ASL(me,"mummyfear","");
+-				$RETURN $SA_REMOVE();
+-			};
+-		i = $NextCreatureIndex(i,sideset);
+-	};
+\(END)
+

@@ -1,0 +1,19 @@
+\(BEGIN)
+name = spell_DimensionDoor
+[InvokeSpellOnTarget] = $VAR atk; // attacker
+-atk = $IndexOf($AttackerContext());
+-$TeleportCombatant(atk,$GET_HOOK_PARAM(5),$GET_HOOK_PARAM(6));
+[IsValidTarget] = $VAR me;
+-$VAR x0;
+-$VAR y0;
+-$VAR x1;
+-$VAR y1;
+-me = $IndexOf($Myself());
+-x1 = $GET_HOOK_PARAM(5);
+-y1 = $GET_HOOK_PARAM(6);
+-x0 = $CombatantLocation(me,"X");
+-y0 = $CombatantLocation(me,"Y");
+-$IF ($IsLineOfSight(x0,y0,x1,y1,1) != "1"){$RETURN "N";}
+-$ELSE{$RETURN "Y";};
+\(END)
+

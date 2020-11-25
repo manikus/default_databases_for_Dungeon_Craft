@@ -1,0 +1,10 @@
+\(BEGIN)
+name = IsSymbolPained
+[DoesAttackSucceed] = $VAR p5;
+-p5 = $GET_HOOK_PARAM(5);
+-$RETURN p5 -# 4;
+[StartCombatRound] = $VAR exp; $VAR tgt;
+-exp = $SA_PARAM_GET(); tgt = $IndexOf($TargetContext());
+-$IF ($GET_PARTY_TIME() ># exp){$SA_REMOVE();$REMOVE_CHAR_MODIFICATION(tgt,"Symbol of Pain");};
+\(END)
+

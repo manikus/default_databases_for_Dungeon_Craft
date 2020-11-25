@@ -1,0 +1,31 @@
+\(BEGIN)
+name = Giant Weasel
+icon file = icon_GiantWeasel.png,0,2,48,48,0,1,0
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 1
+armor class = 6
+movement rate = 15
+hit dice = 3.000000
+treat HD as hit points = yes
+hit dice bonus = 3
+THAC0 = 16
+magic resistance = 0
+size = medium
+morale = 40
+experience point value = 185
+Special Ability = monsterLevel,4
+Class = Fighter
+Race = Monster
+form = mammal + animal
+penalty = none
+immunity = none
+Misc Options = can be held/charmed
+item = none
+attack = 6,2,0,bites,monsterGiantWeaselAttack
+Undead = none
+\(END)
+// MM p100
+

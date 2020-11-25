@@ -1,0 +1,5 @@
+\(BEGIN)
+name = spell_Symbol
+[OverrideSpellSelection] = $RETURN "$Symbol of Hopelessness$Symbol of Pain$Symbol of Persuasion";
+\(END)
+

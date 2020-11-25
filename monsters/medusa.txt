@@ -1,0 +1,33 @@
+\(BEGIN)
+name = Medusa
+icon file = icon_Medusa.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 13
+armor class = 5
+movement rate = 9
+hit dice = 6.000000
+treat HD as hit points = yes
+hit dice bonus = 0
+THAC0 = 13
+magic resistance = 0
+size = medium
+morale = 35
+experience point value = 869
+Special Ability = monsterLevel,6
+Special Ability = monster_CombatantAlignment,evil
+Class = Fighter/Magic User
+Race = Monster
+form = none
+penalty = none
+immunity = none
+Misc Options = can be held/charmed
+item = monsterMedusaPetrifyGaze
+attack = 4,1,0,attacks,monsterPoison
+attack = 1,1,0,gazes,
+Undead = none
+\(END)
+// MM p66
+

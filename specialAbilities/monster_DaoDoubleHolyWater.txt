@@ -1,0 +1,7 @@
+\(BEGIN)
+name = monster_DaoDoubleHolyWater
+[ComputeDamage] = $VAR hW;
+-hW = $SA_ITEM_GET("item_HolyWater");
+-$IF (hW >=# 0){$RETURN $RANDOM(4) +# $RANDOM(4) +# $RANDOM(4) +# $RANDOM(4) +# 4;};
+\(END)
+

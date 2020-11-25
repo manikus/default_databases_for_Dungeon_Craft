@@ -1,0 +1,36 @@
+\(BEGIN)
+name = spell_MirrorImage
+[Dispel] = $SA_REMOVE();
+-$RUN_CHAR_SE_SCRIPTS($TargetContext(),"Dispel SE");
+[Dispel SE] = $REMOVE_SPELL_EFFECT($CharacterContext(),$GET_HOOK_PARAM(5));
+[InvokeSpellOnTarget] = $VAR atk; // attacker
+-$VAR cls;
+-$VAR adj;
+-$VAR lvl;
+-$VAR rndm;
+-$VAR images;
+-atk = $IndexOf($AttackerContext());
+-cls = $SA_PARAM_GET();
+-adj = $GET_CHARACTER_SA($AttackerContext(),"casterLevel");
+-lvl = $GET_CHAR_Lvl(atk,cls) -# adj;
+-$SET_CHARACTER_SA($TargetContext(),"DispelLevel",lvl);
+-// Determine number of new images
+-rndm = $RANDOM(100) +# 1 +# lvl;
+-$IF (rndm ># 75){images = 4;}
+-$ELSE
+-	{
+-		$IF (rndm ># 50){images = 3;}
+-		$ELSE
+-			{
+-				$IF (rndm ># 25){images = 2;}
+-				$ELSE{images = 1;};
+-			};
+-	};
+-// Test for existing images
+-$IF ($GET_CHARACTER_SA($TargetContext(),"IsMirrored") == "-?-?-")
+-  {$SET_CHARACTER_SA($TargetContext(),"IsMirrored",0);};
+-// Add new images
+-$SET_CHARACTER_SA($TargetContext(),"IsMirrored",$GET_CHARACTER_SA($AttackerContext(),"IsMirrored") +# images);
+[RemoveLinger] = $RETURN "TARGETS";
+\(END)
+

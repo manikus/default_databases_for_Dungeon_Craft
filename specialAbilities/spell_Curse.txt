@@ -1,0 +1,22 @@
+\(BEGIN)
+name = spell_Curse
+[InvokeSpellOnTarget] = $VAR atk; // attacker
+-$VAR tgt; // target
+-$VAR cls;
+-$VAR adj;
+-$VAR lvl;
+-$VAR exp; // expiration time
+-$IF ($GET_CHARACTER_SA($TargetContext(),"saved")){$RETURN;};
+-atk = $IndexOf($AttackerContext());
+-tgt = $IndexOf($TargetContext());
+-$IF ($RANDOM(20) +# 1 <# $GET_CHAR_THAC0(atk) -# $GET_CHAR_AC(tgt)){$RETURN;};
+-cls = $SA_PARAM_GET();
+-adj = $GET_CHARACTER_SA($AttackerContext(),"casterLevel");
+-lvl = $GET_CHAR_Lvl(atk,cls) -# adj;
+-exp = $GET_PARTY_TIME() +# (10 *# lvl);
+-$SET_CHARACTER_SA($TargetContext(),"IsBestowedCurse",exp);
+-$SkillAdj($TargetContext(),"Save Vs BW","BestowCurse","+","4");
+-$SkillAdj($TargetContext(),"Save Vs PPDM","BestowCurse","+","4");
+-$SkillAdj($TargetContext(),"Save Vs SP","BestowCurse","+","4");
+\(END)
+

@@ -1,0 +1,36 @@
+\(BEGIN)
+name = Gargoyle
+icon file = icon_Gargoyle.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 6
+armor class = 5
+movement rate = 9
+hit dice = 4.000000
+treat HD as hit points = yes
+hit dice bonus = 4
+THAC0 = 15
+magic resistance = 0
+size = medium
+morale = 35
+experience point value = 265
+Special Ability = monsterLevel,5
+Special Ability = monster_CombatantAlignment,evil
+Special Ability = monster_WeaponImmunity,1
+Class = Fighter
+Race = Monster
+form = none
+penalty = none
+immunity = none
+Misc Options = can be held/charmed
+item = none
+attack = 6,1,0,attacks,
+attack = 4,1,0,attacks,
+attack = 3,1,0,attacks,
+attack = 3,1,0,attacks,
+Undead = none
+\(END)
+// MM p42
+

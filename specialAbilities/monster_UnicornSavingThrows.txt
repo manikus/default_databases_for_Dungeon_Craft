@@ -1,0 +1,10 @@
+\(BEGIN)
+name = monster_UnicornSavingThrows
+[CreateMonsterCombatant] = $SkillAdj($CharacterContext(), "Save Vs BR", "", "F", "11");
+-$SkillAdj($CharacterContext(), "Save Vs PP", "", "F", "9");
+-$SkillAdj($CharacterContext(), "Save Vs PPDM", "", "F", "11");
+-$SkillAdj($CharacterContext(), "Save Vs RSW", "", "F", "7");
+-$SkillAdj($CharacterContext(), "Save Vs SP", "", "F", "8");
+\(END)
+// saving throw matrices DMG p79
+

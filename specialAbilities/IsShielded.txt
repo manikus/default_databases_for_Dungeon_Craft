@@ -1,0 +1,24 @@
+\(BEGIN)
+name = IsShielded
+[CharDisplayStatus] = $IF ($GET_PARTY_TIME() ># $SA_PARAM_GET()){$SA_REMOVE();};
+-$IF ($GET_HOOK_PARAM(5) == "DISPLAY") {$SET_HOOK_PARAM( 7,"Shield"); $SET_HOOK_PARAM( 6,"1");};
+-$RETURN 1;
+[Dispel] = $SA_REMOVE();
+[DoesAttackSucceed] = $VAR atk; // attacker/caster
+-$VAR tgt; // target
+-$VAR par5; // Hook parameter 5
+-$IF ($GET_COMBATANT_SA($TargetContext(),"IsShielded") == "-?-?-"){$RETURN;};
+-atk = $IndexOf($AttackerContext());
+-tgt = $IndexOf($TargetContext());
+-par5 = $GET_HOOK_PARAM(5);
+-$IF ($SA_ITEM_GET("item_HurledWeapon") != "-?-?-" && $VisualDistance(atk,tgt) ># 1)
+-	{$SET_HOOK_PARAM(5,par5 -# 8);}
+-$ELSE
+-	{
+-		$IF ($SA_ITEM_GET("item_MissileWeapon") != "-?-?-"){$SET_HOOK_PARAM(5,$GET_HOOK_PARAM(5) -# 7);}
+-		$ELSE {$SET_HOOK_PARAM(5,par5 -# 6);};
+-	};
+-$IF ($GET_HOOK_PARAM(5) <# $GET_HOOK_PARAM(6)){$RETURN "N";};
+[DoesSpellAttackSucceed] = $IF ($SA_SOURCE_NAME() == ("Magic Missile" || "Magic Missile|Ranger")){$RETURN "N";};
+\(END)
+

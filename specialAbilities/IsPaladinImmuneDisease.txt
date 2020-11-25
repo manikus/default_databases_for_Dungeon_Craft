@@ -1,0 +1,6 @@
+\(BEGIN)
+name = IsPaladinImmuneDisease
+[CharDisplayStatus] = $SET_HOOK_PARAM(7,"Immune to Disease"); $SET_HOOK_PARAM(6,""); $RETURN 1;
+[DoesSpellAttackSucceed] = $IF ($SA_SPELL_GET("DamageMagical") == "disease" || $SA_SPELL_GET("DamageNonMagical") == "disease"){$RETURN "N";};
+\(END)
+

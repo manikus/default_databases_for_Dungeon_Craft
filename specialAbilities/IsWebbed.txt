@@ -1,0 +1,75 @@
+\(BEGIN)
+name = IsWebbed
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Stuck in Webbing");
+-$SET_HOOK_PARAM( 6,"");
+-$RETURN 1;
+[ComputeDamage] = $RETURN $GET_CHAR_HITPOINTS($IndexOf($TargetContext())) +# 1;
+[Dispel] = $SA_REMOVE();
+[DoesAttackSucceed] = $VAR item; $VAR itmNon; $VAR monster; $VAR monNon; $VAR immune;
+-item = $SA_ITEM_GET("DamageMagical");
+-itmNon = $SA_ITEM_GET("DamageNonMagical");
+-monster = $SA_MONSTERTYPE_GET("DamageMagical");
+-monNon = $SA_MONSTERTYPE_GET("DamageNonMagical");
+-$IF ((item == "-?-?-") && (itmNon == "-?-?-") && (monster == "-?-?-") && (monNon == "-?-?-")) {$RETURN;};
+-$IF (item != "-?-?-") {immune = item;};
+-$IF (itmNon != "-?-?-") {immune = itmNon;};
+-$IF (monster != "-?-?-") {immune = monster;};
+-$IF (monNon != "-?-?-") {immune = monNon;};
+-$IF (immune == "fire") 
+-	{
+-		$SA_REMOVE();
+-		$DELETE_CHARACTER_SA($Myself(),"IsWebbedTime");
+-	};
+[DoesSpellAttackSucceed] = $VAR spell; $VAR splNon; $VAR immune;
+-spell = $SA_SPELL_GET("DamageMagical");
+-splNon = $SA_SPELL_GET("DamageNonMagical");
+-$IF ((spell == "-?-?-") && (splNon == "-?-?-")){$RETURN;};
+-$IF (spell != "-?-?-") {immune = spell;};
+-$IF (splNon != "-?-?-") {immune = splNon;};
+-$IF (immune == "fire")
+-	{
+-		$SA_REMOVE();
+-		$DELETE_CHARACTER_SA($Myself(),"IsWebbedTime");
+-	};
+[GetAdjMaxMovement] = $RETURN "0";
+[IsCombatReady] = $VAR exp; $VAR chr; $VAR str; $VAR rnd;
+-exp = $SA_PARAM_GET();
+-chr = $MyIndex();
+-str = $GET_CHAR_LIMITED_STR(chr);
+-rnd = $SA_CHARACTER_GET("IsWebbedTime");
+-$IF (str ># 12 && str <# 18) 
+-	{
+-		$IF ($GET_PARTY_TIME() >=# (rnd +# 10))
+-			{
+-				$SA_REMOVE();
+-				$DELETE_CHARACTER_SA($Myself(),"IsWebbedTime");
+-				$RETURN "Y";
+-			};
+-	};
+-$IF (str ># 17) 
+
+-	{
+-		$IF ($GET_PARTY_TIME() >=# (rnd +# 1))
+-			{
+-				$SA_REMOVE();
+-				$DELETE_CHARACTER_SA($Myself(),"IsWebbedTime");
+-				$RETURN "Y";
+-			};
+-	};
+-$IF ($GET_PARTY_TIME() >=# exp) {$SA_REMOVE(); $RETURN "Y";}
+-$ELSE {$RETURN "N";};
+[StartCombatRound] = $VAR time; $VAR now; $VAR n; $VAR rnd; $VAR tgt;
+-time = $SA_CHARACTER_GET("IsWebbedTime");
+-now = $GET_PARTY_TIME();
+-n = "10";
+-rnd = $RANDOM(20);
+-tgt = $MyIndex();
+-$IF (now -# time ># n)
+-	{
+-		$IF (((now -# time) %# n ==# 0) && (rnd ==# 0))
+-			{
+-				$SET_CHAR_HITPOINTS(tgt,-11);
+-				$SET_CHAR_STATUS(tgt,"2");
+-	};
+\(END)
+

@@ -1,0 +1,41 @@
+\(BEGIN)
+name = spell_DrainVamp
+[InvokeSpellOnTarget] = $VAR trgt; // trgt of draining
+-$VAR bName; // name of baseclass
+-$VAR bLvl; // level of baseclasses
+-$VAR bDie; // type of die used for HP for baseclass
+-$VAR bNum; // number of baseclasses in class
+-$VAR monHit; // monster THAC0
+-$VAR rand;
+-$VAR drain; // amount of HP drained
+-$VAR prevDrain; // previous Drains
+-trgt = $IndexOf($TargetContext());
+-bName = $GetHighestLevelBaseclass(trgt);
+-bLvl = $GetBaseclassLevel(trgt,bName);
+-$SET_CHAR_Lvl(trgt,bName,bLvl -# 2);
+-$IF ((bLvl -# 2) <=# 0)
+-	{
+-		$SET_CHAR_HITPOINTS(trgt,-11);
+-		$SET_CHAR_MAXHITPOINTS(trgt,-11);
+-		$SET_CHAR_STATUS(trgt,5); // status 5 = gone, PC cannot be raised or resurrected
+-		$RETURN ;
+-	};
+-bDie = $RollHitPointDice(bName,bLvl,bLvl); 
+-bNum = $DelimitedStringCount($GET_CHARACTER_SA($TargetContext(),"class_baseName"));
+-$IF (bNum <# 1){bNum = 1;};
+-rand = $RANDOM(bDie) +# 1;
+-drain = rand /# bNum;
+-$IF (drain <# 1){drain = 1;};
+-$SET_CHAR_MAXHITPOINTS(trgt,$GET_CHAR_MAXHITPOINTS(trgt) -# drain);
+-$IF ($GET_CHARACTER_SA($TargetContext(),"IsDrained") == "-?-?-")
+-	{
+-		$SET_CHARACTER_SA($TargetContext(),"IsDrained","#$" + bName + "$" + bLvl + "$" + drain + "#$99");
+-	}
+-$ELSE
+-	{
+-		prevDrain = $GET_CHARACTER_SA($TargetContext(),"IsDrained");
+-		$SET_CHARACTER_SA($TargetContext(),"IsDrained","#$" + bName + "$" + bLvl + "$" + drain + prevDrain);
+-	};
+-$SET_CHAR_Exp(trgt,bName,$DAT_Baseclass_Experience(bName,bLvl -# 1));
+\(END)
+

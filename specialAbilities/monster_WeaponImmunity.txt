@@ -1,0 +1,57 @@
+\(BEGIN)
+name = monster_WeaponImmunity
+[ComputeDamage] = $VAR immun;
+-$VAR item;
+-$VAR mlev;
+-$VAR list;
+-immun = $GET_COMBATANT_SA($TargetContext(),"monster_WeaponImmunity");
+-item = $SA_ITEM_GET("item_MagicalWeapon");
+-$IF (item == "-?-?-"){item = 0;};
+-$IF (immun != "-?-?-")
+-	{
+-		$IF (item ==# 0)
+-			{
+-				mlev = $GET_COMBATANT_SA($AttackerContext(),"monsterLevel");
+-				$IF (mlev != "-?-?-")
+-					{
+-						list = "$0$0$0$0$0$1$1$2$2$3$3";
+-						$IF (mlev <# 11){item = $DelimitedStringSubstring(list,mlev);}
+-						$ELSE {item = 4;};
+-					};
+-			};
+-	};
+-$IF (item <# immun){$RETURN "0";};
+DoesAttackSucceed = $VAR atk; // attacker
+-$VAR item;
+-$VAR mlev;
+-$VAR list;
+-$VAR nm;
+-$VAR par5; // Hook parameter 5
+-$VAR par6; // Hook parameter 6
+-par5 = $GET_HOOK_PARAM(5);
+-par6 = $GET_HOOK_PARAM(6);
+-nm = $GET_CHAR_NAME($IndexOf($TargetContext()));
+-$IF ($GET_MONSTERTYPE_SA(nm,"monster_WeaponImmunity") != "-?-?-")
+-	{
+-		atk = $IndexOf($AttackerContext());
+-		item = $SA_ITEM_GET("item_MagicalWeapon");
+-		$IF ($SA_ITEM_GET("AdjustBonus") != "-?-?-"){item = $GET_HOOK_PARAM(7);};
+-		$IF ($GET_MONSTERTYPE_SA(nm,"vulnSilver") != "-?-?-" && $SA_ITEM_GET("item_SilverWeapon") != "-?-?-")
+-			{item = 5;};
+- 		$IF (item == "-?-?-")
+-			{
+-				mlev = $GET_MONSTERTYPE_SA($GET_CHAR_NAME(atk),"monsterLevel");
+-				$IF (mlev != "-?-?-")
+-					{
+-						list = "$0$0$0$0$0$1$1$2$2$3$3";
+-						$IF (mlev <# 11)
+-							{item = $DelimitedStringSubstring(list,mlev);}
+-						$ELSE {item = 4;};
+- 					};
+-			};
+-		$IF (item <# $SA_PARAM_GET()){$SET_HOOK_PARAM(6,par6 +# 90);};
+-	};
+-$IF (par5 >=# par6){$RETURN "Y";}
+-$ELSE {$RETURN "N";};
+\(END)
+

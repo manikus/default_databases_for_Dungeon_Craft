@@ -1,0 +1,25 @@
+\(BEGIN)
+name = item_LongSwordVsGiants
+[ComputeDamage] = $VAR tgt; // target
+-$VAR par5; // Hook parameter 5
+-$VAR mNm; // monster name
+-tgt = $IndexOf($TargetContext());
+-par5 = $GET_HOOK_PARAM(5);
+-mNm = $GET_CHAR_NAME(tgt);
+-$IF ($GET_ISGIANT($TargetContext())){$SET_HOOK_PARAM(5,(par5 *# 2) +# 1);};
+-$IF ($GET_MONSTERTYPE_SA(mNm,"subGiant") != "-?-?-"){$SET_HOOK_PARAM(5,par5 +# 1);};
+[DoesAttackSucceed] = $VAR tgt; // target
+-$VAR mNm; // monster name
+-$VAR par5; // Hook parameter 5
+-$VAR par6; // Hook parameter 6
+-tgt = $IndexOf($TargetContext());
+-mNm = $GET_CHAR_NAME(tgt);
+-par5 = $GET_HOOK_PARAM(5);
+-par6 = $GET_HOOK_PARAM(6);
+-$IF ($GET_MONSTERTYPE_SA(mNm,"subGiant") != "-?-?-" || $GET_ISGIANT($TargetContext()))
+-	{
+-		$IF (par5 >=# (par6 -# 1)){$RETURN "Y";}
+-		$ELSE {$RETURN "N";};
+-	};
+\(END)
+

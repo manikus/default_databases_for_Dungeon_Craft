@@ -1,0 +1,16 @@
+\(BEGIN)
+name = IsHolyStunned
+[CanCastSpells] = $RETURN "N";
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Stunned"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
+[DoesAttackSucceed] = $VAR p5; $VAR p6;
+-p5 = $GET_HOOK_PARAM(5) -# 4;
+-p6 = $GET_HOOK_PARAM(6);
+-$IF (p5 <=# p6) {$RETURN "N";};
+[GetAdjMaxMovement] = $VAR p5;
+-p5 = $SA_PARAM_GET(5);
+-$RETURN p5 /# 2;
+[StartCombatRound] = $VAR exp;
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() ># exp){$SA_REMOVE();$RETURN;};
+\(END)
+

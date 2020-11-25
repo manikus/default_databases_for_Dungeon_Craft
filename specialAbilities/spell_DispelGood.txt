@@ -1,0 +1,13 @@
+\(BEGIN)
+name = spell_DispelGood
+[Dispel] = $SA_REMOVE();
+-$RUN_CHAR_SE_SCRIPTS($TargetContext(),"Dispel SE");
+[Dispel SE] = $REMOVE_SPELL_EFFECT($CharacterContext(),$GET_HOOK_PARAM(5));
+[InvokeSpellOnTarget] = $VAR atk; // attacker
+-$VAR lvl;
+-atk = $IndexOf($AttackerContext());
+-lvl = $GET_CHAR_Lvl(atk,$SA_PARAM_GET());
+-$SET_CHARACTER_SA($TargetContext(),"IsDispellingGood",$GET_PARTY_TIME() +# lvl);
+-$SET_CHARACTER_SA($TargetContext(),"CanDispel",1);
+\(END)
+

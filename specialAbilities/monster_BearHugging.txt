@@ -1,0 +1,28 @@
+\(BEGIN)
+name = monster_BearHugging
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Hugging");
+-$SET_HOOK_PARAM( 6,"");
+-$RETURN 1;
+[GetAdjMaxMovement] = $RETURN 0;
+[GetNumberOfAttacks] = $RETURN 0;
+[OnStartCombatantAction] = $VAR Tgt;
+-$VAR nm;
+-$VAR dmg;
+-Tgt = $SA_PARAM_GET();
+-$IF ($GET_CHAR_HITPOINTS(Tgt) ># 0)
+-	{
+-		nm = $GET_CHAR_NAME($IndexOf($CombatantContext()));
+-		$IF (nm == "Black Bear"){dmg = ($RANDOM(4) +# $RANDOM(4) +# 2);};
+-		$IF (nm == "Brown Bear" || nm == "Grizzly Bear"){dmg = ($RANDOM(6) +# $RANDOM(6) +# 2);};
+-		$IF (nm == "Cave Bear" || nm == "Owlbear" || nm == "Werebear" ){dmg = ($RANDOM(8) +# $RANDOM(8) +# 2);};
+-		$IF (nm == "Northern Bear"){dmg = ($RANDOM(6) +# $RANDOM(6) +# $RANDOM(6) +# 3);};
+-		$SET_CHAR_HITPOINTS(Tgt,$GET_CHAR_HITPOINTS(Tgt) -# dmg);
+-	};
+-$IF ($GET_CHAR_HITPOINTS(Tgt) <# 1) 
+-	{
+-		$IF ($GET_CHAR_HITPOINTS(Tgt) <# "-9")  {$SET_CHAR_STATUS(Tgt,2);}
+-		$ELSE {$SET_CHAR_STATUS(Tgt,9);};
+-		$DELETE_COMBATANT_SA($CombatantContext(),"monster_BearHugging");
+-	};
+\(END)
+

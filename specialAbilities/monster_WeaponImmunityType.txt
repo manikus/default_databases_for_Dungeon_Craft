@@ -1,0 +1,12 @@
+\(BEGIN)
+name = monster_WeaponImmunityType
+[DoesAttackSucceed] = $VAR tgt; $VAR par5; $VAR par6;
+-tgt = $IndexOf($TargetContext());
+-par5 = $GET_HOOK_PARAM(5);
+-par6 = $GET_HOOK_PARAM(6);
+-$IF ($GET_MONSTERTYPE_SA($GET_CHAR_NAME(tgt),$SA_NAME()) != "-?-?-" && $SA_ITEM_GET("item_WeaponType") == $SA_PARAM_GET())
+-	{$SET_HOOK_PARAM(6,par6 +# 90);};
+-$IF (par5 >=# par6){$RETURN "Y";}
+-$ELSE {$RETURN "N";};
+\(END)
+

@@ -1,0 +1,40 @@
+\(BEGIN)
+name = Manes
+icon file = icon_Manes.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 3
+armor class = 7
+movement rate = 3
+hit dice = 1.000000
+treat HD as hit points = yes
+hit dice bonus = 0
+THAC0 = 19
+magic resistance = 0
+size = small
+morale = 40
+experience point value = 22
+Special Ability = elemental_ResistantCold
+Special Ability = elemental_ResistantElectricity
+Special Ability = elemental_ResistantFire
+Special Ability = monsterLevel,1
+Special Ability = monster_CombatantAlignment,evil
+Special Ability = monster_VulnerableToHolyWater
+Special Ability = monster_WeaponImmunity,1
+Special Ability = Summoned,plane
+Class = Fighter
+Race = Monster
+form = none
+penalty = none
+immunity = death magic + confusion
+Misc Options = affected by dispel evil
+item = none
+attack = 2,1,0,hits,
+attack = 2,1,0,hits,
+attack = 4,1,0,bites,
+Undead = Special
+\(END)
+// MM p17
+

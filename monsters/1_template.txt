@@ -1,0 +1,29 @@
+\(BEGIN)
+name = template
+icon file = DEFAULT
+miss sound = DEFAULT
+hit sound = DEFAULT
+move sound = DEFAULT
+death sound = DEFAULT
+intelligence = 0
+armor class = 0
+movement rate = 0
+hit dice = 0.000000
+treat HD as hit points = yes
+hit dice bonus = 0
+THAC0 = 20
+magic resistance = 0
+size = medium
+morale = 0
+experience point value = 0
+Class = Fighter
+Race = Monster
+form = none
+penalty = none
+immunity = none
+Misc Options = none
+item = none
+attack = none
+Undead = none
+\(END)
+

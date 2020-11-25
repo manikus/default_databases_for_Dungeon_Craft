@@ -1,0 +1,36 @@
+\(BEGIN)
+name = Ogre Mage
+icon file = icon_OgreMage.png,0,2,48,48,0,1,0
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathLarge.wav
+intelligence = 12
+armor class = 4
+movement rate = 9
+hit dice = 5.000000
+treat HD as hit points = yes
+hit dice bonus = 2
+THAC0 = 15
+magic resistance = 0
+size = large
+morale = 40
+experience point value = 1032
+Special Ability = monsterLevel,6
+Special Ability = monster_CombatantAlignment,evil
+Special Ability = monster_Regeneration1,OgreMage
+Class = Fighter
+Race = Monster
+form = giant + large
+penalty = DwarfAC + GnomeAC + RangerDmg
+immunity = none
+Misc Options = can be held/charmed
+item = monsterMageSleep
+item = monsterMageCharmPerson
+item = monsterOgreMageColdRay
+item = monsterOgreMageInvisibility
+attack = 12,1,0,attacks,
+Undead = none
+\(END)
+// MM p76
+

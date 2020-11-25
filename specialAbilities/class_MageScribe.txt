@@ -1,0 +1,110 @@
+\(BEGIN)
+name = class_MageScribe
+[CanScribeOrWhatever] = $SET_HOOK_PARAM(5,"SCRIBE");
+-$SET_HOOK_PARAM(6,0);
+[KnowableSpells] = $RETURN "100";
+[KnowableSpellsMinMax] = $SET_HOOK_PARAM(7,"999999");
+-$SET_HOOK_PARAM(8,"999999");
+-$SET_HOOK_PARAM(9,"999999");
+[AD&DKnowableSpellsMinMax] = $VAR param;
+-$VAR par4;
+-$VAR par5;
+-$VAR par6;
+-$VAR intMin;
+-$VAR intMax;
+-$VAR char;
+-$VAR muLvl;
+-param = $SA_PARAM_GET();
+-par4 = $GET_HOOK_PARAM(4);
+-par4 = $GET_HOOK_PARAM(5);
+-par6 = $GET_HOOK_PARAM(6);
+-intMin = $IntegerTable("AbilityAdjustments","IntSpellsMin",par5 -# 9,"Index");
+-intMax = $IntegerTable("AbilityAdjustments","IntSpellsMax",par5 -# 9,"Index");
+-char = $IndexOf($CharacterContext());
+-muLvl = $GET_CHAR_Lvl(char,param);
+-$IF (par4 == "I")
+-	{
+-		$IF (par6 !=# 1)
+-			{
+-				$SET_HOOK_PARAM(7, intMin);
+-				$SET_HOOK_PARAM(8, intMax);
+-				$SET_HOOK_PARAM(9, "999999");
+-				$RETURN "2";
+-			}
+-		$ELSE
+-			{
+-				$SET_HOOK_PARAM(7, intMin -# 2);
+-				$SET_HOOK_PARAM(8, intMax -# 2);
+-				$SET_HOOK_PARAM(9, "999999");
+-				$RETURN "1";
+-			};
+-	};
+-$IF (par4 == "L")
+-	{
+-		$IF (muLvl ># 18){muLvl = 19;};
+-		$IF (par6 !=# $IntegerTable("class_Spells","magicUserTrain",muLvl -# 1,"Index"))
+-			{
+-				$SET_HOOK_PARAM(7, 0);
+-				$SET_HOOK_PARAM(8, 0);
+-				$SET_HOOK_PARAM(9, "999999");
+-				$RETURN "0";
+-			}
+-		$ELSE
+-			{
+-				$SET_HOOK_PARAM(7, intMin);
+-				$SET_HOOK_PARAM(8, intMax);
+-				$SET_HOOK_PARAM(9, "999999");
+-				$RETURN "0";
+-			};
+-	};
+[LearnSpells] = $VAR spl;
+-spl = $GET_SPELL_SA($SpellContext(),"spellClass");
+-$IF (spl != "-?-?-"){$RETURN "100";}
+-$ELSE {$RETURN "0";};
+[LearnSpellsNum] = $VAR char;
+-$VAR param;
+-$VAR muLvl;
+-$VAR canKnow;
+-$VAR lvl;
+-$VAR spl;
+-$VAR sLvl;
+-$VAR par4;
+-$VAR par6;
+-char = $IndexOf($CharacterContext());
+-param = $SA_PARAM_GET();
+-muLvl = $GET_CHAR_Lvl(char,param);
+-canKnow = "#$2$0$0$0$0$0$0$0$0#$3$0$0$0$0$0$0$0$0#$3$2$0$0$0$0$0$0$0#$4$3$0$0$0$0$0$0$0#$4$3$2$0$0$0$0$0$0#$5$3$3$0$0$0$0$0$0#$5$4$3$2$0$0$0$0$0#$5$4$4$3$0$0$0$0$0#$5$5$4$3$2$0$0$0$0#$6$5$4$3$3$0$0$0$0#$6$6$5$4$4$0$0$0$0#$6$6$5$5$5$2$0$0$0#$7$6$6$5$5$3$0$0$0#$7$7$6$5$5$3$2$0$0#$7$7$6$6$6$4$2$0$0#$7$8$6$6$6$4$3$2$0#$7$8$6$6$6$4$4$3$0#$7$8$6$6$6$4$4$3$2#$7$8$7$6$6$4$4$4$2#$7$8$7$6$6$5$4$4$3#$7$8$7$6$6$5$5$5$3#$7$8$7$6$6$6$5$5$4#$7$8$7$6$6$6$6$6$4#$7$8$7$6$6$6$6$6$5#$7$9$7$6$6$6$6$6$6#$8$9$8$7$6$6$6$6$6#$8$9$8$7$7$7$7$6$6#$8$9$8$7$7$7$7$7$7#$9$10$9$8$7$7$7$7$7#$9$10$9$8$8$8$8$7$7#$9$10$9$8$8$8$8$8$8#$10$11$10$9$8$8$8$8$8#$10$11$10$9$9$9$9$8$8#$11$12$11$10$9$9$9$9$9#$11$12$12$11$9$9$9$9$9#$11$12$12$11$10$10$10$9$9#$11$12$12$11$10$10$10$10$10#$12$13$12$11$10$10$10$10$10#$12$13$12$11$11$11$11$10$10#$12$13$12$11$11$11$11$11$11";
+-lvl = $DelimitedStringSubstring(canKnow,muLvl -# 1);
+-sLvl = $IntegerTable("class_Spells","magicUserLvl",muLvl -# 1,"Index");
+-par4 = $GET_HOOK_PARAM(4);
+-par6 = $GET_HOOK_PARAM(6);
+-spl = $DelimitedStringSubstring(lvl,par6 -# 1);
+-$IF (par4 == "I")
+-	{
+-		$IF (par6 ==# 0) {$RETURN;};
+-		$SET_HOOK_PARAM(8,spl);
+-		$SET_HOOK_PARAM(9,1);
+-		$RETURN "1";
+-	};
+-$IF (par4 != "I")
+-	{
+-		$IF (par6 ==# 0) {$SET_HOOK_PARAM(8,1); $RETURN;};
+-		$IF (par6 <=# sLvl)
+-			{
+-				$SET_HOOK_PARAM(8,1);
+-				$SET_HOOK_PARAM(9,1);
+-			}
+-		$ELSE
+-			{
+-				$SET_HOOK_PARAM(8,0);
+-			};
+-		$RETURN "1";
+-	};
+[ScribeOrWhatever] = $SET_HOOK_PARAM(5, "Scribe");
+TrainingCharacter = $VAR me; $VAR lvl;
+-me = $IndexOf($CharacterContext());
+-lvl = $GET_CHAR_Lvl(me,"magicUser");
+-$IF ($GET_CHARACTER_SA($CharacterContext(),"class_NoSpells") == "-?-?-") {$RETURN;};
+-$IF (lvl ># 0){$DELETE_CHARACTER_SA($CharacterContext(),"class_NoSpells");};
+\(END)
+

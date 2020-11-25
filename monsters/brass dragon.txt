@@ -1,0 +1,40 @@
+\(BEGIN)
+name = Brass Dragon
+icon file = icon_BrassDragon.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathLarge.wav
+intelligence = 14
+armor class = 2
+movement rate = 12
+hit dice = 35
+treat HD as hit points = no
+hit dice bonus = 0
+THAC0 = 13
+magic resistance = 0
+size = large
+morale = 45
+experience point value = 2000
+Special Ability = IsSeeingInvisible,mdragon
+Special Ability = monsterLevel,7
+Special Ability = monster_AuraDragon,Brass Dragon
+Special Ability = monster_CombatantAlignment,good
+Special Ability = IsImmuneDragonBreathWeapon,$fear$sleep
+Special Ability = monster_DragonSavingThrow,second
+Class = Fighter/Magic User
+Race = Monster
+form = large
+penalty = none
+immunity = vorpal weapon
+Misc Options = can be held/charmed
+item = monsterDragonBreathSleepGas
+item = monsterDragonBreathSleepGas
+item = monsterDragonBreathFearGas
+attack = 4,1,0,attacks,
+attack = 4,1,0,attacks,
+attack = 4,4,0,bites,
+Undead = none
+\(END)
+// MM p31
+

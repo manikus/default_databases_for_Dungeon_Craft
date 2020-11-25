@@ -1,0 +1,44 @@
+\(BEGIN)
+name = monster_TrollGetUp
+[StartCombatRound] = $VAR cbt; // combatant
+-$VAR hp; // hit points
+-$VAR round;
+-$VAR getUp;
+-$VAR nm;
+-$VAR nt;
+-$VAR x;
+-$VAR y;
+-$VAR mhp; // max hit point
+-$VAR i;
+-$VAR n;
+-cbt = $SA_PARAM_GET();
+-hp = $GET_CHAR_HITPOINTS(cbt);
+-$IF (hp <=# 0)
+-	{
+-		nm = $GET_CHAR_NAME(cbt);
+-		round = $GetCombatRound();
+-		$IF ($GET_COMBATANT_SA($CombatantContext(),"timeToRise") == "-?-?-")
+-			{
+-				getUp = ($RANDOM(6) +# $RANDOM(6) +# $RANDOM(6) +# 3);
+-				$SET_COMBATANT_SA($CombatantContext(),"timeToRise", round +# getUp);
+-			};
+-		$IF (round ==# ($SA_COMBATANT_GET("timeToRise")))
+-			{
+-				i = $NextCreatureIndex("",0);
+-				$WHILE (i != "")
+-					{
+-						n = i;
+-						i = $NextCreatureIndex(i,0);
+-					};
+-				nt = n +# 1;
+-				x = $CombatantLocation(cbt,"X");
+-				y = $CombatantLocation(cbt,"Y");
+-				mhp = $GET_CHAR_MAXHITPOINTS(cbt);
+-				$AddCombatant(nm,0);
+-				$TeleportCombatant(nt,x,y);
+-				$SET_CHAR_MAXHITPOINTS(nt,mhp); 
+-				$SET_CHAR_HITPOINTS(nt,mhp);
+-			};
+-	};
+\(END)
+

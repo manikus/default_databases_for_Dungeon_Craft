@@ -1,0 +1,5 @@
+\(BEGIN)
+name = monster_GorgonBreath
+[InvokeSpellOnTarget] = $SET_CHARACTER_SA($TargetContext(),"IsPetrified","Petrified");
+\(END)
+

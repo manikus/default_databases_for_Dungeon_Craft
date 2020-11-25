@@ -1,0 +1,5 @@
+\(BEGIN)
+name = class_baseName
+[PostCreateCharacter] = $SET_CHARACTER_SA($CharacterContext(), "class_baseName", $SA_PARAM_GET());
+\(END)
+

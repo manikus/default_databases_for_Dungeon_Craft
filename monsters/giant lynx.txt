@@ -1,0 +1,33 @@
+\(BEGIN)
+name = Giant Lynx
+icon file = icon_GiantLynx.png,0,2,48,48,0,1,0
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 11
+armor class = 6
+movement rate = 12
+hit dice = 2.000000
+treat HD as hit points = yes
+hit dice bonus = 2
+THAC0 = 16
+magic resistance = 0
+size = medium
+morale = 40
+experience point value = 150
+Special Ability = monsterLevel,3
+Class = Fighter
+Race = Monster
+form = mammal + animal
+penalty = none
+immunity = none
+Misc Options = can be held/charmed
+item = none
+attack = 2,1,0,claws,monsterRearClawRake1
+attack = 2,1,0,claws,monsterRearClawRake2
+attack = 4,1,0,attacks,
+Undead = none
+\(END)
+// MM p64
+

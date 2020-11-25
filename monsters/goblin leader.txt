@@ -1,0 +1,35 @@
+\(BEGIN)
+name = Goblin Leader
+icon file = icon_GoblinLeader.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 7
+armor class = 10
+movement rate = 6
+hit dice = 7.000000
+treat HD as hit points = no
+hit dice bonus = 0
+THAC0 = 19
+magic resistance = 0
+size = medium
+morale = 25
+experience point value = 17
+Special Ability = IsPerson,monster
+Special Ability = monsterLevel,1
+Special Ability = monster_CombatantAlignment,evil
+Class = Fighter
+Race = Monster
+form = none
+penalty = DwarfTHAC0 + GnomeTHAC0 + RangerDmg
+immunity = none
+Misc Options = can be held/charmed
+item = Spear
+item = Javelin,6
+item = Leather Armor
+attack = 6,1,0,attacks,
+Undead = none
+\(END)
+// MM p47
+

@@ -1,0 +1,48 @@
+\(BEGIN)
+name = ChangeClassRanger
+[CanChangeFromClass] = $VAR me; $VAR STR; $VAR INT; $VAR WIS;
+-me = $IndexOf($CharacterContext());
+-STR = $GET_CHAR_LIMITED_STR(me); INT = $GET_CHAR_LIMITED_INT(me); WIS = $GET_CHAR_LIMITED_WIS(me);
+-$IF ((STR >=# 15) && (INT >=# 15) && (WIS >=# 15)) {$RETURN "Y";};
+[CanChangeToClass] = $VAR me; $VAR STR; $VAR INT; $VAR WIS; $VAR CON; $VAR align; $VAR race;
+-me = $IndexOf($CharacterContext());
+-STR = $GET_CHAR_LIMITED_STR(me); INT = $GET_CHAR_LIMITED_INT(me);
+-WIS = $GET_CHAR_LIMITED_WIS(me); CON = $GET_CHAR_LIMITED_CON(me);
+-align = $GET_CHAR_ALIGNMENT(me); race = $GET_CHAR_RACE(me);
+-$IF (race != "Human") {$RETURN "N";};
+-$IF ((STR >=# 17) && (INT >=# 17) && (WIS >=# 17) && (WIS >=# 14) && (align <=# 2)) {$RETURN "Y";};
+[ChangeClassFrom] = $VAR me; $VAR cls; $VAR lvl; $VAR toHit;
+-me = $IndexOf($CharacterContext());
+-cls = $GET_CHAR_CLASS(me); lvl = $GET_CHAR_Lvl(me,"fighter"); toHit = $GET_CHAR_THAC0(me);
+-$DELETE_CHARACTER_SA($CharacterContext(),"class_Unsurprised");
+-$DELETE_CHARACTER_SA($CharacterContext(),"class_Sweep");
+-$DELETE_CHARACTER_SA($CharacterContext(),"class_AttacksPerRound");
+-$DELETE_CHARACTER_SA($CharacterContext(),"class_AttacksPerRoundAdj");
+-$DELETE_CHARACTER_SA($CharacterContext(),"class_baseName");
+-$SET_CHARACTER_SA($CharacterContext(),"prevSaveVsPPDM",$SkillAdj($CharacterContext(),"Save Vs PPDM","","F",""));
+-$SET_CHARACTER_SA($CharacterContext(),"prevSaveVsPP",$SkillAdj($CharacterContext(),"Save Vs PP","","F",""));
+-$SET_CHARACTER_SA($CharacterContext(),"prevSaveVsRSW",$SkillAdj($CharacterContext(),"Save Vs RSW","","F",""));
+-$SET_CHARACTER_SA($CharacterContext(),"prevSaveVsBR",$SkillAdj($CharacterContext(),"Save Vs BR","","F",""));
+-$SET_CHARACTER_SA($CharacterContext(),"prevSaveVsSP",$SkillAdj($CharacterContext(),"Save Vs SP","","F",""));
+-$SET_CHARACTER_SA($CharacterContext(),"prevTHAC0",toHit);
+-$IF (lvl ># 13) {$SET_CHARACTER_SA($CharacterContext(),"prevNumberOfAttacks","2");};
+-$IF (lvl ># 7) {$SET_CHARACTER_SA($CharacterContext(),"prevNumberOfAttacks","(($GetCombatRound() +# 1) %# 2) +# 1");};
+-$SET_CHARACTER_SA($CharacterContext(),"preDualClass","$"+cls+"$"+lvl);
+[ChangeClassTo] = $VAR me;
+-me = $IndexOf($CharacterContext());
+-$SET_CHARACTER_SA($CharacterContext(),"class_baseName","$ranger");
+-$SET_CHARACTER_SA($CharacterContext(),"class_Unsurprised","$ranger");
+-$SET_CHARACTER_SA($CharacterContext(),"class_Sweep","ranger");
+-$SET_CHARACTER_SA($CharacterContext(),"class_AttacksPerRound","ranger");
+-$SET_CHARACTER_SA($CharacterContext(),"class_AttacksPerRoundAdj","15");
+-$SET_CHARACTER_SA($CharacterContext(),$SA_NAME(),"$ranger");
+[TrainingCharacter] = $VAR me; $VAR bc; $VAR lvl; $VAR pdc; $VAR prv; $VAR cls;
+-me = $IndexOf($CharacterContext());
+-bc = $GetHighestLevelBaseclass(me);
+-lvl = $GET_CHAR_Lvl(me,bc);
+-pdc = $GET_CHARACTER_SA($CharacterContext(),"preDualClass");
+-prv = $DelimitedStringSubstring(pdc,1); cls = $DelimitedStringSubstring(pdc,0);
+-$IF (pdc == "-?-?-") {$RETURN;};
+-$IF (lvl ># prv) {$RUN_CHAR_SCRIPTS(me,"DualClassAchieved"+cls);};
+\(END)
+

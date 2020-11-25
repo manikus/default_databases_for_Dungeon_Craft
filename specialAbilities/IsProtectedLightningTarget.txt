@@ -1,0 +1,25 @@
+\(BEGIN)
+name = IsProtectedLightningTarget
+[Dispel] = $SA_REMOVE();
+-$SkillAdj($TargetContext(),"Save Vs BR","protectedLightning","D","");
+-$SkillAdj($TargetContext(),"Save Vs RSW","protectedLightning","D","");
+-$SkillAdj($TargetContext(),"Save Vs SP","protectedLightning","D","");
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7, "Protected from Lightning");
+-$SET_HOOK_PARAM( 6, "");
+-$RETURN 1;
+[DoesSpellAttackSucceed] = $IF ($SA_SPELL_GET("DamageNonMagical") == "electricity")
+-	{
+-		$SET_HOOK_PARAM(5,$GET_CHAR_NAME($IndexOf($TargetContext())) +" is unaffected.");
+-		$RETURN "N";
+-	};
+[spawn] = $SET_COMBATANT_SA($Myself(),"IsProtectedLightningTarget1",1);
+[StartCombatRound] = $IF ($GET_PARTY_TIME() ># $SA_PARAM_GET())
+-	{
+-		$DELETE_COMBATANT_SA($CharacterContext(),"IsProtectedLightningTarget1");
+-		$SA_REMOVE();
+-		$SkillAdj($TargetContext(),"Save Vs BR","protectedLightning","D","");
+-		$SkillAdj($TargetContext(),"Save Vs RSW","protectedLightning","D","");
+-		$SkillAdj($TargetContext(),"Save Vs SP","protectedLightning","D","");
+-	};
+\(END)
+

@@ -1,0 +1,27 @@
+\(BEGIN)
+name = IsReflecting
+[RedirectSpell] = $VAR atk; // attacker/caster
+-$VAR tgt; // target
+-$VAR cName; // caster's name
+-$VAR tName; // target's name
+-$VAR list; // list of gaze type
+-$VAR num; // number of gaze type
+-$VAR reflect; // gaze being reflected
+-atk = $IndexOf($AttackerContext());
+-tgt = $IndexOf($TargetContext());
+-cName = $GET_CHAR_NAME (atk);
+-tName = $GET_CHAR_NAME (tgt);
+-list = "$its gaze|monsterCharmGaze$its gaze|monsterConfusionGaze$its gaze|monsterPetrifyGaze";
+-num = $DelimitedStringCount(list);
+-$WHILE (num ># 0)
+-	{
+-		num = num -# 1;
+-		reflect = $DelimitedStringSubstring(list,num);
+-		$IF ($SpellContext() == reflect)
+-			{
+-				$SET_HOOK_PARAM(5,$IndexOf($AttackerContext()));
+-				$SET_HOOK_PARAM(6, tName + " reflects " + reflect  + " back at " + cName);
+-			};
+-	};
+\(END)
+

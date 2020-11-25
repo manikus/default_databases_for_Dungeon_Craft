@@ -1,0 +1,10 @@
+\(BEGIN)
+name = spell_Charm
+[InvokeSpellOnTarget] = $IF ($GET_CHARACTER_SA($TargetContext(),"saved")) {$RETURN;};
+-$IF ($GET_CANBEHELDORCHARMED($TargetContext()) !=# 1){$RETURN;};
+-$IF ($GET_COMBATANT_SA($TargetContext(),"monster_ImmuneCharm") != "-?-?-"){$RETURN;};
+-$SetFriendly($IndexOf($TargetContext()), $GET_COMBATANT_SA($Myself(),"side"));
+-$SET_COMBATANT_SA($TargetContext(),"IsCharmed","11");
+-$SET_CHARACTER_SA($TargetContext(),"DispelLevel","11");
+\(END)
+

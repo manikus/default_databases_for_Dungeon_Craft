@@ -1,0 +1,31 @@
+\(BEGIN)
+name = Stone Giant
+icon file = icon_StoneGiant.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathLarge.wav
+intelligence = 10
+armor class = 0
+movement rate = 12
+hit dice = 9.000000
+treat HD as hit points = yes
+hit dice bonus = 2
+THAC0 = 12
+magic resistance = 0
+size = large
+morale = 40
+experience point value = 2332
+Special Ability = monsterLevel,10
+Class = Fighter
+Race = Monster
+form = giant + large
+penalty = DwarfAC + GnomeAC + RangerDmg
+immunity = none
+Misc Options = can be held/charmed
+item = none
+attack = 6,3,0,attacks,
+Undead = none
+\(END)
+// MM p 45
+

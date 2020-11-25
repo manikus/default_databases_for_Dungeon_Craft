@@ -1,0 +1,16 @@
+\(BEGIN)
+name = spell_HarmDisease
+[InvokeSpellOnTarget] = $VAR tgt; // target
+-$VAR minhp;
+-tgt = $IndexOf($TargetContext());
+-$IF ($GET_CHARACTER_SA($TargetContext(),"pcSTR") == "-?-?-")
+-  {
+-   $SET_CHARACTER_SA($TargetContext(),"pcSTR", $GET_CHAR_LIMITED_STR(tgt));
+-   $SET_CHARACTER_SA($TargetContext(),"pcSTRMOD", $GET_CHAR_LIMITED_STRMOD(tgt));
+-  };
+-minhp = $GET_CHAR_MAXHITPOINTS(tgt) /# 10;
+-$IF (minhp <# 1){minhp = 1;};
+-$SET_CHARACTER_SA($TargetContext(),"minhp",minhp);
+-$SET_CHARACTER_SA($TargetContext(),"IsDiseasedSpell",$GET_PARTY_TIME() +# (($RANDOM(6) +# 1) *# 10));
+\(END)
+

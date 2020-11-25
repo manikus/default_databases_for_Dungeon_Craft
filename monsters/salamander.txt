@@ -1,0 +1,38 @@
+\(BEGIN)
+name = Salamander
+icon file = icon_Salamander.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathLarge.wav
+intelligence = 14
+armor class = 3
+movement rate = 9
+hit dice = 7
+treat HD as hit points = yes
+hit dice bonus = 7
+THAC0 = 12
+magic resistance = 0
+size = medium
+morale = 30
+experience point value = 1175
+Special Ability = monsterLevel,9
+Special Ability = monster_CombatantAlignment,evil
+Special Ability = elemental_ImmuneFire
+Special Ability = monster_ImmuneCharm,monster
+Special Ability = monster_ImmuneHold,monster
+Special Ability = monster_ImmuneSleep,monster
+Special Ability = monster_WeaponImmunity,1
+Class = Fighter
+Race = Monster
+form = none
+penalty = none
+immunity = none
+Misc Options = affected by dispel evil
+item = none
+attack = 6,1,0,attacks,
+attack = 6,2,0,attacks,monsterSalamanderFireAttack
+Undead = none
+\(END)
+// MM p85
+

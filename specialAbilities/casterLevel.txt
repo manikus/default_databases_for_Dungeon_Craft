@@ -1,0 +1,19 @@
+\(BEGIN)
+name = casterLevel
+[SpellCasterLevel] = $VAR atk; // attacker
+-$VAR nom;
+-$VAR list;
+-$VAR cls; // class of spell caster
+-$VAR adj; // level modifier
+-$VAR lvl; // level
+-atk = $IndexOf($AttackerContext());
+-nom = $GET_CHAR_NAME(atk);
+-list = $SA_PARAM_GET();
+-cls = $DelimitedStringSubstring(list,0);
+-adj = $DelimitedStringSubstring(list,1);
+-lvl = $GET_CHAR_Lvl(atk,cls) -# adj;
+-$IF (cls == "monster"){$RETURN $GET_MONSTERTYPE_SA(nom,"monsterLevel");};
+-$IF (cls == "item"){$RETURN adj;}
+-$ELSE {$RETURN lvl;};
+\(END)
+

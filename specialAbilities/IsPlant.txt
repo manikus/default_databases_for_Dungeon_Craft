@@ -1,0 +1,4 @@
+\(BEGIN)
+name = IsPlant
+\(END)
+

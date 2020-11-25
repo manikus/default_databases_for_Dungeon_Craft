@@ -1,0 +1,36 @@
+\(BEGIN)
+name = Goblin
+icon file = icon_Goblin.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 7
+armor class = 10
+movement rate = 6
+hit dice = 0.900000
+treat HD as hit points = yes
+hit dice bonus = 0
+THAC0 = 20
+magic resistance = 0
+size = medium
+morale = 25
+experience point value = 13
+Special Ability = IsPerson,monster
+Special Ability = monsterLevel,1
+Special Ability = monster_CombatantAlignment,evil
+Special Ability = monster_Swept,1
+Class = Fighter
+Race = Monster
+form = none
+penalty = DwarfTHAC0 + GnomeTHAC0 + RangerDmg
+immunity = none
+Misc Options = can be held/charmed
+item = Mace
+item = Buckler
+item = Leather Armor
+attack = 6,1,0,attacks,
+Undead = none
+\(END)
+// MM p47
+

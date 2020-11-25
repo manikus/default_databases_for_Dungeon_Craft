@@ -1,0 +1,5 @@
+\(BEGIN)
+name = IsDrained
+[TrainingCharacter] = $SA_REMOVE();
+\(END)
+

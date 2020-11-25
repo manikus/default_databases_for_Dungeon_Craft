@@ -1,0 +1,33 @@
+\(BEGIN)
+name = Lizard Man King
+icon file = icon_LizardManKing.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 10
+armor class = 6
+movement rate = 9
+hit dice = 8.000000
+treat HD as hit points = yes
+hit dice bonus = 0
+THAC0 = 12
+magic resistance = 0
+size = large
+morale = 40
+experience point value = 870
+Special Ability = IsPerson,monster
+Special Ability = monsterLevel,8
+Special Ability = monster_CombatantAlignment,evil
+Class = Fighter
+Race = Monster
+form = large
+penalty = none
+immunity = none
+Misc Options = can be held/charmed
+item = none
+attack = 6,3,2,attacks,
+Undead = none
+\(END)
+// MM p62
+

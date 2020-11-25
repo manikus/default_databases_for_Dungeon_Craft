@@ -1,0 +1,23 @@
+\(BEGIN)
+name = DualclassedMagicUser
+[DualClassAchievedMagicUser] = $VAR savePPDM; $VAR prevSavePPDM;
+-$VAR savePP; 	$VAR prevSavePP; $VAR saveRSW; 	$VAR prevSaveRSW;
+-$VAR saveBR; 	$VAR prevSaveBR; $VAR saveSP; 	$VAR prevSaveSP; 
+-$VAR toHit; 	$VAR prevToHit; $VAR me;
+-me = $IndexOf($CharacterContext());
+-savePPDM = $SkillAdj($CharacterContext(),"Save Vs PPDM","","F",""); prevSavePPDM = $GET_CHARACTER_SA($CharacterContext(),"prevSaveVsPPDM");
+-savePP = $SkillAdj($CharacterContext(),"Save Vs PP","","F",""); prevSavePP = $GET_CHARACTER_SA($CharacterContext(),"prevSaveVsPP");
+-saveRSW = $SkillAdj($CharacterContext(),"Save Vs RSW","","F",""); prevSaveRSW = $GET_CHARACTER_SA($CharacterContext(),"prevSaveVsRSW");
+-saveBR = $SkillAdj($CharacterContext(),"Save Vs BR","","F",""); prevSaveBR = $GET_CHARACTER_SA($CharacterContext(),"prevSaveVsBR");
+-saveSP = $SkillAdj($CharacterContext(),"Save Vs SP","","F",""); prevSaveSP = $GET_CHARACTER_SA($CharacterContext(),"prevSaveVsSP");
+-toHit = $GET_CHAR_THAC0(me); prevToHit = $GET_CHARACTER_SA($CharacterContext(),"prevTHAC0");
+-$IF (savePPDM ># prevSavePPDM) {$SkillAdj($CharacterContext(),"Save Vs PPDM","postDualClass","=",prevSavePPDM);};
+-$IF (savePP ># prevSavePP) {$SkillAdj($CharacterContext(),"Save Vs PP","postDualClass","=",prevSavePP);};
+-$IF (saveRSW ># prevSaveRSW) {$SkillAdj($CharacterContext(),"Save Vs RSW","postDualClass","=",saveRSW);};
+-$IF (saveBR ># prevSaveBR) {$SkillAdj($CharacterContext(),"Save Vs BR","postDualClass","=",saveBR);};
+-$IF (saveSP ># prevSaveSP) {$SkillAdj($CharacterContext(),"Save Vs SP","postDualClass","=",saveSP);};
+-$IF (toHit ># prevToHit) {$SET_CHAR_THAC0(me,prevToHit);};
+-$DELETE_CHARACTER_SA($CharacterContext(),"class_NoSpells");
+-$SET_CHARACTER_SA($CharacterContext(),"class_MageScribe","magicUser");
+\(END)
+

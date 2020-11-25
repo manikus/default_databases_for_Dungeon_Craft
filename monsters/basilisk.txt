@@ -1,0 +1,31 @@
+\(BEGIN)
+name = Basilisk
+icon file = icon_Basilisk.png,0,2,96,48,0,1,0
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 1
+armor class = 4
+movement rate = 6
+hit dice = 6.000000
+treat HD as hit points = yes
+hit dice bonus = 1
+THAC0 = 13
+magic resistance = 0
+size = medium
+morale = 35
+experience point value = 1200
+Special Ability = monsterLevel,7
+Class = Fighter/Magic User
+Race = Monster
+form = none
+penalty = none
+immunity = none
+Misc Options = can be held/charmed
+item = monsterBasiliskPetrifyGaze
+attack = 10,1,0,bites,
+Undead = none
+\(END)
+// MM p8
+

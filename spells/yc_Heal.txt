@@ -1,0 +1,57 @@
+\(BEGIN)
+name = Heal|MonsterCleric
+casting sound = none
+cast msg = /c casts Heal on /t
+missile sound = none
+coverage sound = none
+hit sound = none
+linger sound = none
+cast art = spell_cast_Priest.png,210,2,48,48,0,1,4,1,0,0
+missile art = none
+target cover art = none
+target hit art = spell_hit_Heal.png,200,2,48,48,0,1,4,1,0,0
+target linger art = none
+school = Monster
+cast by = cleric
+can target friend = yes
+can target enemy = yes
+cumulative = yes
+can memorize = no
+allow scribe = no
+auto scribe = no
+in camp = yes
+in combat = yes
+can be dispelled = no
+lingers = no
+linger affects once = no
+save versus = spell
+save result = none
+Special Ability = DamageMagical,wound
+Special Ability = casterLevel,$cleric$0
+Special Ability = spell_FixBlind,cleric
+Special Ability = spell_FixCure,cleric
+Special Ability = spell_FixDisease,cleric
+Special Ability = spell_FixFeeblemind,cleric
+Special Ability = spell_Heal,cleric
+Special Ability = spell_RemoveFeeblemind,cleric
+targeting type = touch
+target quantity = 1
+level = 6
+casting time = 1
+casting time units = rounds
+duration = 0
+duration units = instantaneous
+target duration = 0
+price = 0
+priority = 500
+spell effect 1 = none
+spell effect 2 = $CHAR_STATUS,0,absolute,target,yes
+activate script 1 = $VAR tgt;tgt \= $IndexOf($TargetContext()); $IF (($GET_CHAR_UNDEAD(tgt) \=\= "") || ($GET_CHAR_UNDEAD(tgt) \=\= "none")){$RETURN 1;};
+activate script 2 = $IF ($GET_CHAR_STATUS($IndexOf($TargetContext())) \=\=# 1){$RETURN 1;};
+savingThrowScript = 
+savingThrowSucceededScript = 
+savingThrowFailedScript = 
+begin script = 
+end script = 
+\(END)
+

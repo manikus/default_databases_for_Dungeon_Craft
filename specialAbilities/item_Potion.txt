@@ -1,0 +1,25 @@
+\(BEGIN)
+name = item_Potion
+[CanExamineOrWhatever] = $SET_HOOK_PARAM( 5, "DRINK" );
+-$SET_HOOK_PARAM( 6, 0 );
+-$RETURN "Y";
+[ExamineOrWhatever] = $VAR char;
+-$VAR item;
+-$VAR newItem;
+-$VAR rndm;
+-char = $IndexOf($CharacterContext());
+-item = "Potion";
+-newItem = "Empty Bottle";
+-rndm = $RANDOM(4) +# $RANDOM(4) +# 4;
+-$IF ($GET_CHAR_Ready($CharacterContext(), "WEAPON", 0) == item)
+-	{
+-		$TAKE_CHAR_ITEM($CharacterContext(),item);
+-		$GIVE_CHAR_ITEM($CharacterContext(),newItem);
+-		$SET_CHAR_HITPOINTS(char, $GET_CHAR_HITPOINTS(char) +# rndm);
+-		$IF ($GET_CHAR_HITPOINTS(char) ># $GET_CHAR_MAXHITPOINTS(char))
+-			{
+-				$SET_CHAR_HITPOINTS(char,$GET_CHAR_MAXHITPOINTS(char));
+-			};
+-	};
+\(END)
+

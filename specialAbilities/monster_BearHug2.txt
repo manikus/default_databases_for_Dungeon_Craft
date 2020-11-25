@@ -1,0 +1,19 @@
+\(BEGIN)
+name = monster_BearHug2
+[InvokeSpellOnTarget] = $VAR atk; // attacker
+-$VAR tgt; // target
+-atk = $IndexOf($AttackerContext());
+-tgt = $IndexOf($TargetContext());
+-$IF ($GET_COMBATANT_SA($AttackerContext(),"CombatRoundStart") ==# 1)
+-	{
+-		$IF ($GET_COMBATANT_SA($TargetContext(),"IsHugged") == "-?-?-")
+-			{
+-				$SET_COMBATANT_SA($AttackerContext(),"HugLink",tgt);
+-				$SET_COMBATANT_SA($AttackerContext(),"monster_BearHugging",tgt);
+-				$SET_COMBATANT_SA($TargetContext(),"monster_BearHugged",atk);
+-				$SET_COMBATANT_SA($TargetContext(),"HugLink",atk);
+-				$SET_COMBATANT_SA($TargetContext(),"IsHugged",1);
+-			};
+-	};
+\(END)
+

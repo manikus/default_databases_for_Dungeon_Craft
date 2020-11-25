@@ -1,0 +1,17 @@
+\(BEGIN)
+name = Assassin
+HitDiceLevelBonus = assassin,Constitution,0,0,-2,-1,-1,-1,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2,2,2
+HitDiceBaseclass = *Average*
+StrengthBonusDice = 
+Starting Equipment = Sling
+Starting Equipment = Leather Armor
+Starting Equipment = Shield
+Starting Equipment = Short Sword
+baseclass = assassin
+Special Ability = class_NoSpells,assassin
+Special Ability = class_baseName,$assassin
+Special Ability = class_ThievingSkills,$assassin
+Special Ability = ChangeClassAssassin
+// Special Ability = class_ClassSuppress,"Y"
+\(END)
+

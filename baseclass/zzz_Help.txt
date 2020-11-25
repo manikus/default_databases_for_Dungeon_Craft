@@ -1,0 +1,6 @@
+\(BEGIN)
+name = $$Help
+Special Ability = Date,"December 16, 2017"
+Special Ability = Updates1_02,"minor corrections for druid, fighter, magic user, paladin, ranger and thief"
+Special Ability = Updates_171216,"fixed MaxLevel$SYS$ for all baseclasses"
+\(END)

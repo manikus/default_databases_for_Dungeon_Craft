@@ -1,0 +1,5 @@
+\(BEGIN)
+name = DamageNonMagical
+Parameters = "acid, blunt, cold, crushing, electricity, fire, piercing, poison, psionic, slashing, venom";
+\(END)
+

@@ -1,0 +1,30 @@
+\(BEGIN)
+name = IsMummyDiseased
+[CanCastSpells] = $VAR me;
+-me = $IndexOf($CharacterContext());
+-$IF ($GET_PARTY_DAYS() >=# $SA_PARAM_GET())
+-	{
+-		$SA_PARAM_SET($GET_PARTY_DAYS() +# 30);
+-		$MODIFY_CHAR_ATTRIBUTE(me,"CHA",-2, "MINUTES", 9999999, "Mummy Disease","MONSTER Disease");
+-		$SET_CHARACTER_SA($CharacterContext(),"pcCHA",$GET_CHAR_LIMITED_CHA(me));
+-		$SET_CHARACTER_SA($CharacterContext(),"rot",$GET_CHARACTER_SA($CharacterContext(),"rot") +# 17);
+-		$IF ($RANDOM(100) <= $GET_CHARACTER_SA($CharacterContext(),"rot"))
+-			{
+-				$SET_CHAR_HITPOINTS(me,0); $SET_CHAR_STATUS(me,5);
+-			};
+-		$IF ($GET_CHAR_LIMITED_CHA(me) <# 6)
+-			{
+-				$SET_CHAR_STATUS(me,5);
+-			};
+-	};
+-$IF ($GET_CHAR_STATUS(me) ==# 2 && $GET_CHARACTER_SA($CharacterContext(),"IsMummyRotting") == "-?-?-")
+-	{
+-		$SET_CHARACTER_SA($CharacterContext(),"IsMummyRotting",$GET_PARTY_TIME() +# 60);
+-	};
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Has Mummy Rot"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
+[DoesSpellAttackSucceed] = $VAR dm;
+-dm = $SA_SPELL_GET("DamageMagical");
+-$IF ($SA_SOURCE_NAME() == "Heal" || dm == "cureDis"){$RETURN $SA_REMOVE();};
+-$IF ((dm == "wound" && $SA_SPELL_GET("spell_Attack") == "-?-?-") || dm == "raise"){$RETURN "N";};
+\(END)
+

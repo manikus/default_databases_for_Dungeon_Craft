@@ -1,0 +1,34 @@
+\(BEGIN)
+name = Invisible Stalker
+icon file = icon_InvisibleStalker.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathLarge.wav
+intelligence = 12
+armor class = 3
+movement rate = 12
+hit dice = 8.000000
+treat HD as hit points = yes
+hit dice bonus = 0
+THAC0 = 12
+magic resistance = 30
+size = large
+morale = 35
+experience point value = 1410
+Special Ability = monsterLevel,8
+Special Ability = monster_PlayerControl,yes
+Special Ability = IsInvisibleStalker,yes
+Special Ability = Summoned,plane
+Class = Fighter
+Race = Monster
+form = large
+penalty = none
+immunity = poison + death magic + vorpal weapon
+Misc Options = can be held/charmed + affected by dispel evil
+item = none
+attack = 4,4,0,attacks,
+Undead = none
+\(END)
+// MM p55
+

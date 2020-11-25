@@ -1,0 +1,10 @@
+\(BEGIN)
+name = spell_Summon1
+[CharDisplayStatus] = $SET_HOOK_PARAM(7, "");
+-$SET_HOOK_PARAM(6, "");
+-$RETURN "1";
+[InvokeSpellOnTarget] = $VAR rndmRnd;
+-rndmRnd = $RANDOM(4) +# $GetCombatRound();
+-$SET_CHARACTER_SA($TargetContext(), "summoning1", rndmRnd);
+\(END)
+

@@ -1,0 +1,23 @@
+\(BEGIN)
+name = monster_AuraGhast
+[CreateMonsterCombatant] = $VAR me; // sa's parameter
+-me = $IndexOf($CharacterContext());
+-$AURA_Create("monster_AuraGhast","",me,"","");
+[AURA_Create] = $VAR chr; // character
+-chr = $AURA_GetData(0);
+-$AURA_Attach("Combatant");
+-$AURA_Combatant(chr);
+-$AURA_Size(0,1,0,360);
+-$AURA_Shape("AnnularSector");
+-$AURA_Wavelength("Xray");
+[AURA_Enter] = $VAR me;
+-$VAR save; // save vs poison
+-$VAR rndm;
+-me = $IndexOf($CombatantContext());
+-save = $SkillAdj($CombatantContext(),"Save Vs PPDM","ghast","F",0);
+-rndm = $RANDOM(20) +# 1;
+-$IF ($SA_SOURCE_NAME() == $GET_CHAR_NAME(me)) {$RETURN;};
+-$IF (rndm <# save){$RETURN $SET_COMBATANT_SA($CombatantContext(),"IsCarrionStenched","");};
+[AURA_Exit] = $DELETE_COMBATANT_SA($CombatantContext(),"IsCarrionStenched");
+\(END)
+

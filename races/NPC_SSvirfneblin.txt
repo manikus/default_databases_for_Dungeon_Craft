@@ -1,0 +1,41 @@
+\(BEGIN)
+name = Svirfneblin
+height = 2d4+34+(1*Male)
+weight = 2d9+65+((5+1d4)*Male)
+age = 3d12+60
+maxage = 3d100+200
+BaseMovement = 6
+AbilityRequirement = Strength 6/18(50)
+AbilityRequirement = Intelligence 7/18
+AbilityRequirement = Wisdom 3/18
+AbilityRequirement = Dexterity 3/18
+AbilityRequirement = Constitution 8/18
+AbilityRequirement = Charisma 3/18
+AllowedMultiClass = Fighter/Magic User
+AllowedMultiClass = Fighter/Thief
+AllowedMultiClass = Magic User/Thief
+Special Ability = race_ShortSaveBonus,8
+ChangeClass = no
+DwarfResistance = no
+GnomeResistance = no
+FindSecretDoor = 0
+FindSecretDoorSearching = 1
+Skill = DetectGrade,80
+Skill = DetectApproxDepth,60
+Skill = Infravision,60
+Skill = DetermineDirectionUnderground,50
+Skill = DetectUnsafeCeilingsWallsFloors,70
+Skill = MaxLevel$SYS$,40
+SkillAdjAbility = MaxLevel$SYS$,Strength,+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1
+SkillAdjAbility = MageLevelCaps,Intelligence,+,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2
+SkillAdjBaseclass = MaxLevel$SYS$,fighter,\=,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+SkillAdjBaseclass = MageLevelCaps,magicUser,\=,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+SkillAdjRace = OpenLocks,Svirfneblin,%,105
+SkillAdjRace = FindTraps,Svirfneblin,%,110
+SkillAdjRace = MoveSilent,Svirfneblin,%,105
+SkillAdjRace = HideInShadows,Svirfneblin,%,105
+SkillAdjRace = HearNoise,Svirfneblin,%,110
+SkillAdjRace = ClimbWalls,Svirfneblin,%,85
+Special Ability = race_RaceSuppress,"Y"
+\(END)
+

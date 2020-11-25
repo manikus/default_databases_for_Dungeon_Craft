@@ -1,0 +1,12 @@
+\(BEGIN)
+name = SymbolOfPersuasionAURA
+[AURA_Create] = -$AURA_Attach("XY");
+-$AURA_Shape("AnnularSector");
+-$AURA_Size(0,15,0,360);
+-$AURA_Spell("Symbol Of Persuasion");
+-$AURA_Wavelength("Visible");
+[AURA_Enter] = $VAR tgt; $VAR exp;
+-tgt = $AURA_GetData(1); exp = $AURA_GetData(2);
+-$SET_COMBATANT_SA($CombatantContext(),"IsSymbolPersuaded",exp);
+\(END)
+

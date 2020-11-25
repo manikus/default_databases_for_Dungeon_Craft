@@ -1,0 +1,11 @@
+\(BEGIN)
+name = spell_CurseMinor
+[Dispel] = $SA_REMOVE();
+-$RUN_CHAR_SE_SCRIPTS($TargetContext(),"Dispel SE");
+[Dispel SE] = $REMOVE_SPELL_EFFECT($CharacterContext(),$GET_HOOK_PARAM(5));
+[InvokeSpellOnTarget] = $VAR mySide;
+-mySide = $GET_CHARACTER_SA($AttackerContext(),"side");
+-$IF (mySide ==# $GET_CHARACTER_SA($TargetContext(),"side")){$RETURN;};
+-$SET_CHARACTER_SA($TargetContext(),"IsCursed",$GET_PARTY_TIME() +# 6);
+\(END)
+

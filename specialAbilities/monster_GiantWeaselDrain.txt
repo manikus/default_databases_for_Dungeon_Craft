@@ -1,0 +1,36 @@
+\(BEGIN)
+name = monster_GiantWeaselDrain
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7,$SA_PARAM_GET());
+-$SET_HOOK_PARAM( 6,"");
+-$RETURN 1;
+[GetAdjMaxMovement] = $RETURN 0;
+[GetNumberOfAttacks] = $RETURN 0;
+[OnStartCombatantAction] = $VAR tgt; // target
+-$VAR dmg;
+-$VAR HP; // hit points
+-// Test Target and Compute & Apply Drain
+-tgt = $GET_COMBATANT_SA($CombatantContext(),"monster_GiantWeaselLink");
+-HP = $GET_CHAR_HITPOINTS(tgt);
+-$IF ($GET_CHAR_STATUS(tgt) ==# 0) 
+-	{
+-		dmg = ($RANDOM(6) +# 1) +# ($RANDOM(6) +# 1);
+-		$SET_CHAR_HITPOINTS(tgt,HP -# dmg);
+-// Is Target Dead?
+-		$IF (HP <# 1)
+-			{
+-// Target
+-				$SET_CHAR_STATUS(tgt,1);
+-// Attacker
+-				$DELETE_COMBATANT_SA($CombatantContext(),"monster_GiantWeaselDrain");
+-				$DELETE_COMBATANT_SA($CombatantContext(),"monster_GiantWeaselLink");
+-			};
+-	}
+-$ELSE
+-	{
+-// Someone Else Killed It
+-// Attacker
+-		$DELETE_COMBATANT_SA($CombatantContext(),"monster_GiantWeaselDrain");
+-		$DELETE_COMBATANT_SA($CombatantContext(),"monster_GiantWeaselLink");
+-	};
+\(END)
+

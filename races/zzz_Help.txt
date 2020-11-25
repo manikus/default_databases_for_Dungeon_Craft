@@ -1,0 +1,9 @@
+\(BEGIN)
+name = $$Help
+Special Ability = Date,"December 16, 2017"
+Special Ability = updates1_01,"gave all races except monster a 1 for FindSecretDoorSearching if it was previously 0"
+Special Ability = Updates1_02,"fixed thief racial bonuses for half-elf and half-orc"
+Special Ability = Updates1_03,"fixed incorrect multi-class listing for half-elf"
+Special Ability = Updates171216,"fixed MaxLevel$SYS$ for all races"
+\(END)
+

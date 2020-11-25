@@ -1,0 +1,206 @@
+// Monster database file
+// The line above **must** be the first line of the monsters file!!!
+//
+//	Total validation is performed when reading this data. Nothing you do can cause the program to crash.  It may spit error messages and quit for lack of something decent to do but it will not crash or do unexpected things. It shouldn't anyway. If it does, please let us know.
+//
+//	The first item has the name "template" and will be ignored.  You can use it as a 'template'.  Copy it to the bottom of the file and edit the copy to add your item to the database.
+//
+//	Each line is of the form    name = value (value may be omitted)
+//	eg:   
+//		Special Ability = 
+//	This line will be interpreted as setting 'Special Ability' to the empty string.  This is commonly the default so in many cases it is the same as omitting the line entirely.
+//
+//	White space is a bit important.  Because names and values can contain blanks.  So the rule is....leading and trailing whitespace are ignored.  So, for example:
+//		attack bonus         =     3         <cr>
+//		attack bonus=3<cr>
+//	are equivalent.  But
+//		attack    bonus = 3
+//		attack bonus = 3
+//	are different.
+//
+//	Lines starting with two slashes are comment lines.  Like this one.
+//
+//	Attribute names are case-insensitive.  
+//		Name = Wimpy Axe
+//		namE = Wimpy Axe
+//		NAME = Wimpy Axe
+//	are equivalent.
+//	Text values retain their case.  Values with enumerated possibilities are case-insensitive.  Example  cLaSs = PaLaDiN     + FiGhTeR+ThIeF
+//
+//	File names can use the UNIX syntax with slashes because the backslash is used to escape special characters and it gets ugly to put double backslashes everywhere.  If you like to use backslashes you may. We will accept either.  Even mixed in a single filename.
+//	Example:    C:/UAF\\src\\guild of ravens/release1/beta\\art/barkeep.bmp
+//
+//	Item definitions are delimited by \(BEGIN) ........ \(END) which must start in column 1.  This ain't free format. You get what you pay for.  
+//
+//  ************ Now for the interesting part  ***********
+//	Each monster is defined by the following fields:
+//
+//	Name (text, required - monster record ignored if missing or blank).
+//	Each monster must have a uniue name.  You may add a qualifier to a name to make it unique.  For example:
+//		Kobald
+//		Kobald|Mean
+//		Kobald|Kind
+//	The qualifier is only used when editing a design.  The qualifier is discarded when the binary files for the design are created.  But the unique name is necessary during the design stage to allow unambiguous references to the monsters.  During gameplay they are identified by a binary integer 'key' so there is no confusion between the three Kobalds.
+//	Default - none.  Missing name will cause entire monster to be skipped.
+//	eg:		name = Blue legged pussycat
+//
+//	Icon  (icon image file used during combat, or "default",  or "none")
+//	A typical combat icon is 1x1 with 2 48x48 pixel frames. Both
+//	frames should face to the right and be on the same row. The
+//	left frame will be the 'ready' pose, and the right will be the 'attack' pose.
+//	comma-separated text format: 
+//		filename,delay,num frames, frame width, frame height, style
+//			filename can be blank to use DEFAULT or "none"
+//			delay in millisecs where 1 sec=1000 ms (should be 0 for monsters)
+//			num frames is total frames in image
+//			width is pixel width of single frame in image, should be 48 for monsters
+//			height is pixel height, should be 48 for monsters
+//			style is animation style, should be 0 for monsters
+//	The only values that actually change should be filename and num frames.
+//	Default - "DEFAULT"
+//	eg:		icon = icon_Kobold.png,0,2,48,48,0,0,0
+//
+// Hit Sound File (text, WAV file played when monster hits opponent, or Deault, or None)
+//	Default - DEFAULT
+//	eg:		hit sound = sound_Hit.wav
+//
+// Miss Sound File (text, WAV file played when monster misses opponent, or default, or None)
+//	Default - DEFAULT
+//	eg:		miss sound = DEFAULT
+//
+// Move Sound File (text, WAV file played when monster moves, or default, or None)
+//	Default - DEFAULT
+//	eg:		move sound = sound_MoveCrawl.wav
+//
+// Death Sound File (text, WAV file played when monster dies, or default, or None)
+//	Default - DEFAULT
+//	eg:		death sound = sound_LastGasp.wav
+//
+// Intelligence (integer)
+//	The intelligance ability score of the monster.
+//	Range is 0 to 25 (PCs are in the range 3-18)
+//	Default - 0
+//	eg:		intelligence = 10
+//
+// Armor class (integer)
+//	Armor Class (AC) represents the difficulty opponents
+//	have when attempting to hit this mosnter. The lower
+//	the AC value, the better the protection
+//	Default - 0
+//	eg:		armor class = -1
+//
+// Movement rate (integer)
+//	This is the number of squares that can be moved during
+//	combat by this monster.
+//	Max value for PCs is 12
+//	Default - 1
+//	eg:		movement rate = 3
+//
+// Hit dice (real number of dice)
+//	The number of Hit Dice that this creature has.
+//	Hit Dice are 8-sided dice.
+//	Default - 2.71828
+//	eg:		hit dice = 2
+//
+// Treat HD as hit points (yes/no)
+//	If true, the 'Hit Dice' value is treated as actual hit
+//	points value instead of how many dice to roll to determine hitpoints.
+//	Default - no
+//	eg:		treat HD as hit points = yes
+//
+// Hit dice bonus (integer)
+//	Bonus Hit Points added to the monsters score.
+//	Default - 0
+//	eg:		hit dice bonus = 2
+//
+// THACO (integer)
+//	THAC0 stands for "to hit armor class 0" and is the
+//	number needed for the monster to successfully attack
+//	an opponent with an Armor Class of 0
+//	Default - 10
+//	eg:		THAC0 = 14
+//
+// Magic Resistance (integer)
+//	Magic Resistance represents a percentage score
+//	that is the monsters immunity to all magic
+//	Default - 0
+//	eg:		magic resistance = 3
+//
+// Size (small, medium, large)
+//	This is the size class of the creature. Humans
+//	and other Player Character races are medium.
+//	Default - small
+//	eg:		size = medium
+//
+// Morale (integer)
+//	This score is the likelihood that the monster will
+//	stand its ground during combat.
+//	The range for this score is 0 to 50 and is
+//	added to the Combat Morale score defined
+//	in the Event Editor
+//	Default - 0
+//	eg:		morale = 30
+//
+// experience point value (integer)
+//	This is the number of XP awarded to the party for
+//	defeating the monster in combat.
+//	Default - 0
+//	eg:		experience point value = 2000
+//
+// Special Ability (SA name)
+//	each listed Special Ability corresponds to
+//	the Special Ability database.
+//	Each Special Ability is listed on a new line
+//	with a separate instance of the keyword.
+//	eg:		Special Ability = monsterPoisonousBite
+// 
+// Class (name of class)
+//	compared to classes permitted for each item to determine if
+//	an item can be readied by this monster, compared to legal
+//	classes from Class database
+//	Default - none
+//	eg:		Class = Fighter
+//
+// Race (name of race)
+//	Name corresponding to one of the races in the race database.
+//	Default - monster
+//	eg:		Race = Drow
+//
+// Form (combinable - none, mammal, animal, snake, giant, large (even if icon is 1x1)
+//	Default - mammal
+//	eg:		form = animal + giant + snake
+//
+// Penalty (combinable - none, DwarfAC, GnomeAC, DwarfTHACO, GnomeTHACO, RangerDmg)
+//	Default - none
+//	eg:		penalty = dwarfac + rangerdmg
+//
+// Immunity (combinable - none, poison, death magic, confusion, vorpal weapon)
+//	Default - none
+//	eg:		immunity = confusion + poison
+//
+// Misc Options (combinable - none, can be held/charmed, affected by dispel evil)
+//	Default = none
+//	eg:		misc options = affected by dispel evil
+//
+// item (name of item)
+//	The name of item that is added to monster's inventory.
+//	Add multiple items by using multiple 'item = <name>' lines
+//	Default - none
+//	eg:		item = Long Sword
+//
+// attack (text, attack dice)
+//	Attack dice formatted as: dice sides,nbr dice,bonus per
+//	roll, message the attack message is limited to 20 characters
+//	Add multiple attacks by using multiple 'attack = <data>' lines
+//	Default - none
+//	eg:		attack = 4,1,0,attacks
+//
+// Undead (name of undead type)
+//	Choose one of: none, Skeleton, Zombie, Ghoul, Shadow, Wight,
+//	Ghast, Wraith, Mummy, Spectre, Vampire, Ghost, Lich, Special
+//	The list of Undead is controlled by a Special Ability in
+//	the Special Abilty database.
+//	Default - none
+//	eg:		Undead = Skeleton
+//
+

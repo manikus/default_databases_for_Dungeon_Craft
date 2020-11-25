@@ -1,0 +1,26 @@
+\(BEGIN)
+name = item_VorpalLongSword
+[ComputeDamage] = $VAR roll;
+-$VAR tgt; // target
+-$VAR nom;
+-$VAR par5;
+-$IF ($GET_HASVORPALIMMUNITY($TargetContext()) != ""){$RETURN;};
+-roll = $GET_COMBATANT_SA($TargetContext(),"vorp");
+-tgt = $IndexOf($TargetContext());
+-nom = $GET_CHAR_NAME(tgt);
+-par5 = $GET_HOOK_PARAM(5);
+-$IF ($GET_MONSTERTYPE_SA(nom,"MetalOrStone") != "-?-?-"){roll = roll -# 2;};
+-$IF ($GET_CHAR_SIZE(tgt) == 2){roll = roll -# 1;};
+-$IF (roll ># 16)
+-	{
+-		$SET_HOOK_PARAM(7,nom +" is beheaded");
+-		$RETURN par5 +# 11);
+-	};
+[DoesAttackSucceed] = $VAR par5; $VAR par6;
+-par5 = $GET_HOOK_PARAM(5);
+-par6 = $GET_HOOK_PARAM(6);
+-$SET_COMBATANT_SA($TargetContext(),"vorp",par5);
+-$IF (par5 >=# par6){$RETURN "Y";}
+-$ELSE {$RETURN "N";};
+\(END)
+

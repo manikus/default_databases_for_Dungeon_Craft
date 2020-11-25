@@ -1,0 +1,8 @@
+\(BEGIN)
+name = spell_GeasAttack
+[InvokeSpellOnTarget] = $VAR tgt; $VAR iq;
+-tgt = $IndexOf($TargetContext()); iq = $GET_CHAR_LIMITED_INT(tgt);
+-$IF (iq ># 1) {$SET_COMBATANT_SA($TargetContext(),"IsGeasAttack","F");};
+-$SetFriendly(tgt, $GET_COMBATANT_SA($Myself(),"side"));
+\(END)
+

@@ -1,0 +1,12 @@
+\(BEGIN)
+name = IsEntangled1
+[CharDisplayStatus] = $RUN_AREA_SE_SCRIPTS("Entangled1", $IndexOf($CharacterContext()));
+-$SET_HOOK_PARAM( 7, $GET_HOOK_PARAM(8)); $SET_HOOK_PARAM( 6,""); $RETURN 1;
+[Dispel] = $SA_REMOVE();
+[GetAdjMaxMovement] = $VAR chr; // character
+-chr = $IndexOf($CharacterContext());
+-$SET_HOOK_PARAM(6, $GET_HOOK_PARAM(5));
+-$RUN_AREA_SE_SCRIPTS("MovementAdjustments",chr);
+-$RETURN $GET_HOOK_PARAM(5);
+\(END)
+

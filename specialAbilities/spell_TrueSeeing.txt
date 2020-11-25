@@ -1,0 +1,19 @@
+\(BEGIN)
+name = spell_TrueSeeing
+[InvokeSpellOnTarget] = $VAR atk; $VAR cls; $VAR lvl; $VAR exp;
+-atk = $IndexOf($AttackerContext());
+-cls = $GetHighestLevelBaseclass(atk);
+-lvl = $GET_CHAR_Lvl(atk,cls);
+-exp = $GET_PARTY_TIME() +# lvl;
+-$SET_CHARACTER_SA($TargetContext(),"IsDetectingEvil",exp);
+-$SET_CHARACTER_SA($TargetContext(),"IsDetectingGood",exp);
+-$SET_CHARACTER_SA($TargetContext(),"IsDetectingIllusion",exp);
+-$SET_CHARACTER_SA($TargetContext(),"IsDetectingMagic",exp);
+-$SET_CHARACTER_SA($TargetContext(),"IsDetectingSecretDoors",exp);
+-$SET_CHARACTER_SA($TargetContext(),"IsKnowingAlignment",exp);
+-$SET_CHARACTER_SA($TargetContext(),"IsSeeingAstral",exp);
+-$SET_CHARACTER_SA($TargetContext(),"IsSeeingDisplaced",exp);
+-$SET_CHARACTER_SA($TargetContext(),"IsSeeingEthereal",exp);
+-$SET_CHARACTER_SA($TargetContext(),"IsSeeingInvisible",exp);
+\(END)
+

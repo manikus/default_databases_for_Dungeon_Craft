@@ -1,0 +1,27 @@
+\(BEGIN)
+name = spell_InsectPlagueDruid
+[CheckProximity] = $VAR atk; // attacker/caster
+-$VAR tgt; // target
+-$VAR range;
+-$VAR distance;
+-$VAR sVS; // Save Vs Spell
+-$VAR roll;
+-$VAR bCls; // target baseclass
+-$VAR lvl; // target level
+-atk = $GET_HOOK_PARAM(5);
+-tgt = $GET_HOOK_PARAM(6);
+-range = $SA_PARAM_GET();
+-distance = $VisualDistance(tgt, atk);
+-$IF (range <# distance) {$RETURN;};
+-sVS = $SkillAdj($TargetContext(), "Save Vs SP", "", "F", "");
+-roll = $RANDOM(20) +# 1;
+-bCls = $GetHighestLevelBaseclass(tgt);
+-lvl = $GetBaseclassLevel(tgt,bCls);
+-$IF (lvl <# 3){$SET_COMBATANT_SA($TargetContext(),"IsInsectFlee",atk);};
+-$IF (lvl <# 6){$IF (sVS ># roll){$SET_COMBATANT_SA($TargetContext(),"IsInsectFlee",atk);};};
+[Dispel] = $SA_REMOVE();
+-$RUN_CHAR_SE_SCRIPTS($TargetContext(),"Dispel SE");
+[Dispel SE] = $REMOVE_SPELL_EFFECT($CharacterContext(),$GET_HOOK_PARAM(5));
+[RemoveLinger] = $RETURN "AREA";
+\(END)
+

@@ -1,0 +1,38 @@
+\(BEGIN)
+name = Ice Troll
+icon file = icon_IceTroll.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathLarge.wav
+intelligence = 6
+armor class = 8
+movement rate = 9
+hit dice = 2.000000
+treat HD as hit points = no
+hit dice bonus = 6
+THAC0 = 16
+magic resistance = 0
+size = large
+morale = 35
+experience point value = 60
+Special Ability = monsterLevel,2
+Special Ability = monster_CombatantAlignment,evil
+Special Ability = elemental_ImmuneCold
+Special Ability = monster_ElementalVulnerabity,fire
+Special Ability = monster_WeaponImmunity,1
+Special Ability = monster_TrollGetUp,monster
+Special Ability = monster_TrollRegeneration,2
+Class = Fighter
+Race = Monster
+form = large
+penalty = DwarfAC + GnomeAC + RangerDmg
+immunity = none
+Misc Options = can be held/charmed
+item = none
+attack = 8,1,0,attacks,
+attack = 8,1,0,attacks,
+Undead = none
+\(END)
+// FF p80
+

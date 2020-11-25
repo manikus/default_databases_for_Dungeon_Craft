@@ -1,0 +1,14 @@
+\(BEGIN)
+name = spell_Blink
+[InvokeSpellOnTarget] = $VAR atk; // attacker
+-$VAR lvl;
+-atk = $IndexOf($AttackerContext());
+-lvl = $GET_CHAR_Lvl(atk,"magicUser");
+-$SET_CHARACTER_SA($AttackerContext(),"IsBlinking",$GET_PARTY_TIME() +# lvl);
+-$IF ($GET_CHARACTER_SA($AttackerContext(),"side") != "-?-?-")
+-	{
+-		$SET_CHARACTER_SA($AttackerContext(),"IsBlinking1",1);
+-		$SET_CHARACTER_SA($AttackerContext(),"IsBlinking2",1);
+-	};
+\(END)
+

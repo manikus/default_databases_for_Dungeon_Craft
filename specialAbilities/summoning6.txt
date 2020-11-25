@@ -1,0 +1,19 @@
+\(BEGIN)
+name = summoning6
+[StartCombatRound] = $VAR list;
+-$VAR count;
+-$VAR n;
+-$VAR monster1;
+-$VAR rndmRnd;
+-list = "$Troll$Wight$Wraith$Wyvern";
+-count = $DelimitedStringCount(list);
+-n = $RANDOM(count);
+-monster1 = $DelimitedStringSubstring(list,n);
+-rndmRnd = $SA_PARAM_GET();
+-$IF (rndmRnd ==# $GetCombatRound())
+-	{
+-		$AddCombatant(monster1,1);
+-		$SA_REMOVE();
+-	};
+\(END)
+

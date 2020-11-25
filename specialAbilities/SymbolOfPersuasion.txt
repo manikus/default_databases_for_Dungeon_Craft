@@ -1,0 +1,8 @@
+\(BEGIN)
+name = SymbolOfPersuasion
+[InvokeSpellOnTarget] = $VAR atk; $VAR tgt; $VAR rndm; $VAR exp;
+-atk = $IndexOf($AttackerContext()); tgt = $IndexOf($TargetContext());
+-rndm = ($RANDOM(20) +# 1) *# 10; exp = $GET_PARTY_TIME() +# rndm;
+-$AURA_Create("SymbolOfPersuasionAURA","",atk,tgt,exp);
+\(END)
+

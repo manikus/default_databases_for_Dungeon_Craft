@@ -1,0 +1,52 @@
+\(BEGIN)
+name = Cure Light Wounds
+casting sound = sound_Cast.wav
+cast msg = /c casts Cure Light Wounds on /t
+missile sound = none
+coverage sound = none
+hit sound = sound_Hit.wav
+linger sound = none
+cast art = spell_cast_Priest.png,210,2,48,48,0,1,4,1,0,0
+missile art = none
+target cover art = none
+target hit art = spell_hit_CureLightWounds.png,200,11,48,48,0,1,0,1,0,0
+target linger art = none
+school = Cleric
+cast by = cleric
+can target friend = yes
+can target enemy = yes
+cumulative = yes
+can memorize = yes
+allow scribe = yes
+auto scribe = yes
+in camp = yes
+in combat = yes
+can be dispelled = no
+lingers = no
+linger affects once = no
+save versus = spell
+save result = none
+Special Ability = DamageMagical,wound
+Special Ability = casterLevel,$cleric$0
+Special Ability = spell_FixCure,cleric
+targeting type = touch
+target quantity = 1
+level = 1
+casting time = 5
+casting time units = initiative
+duration = 0
+duration units = instantaneous
+target duration = 0
+price = 10
+priority = 500
+spell effect 1 = $CHAR_HITPOINTS,1d8,delta,target,yes
+spell effect 2 = $CHAR_STATUS,0,absolute,target,yes
+activate script 1 = $VAR tgt;tgt \= $IndexOf($TargetContext()); $IF (($GET_CHAR_UNDEAD(tgt) \=\= "") || ($GET_CHAR_UNDEAD(tgt) \=\= "none")){$RETURN 1;};
+activate script 2 = $IF ($GET_CHAR_STATUS($IndexOf($TargetContext())) \=\=# 1){$RETURN 1;};
+savingThrowScript = 
+savingThrowSucceededScript = 
+savingThrowFailedScript = 
+begin script = 
+end script = 
+\(END)
+

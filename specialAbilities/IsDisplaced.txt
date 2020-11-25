@@ -1,0 +1,11 @@
+\(BEGIN)
+name = IsDisplaced
+[DoesAttackSucceed] = $IF ($GET_COMBATANT_SA($TargetContext(),"IsCloakDisplaced") != "-?-?-" && $GET_COMBATANT_SA($TargetContext(),"displaceMiss") == "-?-?-")
+-	{
+-		$SET_COMBATANT_SA($TargetContext(),"displaceMiss",1);
+-		$SET_HOOK_PARAM(6,$GET_HOOK_PARAM(6) +# 90);
+-	};
+-$IF ($GET_HOOK_PARAM(5) >=# $GET_HOOK_PARAM(6)){$RETURN "Y";}
+-$ELSE {$RETURN "N";};
+\(END)
+

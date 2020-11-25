@@ -1,0 +1,20 @@
+\(BEGIN)
+name = Paladin
+HitDiceLevelBonus = paladin,Constitution,0,0,-2,-1,-1,-1,0,0,0,0,0,0,0,0,1,2,3,4,5,5,6,6,6,7,7
+HitDiceBaseclass = *Average*
+StrengthBonusDice = 1D100
+Starting Equipment = Long Sword
+Starting Equipment = Shield
+Starting Equipment = Arrow
+Starting Equipment = Long Bow
+Starting Equipment = Banded Mail
+baseclass = paladin
+Special Ability = class_Paladin,paladin
+Special Ability = class_baseName,$paladin
+Special Ability = class_Sweep,paladin
+Special Ability = class_AttacksPerRound,paladin
+Special Ability = class_Leader,paladin
+Special Ability = ChangeClassPaladin
+// Special Ability = class_ClassSuppress,"Y"
+\(END)
+

@@ -1,0 +1,20 @@
+\(BEGIN)
+name = IsDruidShapeChanger
+[CanLayOrWhatever] = $VAR prevTime;
+-$VAR curTime;
+-$VAR elapsedTime;
+-prevTime = $GET_CHARACTER_SA($CharacterContext(),"druidChangeTime");
+-curTime = $GET_PARTY_TIME();
+-$IF(prevTime)  // First time fudge.
+-{elapsedTime = curTime -# prevTime;}
+-$ELSE{elapsedTime = 999;};
+-$IF ((elapsedTime >= 0) && (elapsedTime <# 24)) {$RETURN;};
+-$SET_HOOK_PARAM( 5, "SHAPE CHANGE" );
+-$SET_HOOK_PARAM( 6, "0");
+[LayOrWhatever] = $VAR curTime;
+-curTime = $GET_PARTY_TIME();
+-$SET_CHARACTER_SA($CharacterContext(),"druidChangeTime",curTime);
+-$SET_HOOK_PARAM(1,"druidShapeChange");
+-$RETURN "CastSpell";
+\(END)
+

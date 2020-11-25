@@ -1,0 +1,44 @@
+\(BEGIN)
+name = spell_Restoration
+[InvokeSpellOnTarget] = $VAR tgt; // target
+-$VAR feebled;
+-$VAR drained;
+-$VAR head;
+-$VAR cls;
+-$VAR level;
+-$VAR hp;
+-$VAR done;
+-$VAR tHP;
+-$VAR tMaxHP;
+-tgt = $IndexOf($TargetContext());
+-done = 0;
+-// Level restoration
+-drained = $GET_CHARACTER_SA($TargetContext(),"IsDrained");
+-$IF (drained != "-?-?-")
+-	{
+-		tHP = $GET_CHAR_HITPOINTS(tgt);
+-		tMaxHP = $GET_CHAR_MAXHITPOINTS(tgt);
+-		$WHILE (done <# 1)
+-			{
+-				head = $DelimitedStringHead(drained);
+-				cls = $DelimitedStringSubstring(head,0);
+-				$IF ($GET_CHAR_Lvl(tgt,cls) <# $DelimitedStringSubstring(head,1))
+-					{
+-						level = $DelimitedStringSubstring(head,1);
+-						$SET_CHAR_Lvl(tgt,cls,level);
+-						$SET_CHAR_Exp(tgt,cls,$DAT_Baseclass_Experience(cls,level));
+-						hp = $DelimitedStringSubstring(head,2);
+-						$SET_CHAR_MAXHITPOINTS(tgt,tMaxHP +# hp);
+-						$SET_CHAR_HITPOINTS(tgt,tHP +# hp); 
+-						done = 2;
+-					};
+-				$SET_CHARACTER_SA($TargetContext(),"IsDrained",$DelimitedStringTail(drained));
+-				$IF ($GET_CHARACTER_SA($TargetContext(),"IsDrained") == "$|99")
+-					{
+-						$DELETE_CHARACTER_SA($TargetContext(),"IsDrained");
+-						done = 3;
+-					};
+-			};
+-	};
+\(END)
+

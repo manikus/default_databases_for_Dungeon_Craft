@@ -1,0 +1,9 @@
+\(BEGIN)
+name = spell_Disease
+[InvokeSpellOnTarget] = $VAR tgt; // target
+-tgt = $IndexOf($TargetContext());
+-$IF ($GET_CHAR_Lvl(tgt,"paladin") >=# 1){$RETURN;};
+-$IF($GET_CHARACTER_SA($TargetContext(),"IsImmuneDisease") != "-?-?-"){$RETURN;};
+-$SET_CHARACTER_SA($TargetContext(),"IsDiseased","Diseased");
+\(END)
+

@@ -1,0 +1,7 @@
+\(BEGIN)
+name = monster_VulnerableToHolyWater
+[ComputeDamage] = $VAR vulnHolyWater;
+-vulnHolyWater = $SA_ITEM_GET("item_HolyWater");
+-$IF (vulnHolyWater >=# 0){$RETURN $RANDOM(4) +# $RANDOM(4) +# 2;};
+\(END)
+

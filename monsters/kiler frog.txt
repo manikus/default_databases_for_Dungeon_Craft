@@ -1,0 +1,33 @@
+\(BEGIN)
+name = Killer Frog
+icon file = icon_KillerFrog.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathLarge.wav
+intelligence = 0
+armor class = 8
+movement rate = 6
+hit dice = 1.000000
+treat HD as hit points = yes
+hit dice bonus = 4
+THAC0 = 19
+magic resistance = 0
+size = small
+morale = 35
+experience point value = 52
+Special Ability = monsterLevel,2
+Class = Fighter
+Race = Monster
+form = animal
+penalty = none
+immunity = none
+Misc Options = can be held/charmed
+item = none
+attack = 2,1,0,attacks,
+attack = 2,1,0,attacks,
+attack = 4,1,1,bites,
+Undead = none
+\(END)
+// MM p41
+

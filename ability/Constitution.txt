@@ -1,0 +1,6 @@
+\(BEGIN)
+name = Constitution
+Abbreviation = CON
+Roll = 3 |< 3d6 |< 3d6 + (Race_Dwarf*1) + (Race_Elf*-1) + ("Race_Half-Orc"*1) >| 19
+\(END)
+

@@ -1,0 +1,5 @@
+\(BEGIN)
+name = spell_SummonElementalWater
+[InvokeSpellOnTarget] = $AddCombatant("Water Elemental",1);
+\(END)
+

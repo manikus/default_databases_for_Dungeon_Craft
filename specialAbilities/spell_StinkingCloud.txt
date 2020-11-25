@@ -1,0 +1,35 @@
+\(BEGIN)
+name = spell_StinkingCloud
+[Dispel] = $SA_REMOVE();
+-$RUN_CHAR_SE_SCRIPTS($TargetContext(),"Dispel SE");
+[Dispel SE] = $REMOVE_SPELL_EFFECT($CharacterContext(),$GET_HOOK_PARAM(5));
+[InvokeSpellOnTarget] = $VAR atk; // attacker
+-$VAR cls;
+-$VAR adj;
+-$VAR lvl;
+-$IF ($GET_CHARACTER_SA($TargetContext(),"IsImmunePoison") != "-?-?-"){$RETURN;};
+-$IF ($GET_HASPOISONIMMUNITY($TargetContext()) == 1){$RETURN;};
+-$IF($GET_CHARACTER_SA($TargetContext(),"IsProtectedPoisonCaster") != "-?-?-"){$RETURN;};
+-$IF($GET_CHARACTER_SA($TargetContext(),"IsProtectedPoisonTarget") != "-?-?-"){$RETURN;};
+-atk = $IndexOf($AttackerContext());
+-cls = $SA_PARAM_GET();
+-adj = $GET_CHARACTER_SA($AttackerContext(),"casterLevel");
+-lvl = $GET_CHAR_Lvl(atk,cls) -# adj;
+-$SET_CHARACTER_SA($TargetContext(),"DispelLevel",lvl);
+-$IF ($GET_CHARACTER_SA($TargetContext(),"StinkingSave") == "-?-?-")
+-  {
+-   $SET_CHARACTER_SA($TargetContext(),"StinkingSave",$SkillAdj($TargetContext(), "Save Vs PPDM", "", "F", ""));
+-   $IF ($GET_CHARACTER_SA($TargetContext(),"StinkingSave") != 1)
+-     {$SET_CHARACTER_SA($TargetContext(),"IsStinkingStuck",$GetCombatRound() +# $RANDOM(4) +# 2);};
+-  };
+-$IF ($GET_CHARACTER_SA($TargetContext(),"StinkingSave") == 1)
+-  {$SET_CHARACTER_SA($TargetContext(),"IsStinkingCloudy",$GetCombatRound());};
+[RemoveLinger] = $RETURN "AREA";
+[SpellLingerBlockage] = $IF ($GET_CHARACTER_SA($CharacterContext(),"IsImmunePoison") != "-?-?-" || $GET_HASPOISONIMMUNITY($CombatantContext()) == 1 || $SA_CHARACTER_GET("IsProtectedPoisonCaster") != "-?-?-" || $SA_CHARACTER_GET("IsProtectedPoisonTarget") != "-?-?-"){$RETURN;};
+-$IF ($GET_CHARACTER_SA($CombatantContext(),"StinkingSave") != "-?-?-")
+-  {$RETURN "N";};
+[StinkAdjust] = $SET_HOOK_PARAM(6, "N");
+[StinkingCloudy] = $RETURN $SET_HOOK_PARAM(8 ,"Coughing");
+[StinkingStuck] = $RETURN $SET_HOOK_PARAM(8 ,"Coughing Uncontrollably");
+\(END)
+

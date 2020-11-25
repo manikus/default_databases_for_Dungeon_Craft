@@ -1,0 +1,32 @@
+\(BEGIN)
+name = Giant Spider
+icon file = icon_GiantSpider.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveInsect.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 6
+armor class = 4
+movement rate = 3
+hit dice = 4.000000
+treat HD as hit points = yes
+hit dice bonus = 4
+THAC0 = 15
+magic resistance = 0
+size = large
+morale = 32
+experience point value = 415
+Special Ability = monsterLevel,5
+Special Ability = monster_CombatantAlignment,evil
+Class = Fighter
+Race = Monster
+form = animal + large
+penalty = none
+immunity = none
+Misc Options = can be held/charmed
+item = none
+attack = 4,1,0,bites,monsterPoison
+Undead = none
+\(END)
+// MM p90
+

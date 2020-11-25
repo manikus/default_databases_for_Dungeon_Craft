@@ -1,0 +1,17 @@
+\(BEGIN)
+name = IsImmuneDragonBreathWeapon
+[Dispel] = $SA_REMOVE();
+[DoesSpellAttackSucceed] = $VAR param;
+-$VAR prm1;
+-$VAR prm2;
+-$VAR tgt; // target
+-param = $SA_PARAM_GET();
+-prm1 = $DelimitedStringSubstring(param,0);
+-prm2 = $DelimitedStringSubstring(param,1);
+-tgt = $IndexOf($TargetContext());
+-$IF ($SA_SPELL_GET("DragonBreathWeapon") == prm1)
+-	{$SET_HOOK_PARAM(5,$GET_CHAR_NAME(tgt) +" is unaffected"); $RETURN "N";};
+-$IF ($SA_SPELL_GET("DragonBreathWeapon") == prm2)
+-	{$SET_HOOK_PARAM(5,$GET_CHAR_NAME(tgt) +" is unaffected"); $RETURN "N";};
+\(END)
+

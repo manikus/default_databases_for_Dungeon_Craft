@@ -1,0 +1,37 @@
+\(BEGIN)
+name = Dracolisk
+icon file = icon_Dracolisk.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathLarge.wav
+intelligence = 9
+armor class = 3
+movement rate = 9
+hit dice = 7
+treat HD as hit points = yes
+hit dice bonus = 3
+THAC0 = 13
+magic resistance = 0
+size = large
+morale = 30
+experience point value = 2560
+Special Ability = monsterLevel,8
+Special Ability = monster_CombatantAlignment,evil
+Special Ability = IsImmuneDragonBreathWeapon,$acid
+Class = Fighter
+Race = Monster
+form = none
+penalty = none
+immunity = none
+Misc Options = can be held/charmed
+item = monsterDracoliskPetrifyGaze
+item = monsterDracoliskPetrifyGaze
+item = monsterDracoliskBreath
+attack = 6,1,0,attacks,
+attack = 6,1,0,attacks,
+attack = 4,3,0,bites,
+Undead = none
+\(END)
+// MMII p55
+

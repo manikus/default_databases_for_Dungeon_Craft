@@ -1,0 +1,9 @@
+\(BEGIN)
+name = spell_WallOfStone
+[Dispel] = $SA_REMOVE();
+-$RUN_CHAR_SE_SCRIPTS($TargetContext(),"Dispel SE");
+[Dispel SE] = $REMOVE_SPELL_EFFECT($CharacterContext(),$GET_HOOK_PARAM(5));
+[RemoveLinger] = $RETURN "AREA";
+[SpellLingerBlockage] = $RETURN "Y";
+\(END)
+

@@ -1,0 +1,31 @@
+\(BEGIN)
+name = IsReduced
+[CanCastSpells] = $VAR me;
+-me = $IndexOf($CharacterContext());
+-$IF ($GET_PARTY_TIME() ># $GET_CHARACTER_SA($CharacterContext(),"reduced"))
+-	{
+-		$DELETE_CHARACTER_SA($CharacterContext(),"reduced");
+-		$SET_CHAR_SIZE(me,$GET_CHARACTER_SA($CharacterContext(),"mySize"));
+-		$RUN_CHAR_SE_SCRIPTS($CharacterContext(),"Dispel SE");
+-		$SA_REMOVE();
+-	};
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7, "Reduced");
+-$SET_HOOK_PARAM( 6, "");
+-$RETURN 1;
+[Dispel] = $VAR me;
+-me = $IndexOf($CharacterContext());
+-$DELETE_CHARACTER_SA($CharacterContext(),"reduced");
+-$REMOVE_CHAR_MODIFICATION(me,"SPELL Reduce *");
+-$SET_CHAR_SIZE(me,$GET_CHARACTER_SA($CharacterContext(),"mySize"));
+-$RUN_CHAR_SE_SCRIPTS($CharacterContext(),"Dispel SE");
+-$SA_REMOVE();
+[Dispel reduced] = $VAR me;
+-me = $IndexOf($CharacterContext());
+-$DELETE_CHARACTER_SA($CharacterContext(),"reduced");
+-$REMOVE_CHAR_MODIFICATION(me,"SPELL Reduce *");
+-$SET_CHAR_SIZE(me,$GET_CHARACTER_SA($CharacterContext(),"mySize"));
+-$RUN_CHAR_SE_SCRIPTS($CharacterContext(),"Dispel SE");
+-$SA_REMOVE();
+[GetAdjMaxMovement] = $RETURN $GET_HOOK_PARAM(5) /# 2;
+\(END)
+

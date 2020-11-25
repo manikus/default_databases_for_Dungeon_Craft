@@ -1,0 +1,10 @@
+\(BEGIN)
+name = StandardDisplaySpellEffect
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7, $SA_PARAM_GET());
+-$SET_HOOK_PARAM( 6, "");
+-$RETURN 1;
+[Dispel] = $SA_REMOVE();
+-$RUN_CHAR_SE_SCRIPTS($TargetContext(),"Dispel SE");
+[Dispel SE] = $REMOVE_SPELL_EFFECT($CharacterContext(),$GET_HOOK_PARAM(5));
+\(END)
+

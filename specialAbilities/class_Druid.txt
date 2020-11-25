@@ -1,0 +1,15 @@
+\(BEGIN)
+name = class_Druid
+[CharDisplayStatus] = $SET_HOOK_PARAM(7,"Immune to Woodland Creature Charm");
+-$SET_HOOK_PARAM(6,"");
+-$RETURN 1;
+TrainingCharacter = $VAR me;
+-me = $IndexOf($CharacterContext());
+-$IF ($GET_CHARACTER_SA($CharacterContext(),"IsDruidImmuneWoodlandCharm") != "-?-?-") {$RETURN;};
+-$IF ($GET_CHAR_Lvl(me,"druid") ># 6)
+-	{
+-		$SET_CHARACTER_SA($CharacterContext(),"IsDruidImmuneWoodlandCharm","");
+-		$SET_CHARACTER_SA($CharacterContext(),"IsDruidShapeChanger","");
+-	};
+\(END)
+

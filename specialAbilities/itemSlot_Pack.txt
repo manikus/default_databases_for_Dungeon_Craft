@@ -1,0 +1,5 @@
+\(BEGIN)
+name = itemSlot_Pack
+[CanReady] = $RETURN "Y";
+\(END)
+

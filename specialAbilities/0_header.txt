@@ -1,0 +1,12 @@
+// Special Abilities database file
+// The line above **must** be the first line of the special abilities file!!!
+// Sample:
+// \(BEGIN)
+// name = Bless
+// [Activation Script] = $PUBLIC $FUNC SA_Bless  // Script names in []
+// -{   //  Continuations start with hyphen
+// -  $RETURN $SET_CHAR_BLESS($IndexOf($Target()),true)
+// -} SA_Bless;
+// (parameterA) = 5    // parameter names in ()
+// \(END)
+

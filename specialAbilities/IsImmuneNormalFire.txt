@@ -1,0 +1,7 @@
+\(BEGIN)
+name = IsImmuneNormalFire
+[DoesSpellAttackSucceed] = $IF ($SA_SPELL_GET("DamageNonMagical") == "fire"){$RETURN "N";};
+-$IF ($SA_ITEM_GET("DamageNonMagical") == "fire"){$RETURN "N";};
+-$IF ($SA_MONSTERTYPE_GET("DamageNonMagical") == "fire"){$RETURN "N";};
+\(END)
+

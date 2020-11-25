@@ -1,0 +1,29 @@
+\(BEGIN)
+name = monster_AuraMummy
+[CreateMonsterCombatant] = $VAR me; $VAR exp;
+-me = $IndexOf($CharacterContext()); exp = $GET_PARTY_TIME() +# $RANDOM(4) +# 1;
+-$AURA_Create("monster_AuraMummy","",me,exp,"");
+[AURA_Create] = $VAR chr; 
+-chr = $AURA_GetData(0);
+-$AURA_Attach("Combatant");
+-$AURA_Combatant(chr);
+-$AURA_Size(0,6,0,360);
+-$AURA_Shape("AnnularSector");
+-$AURA_Wavelength("Xray");
+[AURA_Enter] = $VAR com; // comabtant
+-$VAR race;
+-$VAR save;
+-$VAR rndm;
+-$VAR time;
+-$IF ($GET_COMBATANT_SA($CombatantContext(),"IsOverMummy") != "-?-?-"){$RETURN;};
+-com = $IndexOf($CombatantContext());
+-race = $GET_CHAR_NAME(com);
+-$IF ($SA_SOURCE_NAME() == $GET_CHAR_NAME(race)) {$RETURN;};
+-save = $SkillAdj($CombatantContext(),"Save Vs PPDM","mummy","F",0);
+-rndm = $RANDOM(20) +# 1;
+-time = $AURA_GetData(1);
+-$IF (race == "Human"){save = save +# 2;};
+-$IF (rndm >=# save){$RETURN $SET_COMBATANT_SA($CombatantContext(),"IsOverMummy","");}
+-$ELSE {$RETURN $SET_COMBATANT_SA($CombatantContext(),"IsMummyFear",time);};
+\(END)
+

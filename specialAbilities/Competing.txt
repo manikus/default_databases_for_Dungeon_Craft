@@ -1,0 +1,157 @@
+\(BEGIN)
+name = Competing
+[AdjustInitiative] = $VAR me; $VAR dex; $VAR p5; $VAR list; $VAR adj; $VAR redo; $VAR un;
+-me = $IndexOf($CombatantContext());
+-dex = $GET_CHAR_LIMITED_DEX(me);
+-p5 = $GET_HOOK_PARAM(5);
+-list = "$3$3$3$3$2$1$0$0$0$0$0$0$0$0$0$0$-1$-2$-3$-3$-3$-4$-4$-4$-5$-5";
+-adj = $DelimitedStringSubstring(list,dex);
+-un = $GET_COMBATANT_SA($CombatantContext(),"class_Unsurprised");
+-$IF ($NOT($GetCombatRound()))//Past round 1
+-	{$RETURN adj;};
+-$IF (p5 != 18)// adjustment for unsurprised
+-	{$RETURN adj;};
+-$IF (adj <# "-1" || adj ==# "-1" && un != "-?-?-")// negate surprise for -2 or better
+-	{redo = 1;};
+-$IF (un != "-?-?-" || dex == 16)// 50% negate surprise for -1 or ranger
+-	{redo = $RANDOM(2);};
+-$IF (redo ==# 1)// set new random initiative if not surprised
+-	{$RETURN $RANDOM(10) +# 9 +# adj -# 18;}
+-$ELSE {$RETURN 5;}; // set to surprised
+[AutoAction] = $RETURN $GET_COMBATANT_SA($CombatantContext(),"playerControl");
+[CombatMainMenu] = $VAR adj; $VAR count; $VAR t; $VAR tgt; $VAR bc; $VAR lvl;
+-bc = $GET_CHARACTER_SA($CharacterContext(),"class_Sweep");
+-$IF (bc != "-?-?-") {lvl = $GET_CHAR_Lvl($MyIndex(),bc);};
+-$IF (lvl ># 1)
+-	{
+-		adj = $ListAdjacentCombatants($MyIndex());
+-		t = 0;
+-		count = $DelimitedStringCount(adj);
+-		$WHILE (count >=# 0)
+-			{
+-				tgt = $DelimitedStringSubstring(adj,count);
+-				$IF ($GET_MONSTERTYPE_SA($GET_CHAR_NAME(tgt),"monster_Swept") != "-?-?-" && $GET_CHAR_STATUS(tgt) ==# 0){t = t +# 1;};
+-				count = count -# 1;
+-			};
+-		$IF (t ># 1)
+-			{
+-				$SET_HOOK_PARAM(6, "SWEEP");
+-				$SET_HOOK_PARAM(7, 0);
+-				$SET_COMBATANT_SA($CombatantContext(),"IsSweeping",lvl);
+-			};
+-	};
+[DoesAttackSucceed] = $VAR par5;
+-par5 = $GET_HOOK_PARAM(5);
+-$IF (par5 ==# 20) {$RETURN "Y";};
+-$IF (par5 ==# 1) {$RETURN "N";};
+[FreeAttack-AttackOver] = $SET_HOOK_PARAM(7,"0");
+-$RETURN;
+[FreeAttack-CanFreeAttack] = $VAR rangeWpn; $VAR par8;
+-rangeWpn = $GET_ITEM_SA($GET_CHAR_Ready($AttackerContext(), "WEAPON", 0),"item_CombatAim");
+-par8 = $GET_HOOK_PARAM(8);
+-$IF (rangeWpn != "-?-?-"){$RETURN "N";};
+-$RETURN par8;
+[GetNumberOfAttacks] = $VAR com; $VAR bc; $VAR lvl; $VAR adj; $VAR adjLvl;
+-com = $IndexOf($CombatantContext());
+-bc = $GET_CHARACTER_SA($CharacterContext(),"class_AttacksPerRound");
+-// monk starts
+-$IF ($GET_CHAR_Lvl(com,"monk") ># 0)
+-	{
+-		lvl = $GET_CHAR_Lvl(com,"monk");
+-		$IF (lvl >=# 16) {$RETURN 4;};
+-		$IF (lvl >=# 14) {$RETURN 3;};
+-		$IF (lvl >=# 11) {$IF ((($GetCombatRound() +# 1) %# 2) ==# 0) {$RETURN 2;}
+-						  $ELSE {$RETURN 3;};};
+-		$IF (lvl >=# 9) {$RETURN 2;};
+-		$IF (lvl >=# 6) {$RETURN (($GetCombatRound() +# 1) %# 2) +# 1;};
+-		$IF (lvl >=# 4) {$IF ((($GetCombatRound() +# 1) %# 4) ==# 0) {$RETURN 2;};};
+-// monk ends
+-	};
+-$IF (bc == "-?-?-") {$RETURN;};
+-adj = $GET_CHARACTER_SA($CharacterContext(),"class_AttacksPerRoundAdj");
+-$IF (adj != "-?-?-") {adjLvl = ($GET_CHAR_Lvl(com,bc) -# 1) /# 7;}
+-$ELSE {adjLvl = 0;};
+-lvl = $GET_CHAR_Lvl(com,bc) -# adjLvl;
+-$IF ($GET_MONSTERTYPE_SA($MonsterTypeContext(),"monsterLevel") != "-?-?-"){$RETURN;};
+-$IF (lvl >=# 13) {$RETURN 2;};
+-$IF (lvl >=# 7) {$RETURN (($GetCombatRound() +# 1) %# 2) +# 1;};
+[Guarding-AttackOver] = $RETURN;
+[Guarding-BeginCombat] = $RETURN "N";
+[Guarding-CanGuard] = $VAR rangeWpn;
+-rangeWpn = $GET_ITEM_SA($GET_CHAR_Ready($CombatantContext(), "WEAPON",0),"item_CombatAim");
+-$IF (rangeWpn != "-?-?-"){$RETURN "N";};
+-$IF($GET_HOOK_PARAM(5) ==# 2){$RETURN "Y";};
+[Guarding-CanGuardAttack] = $VAR par5;
+-par5 = $GET_HOOK_PARAM(5);
+-$IF ($GetCombatantState($AttackerContext()) != "ICS_Guarding"){$RETURN "N";};
+-$IF (par5 ># 0){$RETURN "Y";};
+[Guarding-Guard] = $RETURN;
+[Guarding-StartOfRound] = $VAR par5;
+-$VAR par6;
+-par5 = $GET_HOOK_PARAM(5);
+-par6 = $GET_HOOK_PARAM(6);
+-$IF (par5 ==# 3){$SET_HOOK_PARAM(6,"G");};
+[IsCombatReady] = $RETURN;
+[OnStartCombat] = $VAR nm; $VAR nml; $VAR me;
+-$VAR lvl; $VAR lead; $VAR controlNPC;
+-$VAR idx1; $VAR idx4; $VAR modCha;
+-me = $IndexOf($CharacterContext());
+-nm = $GET_CHAR_NAME(me);
+-idx1 = $NextCreatureIndex("", 1);
+-idx4 = $NextCreatureIndex("", 4);
+-$SET_CHARACTER_SA($CharacterContext(  ),"turnUndead","");
+-$IF ($NextCreatureIndex(me -# 1, 4) == me)
+-	{
+-		$SET_CHARACTER_SA($CharacterContext(),"side",1);
+-		$SET_CHAR_ASL(me,"side",1);
+-	}
+-$ELSE
+-	{
+-		$SET_CHARACTER_SA($CharacterContext(),"side",2);
+-		$SET_CHAR_ASL(me,"side",2);
+-	};
+-nml = $GET_CHAR_NAME(idx1);
+-$IF (nm != nml && $GET_MONSTERTYPE_SA(nml,"range") != "-?-?-")
+-	{
+-		$SET_CHARACTER_SA($CharacterContext(),"range" + nml,1);
+-	};
+-$RUN_CHAR_SCRIPTS(me,"spawn");
+-$IF ($GetCombatRound() ># 0) {$SET_COMBATANT_SA($CharacterContext(),"Summoned","spell");};
+-// Paladin Leadership
+-controlNPC = 0;
+-$SET_CHARACTER_SA($CharacterContext(),"endControl", 1);
+-lead = $GET_CHARACTER_SA($CharacterContext(),"class_Leader");
+-lvl = $GET_CHAR_Lvl(me,lead);
+-$IF ($InParty($CharacterContext()) != "" && lvl ># 0)
+-	{
+-		modCha = ($GET_CHAR_LIMITED_CHA(me) -# 13) *# 5;
+-		$IF (lvl >=# 3){controlNPC = modCha +# 79;};
+-		$IF (lvl ==# 2){controlNPC = modCha +# 39;};
+-		$IF (lvl ==# 1){controlNPC = modCha +# 19;};
+-		$SET_PARTY_ASL("controlNPC",controlNPC);
+-	};
+-$IF ($GET_CHARACTER_SA($CharacterContext(),"side") == 1 && $RANDOM(100) <# $GET_PARTY_ASL("controlNPC"))
+-	{
+-		$SET_CHARACTER_SA($CharacterContext(),"playerControl","CP");
+-	};
+[OnStep] = $VAR me;
+-$VAR it;
+-me = $IndexOf($CombatantContext());
+-it = $NextCreatureIndex("", 1);
+-$IF (it != me)
+-	{
+-		$SET_HOOK_PARAM(5, it);
+-		$SET_HOOK_PARAM(6, me);
+-		$RUN_CHAR_SCRIPTS(it,"CheckProximity");
+-		$RUN_CHAR_SCRIPTS(me,"CheckProximity");
+-	};
+[PreStartCombat] = $VAR par5;
+-$VAR char;
+-$VAR class;
+-par5 = $GET_HOOK_PARAM(5);
+-char = $IndexOf($CharacterContext());
+-class = $GET_CHAR_CLASS(char);
+-$IF (class == "Paladin") {$RETURN par5 +# 10000;};
+[StartCombatRound] = $RETURN;
+\(END)
+

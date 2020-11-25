@@ -1,0 +1,39 @@
+\(BEGIN)
+name = Tridrone
+icon file = icon_ModronTridrone.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 0
+armor class = 5
+movement rate = 12
+hit dice = 3.000000
+treat HD as hit points = yes
+hit dice bonus = 3
+THAC0 = 16
+magic resistance = 0
+size = medium
+morale = 50
+experience point value = 145
+Special Ability = monsterLevel,4
+Special Ability = Summoned,plane
+Special Ability = monster_ImmuneCharm,modron
+Special Ability = monster_ImmuneFear,modron
+Special Ability = monster_ImmuneHold,modron
+Special Ability = monster_ImmuneSleep,modron
+Special Ability = monster_ModronElementalResistance,1
+Class = Fighter
+Race = Monster
+form = none
+penalty = none
+immunity = confusion + vorpal weapon
+Misc Options = none
+item = none
+attack = 4,1,2,hits,
+attack = 4,1,2,hits,
+attack = 4,1,2,hits,
+Undead = none
+\(END)
+// MMII p88
+

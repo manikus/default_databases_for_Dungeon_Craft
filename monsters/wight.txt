@@ -1,0 +1,38 @@
+\(BEGIN)
+name = Wight
+icon file = icon_Wight.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 9
+armor class = 5
+movement rate = 12
+hit dice = 4.000000
+treat HD as hit points = yes
+hit dice bonus = 3
+THAC0 = 15
+magic resistance = 0
+size = medium
+morale = 35
+experience point value = 635
+Special Ability = elemental_ImmuneCold
+Special Ability = monsterLevel,5
+Special Ability = monster_CombatantAlignment,evil
+Special Ability = monster_ImmuneCharm
+Special Ability = monster_ImmuneFear,monster
+Special Ability = monster_ImmuneSleep
+Special Ability = monster_VulnerableToHolyWater,monster
+Special Ability = monster_WeaponImmunity,1
+Class = Fighter
+Race = Monster
+form = none
+penalty = none
+immunity = poison + death magic
+Misc Options = none
+item = none
+attack = 4,1,0,attacks,monsterUndeadDrainLevel
+Undead = Wight
+\(END)
+// MM p100
+

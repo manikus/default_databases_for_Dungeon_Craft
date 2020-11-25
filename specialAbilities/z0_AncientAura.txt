@@ -1,0 +1,25 @@
+\(BEGIN)
+name = _AncientAura
+[AURA_Create] = $VAR chr; // character
+-$VAR prm; // SA parameter
+-$DEBUG($SA_NAME());
+-chr = $IndexOf($CharacterContext());
+-prm = $SA_PARAM_GET();
+-$AURA_Attach("Combatant");
+-$AURA_Combatant(chr);
+-$AURA_Size(0,prm,0,360);
+-$AURA_Shape("AnnularSector");
+-$AURA_Spell("AncientAura");
+-$AURA_Wavelength("Xray");
+[AURA_Enter] = $VAR com; // comabtant
+-$VAR cName; // combatant's name
+-com = $IndexOf($CombatantContext());
+-cName = $GET_CHAR_NAME(com);
+-$DEBUG ($SA_NAME() + ", ARUA_Enter");
+-$IF (cName == "Ancient Fighter"){$RETURN;};
+-$SET_COMBATANT_SA($CombatantContext(),"_IsAuraed","");
+[AURA_Exit] = $DEBUG ($SA_NAME() + ", AURA_Exit");
+-$DELETE_COMBATANT_SA($CombatantContext(),"_IsAuraed");
+[CreateMonsterCombatant] = $AURA_Create("_AncientAura",3,0,0,0);
+\(END)
+

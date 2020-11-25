@@ -1,0 +1,10 @@
+\(BEGIN)
+name = spell_Attack
+[InvokeSpellOnTarget] = $IF ($GET_CHARACTER_SA($AttackerContext(),"IsInvisible"))
+-  {
+-   $DELETE_CHARACTER_SA($AttackerContext(),"IsInvisibleSpell");
+-   $DELETE_CHARACTER_SA($AttackerContext(),"IsInvisiblePotion");
+-   $DELETE_COMBATANT_SA($AttackerContext(),"IsInvisible");
+-  };
+\(END)
+

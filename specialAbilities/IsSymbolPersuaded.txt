@@ -1,0 +1,11 @@
+\(BEGIN)
+name = IsSymbolPersuaded
+[StartCombatRound] = $VAR me; $VAR exp; $VAR sd; $VAR fsd;
+-me = $IndexOf($CombatantContext());
+-exp = $SA_PARAM_GET();
+-sd = $GET_COMBATANT_SA($Myself(),"side")
+-$IF (sd ==# 1){fsd = "2";};
+-$IF (sd ==# 2){fsd = "1";};
+-$IF ($GET_PARTY_TIME() ># exp){$SA_REMOVE();$SetFriendly(me,fsd);};
+\(END)
+

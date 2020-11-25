@@ -1,0 +1,5 @@
+\(BEGIN)
+name = monster_RakshasaSpellImmunity
+[DoesSpellAttackSucceed] = $IF ($GET_SPELL_Level($SpellContext()) <# 9){$RETURN "N";};
+\(END)
+

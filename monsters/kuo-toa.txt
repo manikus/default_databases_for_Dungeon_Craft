@@ -1,0 +1,37 @@
+\(BEGIN)
+name = Kuo-toa
+icon file = icon_KuoToa.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 12
+armor class = 4
+movement rate = 9
+hit dice = 18
+treat HD as hit points = no
+hit dice bonus = 0
+THAC0 = 16
+magic resistance = 0
+size = medium
+morale = 40
+experience point value = 149
+Special Ability = elemental_ResistantElectricity
+Special Ability = IsImmunePoison,monster
+Special Ability = IsSeeingInvisible
+Special Ability = monsterLevel,3
+Special Ability = monster_KuoToaFireSave
+Special Ability = monster_KuoToaMagicMissile
+Special Ability = monster_LightSusceptible
+Class = Fighter
+Race = Monster
+form = none
+penalty = none
+immunity = poison
+Misc Options = none
+item = none
+attack = 4,1,1,attacks,
+Undead = none
+\(END)
+// FF p57
+

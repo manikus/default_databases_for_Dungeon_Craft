@@ -1,0 +1,13 @@
+\(BEGIN)
+name = IsStinkingStuck
+[CharDisplayStatus] = $RUN_AREA_SE_SCRIPTS("StinkingStuck", $IndexOf($CharacterContext()));
+-$SET_HOOK_PARAM( 7, $GET_HOOK_PARAM(8)); $SET_HOOK_PARAM( 6,""); $RETURN 1;
+[ComputeDamage] = $IF ($GET_COMBATANT_SA($TargetContext(),"IsStinkingStuck") != "-?-?-")
+-  {$RETURN $GET_CHAR_HITPOINTS($IndexOf($TargetContext()));};
+[Dispel] = $SA_REMOVE();
+[DoesAttackSucceed] = $IF ($GET_COMBATANT_SA($TargetContext(),"IsStinkingStuck") != "-?-?-")
+-  {$RETURN "Y";};
+[IsCombatReady] = $RUN_AREA_SE_SCRIPTS("StinkAdjust", $IndexOf($CharacterContext()));
+-$RETURN $GET_HOOK_PARAM(6);
+\(END)
+

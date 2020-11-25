@@ -1,0 +1,5 @@
+\(BEGIN)
+name = IsImmunePoison
+[DoesSpellAttackSucceed] = $IF ($SA_SPELL_GET("DamageMagical") == "poison" || $SA_SPELL_GET("DamageNonMagical") == "poison"){$RETURN "N";};
+\(END)
+

@@ -1,0 +1,9 @@
+\(BEGIN)
+name = IsImmuneSpellsMinor
+[Dispel] = $SA_REMOVE();
+[DoesSpellAttackSucceed] = $VAR spLvl; $VAR spAtk;
+-spLvl = $GET_SPELL_Level($SpellContext());
+-spAtk = $GET_SPELL_SA($SpellContext(),"spell_Attack");
+-$IF (spLvl <=# 3){$IF (spAtk != "-?-?-"){$RETURN "N";};};
+\(END)
+

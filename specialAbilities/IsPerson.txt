@@ -1,0 +1,5 @@
+\(BEGIN)
+name = IsPerson
+Parameters = "brownies, dryads, dwarves, elves, gnolls, gnomes, goblins, half-elves, halflings, half-orcs, hobgoblins, humans, kobolds, lizard men, nixies, orcs, pixies, sprites, troglodytes";
+\(END)
+

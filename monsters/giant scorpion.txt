@@ -1,0 +1,33 @@
+\(BEGIN)
+name = Giant Scorpion
+icon file = icon_GiantScorpion.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveInsect.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 0
+armor class = 3
+movement rate = 15
+hit dice = 5.000000
+treat HD as hit points = yes
+hit dice bonus = 5
+THAC0 = 13
+magic resistance = 0
+size = medium
+morale = 40
+experience point value = 800
+Special Ability = monsterLevel,7
+Class = Fighter
+Race = Monster
+form = animal
+penalty = none
+immunity = none
+Misc Options = can be held/charmed
+item = none
+attack = 10,1,0,attacks,
+attack = 10,1,0,attacks,
+attack = 4,1,0,stings,monsterPoison
+Undead = none
+\(END)
+// MM p85
+

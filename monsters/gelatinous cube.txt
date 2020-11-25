@@ -1,0 +1,34 @@
+\(BEGIN)
+name = Gelatinous Cube
+icon file = icon_GelatinousCube.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveSuction.wav
+death sound = sound_MonsterDeathLarge.wav
+intelligence = 0
+armor class = 8
+movement rate = 6
+hit dice = 4.000000
+treat HD as hit points = yes
+hit dice bonus = 0
+THAC0 = 15
+magic resistance = 0
+size = large
+morale = 25
+experience point value = 214
+Special Ability = monsterLevel,4
+Special Ability = elemental_ImmuneElectricity
+Special Ability = elemental_SlowingCold
+Special Ability = monster_ImmuneFear,monster
+Class = Fighter
+Race = Monster
+form = large
+penalty = none
+immunity = vorpal weapon
+Misc Options = none
+item = none
+attack = 4,2,0,attacks,monsterParalysis
+Undead = none
+\(END)
+// MM p43
+

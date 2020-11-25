@@ -1,0 +1,30 @@
+\(BEGIN)
+name = monster_DrainStrength
+[InvokeSpellOnTarget] = $VAR tgt; // target
+-$VAR dur;
+-$VAR time;
+-$VAR str; // strength
+-$VAR strMod;
+-tgt = $IndexOf($TargetContext());
+-dur = ($RANDOM(4) +# $RANDOM(4) +# 2) *# 10;
+-time = $GET_PARTY_TIME();
+-str = $GET_CHAR_LIMITED_STR(tgt);
+-strMod = $GET_CHAR_LIMITED_STRMOD(tgt);
+-// SA lowStr used to circumvent Min/Max
+-$IF (str <# 4 && $GET_COMBATANT_SA($TargetContext(),"lowStr") != "-?-?-")
+-	{
+-		$SET_COMBATANT_SA($TargetContext(),"lowStr", $GET_COMBATANT_SA($TargetContext(),"lowStr") -# 1);
+-	}; 
+-$IF (str <# 4 && $GET_COMBATANT_SA($TargetContext(),"lowStr") == "-?-?-")
+-	{
+-		$SET_COMBATANT_SA($TargetContext(),"lowStr",2);
+-	};
+-$MODIFY_CHAR_ATTRIBUTE(tgt, "STR", -1, "MINUTES", dur, "Weakened", "MONSTER Drain Strength");
+-$IF (strMod ># 0) {$MODIFY_CHAR_ATTRIBUTE(tgt, "STRMOD", 100 -# strMod, "MINUTES", dur, "" , "MONSTER Drain Strength");};
+-$IF ($GET_COMBATANT_SA($TargetContext(),"lowStr") ==# 0 || $GET_CHAR_HITPOINTS(tgt) <# 1)
+-	{
+-		$SET_CHAR_HITPOINTS(tgt,"-10");
+-		$RETURN $SET_CHAR_STATUS(tgt,5);
+-	};
+\(END)
+

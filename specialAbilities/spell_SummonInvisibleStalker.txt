@@ -1,0 +1,5 @@
+\(BEGIN)
+name = spell_SummonInvisibleStalker
+[InvokeSpellOnTarget] = $AddCombatant("Invisible Stalker","1");
+\(END)
+

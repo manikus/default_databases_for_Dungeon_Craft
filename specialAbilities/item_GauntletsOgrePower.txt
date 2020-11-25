@@ -1,0 +1,12 @@
+\(BEGIN)
+name = item_GauntletsOgrePower
+[OnReady] = $VAR tgt; $VAR str; $VAR strMod;
+-tgt = $IndexOf($CharacterContext()); str = $GET_CHAR_LIMITED_STR(tgt); strMod = $GET_CHAR_LIMITED_STRMOD(tgt);
+-$MODIFY_CHAR_ATTRIBUTE(tgt,"STR",18 -# str, "MINUTES", 999999999, "Ogre Strength","ITEM Ogre Strength");
+-$IF (strMod ># 0)
+-	{$MODIFY_CHAR_ATTRIBUTE(tgt,"STRMOD",100 -# strMod, "MINUTES", 999999999, "","ITEM Ogre Strength");};
+[OnUnReady] = $VAR tgt; // target
+-tgt = $IndexOf($CharacterContext());
+-$REMOVE_CHAR_MODIFICATION(tgt,"ITEM Ogre Strength");
+\(END)
+

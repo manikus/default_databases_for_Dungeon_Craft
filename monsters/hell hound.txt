@@ -1,0 +1,34 @@
+\(BEGIN)
+name = Hell Hound
+icon file = icon_HellHound.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 5
+armor class = 4
+movement rate = 12
+hit dice = 7.000000
+treat HD as hit points = yes
+hit dice bonus = 0
+THAC0 = 13
+magic resistance = 0
+size = medium
+morale = 40
+experience point value = 474
+Special Ability = monsterLevel,7
+Special Ability = monster_CombatantAlignment,evil
+Special Ability = IsSeeingInvisible,monster
+Special Ability = Summoned,plane
+Class = Fighter/Magic User
+Race = Monster
+form = none
+penalty = none
+immunity = none
+Misc Options = can be held/charmed + affected by dispel evil
+item = monsterHellHoundBreath
+attack = 10,1,0,bites,
+Undead = none
+\(END)
+// MM p51
+

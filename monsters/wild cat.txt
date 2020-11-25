@@ -1,0 +1,33 @@
+\(BEGIN)
+name = Wild Cat
+icon file = icon_WildCat.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathMedium.wav
+intelligence = 1
+armor class = 
+movement rate = 18
+hit dice = 1
+treat HD as hit points = yes
+hit dice bonus = 0
+THAC0 = 20
+magic resistance = 0
+size = small
+morale = 35
+experience point value = 15
+Special Ability = monsterLevel,1
+Class = Fighter
+Race = Monster
+form = mammal + animal
+penalty = none
+immunity = none
+Misc Options = can be held/charmed
+item = none
+attack = 2,1,0,claws,monsterRearClawRakeCat1
+attack = 2,1,0,claws,monsterRearClawRakeCat2
+attack = 2,1,0,bites,
+Undead = none
+\(END)
+// MMII p22
+

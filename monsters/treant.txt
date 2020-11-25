@@ -1,0 +1,35 @@
+\(BEGIN)
+name = Treant
+icon file = icon_Treant.png,0,2,48,48,0,1,2
+miss sound = sound_Miss.wav
+hit sound = sound_Hit.wav
+move sound = sound_MonsterMoveStep.wav
+death sound = sound_MonsterDeathLarge.wav
+intelligence = 13
+armor class = 0
+movement rate = 12
+hit dice = 10.000000
+treat HD as hit points = yes
+hit dice bonus = 0
+THAC0 = 10
+magic resistance = 0
+size = large
+morale = 40
+experience point value = 2510
+Special Ability = IsPlant,1
+Special Ability = monsterLevel,10
+Special Ability = monster_CombatantAlignment,good
+Special Ability = elemental_VulnerableFire
+Class = Fighter
+Race = Monster
+form = large
+penalty = none
+immunity = vorpal weapon
+Misc Options = can be held/charmed
+item = none
+attack = 6,3,0,hits,
+attack = 6,3,0,hits,
+Undead = none
+\(END)
+// MM p96
+

@@ -1,0 +1,26 @@
+\(BEGIN)
+name = IsCharmed
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Charmed ");
+-$SET_HOOK_PARAM( 6,"");
+-$RETURN 1;
+[Dispel] = $VAR clev; // Cast level
+-$VAR dlev; // Dispel level
+-$VAR cls;  // Class
+-$VAR pct;  // Percent
+-clev = $SA_PARAM_GET();
+-cls  = $SA_SPELL_GET("spell_Dispel");
+-dlev = $GET_CHAR_Lvl($IndexOf($AttackerContext()),cls);
+-$IF ($GET_CHARACTER_SA($TargetContext(),"z-IsGlobedMinor") != "-?-?-" && cls != "druid")
+-	{$RETURN;};
+-$IF ($GET_CHARACTER_SA($TargetContext(),"z-IsGlobed") != "-?-?-")
+-	{$RETURN;};
+-$IF (cls == "paladin"){dlev = dlev -#8;};
+-$IF (clev ># dlev) {pct = 50 -# ((clev -# dlev) *# 2);}
+-$ELSE {pct = 50 +# ((dlev -# clev) *# 5);};
+-$IF ($RANDOM(100) +# 1 <=# pct)
+-	{
+-		$SetFriendly($IndexOf($TargetContext()),$GET_COMBATANT_SA($TargetContext(),"side"));
+-		$SA_REMOVE();
+-	};
+\(END)
+

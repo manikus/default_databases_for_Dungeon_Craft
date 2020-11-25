@@ -1,0 +1,6 @@
+\(BEGIN)
+name = Charisma
+Abbreviation = CHA
+Roll = 3 |< 3d6 |< 3d6 + (Race_Dwarf*-1) + ("Race_Half-Orc"*-2) >| 18
+\(END)
+

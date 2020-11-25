@@ -1,0 +1,14 @@
+\(BEGIN)
+name = _BigGuyAura
+[AURA_Create] = $VAR prm; // SA parameter
+-prm = $SA_PARAM_GET();
+-$DEBUG("Big Guy Aura");
+-$AURA_Attach("Combatant");
+-$AURA_Combatant($IndexOf($CharacterContext()));
+-$AURA_Size(0,prm,0,360);
+-$AURA_Shape("AnnularSector");
+-$AURA_Spell("BigGuyAura");
+-$AURA_Wavelength("Visible");
+[CreateMonsterCombatant] = $AURA_Create("_BigGuyAura",3,0,0,0);
+\(END)
+

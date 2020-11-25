@@ -1,0 +1,15 @@
+\(BEGIN)
+name = spell_ContinualLightCleric
+[OverrideSpellTargeting] = $VAR p5; $VAR p6; $VAR lst; $VAR loc;
+-p5 = $GET_HOOK_PARAM(5); p6 = $GET_HOOK_PARAM(6);
+-$SET_HOOK_PARAM(1,"Select one of the following;");
+-loc = "$"+p5+"$"+p6;
+-lst = "$Map$Combatant";
+-$SET_COMBATANT_SA($AttackerContext(),"ContinualLightClericTargetXY",loc);
+-$RETURN lst;
+[ProcessSpellTargetOverride] = $VAR p5; $VAR atk; $VAR tgt;
+-p5 = $GET_HOOK_PARAM(5);
+-atk = $IndexOf($AttackerContext()); tgt = $IndexOf($TargetContext());
+-$AURA_Create("spell_ContinualLightClericAURA",p5,atk,tgt,"");
+\(END)
+

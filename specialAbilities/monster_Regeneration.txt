@@ -1,0 +1,14 @@
+\(BEGIN)
+name = monster_Regeneration
+[StartCombatRound] = $VAR chr; // character
+-$VAR HP; // hit points
+-$VAR maxHP; // max hit point
+-$VAR prm; // SA's parameter
+-chr = $IndexOf($CharacterContext());
+-hp = $GET_CHAR_HITPOINTS(chr);
+-maxHP = $GET_CHAR_MAXHITPOINTS(chr);
+-prm = $SA_PARAM_GET();
+-$IF (hp >=# maxHP){$RETURN;};
+-$SET_CHAR_HITPOINTS(chr, hp +# prm);
+\(END)
+

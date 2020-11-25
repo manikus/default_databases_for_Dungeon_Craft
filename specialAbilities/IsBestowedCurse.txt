@@ -1,0 +1,20 @@
+\(BEGIN)
+name = IsBestowedCurse
+[CharDisplayStatus] = $IF ($GET_PARTY_TIME() ># $SA_PARAM_GET()){$SA_REMOVE();};
+-$SET_HOOK_PARAM( 7, "Curse Bestowed");
+-$SET_HOOK_PARAM( 6, "");
+-$RETURN 1;
+[Dispel] = $VAR tgt; // target
+-tgt = $IndexOf($TargetContext());
+-$SA_REMOVE();
+-$SetFriendly(tgt,$GET_COMBATANT_SA($TargetContext(),"side"));
+-$RUN_CHAR_SE_SCRIPTS($TargetContext(),"Dispel SE");
+[Dispel SE] = $REMOVE_SPELL_EFFECT($CharacterContext(),$GET_HOOK_PARAM(5));
+[DoesAttackSucceed] = $IF ($GET_COMBATANT_SA($AttackerContext(),"IsBestowedCurse") != "-?-?-")
+-  {$SET_HOOK_PARAM(6,$GET_HOOK_PARAM(6) +# 4);};
+-$IF ($GET_HOOK_PARAM(5) >=# $GET_HOOK_PARAM(6))
+-  {$RETURN "Y";}
+-$ELSE {$RETURN "N";};
+\(END)
+
+\

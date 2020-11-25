@@ -1,0 +1,13 @@
+\(BEGIN)
+name = SymbolOfHopelessnessAURA
+[AURA_Create] = $AURA_Attach("XY");
+-$AURA_Shape("AnnularSector");
+-$AURA_Size(0,15,0,360);
+-$AURA_Spell("Symbol Of Hopelessness");
+-$AURA_Wavelength("Visible");
+[AURA_Enter] = $VAR IR; $VAR atk; $VAR exp;
+-atk = $AURA_GetData(0); exp = $AURA_GetData(2);
+-$SET_COMBATANT_SA($CombatantContext(),"IsSymbolHopelessnessed",atk);
+-$SET_COMBATANT_SA($CombatantContext(),"IsSymbolHopelessnessedDone",exp);
+\(END)
+

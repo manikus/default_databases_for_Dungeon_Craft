@@ -1,0 +1,241 @@
+// Item database file
+//	The line above **must** be the first line of the items file!!!
+//	
+//	Total validation is performed when reading this data. Nothing you do can cause the program to crash.  It may spit error messages and quit for lack of something decent to do but it will not crash or do unexpected things. It shouldn't anyway. If it does, please let us know.
+//	
+//	The first item has the name "template" and will be ignored.  You can use it as a 'template'.  Copy it to the bottom of the file and edit the copy to add your item to the database.
+//	
+//	Each line is of the form    name = value (value may be omitted)
+//	eg:		Special Ability = 
+//	This line will be interpreted as setting 'Special Ability' to the empty string.  This is commonly the default so in many cases it is the same as omitting the line entirely.
+//	
+//	White space is a bit important.  Because names and values can contain blanks.  So the rule is....leading and trailing whitespace are ignored.  So, for example:
+//		attack bonus         =     3         <cr>
+//		attack bonus=3<cr>
+//	are equivalent.  But
+//		attack    bonus = 3
+//		attack bonus = 3
+//	are different.
+//	
+//	Lines starting with two slashes are comment lines.  Like this one.
+//	
+//	Attribute names are case-insensitive.  
+//		Name = Wimpy Axe
+//		namE = Wimpy Axe
+//		NAME = Wimpy Axe
+//	are equivalent.
+//	Text values retain their case.  Values with enumerated possibilities are case-insensitive.  Example  baseclass = PaLaDiN     + FiGhTeR+ThIeF
+//	
+//	File names can use the UNIX syntax with slashes because the backslash is used to escape special characters and it gets ugly to put double backslashes everywhere.  If you like to use backslashes you may. We will accept either.  Even mixed in a single filename.
+//	Example:    C:/UAF\\src\\guild of ravens/release1/beta\\art/barkeep.bmp
+//	
+//	Item definitions are delimited by \(BEGIN) ........ \(END) which must start in column 1.  This ain't free format. You get what you pay for.  
+//	
+//	 ************ Now for the interesting part  ***********
+//	
+//	Each item is defined by the following fields:
+//	
+//	Name (text, required - item record ignored if missing or blank).
+//	
+//	Each item mut have a unique name.  You may add a qualifier to a name (separated with a vertical bar) to make it unique.  For example:
+//		Axe
+//		Axe|Sharp
+//		Axe|Dull
+//	The qualifier is only used when editing a design.  The qualifier is discarded when the binary files for the design are created.  But the unique name is necessary during the design stage to allow unambiguous references to the items.  During gameplay they are identified by a binary integer 'key' so there is no confusion between the three Axes even though they all print as 'Axe'.
+//	default - no default value...required
+//	eg:		name = Axe of Partial Beheading
+//	
+//	Id Name (text, Name used for identified magical items - text, or NA)
+//	default - no default value
+//	eg:		Id Name = qwerty
+//	
+//	Launch Sound File (text, WAV file played when item attack is initiated on opponent, None)
+//	default is to use the default launch sound
+//	eg:     launch sound = C:/uaf/UAF/ShootArrow.wav
+//	        launch sound = None
+//	        launch sound = 
+//	
+//	Hit Sound File (text, WAV file played when item hits opponent, or None)
+//	default is to use the default hit sound
+//	eg:     hit sound = C:/uaf/UAF/ouch.wav
+//	        hit sound = None
+//	        hit sound = 
+//	
+//	Miss Sound File (text, WAV file played when item misses opponent, None)
+//	default is to use the default miss sound
+//	eg:     miss sound = C:/uaf/UAF/swish.wav
+//	        miss sound = None
+//	        miss sound = 
+//	
+//	Missile Sprite
+//	comma-separated text: 
+//	   filename,delay,num frames, frame width, frame height, style, MaxLoops, flags
+//	   filename can be blank to use DEFAULT or "none"
+//	   delay in millisecs where 1 sec=1000 ms (should be 0 for items)
+//	   num frames is total frames in image
+//	   width is pixel width of single frame in image
+//	   height is pixel height
+//	   style is animation style where:
+//	       0=sequenced (sequences thru frames on way to target)
+//	       1=directional (like arrows, requires 8 frames for directions N,NE,E,SE,S,SW,W,NW)
+//	   MaxLoops is the max nbr times the animation will loop, if looping enabled by flags
+//	   flags is animation properties where: (flags are additive)
+//	       0=none
+//	       1=not used for items
+//	       2=loop only nbr times in Max Loops
+//	       4=loop this animation
+//	       flags can be combined, as in 4+2=6 gives looping (4) and uses MaxLoops (2)
+//	default - DEFAULT
+//	eg: missle sprite = c:\sprites\arrow.bmp,0,1,16,16,1,0,0
+//	
+//	Hit Sprite
+//	comma-separated text: 
+//	   filename,delay,num frames, frame width, frame height, style, MaxLoops, flags
+//	   filename can be blank to use DEFAULT or "none"
+//	   delay in millisecs where 1 sec=1000 ms (should be 0 for items)
+//	   num frames is total frames in image
+//	   width is pixel width of single frame in image
+//	   height is pixel height
+//	   style is animation style, should be 0 for hit sprite
+//	   MaxLoops is the max nbr times the animation will loop, if looping enabled by flags
+//	   flags is animation properties where: (flags are additive)
+//	       0=none
+//	       1=not used for items
+//	       2=loop only nbr times in Max Loops
+//	       4=loop this animation
+//	       flags can be combined, as in 4+2=6 gives looping (4) and uses MaxLoops (2)
+//	
+//	default is "none"
+//	eg:		hit sprite = wham.png,0,1,16,16,0,0,0
+//	
+//	ROF per round (float, 3 attacks every 2 rounds = 3/2 = 1.5)
+//	default is 1.0
+//	eg:     ROF per round = 2.0
+//	
+//	Combat Range (int, in squares)
+//	default is 1
+//	eg:     combat range = 3
+//	
+//	Cost (int - in gold pieces)
+//	default is zero
+//	eg:     cost = 12
+//	
+//	Hands to carry (0,1,2)
+//	default is 1
+//	eg:     hands to carry = 2
+//	
+// baseclass (assassin, magicUser, cleric, thief, fighter, paladin, ranger, druid, any)
+//	this is hte name of the baseclass which may use this item
+//	names correspond to those in the baseclass database
+//	Multiple basecllases may be declared by adding additional lines.
+//	default - any
+//	eg:		baseclass = ranger
+//			baseclass = thief
+//	
+//	Small/Medium damage dice (NumDice 'D' NumSides + Bonus - damage to small/medium creatures)
+//	default is 0D0+0
+//	eg:     small/medium damage dice = 1D8+3
+//	
+//	large damage dice (NumDice 'D' NumSides + Bonus - damage to large creatures)
+//	default is 0D0+0
+//	eg:     large damage dice = 1D6+2
+//	
+//	AC base (int)
+//	default is 0
+//	eg:     AC base = 1
+//	
+//	AC Bonus (int)
+//	default is zero
+//	eg:     AC bonus = 1
+//	
+//	Attack Bonus (int)
+//	default is zero
+//	eg:     attack bonus = 3
+//	
+//	Experience (int - given to player when item received)
+//	default is zero
+//	eg:     experience = 23
+//	
+//	Encumbrance (int - weight in gold pieces, the gp per pound is configured in UAFConfig.txt)
+//	default is zero
+//	eg:     encumbrance = 20
+//	
+// Cursed (yes/no)
+//	if yes, item cannot be un-readied without magical intervention
+//	default is no
+//	eg:     cursed = yes
+//	
+//	Non Lethal (yes or no - if yes, item cannot reduce target below 0 hit points)
+//	default is yes
+//	eg:     non lethal = yes
+//	
+//	Readied Location (weapon hand, shield hand, armor, on hands, head, waist, body, back, feet, fingers, quiver
+//	default is weapon hand
+//	eg:     readied location = QUIVER
+//	
+///	Bundle Qty (int - if higher than 1, item can be joined/halved and is purchased in this qty)
+//	default is 1
+//	eg:     bundle quantity = 10
+//	
+//	Special Abilities 
+//	eg:     Special Ability = SA_Bless,1
+//	
+//	Weapon Type (not weapon, hand held blunt, hand held cutting, hand held or thrown, sling, bow, crossbow, thrown only, ammo (bolts,etc), SpellCaster, Spell-like Ability)
+//	default - not weapon
+//	eg:		weapon type = sling
+//		
+//	Note about weapon type Spell-like Ability: when used in combat by monsters, only words/characters after the vertical bar will be displayed
+//	
+//	Ammo Type (text - specifies ammo category)
+//	  Before a weapon can use ammo, the Ammo Type text for both must match exactly.
+//	  The Ammo Type can be any text string
+//	  eg:  ammo type = bow
+//	
+//	Usable? (yes or no)
+//	default is no
+//	eg:     usable = yes
+//	
+// Scribtable (yes/no)
+//	Determines if an items (such as a scroll) is scribable by PC
+//	eg:		scribtable = no
+//
+// not magical (yes/no)
+//	Used to determine if an item is to be considered magical
+//	eg:		not magical = yes
+//
+// can drop (yes/no)
+//	Determines if PC or NPC can drop the item from their inventory
+//	eg:		can drop = yes
+//
+// CanHalveJoin (yes/no)
+//	For items with a Bundle Quantity of greater than 1, this keyword
+//	determines if the item can be halved into two smaller groups or combined
+//	with another like item to form a bigger group
+//	eg:		CanHalveJoin = no
+//
+// number of charges (zero or positive integer)
+//	This sets the number of times an item can be USEd, typically for
+//	use with magical items
+//	eg:		number of charges = 0
+//
+// Examine Event ID (zero or positive integer)
+//	If item has an EXAMINE event associated with it, the value is that number
+//	which is specific to a corresponding event number in your design
+//	default:	0
+//	eg:		Examine Event ID = 28
+//
+// Examine Label (text)
+//	If using an examine event, the label can be renamed
+//	default:	EXAMINE
+//	eg:		Examine Label = DRINK
+//
+// Recharge Rate (how often item charges are restored to maximagicUserm)
+//	can be 'never' or 'daily'
+//	default is never, and only has effect if 'usable = yes'
+//	eg: recharge rate = daily
+//	
+// Spell effect (name of spell in spell database that this item can cast)
+//	default is none
+//	eg:     spell effect = Cause Tonsillitus
+//
+

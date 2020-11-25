@@ -1,0 +1,6 @@
+\(BEGIN)
+name = IsPetrified
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Petrified"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
+[IsCombatReady] = $RETURN "N";
+\(END)
+

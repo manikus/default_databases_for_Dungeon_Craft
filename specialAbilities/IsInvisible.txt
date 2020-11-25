@@ -1,0 +1,15 @@
+\(BEGIN)
+name = IsInvisible
+[Dispel] = $SA_REMOVE();
+[DoesAttackSucceed] = $IF ($GET_COMBATANT_SA($AttackerContext(),"IsInvisible") != "-?-?-")
+-	{
+-		$DELETE_COMBATANT_SA($AttackerContext(),"IsInvisibleSpell");
+-		$DELETE_COMBATANT_SA($AttackerContext(),"IsInvisible");
+-	};
+-$IF ($GET_HOOK_PARAM(5) >=# $GET_HOOK_PARAM(6)){$RETURN "Y";}
+-$ELSE {$RETURN "N";};
+[IsValidTarget] = $IF ($SA_COMBATANT_GET("IsSeeingInvisible") != "-?-?-"){$RETURN "Y";};
+-$IF ($GET_CHARACTER_SA($TargetContext(),"IsFaerieFire") != "-?-?-"){$RETURN;}
+-$ELSE {$RETURN "N";};
+\(END)
+

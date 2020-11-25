@@ -1,0 +1,8 @@
+\(BEGIN)
+name = spell_RemoveFeeblemind
+[InvokeSpellOnTarget] = $VAR tgt; // target
+-tgt = $IndexOf($TargetContext());
+-$DELETE_CHARACTER_SA($TargetContext(),"IsFeebleminded");
+-$REMOVE_CHAR_MODIFICATION(tgt,"SPELL Feeblemind");
+\(END)
+

@@ -1,0 +1,26 @@
+\(BEGIN)
+name = spell_LightMageAURA
+[AURA_Create] = $VAR atk; $VAR tgt; $VAR prm; $VAR pXY; $VAR X; $VAR Y;
+-atk = $AURA_GetData(0); tgt = $AURA_GetData(1);
+-prm = $SA_PARAM_GET(); pXY = $SA_COMBATANT_GET("LightMageTargetXY");
+-X = $DelimitedStringSubstring(pXY,0); Y = $DelimitedStringSubstring(pXY,1);
+-$AURA_Attach("XY");
+-$AURA_Location(X,Y);
+-$AURA_Shape("AnnularSector");
+-$AURA_Size(0,2,0,360);
+-$AURA_Spell("Light|MonsterMage");
+-$AURA_Wavelength("Xray");
+-$DELETE_COMBATANT_SA($IndexToActor(atk),"LightMageTargetXY");
+[AURA_Enter] = $VAR sus;
+-sus = $GET_COMBATANT_SA($CombatantContext(),"monster_LightSusceptible");
+-$IF (sus == "-?-?-"){$RETURN;};
+-$SET_COMBATANT_SA($CombatantContext(),"IsLightBlinded","");
+[AURA_Exit] = $DELETE_COMBATANT_SA($CombatantContext(),"IsLightBlinded");
+[AURA_Round] = $VAR exp;
+-exp = $AURA_GetData(2);
+-$IF ($GET_PARTY_TIME() ># exp)
+-	{$AURA_Destroy();$DELETE_COMBATANT_SA($CombatantContext(),"IsLightBlinded");};
+[Dispel] = $AURA_Destroy();$DELETE_COMBATANT_SA($CombatantContext(),"IsLightBlinded");
+[SpellDuration] = $SA_PARAM_SET($GET_HOOK_PARAM(5));
+\(END)
+

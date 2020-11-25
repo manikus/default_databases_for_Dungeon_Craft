@@ -1,0 +1,12 @@
+\(BEGIN)
+name = spell_ChainLightning
+[InvokeSpellOnTarget] = $VAR atk; $VAR cls; $VAR lvl; $VAR hp; $VAR dmg; $VAR next; 
+-atk = $IndexOf($AttackerContext()); cls = $GET_CHAR_CLASS(atk); lvl = $GET_CHAR_Lvl(atk,cls) -# 1;
+-$WHILE (lvl ># 0)
+-	{
+-		dmg = ($RANDOM(6) +# 1) *# lvl; next = $IndexOf($NEAREST_TO($TargetContext())); hp = $GET_CHAR_HITPOINTS(next);
+-		$SET_CHAR_HITPOINTS(next,hp -# dmg);
+-		lvl = lvl -# 1;
+-	};
+\(END)
+

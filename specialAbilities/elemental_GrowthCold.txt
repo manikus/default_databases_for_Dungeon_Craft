@@ -1,0 +1,49 @@
+\(BEGIN)
+name = elemental_GrowthCold
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7, "Cold Growth");
+-$SET_HOOK_PARAM( 6, "");
+-$RETURN 1;
+[ComputeDamage] = $VAR tgt; $VAR tgtName; $VAR hp;
+-$VAR item; $VAR itmNon; $VAR monster; $VAR monNon; $VAR grow;
+-item = $SA_ITEM_GET("DamageMagical");
+-itmNon = $SA_ITEM_GET("DamageNonMagical");
+-monster = $GET_CHARACTER_SA($AttackerContext(),"DamageMagical");
+-monNon = $GET_CHARACTER_SA($AttackerContext(),"DamageNonMagical");
+-$IF ((item == "-?-?-") && (itmNon == "-?-?-") && (monster == "-?-?-") && (monNon == "-?-?-")) {$RETURN;};
+-$IF (item != "-?-?-") {grow = item;};
+-$IF (itmNon != "-?-?-") {grow = itmNon;};
+-$IF (monster != "-?-?-") {grow = monster;};
+-$IF (monNon != "-?-?-") {grow = monNon;};
+-$IF (grow == "cold")
+-	{
+-		tgt = $IndexOf($TargetContext());
+-		hp = $RANDOM(8) +# 1;
+-		tgtName = $GET_CHAR_NAME(tgt);
+-		$SET_CHAR_MAXHITPOINTS(tgt, $GET_CHAR_MAXHITPOINTS(tgt) +# hp);
+-		$SET_CHAR_HITPOINTS(tgt, $GET_CHAR_HITPOINTS(tgt) +# hp);
+-		$SET_CHAR_THAC0(tgt, $GET_CHAR_THAC0(tgt) -# 1);
+-		$SET_COMBATANT_SA($TargetContext(),"monsterLevel", $GET_MONSTERTYPE_SA(tgtName,"monsterLevel") +# 1);
+-		$SET_HOOK_PARAM(7,tgtName +" grows.");
+-		$RETURN "N";
+-	};
+[ComputeSpellDamage] = $VAR tgt; $VAR tgtName; $VAR hp;
+-$VAR spell; $VAR splNon; $VAR grow;
+-spell = $SA_SPELL_GET("DamageMagical");
+-splNon = $SA_SPELL_GET("DamageNonMagical");
+-$IF ((spell == "-?-?-") && (splNon == "-?-?-")) {$RETURN;};
+-$IF (spell != "-?-?-") {grow = spell;};
+-$IF (splNon != "-?-?-") {grow = splNon;};
+-$IF (grow == "cold")
+-	{
+-		tgt = $IndexOf($TargetContext());
+-		tgtName = $GET_CHAR_NAME(tgt);
+-		hp = $RANDOM(8) +# 1;
+-		$SET_CHAR_MAXHITPOINTS(tgt,$GET_CHAR_MAXHITPOINTS(tgt) +# hp);
+-		$SET_CHAR_HITPOINTS(tgt,$GET_CHAR_HITPOINTS(tgt) +# hp);
+-		$SET_CHAR_THAC0(tgt,$GET_CHAR_THAC0(tgt) -# 1);
+-		$SET_COMBATANT_SA($TargetContext(),"monsterLevel", $GET_MONSTERTYPE_SA(tgtName,"monsterLevel") +# 1);
+-		$SET_HOOK_PARAM(7,tgtName +" grows.");
+-		$RETURN "N";
+-	};
+\(END)
+
