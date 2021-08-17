@@ -7,8 +7,8 @@ name = IsPaladinProtectedFromEvil
 -evl = $GET_COMBATANT_SA($AttackerContext(),"monsterCombatantAlignment")
 -$IF ($GET_COMBATANT_SA($TargetContext(),"IsMonsterProtectedEvil") != "-?-?-")
 -	{
--		$IF ((smn != "-?-?-") && (evl = "evil")){p6 = p6 +# 90);};
--		$IF ($AlignmentEvil($AttackerContext())){p6 = p6 +# 2);};
+-		$IF ((smn != "-?-?-") && (evl == "evil")){p6 = p6 +# 90;};
+-		$IF ($AlignmentEvil($AttackerContext())){p6 = p6 +# 2;};
 -	};
 -$IF (p5 <=# p6){$RETURN "N";};
 \(END)

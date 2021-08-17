@@ -1,9 +1,11 @@
 \(BEGIN)
 name = monster_WeaponResistanceType
-[ComputeDamage] = $VAR weapon;
--$VAR resist;
--weapon = $GET_ITEM_SA($ItemContext(),"item_WeaponType");
--resist = $SA_PARAM_GET();
--$IF (weapon == resist){$RETURN $GET_HOOK_PARAM(5) /# 2;};
+[ComputeDamage] = $VAR itm;		// value of item_WeaponType SA
+-$VAR prm;		// value of monster_WeaponImmunityType SA
+-$VAR p5;		//	value of Hook Parameter 5
+-itm = $SA_ITEM_GET("item_WeaponType");
+-prm = $SA_PARAM_GET();
+-p5 = $GET_HOOK_PARAM(5);
+-$IF (itm == prm) {$RETURN p5 /# 2;};
 \(END)
 

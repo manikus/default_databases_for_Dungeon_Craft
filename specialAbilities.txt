@@ -3718,8 +3718,8 @@ name = IsPaladinProtectedFromEvil
 -evl = $GET_COMBATANT_SA($AttackerContext(),"monsterCombatantAlignment")
 -$IF ($GET_COMBATANT_SA($TargetContext(),"IsMonsterProtectedEvil") != "-?-?-")
 -	{
--		$IF ((smn != "-?-?-") && (evl = "evil")){p6 = p6 +# 90);};
--		$IF ($AlignmentEvil($AttackerContext())){p6 = p6 +# 2);};
+-		$IF ((smn != "-?-?-") && (evl == "evil")){p6 = p6 +# 90;};
+-		$IF ($AlignmentEvil($AttackerContext())){p6 = p6 +# 2;};
 -	};
 -$IF (p5 <=# p6){$RETURN "N";};
 \(END)
@@ -6503,94 +6503,95 @@ name = monster_WeaponDamageOnlyOne
 
 \(BEGIN)
 name = monster_WeaponImmunity
-[ComputeDamage] = $VAR immun;
--$VAR item;
--$VAR mlev;
--$VAR list;
--immun = $GET_COMBATANT_SA($TargetContext(),"monster_WeaponImmunity");
--item = $SA_ITEM_GET("item_MagicalWeapon");
--$IF (item == "-?-?-"){item = 0;};
--$IF (immun != "-?-?-")
+[ComputeDamage] = $VAR imm;	// value of the monster_WeaponImmunity SA
+-$VAR itm;	// value of the item_MagicalWeapon SA
+-$VAR mlv;	// value of the monsterLevel SA if the attacker is a monster
+-$VAR lst;	// list of monster attacks that count as magical - determined by level
+-imm = $GET_COMBATANT_SA($TargetContext(),"monster_WeaponImmunity");
+-itm = $SA_ITEM_GET("item_MagicalWeapon");
+-$IF (itm == "-?-?-"){itm = 0;};
+-$IF (itm ==# 0)
 -	{
--		$IF (item ==# 0)
+-		mlv = $GET_COMBATANT_SA($AttackerContext(),"monsterLevel");
+-		$IF (mlv != "-?-?-")
 -			{
--				mlev = $GET_COMBATANT_SA($AttackerContext(),"monsterLevel");
--				$IF (mlev != "-?-?-")
--					{
--						list = "$0$0$0$0$0$1$1$2$2$3$3";
--						$IF (mlev <# 11){item = $DelimitedStringSubstring(list,mlev);}
--						$ELSE {item = 4;};
--					};
+-				lst = "$0$0$0$0$0$1$1$2$2$3$3";
+-				$IF (mlv <# 11){itm = $DelimitedStringSubstring(lst,mlv);}
+-				$ELSE {itm = 4;};
 -			};
 -	};
--$IF (item <# immun){$RETURN "0";};
+-$IF (imm >=# itm){$RETURN "0";};
 DoesAttackSucceed = $VAR atk; // attacker
--$VAR item;
--$VAR mlev;
--$VAR list;
--$VAR nm;
--$VAR par5; // Hook parameter 5
--$VAR par6; // Hook parameter 6
--par5 = $GET_HOOK_PARAM(5);
--par6 = $GET_HOOK_PARAM(6);
+-$VAR itm;	// value of the item_MagicalWeapon SA
+-$VAR mlv;	// value of the monsterLevel SA if the attacker is a monster
+-$VAR lst;	// list of monster attacks that count as magical - determined by level
+-$VAR prm;	// value of the monster_MagicResistance SA
+-$VAR nm;	// name of the target monster
+-$VAR p5;	// Hook parameter 5
+-$VAR p6;	// Hook parameter 6
+-p5 = $GET_HOOK_PARAM(5);
+-p6 = $GET_HOOK_PARAM(6);
 -nm = $GET_CHAR_NAME($IndexOf($TargetContext()));
+-prm = $SA_PARAM_GET();
 -$IF ($GET_MONSTERTYPE_SA(nm,"monster_WeaponImmunity") != "-?-?-")
 -	{
 -		atk = $IndexOf($AttackerContext());
--		item = $SA_ITEM_GET("item_MagicalWeapon");
--		$IF ($SA_ITEM_GET("AdjustBonus") != "-?-?-"){item = $GET_HOOK_PARAM(7);};
+-		itm = $SA_ITEM_GET("item_MagicalWeapon");
+-		$IF ($SA_ITEM_GET("AdjustBonus") != "-?-?-"){itm = $GET_HOOK_PARAM(7);};
 -		$IF ($GET_MONSTERTYPE_SA(nm,"vulnSilver") != "-?-?-" && $SA_ITEM_GET("item_SilverWeapon") != "-?-?-")
--			{item = 5;};
-- 		$IF (item == "-?-?-")
+-			{itm = 5;};
+- 		$IF (itm == "-?-?-")
 -			{
--				mlev = $GET_MONSTERTYPE_SA($GET_CHAR_NAME(atk),"monsterLevel");
--				$IF (mlev != "-?-?-")
+-				mlv = $GET_MONSTERTYPE_SA($GET_CHAR_NAME(atk),"monsterLevel");
+-				$IF (mlv != "-?-?-")
 -					{
--						list = "$0$0$0$0$0$1$1$2$2$3$3";
--						$IF (mlev <# 11)
--							{item = $DelimitedStringSubstring(list,mlev);}
--						$ELSE {item = 4;};
+-						lst = "$0$0$0$0$0$1$1$2$2$3$3";
+-						$IF (mlv <# 11)
+-							{itm = $DelimitedStringSubstring(lst,mlv);}
+-						$ELSE {itm = 4;};
 - 					};
 -			};
--		$IF (item <# $SA_PARAM_GET()){$SET_HOOK_PARAM(6,par6 +# 90);};
+-		$IF (itm <# prm){$SET_HOOK_PARAM(6,p6 +# 90);};
 -	};
--$IF (par5 >=# par6){$RETURN "Y";}
+-$IF (p5 >=# p6){$RETURN "Y";}
 -$ELSE {$RETURN "N";};
 \(END)
 
 \(BEGIN)
 name = monster_WeaponImmunityType
-[DoesAttackSucceed] = $VAR tgt; $VAR par5; $VAR par6;
--tgt = $IndexOf($TargetContext());
--par5 = $GET_HOOK_PARAM(5);
--par6 = $GET_HOOK_PARAM(6);
--$IF ($GET_MONSTERTYPE_SA($GET_CHAR_NAME(tgt),$SA_NAME()) != "-?-?-" && $SA_ITEM_GET("item_WeaponType") == $SA_PARAM_GET())
--	{$SET_HOOK_PARAM(6,par6 +# 90);};
--$IF (par5 >=# par6){$RETURN "Y";}
--$ELSE {$RETURN "N";};
+[DoesAttackSucceed] = $VAR tgt;		// name of target of attack
+-$VAR san;		// name of SA
+-$VAR itm;		// value of item_WeaponType SA
+-$VAR prm;		// value of monster_WeaponImmunityType SA
+-tgt = $GET_CHAR_NAME($IndexOf($TargetContext()));
+-san = $SA_NAME();
+-itm = $SA_ITEM_GET("item_WeaponType");
+-prm = $SA_PARAM_GET();
+-$IF ($GET_MONSTERTYPE_SA(tgt,san) != "-?-?-" && itm == prm) {$RETURN "N";};
 \(END)
 
 \(BEGIN)
 name = monster_WeaponResistance
-[ComputeDamage] = $VAR atk; // attacker
--$VAR item;
--atk = $IndexOf($AttackerContext());
--item = $SA_ITEM_GET("item_MagicalWeapon");
--$IF ($GET_CHAR_TYPE(atk) != "@PC@" && $GET_CHAR_TYPE(atk) != "@NPC@") {$RETURN;};
--$IF (item != "-?-?-")
--	{
--		$IF (item <# $SA_PARAM_GET()){$RETURN $GET_HOOK_PARAM(5) /# 2;};
--	};
+[ComputeDamage] = $VAR itm;	// value of the item_MagicalWeapon SA
+-$VAR prm;	// value of the monster_MagicResistance SA
+-$VAR dmg;	// damage to be done with attack
+-itm = $SA_ITEM_GET("item_MagicalWeapon");
+-prm = $SA_PARAM_GET();
+-dmg = $GET_HOOK_PARAM(5);
+-$IF (itm == "?-?-")  {$RETURN;};
+-$IF (prm >=# itm) {$RETURN dmg /# 2;};
 [CreateMonsterCombatant] = $SET_COMBATANT_SA($CombatantContext(),"monster_WeaponResistance", $SA_PARAM_GET());
 \(END)
 
 \(BEGIN)
 name = monster_WeaponResistanceType
-[ComputeDamage] = $VAR weapon;
--$VAR resist;
--weapon = $GET_ITEM_SA($ItemContext(),"item_WeaponType");
--resist = $SA_PARAM_GET();
--$IF (weapon == resist){$RETURN $GET_HOOK_PARAM(5) /# 2;};
+[ComputeDamage] = $VAR itm;		// value of item_WeaponType SA
+-$VAR prm;		// value of monster_WeaponImmunityType SA
+-$VAR p5;		//	value of Hook Parameter 5
+-itm = $SA_ITEM_GET("item_WeaponType");
+-prm = $SA_PARAM_GET();
+-p5 = $GET_HOOK_PARAM(5);
+-$IF (itm == prm) {$RETURN p5 /# 2;};
 \(END)
 
 \(BEGIN)
@@ -10099,5 +10100,7 @@ Updates181010 = "updated class_MageScribe LearnSpellsNum script to allow magic u
 Updates200307 = "fixed item_FineLongBow, monster_LightSusceptible, elemental_GrowthAcid, elemental_GrowthCold, elemental_GrowthElectricity, elemental_GrowthFire, item_LongSwordVsGiants, _PaladinAuraSA, IsEnfeebled, IsEnfeebledHit, spell_Enfeeble"
 Updates200916 = "added the following SAs: spell_Web, IsWebbed, IsHolyDeafened, IsHolyStunned, spell_HolyWord, spell_UnholyWord, IsDarkBlinded, IsLightBlinded, spell_ContinualDarknessCleric, spell_ContinualDarknessClericAURA, spell_ContinualLightCleric, spell_ContinualLightClericAURA, spell_ContinualLightMage, spell_ContinualLightMageAURA, spell_DarknessCleric, spell_DarknessClericAURA, spell_Darkness15RadiusMage, spell_Darkness15RadiusMageAURA, spell_LightCleric, spell_LightClericAURA, spell_LightMage, spell_LightMageAURA, IsFalseSeeing, spell_FalseSeeing, spell_TrueSeeing, IsSymbolHopelessnessed, IsSymbolHopelessnessedDone, IsSymbolPained, IsSymbolPersuaded, spell_Symbol, SymbolOfHopelessness, SymbolOfHopelessnessAURA, SymbolOfPain, SymbolOfPainAURA, SymbolOfPersuasion, SymbolOfPersuasionAURA, IsBrave, spell_CauseFearCleric, spell_RemoveFearCleric, IsWithered, spell_Regenerate, spell_Wither, IsBlindPyrotechnics, spell_Pyrotechnics, IsFieryCloudy, spell_IncendiaryCloud, spell_GeasAttack, IsGeasFlee, spell_Geas, spell_GeasFlee, spell_DismissElementalEarth, spell_DismissElementalFire, IsCommanded, spell_Command, spell_ChainLightning, spell_Aid, IsAided"
 Updates201027 = "corrected minor display issues in Global_Display"
+Updates210812 = "fixed several syntax errors in IsPaladinProtectedFromEvil - thanks to jonathan-benn, rewrote and fixed monster_WeaponImmunity and monster_WeaponResistance - thanks to jonathan-benn"
+Updates210816 = "rewrote and fixed monster_WeaponImmunityType and monster_WeaponResistanceType"
 \(END)
 

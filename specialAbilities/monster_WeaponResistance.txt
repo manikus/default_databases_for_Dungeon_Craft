@@ -1,14 +1,13 @@
 \(BEGIN)
 name = monster_WeaponResistance
-[ComputeDamage] = $VAR atk; // attacker
--$VAR item;
--atk = $IndexOf($AttackerContext());
--item = $SA_ITEM_GET("item_MagicalWeapon");
--$IF ($GET_CHAR_TYPE(atk) != "@PC@" && $GET_CHAR_TYPE(atk) != "@NPC@") {$RETURN;};
--$IF (item != "-?-?-")
--	{
--		$IF (item <# $SA_PARAM_GET()){$RETURN $GET_HOOK_PARAM(5) /# 2;};
--	};
+[ComputeDamage] = $VAR itm;	// value of the item_MagicalWeapon SA
+-$VAR prm;	// value of the monster_MagicResistance SA
+-$VAR dmg;	// damage to be done with attack
+-itm = $SA_ITEM_GET("item_MagicalWeapon");
+-prm = $SA_PARAM_GET();
+-dmg = $GET_HOOK_PARAM(5);
+-$IF (itm == "?-?-")  {$RETURN;};
+-$IF (prm >=# itm) {$RETURN dmg /# 2;};
 [CreateMonsterCombatant] = $SET_COMBATANT_SA($CombatantContext(),"monster_WeaponResistance", $SA_PARAM_GET());
 \(END)
 
