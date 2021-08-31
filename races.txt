@@ -86,16 +86,16 @@
 //	Eg:	Skill = DetectGrade,75
 //
 // SkillAdjAbility (skill name,ability name, mod, num1-num25)
-//	SkillAdjAbility allows modification of a skill based upon
-//	an ability. Name, ability, type of modifier, score
-//	modifier for each of the 25 ability scores
+//	SkillAdjAbility allows modification of a skill based upon an ability. Name, ability, type of modifier, score modifier for each of the 25 ability scores
 //	eg:		SkillAdjAbility = Read,Intelligence,%,0,0,0,0,0,0,0,0,85,90,95,100,100,100,100,100,105,110,115,115,115,115,115,115,115
+//	this keyword expects a skill name of an existing skill, either in this database or the races database
+//	legal values for mod are: %, -, +, *, /, |=
 //
 // SkillAdjRace (skill name, race name, mod, value)
-//	SkillAdjRace allows modification of skills per each
-//	race, by listing the name of the skill, name of the
-//	race, percentage sign and number to modify it by
+//	SkillAdjRace allows modification of skills per each race, by listing the name of the skill, name of the race, percentage sign and number to modify it by
 //	eg:		SkillAdjRace = MaxLevel$SYS$,Half-Elf,\=,5
+//	this keyword expects a skill name of an existing skill, either in this database or the races database
+//	legal values for mod are: %, -, +, *, /, |=
 //
 //	*****Notes*****
 // Adjustments are of the form:
@@ -525,10 +525,11 @@ Special Ability = race_RaceSuppress,"Y"
 
 \(BEGIN)
 name = $$Help
-Special Ability = Date,"December 16, 2017"
+Special Ability = Date,"August 30, 2021"
 Special Ability = updates1_01,"gave all races except monster a 1 for FindSecretDoorSearching if it was previously 0"
 Special Ability = Updates1_02,"fixed thief racial bonuses for half-elf and half-orc"
 Special Ability = Updates1_03,"fixed incorrect multi-class listing for half-elf"
 Special Ability = Updates171216,"fixed MaxLevel$SYS$ for all races"
+Special Ability = Updates_210830,"added some lines of clarification to the SkillAdjAbility, SkillAdjBaseclass, and the SkillAdjRace instructions"
 \(END)
 

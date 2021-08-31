@@ -79,22 +79,22 @@
 //	eg:		Skill = Swim,20
 //
 // SkillAdjAbility (skill name,ability name, mod, num1-num25)
-//	SkillAdjAbility allows modification of a skill based upon
-//	an ability. Name, ability, type of modifier, score
-//	modifier for each of the 25 ability scores
+//	SkillAdjAbility allows modification of a skill based upon an ability. Name, ability, type of modifier, score modifier for each of the 25 ability scores
 //	eg:		SkillAdjAbility = Read,Intelligence,%,0,0,0,0,0,0,0,0,85,90,95,100,100,100,100,100,105,110,115,115,115,115,115,115,115
+//	this keyword expects a skill name of an existing skill, either in this database or the races database
+//	legal values for mod are: %, -, +, *, /, |=
 //
 // SkillAdjBaseclass (skill name, mod, adj1-adj40)
-//	SkillAdjBaseclass asjusts the named skill for this database.
-//	For each entry, skill name, type of modification and 
-//	modification values for level 1 through 40 are listed.
+//	SkillAdjBaseclass asjusts the named skill for this database. For each entry, skill name, type of modification and modification values for level 1 through 40 are listed.
 //	eg:		SkillAdjBaseclass = Save Vs RSW,cleric,-,0,0,0,1,1,1,3,3,3,4,4,4,5,5,5,6,6,6,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8
+//	this keyword expects a skill name of an existing skill, either in this database or the races database
+//	legal values for mod are: %, -, +, *, /, |=
 //
 // SkillAdjRace (skill name, race name, mod, value)
-//	SkillAdjRace allows modification of skills per each
-//	race, by listing the name of the skill, name of the
-//	race, percentage sign and number to modify it by
+//	SkillAdjRace allows modification of skills per each race, by listing the name of the skill, name of the race, percentage sign and number to modify it by
 //	eg:		SkillAdjRace = MaxLevel$SYS$,Half-Elf,\=,5
+//	this keyword expects a skill name of an existing skill, either in this database or the races database
+//	legal values for mod are: %, -, +, *, /, |=
 //
 // SpellBonusAbility (ability name)
 //	If the baseclass gets bonus spells, this is the ability
