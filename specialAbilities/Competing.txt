@@ -132,7 +132,7 @@ name = Competing
 -	};
 -$IF ($GET_CHARACTER_SA($CharacterContext(),"side") == 1 && $RANDOM(100) <# $GET_PARTY_ASL("controlNPC"))
 -	{
--		$SET_CHARACTER_SA($CharacterContext(),"playerControl","CP");
+-		$SET_COMBATANT_SA($CharacterContext(),"playerControl","CP");
 -	};
 [OnStep] = $VAR me;
 -$VAR it;
@@ -151,7 +151,7 @@ name = Competing
 -par5 = $GET_HOOK_PARAM(5);
 -char = $IndexOf($CharacterContext());
 -class = $GET_CHAR_CLASS(char);
--$IF (class == "Paladin") {$RETURN par5 +# 10000;};
+-$IF (class == "Ranger") {$RETURN par5 +# 10000;};
 [StartCombatRound] = $RETURN;
 \(END)
 

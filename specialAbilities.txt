@@ -996,7 +996,7 @@ name = Competing
 -	};
 -$IF ($GET_CHARACTER_SA($CharacterContext(),"side") == 1 && $RANDOM(100) <# $GET_PARTY_ASL("controlNPC"))
 -	{
--		$SET_CHARACTER_SA($CharacterContext(),"playerControl","CP");
+-		$SET_COMBATANT_SA($CharacterContext(),"playerControl","CP");
 -	};
 [OnStep] = $VAR me;
 -$VAR it;
@@ -1015,7 +1015,7 @@ name = Competing
 -par5 = $GET_HOOK_PARAM(5);
 -char = $IndexOf($CharacterContext());
 -class = $GET_CHAR_CLASS(char);
--$IF (class == "Paladin") {$RETURN par5 +# 10000;};
+-$IF (class == "Ranger") {$RETURN par5 +# 10000;};
 [StartCombatRound] = $RETURN;
 \(END)
 
@@ -10102,5 +10102,6 @@ Updates200916 = "added the following SAs: spell_Web, IsWebbed, IsHolyDeafened, I
 Updates201027 = "corrected minor display issues in Global_Display"
 Updates210812 = "fixed several syntax errors in IsPaladinProtectedFromEvil - thanks to jonathan-benn, rewrote and fixed monster_WeaponImmunity and monster_WeaponResistance - thanks to jonathan-benn"
 Updates210816 = "rewrote and fixed monster_WeaponImmunityType and monster_WeaponResistanceType"
+Updates230226 = "fixed player control issue and ranger initiative in Competing"
 \(END)
 
