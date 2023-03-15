@@ -1,1 +1,2 @@
 // magic-user level 3
+// Blink, Dispel Magic, Fireball, Haste, Hold Person, Incendiary Cloud, Invisibility 10' Radius, Lightning Bolt, Monster Summoning I, Protection From Evil 10' Radius, Protection From Good 10' Radius, Protection from Normal Missiles, Slow

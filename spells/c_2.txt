@@ -1,1 +1,2 @@
 // cleric level 2
+// Aid, Continual Darkness, Continual Light, find traps, hold person, resist fire, silence, slow poison, snake charm, spiritual hammer

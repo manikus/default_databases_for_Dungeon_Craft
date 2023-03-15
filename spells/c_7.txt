@@ -1,1 +1,2 @@
 // cleric level 7
+// Destruction, Energy Drain, Holy Word, Regeneration, Restoration, Resurrection, Symbol, Unholy Word, Wither

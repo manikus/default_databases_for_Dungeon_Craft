@@ -418,6 +418,7 @@ end script =
 
 // cleric spells
 // cleric level 1
+// Bless, Cause Fear, cause light wounds, Command, cure light wounds, curse, Darkness, detect magic, Light, protection from evil, protection from good, Remove Fear, Resist Cold
 \(BEGIN)
 name = Bless
 casting sound = sound_Cast.wav
@@ -1073,7 +1074,7 @@ end script =
 \(END)
 
 // cleric level 2
-\(BEGIN)
+// Aid, Continual Darkness, Continual Light, find traps, hold person, resist fire, silence, slow poison, snake charm, spiritual hammer\(BEGIN)
 name = Aid|Cleric
 casting sound = sound_Cast.wav
 cast msg = /c aids /t.
@@ -1579,7 +1580,7 @@ end script = $VAR num;num \= $GET_COMBATANT_SA($AttackerContext(),"spellSpiritHa
 \(END)
 
 // cleric level 3
-\(BEGIN)
+// Bestow Curse, Cause Blindness, Cause Disease, Cure Blindness, Cure Disease, Dispel Magic, Prayer, Remove Curse\(BEGIN)
 name = Bestow Curse
 casting sound = sound_Cast.wav
 cast msg = /c curses /t.
@@ -1987,6 +1988,7 @@ end script =
 \(END)
 
 // cleric level 4
+// Cause Serious Wounds, Cure Serious Wounds, Neutralize Poison, Poison, Protection From Evil 10' Radius, Protection From Good 10' Radius, Sticks to Snakes
 \(BEGIN)
 name = Cause Serious Wounds
 casting sound = sound_Cast.wav
@@ -2348,6 +2350,7 @@ end script =
 \(END)
 
 // cleric level 5
+// Cause Critical Wounds, Cure Critical Wounds, Dispel Evil, Dispel Good, False Seeing, Flame Strike, Raise Dead, Slay Living, True Seeing
 \(BEGIN)
 name = Cause Critical Wounds
 casting sound = sound_Cast.wav
@@ -2809,6 +2812,7 @@ end script =
 \(END)
 
 // cleric level 6
+// Blade Barrier, Harm, Heal
 \(BEGIN)
 name = Blade Barrier
 casting sound = none
@@ -2968,6 +2972,7 @@ end script =
 \(END)
 
 // cleric level 7
+// Destruction, Energy Drain, Holy Word, Regeneration, Restoration, Resurrection, Symbol, Unholy Word, Wither
 \(BEGIN)
 name = Destruction
 casting sound = none
@@ -5272,6 +5277,7 @@ end script =
 
 // magic-user spells:
 // magic-user level 1
+// Burning Hands, Charm Person, Detect Magic, Enlarge, Friends, Light, Magic Missile, Protection From Evil, Protection From Good, Read Magic, Reduce, Shield, Shocking Grasp, Sleep
 \(BEGIN)
 name = Burning Hands
 casting sound = sound_Cast.wav
@@ -5984,6 +5990,7 @@ end script =
 \(END)
 
 // magic-user level 2
+// Continual Light, Darkness 15' Radius, Detect Evil, Detect Good, Detect Invisibility, Invisibility, Knock, Know Alignment, Mirror Image, Pyrotechncs, Ray of Enfeeblement, Stinking Cloud, Strength, Web
 \(BEGIN)
 name = Continual Light|Mage
 casting sound = sound_Cast.wav
@@ -6707,6 +6714,7 @@ end script =
 \(END)
 
 // magic-user level 3
+// Blink, Dispel Magic, Fireball, Haste, Hold Person, Incendiary Cloud, Invisibility 10' Radius, Lightning Bolt, Monster Summoning I, Protection From Evil 10' Radius, Protection From Good 10' Radius, Protection from Normal Missiles, Slow
 \(BEGIN)
 name = Blink
 casting sound = sound_Cast.wav
@@ -7393,6 +7401,7 @@ end script =
 \(END)
 
 // magic-user level 4
+// Bestow Curse, Charm Monster, Confusion, Dimension Door, Fear, Fire Shield, Fumble, Ice Storm, Minor Globe of Invulnerability, Monster Summoning II, Remove Curse
 \(BEGIN)
 name = Bestow Curse|Wizard
 casting sound = sound_Cast.wav
@@ -7966,6 +7975,7 @@ end script =
 \(END)
 
 // magic-user level 5
+// Cloudkill, Cone of Cold, Conjure Air Elemental, Conjure Earth Elemental, Conjure Fire Elemental, Conjure Water Elemental, Feeblemind, Fire Touch, Hold Monster, Monster Summoning III, Protection from Acid, Transmute Rock To Mud, Wall Of Stone
 \(BEGIN)
 name = Cloudkill
 casting sound = sound_Cast.wav
@@ -8655,6 +8665,7 @@ end script =
 \(END)
 
 // magic-user level 6
+// Chain Lightning, Death Spell, Disintegrate, Flesh to Stone, Geas, Globe of Invulnerability, Invisible Stalker, Monster Summoning IV, Power Word, Silence, Stone to Flesh
 \(BEGIN)
 name = Chain Lightning|Mage
 casting sound = none
@@ -9180,6 +9191,7 @@ end script =
 \(END)
 
 // magic-user level 7
+// Charm Plants, Delayed Blast Fireball, Mass Invisibility, Monster Summoning V, Power Word, Stun
 \(BEGIN)
 name = Charm Plants
 casting sound = sound_Cast.wav
@@ -9443,6 +9455,7 @@ end script =
 \(END)
 
 // magic-user level 8
+// Mass Charm, Mind Blank, Monster Summoning VI, Otto's Irresistible Dance, Power Word, Blind
 \(BEGIN)
 name = Mass Charm
 casting sound = sound_Cast.wav
@@ -9706,6 +9719,7 @@ end script =
 \(END)
 
 // magic-user level 9
+// Imprisonment, Meteor Swarm, Monster Summoning VII, Power Word, Kill
 \(BEGIN)
 name = Imprisonment|Mage
 casting sound = none

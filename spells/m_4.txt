@@ -1,1 +1,2 @@
 // magic-user level 4
+// Bestow Curse, Charm Monster, Confusion, Dimension Door, Fear, Fire Shield, Fumble, Ice Storm, Minor Globe of Invulnerability, Monster Summoning II, Remove Curse

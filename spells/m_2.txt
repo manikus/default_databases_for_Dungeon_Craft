@@ -1,1 +1,2 @@
 // magic-user level 2
+// Continual Light, Darkness 15' Radius, Detect Evil, Detect Good, Detect Invisibility, Invisibility, Knock, Know Alignment, Mirror Image, Pyrotechncs, Ray of Enfeeblement, Stinking Cloud, Strength, Web

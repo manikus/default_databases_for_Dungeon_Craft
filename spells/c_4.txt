@@ -1,1 +1,2 @@
 // cleric level 4
+// Cause Serious Wounds, Cure Serious Wounds, Neutralize Poison, Poison, Protection From Evil 10' Radius, Protection From Good 10' Radius, Sticks to Snakes

@@ -1,1 +1,2 @@
 // cleric level 1
+// Bless, Cause Fear, cause light wounds, Command, cure light wounds, curse, Darkness, detect magic, Light, protection from evil, protection from good, Remove Fear, Resist Cold

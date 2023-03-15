@@ -1,1 +1,2 @@
 // cleric level 5
+// Cause Critical Wounds, Cure Critical Wounds, Dispel Evil, Dispel Good, False Seeing, Flame Strike, Raise Dead, Slay Living, True Seeing

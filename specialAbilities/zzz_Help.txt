@@ -40,5 +40,6 @@ Updates201027 = "corrected minor display issues in Global_Display"
 Updates210812 = "fixed several syntax errors in IsPaladinProtectedFromEvil - thanks to jonathan-benn, rewrote and fixed monster_WeaponImmunity and monster_WeaponResistance - thanks to jonathan-benn"
 Updates210816 = "rewrote and fixed monster_WeaponImmunityType and monster_WeaponResistanceType"
 Updates230226 = "fixed player control issue and ranger initiative in Competing"
+Updates230314 = "modified class_MageScribe to check to see if spell is known before scribing it"
 \(END)
 

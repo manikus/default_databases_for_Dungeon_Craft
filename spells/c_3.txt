@@ -1,1 +1,2 @@
 // cleric level 3
+// Bestow Curse, Cause Blindness, Cause Disease, Cure Blindness, Cure Disease, Dispel Magic, Prayer, Remove Curse

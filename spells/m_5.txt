@@ -1,1 +1,2 @@
 // magic-user level 5
+// Cloudkill, Cone of Cold, Conjure Air Elemental, Conjure Earth Elemental, Conjure Fire Elemental, Conjure Water Elemental, Feeblemind, Fire Touch, Hold Monster, Monster Summoning III, Protection from Acid, Transmute Rock To Mud, Wall Of Stone

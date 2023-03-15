@@ -1,7 +1,14 @@
 \(BEGIN)
 name = class_MageScribe
-[CanScribeOrWhatever] = $SET_HOOK_PARAM(5,"SCRIBE");
--$SET_HOOK_PARAM(6,0);
+[CanScribeOrWhatever] = $VAR spl; $VAR splList;
+-spl = $SA_ITEM_GET("scribeSpell");
+-splList = $GET_SPELLBOOK($CharacterContext(),"%@#&");
+-$WHILE (splList)
+-	{
+-		splList =  $DelimitedStringTail(splList);
+-		$IF (splList == spl) {$RETURN;};
+-	};
+-$SET_HOOK_PARAM(5,"SCRIBE"); $SET_HOOK_PARAM(6,0);
 [KnowableSpells] = $RETURN "100";
 [KnowableSpellsMinMax] = $SET_HOOK_PARAM(7,"999999");
 -$SET_HOOK_PARAM(8,"999999");
