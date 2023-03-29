@@ -3,10 +3,8 @@ name = IsFast
 [AdjustInitiative] = $RETURN -2;
 [CharDisplayStatus] = $VAR exp; // expiration time
 -exp = $SA_PARAM_GET();
--$IF ($GET_PARTY_TIME() >=# exp){$SA_REMOVE();};
--$SET_HOOK_PARAM( 7,"Hasted");
--$SET_HOOK_PARAM( 6,"");
--$RETURN 1;
+-$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7,"Hasted"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
 [Dispel] = $SA_REMOVE();
 [GetAdjMaxMovement] = $RETURN $GET_HOOK_PARAM(5) *# 2;
 [GetNumberOfAttacks] = $RETURN 2;

@@ -40,7 +40,7 @@ duration units = instantaneous
 target duration = 0
 price = 0
 priority = 500
-spell effect 1 = none
+spell effect 1 = $CHAR_HITPOINTS,-11,absolute,target,yes
 activate script 1 = $VAR tgt;$VAR type;tgt \= $IndexOf($TargetContext());type \= $GET_CHAR_UNDEAD(tgt);$IF (type !\= "none" || type !\= "Mummy" || type !\= ""){$RETURN 0;};
 modify script 1 = $VAR tgt;$VAR type;tgt \= $IndexOf($TargetContext());type \= $GET_CHAR_UNDEAD(tgt);$IF (type \=\=# "Mummy") {$SET_COMBATANT_SA($AttackerContext(),"mummy",1);};
 savingThrowScript = 

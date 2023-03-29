@@ -9,5 +9,6 @@ name = IsBrave
 -		$IF (sav <# rdm) {$RETURN "Y";}
 -		$ELSE {$RETURN "N";};
 -	};
+[OnEndCombat] = $SA_REMOVE();
 \(END)
 

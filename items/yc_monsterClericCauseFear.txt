@@ -1,6 +1,6 @@
 \(BEGIN)
 name = monsterClericCauseFear
-id name = monsterClierCauseFear
+id name = monsterClericCauseFear
 launch sound = none
 hit sound = none
 miss sound = none
@@ -24,12 +24,12 @@ readied location = WEAPON
 bundle quantity = 1
 weapon type = SpellCaster
 ammo type = 
-usable = no
+usable = yes
 not magical = no
 scribtable = no
 can drop = yes
 CanHalveJoin = yes
-number of charges = 0
+1number of charges = 0
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never

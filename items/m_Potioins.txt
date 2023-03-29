@@ -226,7 +226,7 @@ number of charges = 1
 Examine Event ID = 
 Examine Label = 
 recharge rate = never
-spell effect = none
+spell effect = itemPotionInvisibility
 \(END)
 
 \(BEGIN)
@@ -272,7 +272,7 @@ number of charges = 1
 Examine Event ID = 
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = itemPotionSpeed
 \(END)
 
 \(BEGIN)
@@ -313,7 +313,7 @@ number of charges = 1
 Examine Event ID = 
 Examine Label = 
 recharge rate = never
-spell effect = none
+spell effect = itemPotionGiantStrength
 \(END)
 
 \(BEGIN)

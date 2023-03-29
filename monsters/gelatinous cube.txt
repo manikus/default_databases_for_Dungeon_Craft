@@ -27,7 +27,7 @@ penalty = none
 immunity = vorpal weapon
 Misc Options = none
 item = none
-attack = 4,2,0,attacks,monsterParalysis
+attack = 4,2,0,attacks,monsterGelatinousCubeParalysis
 Undead = none
 \(END)
 // MM p43

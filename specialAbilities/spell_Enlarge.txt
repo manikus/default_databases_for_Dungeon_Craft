@@ -45,7 +45,7 @@ name = spell_Enlarge
 -	}
 -$ELSE {$MODIFY_CHAR_ATTRIBUTE(tgt,"STRMOD",strMod -# strMod,"MINUTES",10 *# lvl,"Enlarge STRMOD","SPELL Enlarge STRMOD");};
 -$IF (lvl ># 4) {$SET_CHAR_SIZE(tgt,2);};
--$SET_CHARACTER_SA($TargetContext(),"IsEnlarged",lvl);
+-$SET_CHARACTER_SA($TargetContext(),"IsEnlarged",$GET_PARTY_TIME() +# (10 *# lvl));
 -$SET_CHARACTER_SA($TargetContext(),"enlarged",1);
 \(END)
 

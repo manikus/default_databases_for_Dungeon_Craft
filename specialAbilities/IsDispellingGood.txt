@@ -1,8 +1,9 @@
 \(BEGIN)
 name = IsDispellingGood
-[CharDisplayStatus] = $SET_HOOK_PARAM( 7, "Dispelling Good");
--$SET_HOOK_PARAM( 6, "");
--$RETURN 1;
+[CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7, "Dispelling Good"); $SET_HOOK_PARAM( 6, ""); $RETURN 1;
 [Dispel] = $SA_REMOVE();
 [DoesAttackSucceed] = $IF ($GET_COMBATANT_SA($TargetContext(),"IsDispellingGood") != "-?-?-")
 -	{

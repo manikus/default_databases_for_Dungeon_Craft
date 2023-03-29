@@ -2490,12 +2490,25 @@ name = IsAided
 \(END)
 
 \(BEGIN)
+name = IsAnesthetized
+[CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7,"Paralyzed"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
+[DoesAttackSucceed] = $IF ($GET_COMBATANT_SA($TargetContext(),"IsAnesthetized") != "-?-?-")
+-  {$SET_HOOK_PARAM(6,$GET_HOOK_PARAM(6) -# 30);};
+-$IF ($GET_HOOK_PARAM(5) >=# $GET_HOOK_PARAM(6)){$RETURN "Y";}
+-$ELSE {$RETURN "N";};
+[GetItemTargetHitBonus] = $RETURN $GET_CHAR_HITPOINTS($IndexOf($TargetContext())) +# 1;
+[IsCombatReady] = $RETURN "N";
+\(END)
+
+\(BEGIN)
 name = IsBarkskinned
-[CharDisplayStatus] = $IF ($GET_PARTY_TIME() ># $SA_PARAM_GET())
--  {$RETURN $SA_REMOVE();};
--$SET_HOOK_PARAM( 7, "Barkskin");
--$SET_HOOK_PARAM( 6, "");
--$RETURN 1;
+[CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7, "Barkskin"); $SET_HOOK_PARAM( 6, ""); $RETURN 1;
 [Dispel] = $SA_REMOVE();
 [DoesAttackSucceed] = $IF ($GET_COMBATANT_SA($TargetContext(),"IsBarkskinned") != "-?-?-")
 -  {$SET_HOOK_PARAM(6,$GET_HOOK_PARAM(6) +# 1);};
@@ -2505,10 +2518,8 @@ name = IsBarkskinned
 
 \(BEGIN)
 name = IsBestowedCurse
-[CharDisplayStatus] = $IF ($GET_PARTY_TIME() ># $SA_PARAM_GET()){$SA_REMOVE();};
--$SET_HOOK_PARAM( 7, "Curse Bestowed");
--$SET_HOOK_PARAM( 6, "");
--$RETURN 1;
+[CharDisplayStatus] = $IF ($GET_PARTY_TIME() ># $SA_PARAM_GET())$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7, "Cursed"); $SET_HOOK_PARAM( 6, ""); $RETURN 1;
 [Dispel] = $VAR tgt; // target
 -tgt = $IndexOf($TargetContext());
 -$SA_REMOVE();
@@ -2540,9 +2551,7 @@ StartCombatRound = $VAR param;
 \(BEGIN)
 name = IsBlessed
 [CharDisplayStatus] = $IF ($GET_PARTY_TIME() ># $SA_PARAM_GET()){$RETURN $SA_REMOVE();};
--$SET_HOOK_PARAM( 7,"Blessed");
--$SET_HOOK_PARAM( 6,"");
--$RETURN 1;
+-$SET_HOOK_PARAM( 7,"Blessed"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
 [Dispel] = $SA_REMOVE();
 [DoesAttackSucceed] = $IF ($GET_COMBATANT_SA($AttackerContext(),"IsBlessed") != "-?-?-")
 -  {$SET_HOOK_PARAM(6,$GET_HOOK_PARAM(6) -# 1);};
@@ -2628,6 +2637,7 @@ name = IsBrave
 -		$IF (sav <# rdm) {$RETURN "Y";}
 -		$ELSE {$RETURN "N";};
 -	};
+[OnEndCombat] = $SA_REMOVE();
 \(END)
 
 \(BEGIN)
@@ -2644,9 +2654,15 @@ name = IsCarrionStenched
 
 \(BEGIN)
 name = IsCharmed
-[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Charmed ");
--$SET_HOOK_PARAM( 6,"");
--$RETURN 1;
+[CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp)
+-	{
+-		$SetFriendly($IndexOf($TargetContext()),$GET_COMBATANT_SA($TargetContext(),"side"));
+-		$SA_REMOVE();
+-		$RETURN;
+-	};
+-$SET_HOOK_PARAM( 7,"Charmed "); $SET_HOOK_PARAM( 6,""); $RETURN 1;
 [Dispel] = $VAR clev; // Cast level
 -$VAR dlev; // Dispel level
 -$VAR cls;  // Class
@@ -2696,9 +2712,10 @@ name = IsCommanded
 \(BEGIN)
 name = IsConfused
 [CanCastSpells] = $RETURN "N";
-[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Confused");
--$SET_HOOK_PARAM( 6,"");
--$RETURN 1;
+[CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7,"Confused"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
 [Dispel] = $SA_REMOVE();
 [GetAdjMaxMovement] = $RETURN "0";
 [IsCombatReady] = $RETURN "N";
@@ -2721,7 +2738,7 @@ name = IsConfusedExtended
 -		$IF (save <# rnd){$DELETE_COMBATANT_SA($CombatantContext(),"ConfusionSA");$RETURN;};
 -		rnd = $RANDOM(10) +# 1;
 -		$IF (rnd ==# 1){$SetFriendly(com,1);$RETURN;};
--		$IF (rnd <=# 6){$SET_COMBATANT_SA($CombatantContext(),"IsConfused","Confused");$RETURN;};
+-		$IF (rnd <=# 6){$SET_COMBATANT_SA($CombatantContext(),"IsConfused",$GET_PARTY_TIME() +# 12;);$RETURN;};
 -		$IF (rnd ==# 7){$SetFriendly(com,1);$RETURN;};
 -		$IF (rnd ==# 8){$SetFriendly(com,2);$RETURN;};
 -		$SetFriendly(com,2);
@@ -2732,9 +2749,7 @@ name = IsConfusedExtended
 \(BEGIN)
 name = IsCursed
 [CharDisplayStatus] = $IF ($GET_PARTY_TIME() ># $SA_PARAM_GET()){$RETURN $SA_REMOVE();};
--$SET_HOOK_PARAM( 7, "Cursed");
--$SET_HOOK_PARAM( 6, "");
--$RETURN 1;
+-$SET_HOOK_PARAM( 7, "Cursed"); $SET_HOOK_PARAM( 6, ""); $RETURN 1;
 [DoesAttackSucceed] = $IF ($GET_COMBATANT_SA($AttackerContext(),"IsCursed") != "-?-?-")
 -  {$SET_HOOK_PARAM(6,$GET_HOOK_PARAM(6) +# 1);};
 -$IF ($GET_HOOK_PARAM(5) >=# $GET_HOOK_PARAM(6)){$RETURN "Y";}
@@ -2743,9 +2758,7 @@ name = IsCursed
 
 \(BEGIN)
 name = IsDarkBlinded
-[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Blind in the dark");
--$SET_HOOK_PARAM( 6,"");
--$RETURN 1;
+[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Blind in the dark"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
 [DoesAttackSucceed] = $IF ($GET_COMBATANT_SA($TargetContext(),"IsDarkBlinded") != "-?-?-")
 -  {$SET_HOOK_PARAM(6,$GET_HOOK_PARAM(6) -# 4);};
 -$IF ($GET_HOOK_PARAM(5) >=# $GET_HOOK_PARAM(6))
@@ -2755,26 +2768,46 @@ name = IsDarkBlinded
 \(END)
 
 \(BEGIN)
-name = IsDetectedEvil
-[CharDisplayStatus] = $SET_HOOK_PARAM( 7,$SA_PARAM_GET());
+name = IsDetectingEvil
+[CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7,"Detecting Evil"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
+\(END)
+
+\(BEGIN)
+name = IsDetectingGood
+[CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7,"Detecting Good");
 -$SET_HOOK_PARAM( 6,"");
 -$RETURN 1;
 \(END)
 
 \(BEGIN)
-name = IsDetectedGood
-[CharDisplayStatus] = $SET_HOOK_PARAM( 7,$SA_PARAM_GET());
--$SET_HOOK_PARAM( 6,"");
--$RETURN 1;
+name = IsDetectingIllusion
+[CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7,"Detecting Illusion"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
 \(END)
 
 \(BEGIN)
 name = IsDetectingMagic
 [StartCombatRound] = $VAR exp;
 -exp = $SA_PARAM_GET();
--$IF ($GET_PARTY_TIME() ># exp){$SA_REMOVE();};
+-$IF ($GET_PARTY_TIME() ># exp){$RETURN $SA_REMOVE();};
 [CanCharacterDetectMagic] = $RETURN "Y";
 [Dispel] = $SA_REMOVE();
+\(END)
+
+\(BEGIN)
+name = IsDetectingSecretDoors
+[CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7,"Detecting Secret Doors"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
 \(END)
 
 \(BEGIN)
@@ -2841,9 +2874,10 @@ name = IsDiseasedSpell
 
 \(BEGIN)
 name = IsDispellingEvil
-[CharDisplayStatus] = $SET_HOOK_PARAM( 7, "Dispelling Evil");
--$SET_HOOK_PARAM( 6, "");
--$RETURN 1;
+[CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7, "Dispelling Evil"); $SET_HOOK_PARAM( 6, ""); $RETURN 1;
 [Dispel] = $SA_REMOVE();
 [DoesAttackSucceed] = $IF ($GET_COMBATANT_SA($TargetContext(),"IsDispellingEvil") != "-?-?-")
 -	{
@@ -2867,9 +2901,10 @@ name = IsDispellingEvil
 
 \(BEGIN)
 name = IsDispellingGood
-[CharDisplayStatus] = $SET_HOOK_PARAM( 7, "Dispelling Good");
--$SET_HOOK_PARAM( 6, "");
--$RETURN 1;
+[CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7, "Dispelling Good"); $SET_HOOK_PARAM( 6, ""); $RETURN 1;
 [Dispel] = $SA_REMOVE();
 [DoesAttackSucceed] = $IF ($GET_COMBATANT_SA($TargetContext(),"IsDispellingGood") != "-?-?-")
 -	{
@@ -3097,9 +3132,18 @@ name = IsEnlarged
 -		$RUN_CHAR_SE_SCRIPTS($CharacterContext(),"Dispel SE");
 -		$SA_REMOVE();
 -	};
-[CharDisplayStatus] = $SET_HOOK_PARAM( 7, "Enlarged");
--$SET_HOOK_PARAM( 6, "");
--$RETURN 1;
+[CharDisplayStatus] = $VAR me; $VAR exp; // time effect expires, gotten from SA that called this one
+-me = $IndexOf($CharacterContext());
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp)
+-	{
+-		$DELETE_CHARACTER_SA($CharacterContext(),"enlarged");
+-		$REMOVE_CHAR_MODIFICATION(me,"SPELL Enlarge *");
+-		$SET_CHAR_SIZE(me,$GET_CHARACTER_SA($CharacterContext(),"mySize"));
+-		$SA_REMOVE();
+-		$RETURN;
+-	};
+-$SET_HOOK_PARAM( 7, "Enlarged"); $SET_HOOK_PARAM( 6, ""); $RETURN 1;
 [Dispel] = $VAR me;
 -me = $IndexOf($CharacterContext());
 -$DELETE_CHARACTER_SA($CharacterContext(),"enlarged");
@@ -3118,16 +3162,14 @@ name = IsEnlarged
 
 \(BEGIN)
 name = IsEntangled0
-[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Entangled by Vines");
--$SET_HOOK_PARAM( 6,"");
--$RETURN 1;
+[CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp){$RETUURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7,"Entangled by Vines"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
 [ComputeDamage] = $RETURN $GET_CHAR_HITPOINTS($IndexOf($TargetContext())) +# 1;
 [Dispel] = $SA_REMOVE();
 [GetAdjMaxMovement] = $RETURN "0";
-[IsCombatReady] = $VAR exp; // expiration time
--exp = $SA_PARAM_GET();
--$IF ($GET_PARTY_TIME() >=# exp) {$SA_REMOVE(); $RETURN "Y";}
--$ELSE {$RETURN "N";};
+[IsCombatReady] = $RETURN "N";
 \(END)
 
 \(BEGIN)
@@ -3162,10 +3204,8 @@ name = IsFast
 [AdjustInitiative] = $RETURN -2;
 [CharDisplayStatus] = $VAR exp; // expiration time
 -exp = $SA_PARAM_GET();
--$IF ($GET_PARTY_TIME() >=# exp){$SA_REMOVE();};
--$SET_HOOK_PARAM( 7,"Hasted");
--$SET_HOOK_PARAM( 6,"");
--$RETURN 1;
+-$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7,"Hasted"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
 [Dispel] = $SA_REMOVE();
 [GetAdjMaxMovement] = $RETURN $GET_HOOK_PARAM(5) *# 2;
 [GetNumberOfAttacks] = $RETURN 2;
@@ -3274,7 +3314,10 @@ name = IsHolyDeafened
 [CanCastSpells] = $VAR rdm;
 -rdm = $RANDOM(2);
 -$IF (rdm ==# 1) {$RETURN "N";};
-[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Deagened"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
+[CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7,"Deagened"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
 [DoesAttackSucceed] = $VAR p5; $VAR p6;
 -p5 = $GET_HOOK_PARAM(5) -# 2;
 -p6 = $GET_HOOK_PARAM(6);
@@ -3282,15 +3325,29 @@ name = IsHolyDeafened
 [GetAdjMaxMovement] = $VAR p5;
 -p5 = $SA_PARAM_GET(5);
 -$RETURN p5 /# 4 *# 3;
-[StartCombatRound] = $VAR exp;
+\(END)
+
+\(BEGIN)
+name = IsHolyParalyzed
+[CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
 -exp = $SA_PARAM_GET();
--$IF ($GET_PARTY_TIME() ># exp){$SA_REMOVE();$RETURN;};
+-$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7,"Paralyzed"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
+[DoesAttackSucceed] = $IF ($GET_COMBATANT_SA($TargetContext(),"IsHolyParalyzed") != "-?-?-")
+-  {$SET_HOOK_PARAM(6,$GET_HOOK_PARAM(6) -# 30);};
+-$IF ($GET_HOOK_PARAM(5) >=# $GET_HOOK_PARAM(6)){$RETURN "Y";}
+-$ELSE {$RETURN "N";};
+[GetItemTargetHitBonus] = $RETURN $GET_CHAR_HITPOINTS($IndexOf($TargetContext())) +# 1;
+[IsCombatReady] = $RETURN "N";
 \(END)
 
 \(BEGIN)
 name = IsHolyStunned
 [CanCastSpells] = $RETURN "N";
-[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Stunned"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
+[CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7,"Stunned"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
 [DoesAttackSucceed] = $VAR p5; $VAR p6;
 -p5 = $GET_HOOK_PARAM(5) -# 4;
 -p6 = $GET_HOOK_PARAM(6);
@@ -3298,9 +3355,6 @@ name = IsHolyStunned
 [GetAdjMaxMovement] = $VAR p5;
 -p5 = $SA_PARAM_GET(5);
 -$RETURN p5 /# 2;
-[StartCombatRound] = $VAR exp;
--exp = $SA_PARAM_GET();
--$IF ($GET_PARTY_TIME() ># exp){$SA_REMOVE();$RETURN;};
 \(END)
 
 \(BEGIN)
@@ -3570,6 +3624,14 @@ name = IsInvisibleToAnimals
 \(END)
 
 \(BEGIN)
+name = IsKnowingAlignment
+[CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7,"Knows Alignment"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
+\(END)
+
+\(BEGIN)
 name = IsLichFear
 [CanAim] = $RETURN "N";
 [CanCastSpells] = $RETURN "N";
@@ -3733,9 +3795,10 @@ name = IsPaladinProtectedFromEvil
 
 \(BEGIN)
 name = IsParalyzed
-[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Paralyzed");
--$SET_HOOK_PARAM( 6,"");
--$RETURN 1;
+[CharDisplayStatus] =$VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7,"Paralyzed"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
 [Dispel] = $SA_REMOVE();
 [DoesAttackSucceed] = $IF ($GET_COMBATANT_SA($TargetContext(),"IsParalyzed") != "-?-?-")
 -  {$SET_HOOK_PARAM(6,$GET_HOOK_PARAM(6) -# 30);};
@@ -3743,9 +3806,6 @@ name = IsParalyzed
 -$ELSE {$RETURN "N";};
 [GetItemTargetHitBonus] = $RETURN $GET_CHAR_HITPOINTS($IndexOf($TargetContext())) +# 1;
 [IsCombatReady] = $RETURN "N";
-[StartCombatRound] = $VAR exp;
--exp = $SA_PARAM_GET();
--$IF ($GET_PARTY_TIME() ># exp) {$RETURN $SA_REMOVE();};
 \(END)
 
 \(BEGIN)
@@ -3781,7 +3841,10 @@ name = IsPoisoned
 
 \(BEGIN)
 name = IsPraying
-[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Praying"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
+[CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7,"Praying"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
 [Dispel] = $SA_REMOVE();
 \(END)
 
@@ -4127,9 +4190,19 @@ name = IsReduced
 -		$RUN_CHAR_SE_SCRIPTS($CharacterContext(),"Dispel SE");
 -		$SA_REMOVE();
 -	};
-[CharDisplayStatus] = $SET_HOOK_PARAM( 7, "Reduced");
--$SET_HOOK_PARAM( 6, "");
--$RETURN 1;
+[CharDisplayStatus] = $VAR me; $VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp)
+-	{
+-		me = $IndexOf($CharacterContext());
+-		$DELETE_CHARACTER_SA($CharacterContext(),"reduced");
+-		$REMOVE_CHAR_MODIFICATION(me,"SPELL Reduce *");
+-		$SET_CHAR_SIZE(me,$GET_CHARACTER_SA($CharacterContext(),"mySize"));
+-		$RUN_CHAR_SE_SCRIPTS($CharacterContext(),"Dispel SE");
+-		$SA_REMOVE();
+-		$RETURN;
+-	};
+-$SET_HOOK_PARAM( 7, "Reduced"); $SET_HOOK_PARAM( 6, ""); $RETURN 1;
 [Dispel] = $VAR me;
 -me = $IndexOf($CharacterContext());
 -$DELETE_CHARACTER_SA($CharacterContext(),"reduced");
@@ -4284,6 +4357,38 @@ name = IsRingWizardry
 \(END)
 
 \(BEGIN)
+name = IsSeeingAstral
+[CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7,"Seeing Astral"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
+\(END)
+
+\(BEGIN)
+name = IsSeeingDisplaced
+[CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7,"Seeing Displaced"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
+\(END)
+
+\(BEGIN)
+name = IsSeeingEthereal
+[CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7,"Seeing Ethereal"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
+\(END)
+
+\(BEGIN)
+name = IsSeeingInvisible
+[CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7,"Seeing Invisible"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
+\(END)
+
+\(BEGIN)
 name = IsShielded
 [CharDisplayStatus] = $IF ($GET_PARTY_TIME() ># $SA_PARAM_GET()){$SA_REMOVE();};
 -$IF ($GET_HOOK_PARAM(5) == "DISPLAY") {$SET_HOOK_PARAM( 7,"Shield"); $SET_HOOK_PARAM( 6,"1");};
@@ -4309,18 +4414,21 @@ name = IsShielded
 
 \(BEGIN)
 name = IsSilenced
-[CanCastSpells] = $VAR exp; // expiration time
+[CanCastSpells] = $RETURN "N";
+[CharDisplayStatus] = $VAR exp; // expiration time
 -exp = $SA_PARAM_GET();
--$IF ($GET_PARTY_TIME() >=# exp){$SA_REMOVE();};
--$RETURN "N";
-[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Silenced"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
+-$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7,"Silenced"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
 [Dispel] = $SA_REMOVE();
 \(END)
 
 \(BEGIN)
 name = IsSleeping
 [CanCastSpells] = $RETURN "N";
-[CharDisplayStatus] = $SET_HOOK_PARAM( 7,$SA_PARAM_GET()); $SET_HOOK_PARAM( 6,""); $RETURN 1;
+[CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7,$SA_PARAM_GET()); $SET_HOOK_PARAM( 6,""); $RETURN 1;
 [Dispel] = $SA_REMOVE();
 [DoesAttackSucceed] = $RETURN "Y";
 [GetAdjMaxMovement] = $RETURN 0;
@@ -4341,7 +4449,7 @@ name = IsSlow
 [Dispel] = $SA_REMOVE();
 [GetAdjMaxMovement] = $VAR expiration;
 -expiration = $SA_PARAM_GET();
--$IF ($GET_PARTY_TIME() >=# expiration){$SA_REMOVE();};
+-$IF ($GET_PARTY_TIME() >=# expiration){$RETURN $SA_REMOVE();};
 -$RETURN $GET_HOOK_PARAM(5) /# 2;
 [GetNumberOfAttacks] = $VAR attackNum;
 -attackNum = $GET_HOOK_PARAM(5);
@@ -4426,20 +4534,13 @@ name = IsStuckInMud
 \(BEGIN)
 name = IsStunned
 [CanCastSpells] = $RETURN "N";
-[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Stunned"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
+[CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7,"Stunned"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
 [Dispel] = $SA_REMOVE();
-[GetAdjMaxMovement] = $VAR exp; // expiration time
--$VAR rnd; // round
--exp = $SA_PARAM_GET();
--rnd = $GetCombatRound();
--$IF (rnd >=# exp){$SA_REMOVE();$RETURN;};
--$RETURN "0";
-[IsCombatReady] = $VAR exp; // expiration time
--$VAR rnd; // round
--exp = $SA_PARAM_GET();
--rnd = $GetCombatRound();
--$IF (rnd >=# exp){$SA_REMOVE();$RETURN;};
--$RETURN "N";
+[GetAdjMaxMovement] = $RETURN "0";
+[IsCombatReady] = $RETURN "N";
 \(END)
 
 \(BEGIN)
@@ -4504,9 +4605,10 @@ name = IsSymbolPersuaded
 
 \(BEGIN)
 name = IsWebbed
-[CharDisplayStatus] = $SET_HOOK_PARAM( 7,"Stuck in Webbing");
--$SET_HOOK_PARAM( 6,"");
--$RETURN 1;
+[CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7,"Stuck in Webbing"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
 [ComputeDamage] = $RETURN $GET_CHAR_HITPOINTS($IndexOf($TargetContext())) +# 1;
 [Dispel] = $SA_REMOVE();
 [DoesAttackSucceed] = $VAR item; $VAR itmNon; $VAR monster; $VAR monNon; $VAR immune;
@@ -6512,56 +6614,42 @@ name = monster_WeaponDamageOnlyOne
 name = monster_WeaponImmunity
 [ComputeDamage] = $VAR imm;	// value of the monster_WeaponImmunity SA
 -$VAR itm;	// value of the item_MagicalWeapon SA
--$VAR mlv;	// value of the monsterLevel SA if the attacker is a monster
+-$VAR mlv;	// value of the monsterLevel SA
 -$VAR lst;	// list of monster attacks that count as magical - determined by level
 -imm = $GET_COMBATANT_SA($TargetContext(),"monster_WeaponImmunity");
 -itm = $SA_ITEM_GET("item_MagicalWeapon");
+-mlv = $GET_COMBATANT_SA($AttackerContext(),"monsterLevel");
+-$IF (mlv == "-?-?-"){$RETURN;};
 -$IF (itm == "-?-?-"){itm = 0;};
 -$IF (itm ==# 0)
 -	{
--		mlv = $GET_COMBATANT_SA($AttackerContext(),"monsterLevel");
--		$IF (mlv != "-?-?-")
--			{
--				lst = "$0$0$0$0$0$1$1$2$2$3$3";
--				$IF (mlv <# 11){itm = $DelimitedStringSubstring(lst,mlv);}
--				$ELSE {itm = 4;};
--			};
+-		lst = "$0$0$0$0$0$1$1$2$2$3$3";
+-		$IF (mlv <# 11){itm = $DelimitedStringSubstring(lst,mlv);}
+-		$ELSE {itm = 4;};
 -	};
 -$IF (imm >=# itm){$RETURN "0";};
-DoesAttackSucceed = $VAR atk; // attacker
--$VAR itm;	// value of the item_MagicalWeapon SA
--$VAR mlv;	// value of the monsterLevel SA if the attacker is a monster
+DoesAttackSucceed = $VAR itm;	// value of the item_MagicalWeapon SA
+-$VAR mlv;	// value of the attacker monsterLevel SA
 -$VAR lst;	// list of monster attacks that count as magical - determined by level
 -$VAR prm;	// value of the monster_MagicResistance SA
--$VAR nm;	// name of the target monster
--$VAR p5;	// Hook parameter 5
--$VAR p6;	// Hook parameter 6
--p5 = $GET_HOOK_PARAM(5);
--p6 = $GET_HOOK_PARAM(6);
--nm = $GET_CHAR_NAME($IndexOf($TargetContext()));
+-$VAR anm;	// name of the attacker monster
+-$VAR tnm;	// name of the target monster
+-anm = $GET_CHAR_NAME($IndexOf($AttackerContext()));
+-tnm = $GET_CHAR_NAME($IndexOf($TargetContext()));
 -prm = $SA_PARAM_GET();
--$IF ($GET_MONSTERTYPE_SA(nm,"monster_WeaponImmunity") != "-?-?-")
+-mlv = $GET_MONSTERTYPE_SA(anm,"monsterLevel");
+-$IF ($GET_MONSTERTYPE_SA(anm,mlv) == "-?-?-"){$RETURN;};
+-$IF ($GET_MONSTERTYPE_SA(tnm,"monster_WeaponImmunity") == "-?-?-"){$RETURN;};
+-itm = $SA_ITEM_GET("item_MagicalWeapon");
+-$IF ($SA_ITEM_GET("AdjustBonus") != "-?-?-"){itm = $GET_HOOK_PARAM(7);};
+-$IF ($GET_MONSTERTYPE_SA(nm,"vulnSilver") != "-?-?-" && $SA_ITEM_GET("item_SilverWeapon") != "-?-?-"){itm = 5;};
+- $IF (itm == "-?-?-")
 -	{
--		atk = $IndexOf($AttackerContext());
--		itm = $SA_ITEM_GET("item_MagicalWeapon");
--		$IF ($SA_ITEM_GET("AdjustBonus") != "-?-?-"){itm = $GET_HOOK_PARAM(7);};
--		$IF ($GET_MONSTERTYPE_SA(nm,"vulnSilver") != "-?-?-" && $SA_ITEM_GET("item_SilverWeapon") != "-?-?-")
--			{itm = 5;};
-- 		$IF (itm == "-?-?-")
--			{
--				mlv = $GET_MONSTERTYPE_SA($GET_CHAR_NAME(atk),"monsterLevel");
--				$IF (mlv != "-?-?-")
--					{
--						lst = "$0$0$0$0$0$1$1$2$2$3$3";
--						$IF (mlv <# 11)
--							{itm = $DelimitedStringSubstring(lst,mlv);}
--						$ELSE {itm = 4;};
-- 					};
--			};
--		$IF (itm <# prm){$SET_HOOK_PARAM(6,p6 +# 90);};
+-		lst = "$0$0$0$0$0$1$1$2$2$3$3";
+-		$IF (mlv <# 11){itm = $DelimitedStringSubstring(lst,mlv);}
+-		$ELSE {itm = 4;};
 -	};
--$IF (p5 >=# p6){$RETURN "Y";}
--$ELSE {$RETURN "N";};
+-$IF (itm <# prm){$RETURN;};
 \(END)
 
 \(BEGIN)
@@ -7017,6 +7105,7 @@ name = spell_Confusion
 -$VAR rnd;
 -$VAR rnd2;
 -$VAR cls;
+-$VAR exp; // expiration time
 -atk = $IndexOf($AttackerContext());
 -tgt = $IndexOf($TargetContext());
 -cls = $SA_PARAM_GET();
@@ -7060,9 +7149,11 @@ name = spell_Confusion
 -		$SET_CHARACTER_SA($TargetContext(),"IsConfusedExtended",1);
 -		$SET_CHARACTER_SA($TargetContext(),"CombatRoundStart",1);
 -	};
+-lvl = $GET_CHAR_Lvl(atk,cls);
+-exp = $GET_PARTY_TIME() +# 2 +# lvl;
 -rnd = $RANDOM(10) +# 1;
 -$IF (rnd ==# 1){$SetFriendly(tgt,1);$RETURN;};
--$IF (rnd <=# 6){$SET_CHARACTER_SA($TargetContext(),"IsConfused","Confused");$RETURN;};
+-$IF (rnd <=# 6){$SET_CHARACTER_SA($TargetContext(),"IsConfused",exp);$RETURN;};
 -$IF (rnd ==# 7){$SetFriendly(tgt,1);$RETURN;};
 -$IF (rnd ==# 8){$SetFriendly(tgt,2);$RETURN;};
 -$SetFriendly(tgt,2);
@@ -7613,7 +7704,7 @@ name = spell_Enlarge
 -	}
 -$ELSE {$MODIFY_CHAR_ATTRIBUTE(tgt,"STRMOD",strMod -# strMod,"MINUTES",10 *# lvl,"Enlarge STRMOD","SPELL Enlarge STRMOD");};
 -$IF (lvl ># 4) {$SET_CHAR_SIZE(tgt,2);};
--$SET_CHARACTER_SA($TargetContext(),"IsEnlarged",lvl);
+-$SET_CHARACTER_SA($TargetContext(),"IsEnlarged",$GET_PARTY_TIME() +# (10 *# lvl));
 -$SET_CHARACTER_SA($TargetContext(),"enlarged",1);
 \(END)
 
@@ -7852,6 +7943,18 @@ name = spell_GeasFlee
 \(END)
 
 \(BEGIN)
+name = spell_GelatinousCubeParalysis
+[InvokeSpellOnTarget] = $VAR rndm;
+-$VAR exp; // expiration time
+-rndm = $RANDOM(4) +# $RANDOM(4) +# $RANDOM(4) +# $RANDOM(4) +# $RANDOM(4) +# 5;
+-exp = $GET_PARTY_TIME() +# rndm;
+-$IF ($GET_CHARACTER_SA($TargetContext(),"IsImmuneParalysis") != "-?-?-"){$RETURN;};
+-$IF ($GET_MONSTERTYPE_SA(nm,"monster_ImmuneParalysis") != "-?-?-"){$RETURN;};
+-$IF ($GET_CHARACTER_SA($TargetContext(),"saved")){$RETURN;};
+-$SET_COMBATANT_SA($TargetContext(),"IsAnesthetized",exp);
+\(END)
+
+\(BEGIN)
 name = spell_Harm
 [InvokeSpellOnTarget] = $IF ($GET_CHAR_UNDEAD($IndexOf($TargetContext())) != "none"){$RETURN;};
 -$CastSpellOnTarget($TargetContext(),"HarmDisease");
@@ -8007,12 +8110,12 @@ name = spell_HolyWord
 -$IF (evl != "evil"){$RETURN;};
 -tgt = $IndexOf($TargetContext());
 -lvl = $GetHighestLevelBaseclass(tgt);
--rD = $RANDOM(4) +# 1;
--rD = $RANDOM(4) +#$RANDOM(4) +# 2;
--rD = ($RANDOM(4) +# 1) *# 10;
+-rD = $GET_PARTY_TIME() +# $RANDOM(4) +# 1;
+-rS = $GET_PARTY_TIME() +# $RANDOM(4) +# $RANDOM(4) +# 2;
+-rP = $GET_PARTY_TIME() +# (($RANDOM(4) +# 1) *# 10);
 -$IF (lvl ># 11){$RETURN $SET_COMBATANT_SA($TargetContext(),"IsHolyDeafened",rD);};
 -$IF (lvl ># 7){$RETURN $SET_COMBATANT_SA($TargetContext(),"IsHolyStunned",rS);};
--$IF (lvl ># 3){$RETURN $SET_COMBATANT_SA($TargetContext(),"IsParalyzed",rP);};
+-$IF (lvl ># 3){$RETURN $SET_COMBATANT_SA($TargetContext(),"IsHolyParalyzed",rP);};
 -$SET_CHAR_HITPOINTS(tgt,-11); $SET_CHAR_STATUS(tgt,5);
 \(END)
 
@@ -8366,7 +8469,7 @@ name = spell_NeutralizePoison
 name = spell_Paralysis
 [InvokeSpellOnTarget] = $VAR atk; // attacker
 -$VAR tgt; // target
--$VAR nm;
+-$VAR nm; // name
 -atk = $IndexOf($AttackerContext());
 -tgt = $IndexOf($TargetContext());
 -nm = $GET_CHAR_NAME(tgt);
@@ -8374,7 +8477,7 @@ name = spell_Paralysis
 -$IF ($GET_MONSTERTYPE_SA(nm,"monster_ImmuneParalysis") != "-?-?-"){$RETURN;};
 -$IF ($GET_CHARACTER_SA($TargetContext(),"saved")){$RETURN;};
 -$IF ($GET_CHAR_NAME(atk) == "Ghoul" && $GET_CHAR_RACE(tgt) == "Elf"){$RETURN;};
--$SET_COMBATANT_SA($TargetContext(),"IsParalyzed","Paralyzed");
+-$SET_COMBATANT_SA($TargetContext(),"IsParalyzed","");
 \(END)
 
 \(BEGIN)
@@ -8652,7 +8755,7 @@ name = spell_Reduce
 -		$MODIFY_CHAR_ATTRIBUTE(tgt,"STR",adjStr,"MINUTES",10 *# lvl,"Reduce STR","SPELL Reduce STR");
 -		$MODIFY_CHAR_ATTRIBUTE(tgt,"STRMOD",-#strMod,"MINUTES",10 *# lvl,"Reduce STRMOD","SPELL Reduce STRMOD");
 -	};
--$SET_CHARACTER_SA($TargetContext(),"IsReduced",lvl);
+-$SET_CHARACTER_SA($TargetContext(),"IsReduced",$GET_PARTY_TIME() +# (10 *# lvl));
 -$SET_CHARACTER_SA($TargetContext(),"reduced",1);
 \(END)
 
@@ -8880,8 +8983,8 @@ name = spell_Sleep
 -$IF ($GET_CHARACTER_SA($TargetContext(),"monster_ImmuneSleep") != "-?-?-") {$RETURN;};
 -$IF ($GET_CHARACTER_SA($TargetContext(),"IsSleeping") != "-?-?-") {$RETURN;};
 -$IF (monLvlMon != "-?-?-") {lvl = monLvlMon;}
--$ELSE {bCls = $GetHighestLevelBaseclass(tgt);lvl = $GetBaseclassLevel(tgt,bCls);};
--$IF (lvl <# 5) {$SET_CHARACTER_SA($TargetContext(),"IsSleeping","Sleeping");};
+-$ELSE {bCls = $GetHighestLevelBaseclass(tgt); lvl = $GetBaseclassLevel(tgt,bCls);};
+-$IF (lvl <# 5) {$SET_CHARACTER_SA($TargetContext(),"IsSleeping",$GET_PARTY_TIME() +# 5 *# lvl);};
 \(END)
 
 \(BEGIN)
@@ -9172,12 +9275,12 @@ name = spell_UnholyWord
 -$IF (good != "good"){$RETURN;};
 -tgt = $IndexOf($TargetContext());
 -lvl = $GetHighestLevelBaseclass(tgt);
--rD = $RANDOM(4) +# 1;
--rD = $RANDOM(4) +#$RANDOM(4) +# 2;
--rD = ($RANDOM(4) +# 1) *# 10;
+-rD = $GET_PARTY_TIME() +# $RANDOM(4) +# 1;
+-rS = $GET_PARTY_TIME() +# $RANDOM(4) +# $RANDOM(4) +# 2;
+-rP = $GET_PARTY_TIME() +# (($RANDOM(4) +# 1) *# 10);
 -$IF (lvl ># 11){$RETURN $SET_COMBATANT_SA($TargetContext(),"IsHolyDeafened",rD);};
 -$IF (lvl ># 7){$RETURN $SET_COMBATANT_SA($TargetContext(),"IsHolyStunned",rS);};
--$IF (lvl ># 3){$RETURN $SET_COMBATANT_SA($TargetContext(),"IsParalyzed",rP);};
+-$IF (lvl ># 3){$RETURN $SET_COMBATANT_SA($TargetContext(),"IsHolyParalyzed",rP);};
 -$SET_CHAR_HITPOINTS(tgt,-11); $SET_CHAR_STATUS(tgt,5);
 \(END)
 
@@ -10111,5 +10214,6 @@ Updates210812 = "fixed several syntax errors in IsPaladinProtectedFromEvil - tha
 Updates210816 = "rewrote and fixed monster_WeaponImmunityType and monster_WeaponResistanceType"
 Updates230226 = "fixed player control issue and ranger initiative in Competing"
 Updates230314 = "modified class_MageScribe to check to see if spell is known before scribing it"
+Updates230328 = "modified the SAs IsBarkskinned, IsBestowedCurse, IsBrave, IsCharmed, IsConfused, IsConfusedExtended, IsDetectingEvil, IsDetectingGood, IsDetectingMagic, IsDispellingEvil, IsDispellingGood, IsEnlarged, IsEntangled0, IsFast, IsHolyDeafened, IsHolyParalyzed, IsHolyStunned, IsParalyzed, IsPraying, IsReduced, IsSilenced, IsSleeping, IsSlow, IsStunned, IsWebbed, monster_WeaponImmunity, spell_Confusion, spell_Enlarge, spell_HolyWord, spell_Paralysis, spell_Prayer, spell_Reduce, spell_Sleep, spell_UnholyWord; added the SAs IsAnesthetized, IsDetectingIllusion, IsDetectingSecretDoors, IsHolyParalyzed, IsKnowingAlignment, IsSeeingAstral, IsSeeingDisplaced, IsSeeingEthereal, IsSeeingInvisible, spell_Enlarge, spell_GelatinousCubeParalysis"
 \(END)
 

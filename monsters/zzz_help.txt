@@ -8,5 +8,7 @@ Special Ability = Updates1_04, "corrected number of javelins"
 Special Ability = Updates1_05,"updated modrons" 
 Special Ability = Updates1_06,"added cat, cheetah, crysmal, dao, djinni, eagle, goat, hybsil, marid, mandragora, wild cat. UPdated galeb duhr." 
 Special Ability = Updates230313,"added mmissing entry for ghost" 
+Special Ability = Updates230317,"changed attack names for Lizard Man, Owlbear, Umber Hulk, Unicorn, White Dragon, Wild Boar, Woolly Mammoth, Xorn" 
+Special Ability = Updates230317,"modified Gelatinous Cube"
 \(END)
 

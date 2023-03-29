@@ -1,9 +1,7 @@
 \(BEGIN)
 name = IsCursed
 [CharDisplayStatus] = $IF ($GET_PARTY_TIME() ># $SA_PARAM_GET()){$RETURN $SA_REMOVE();};
--$SET_HOOK_PARAM( 7, "Cursed");
--$SET_HOOK_PARAM( 6, "");
--$RETURN 1;
+-$SET_HOOK_PARAM( 7, "Cursed"); $SET_HOOK_PARAM( 6, ""); $RETURN 1;
 [DoesAttackSucceed] = $IF ($GET_COMBATANT_SA($AttackerContext(),"IsCursed") != "-?-?-")
 -  {$SET_HOOK_PARAM(6,$GET_HOOK_PARAM(6) +# 1);};
 -$IF ($GET_HOOK_PARAM(5) >=# $GET_HOOK_PARAM(6)){$RETURN "Y";}

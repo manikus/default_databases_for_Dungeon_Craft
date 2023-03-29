@@ -1206,4 +1206,3 @@ Special Ability = Updates1_02,"minor corrections for druid, fighter, magic user,
 Special Ability = Updates_171216,"fixed MaxLevel$SYS$ for all baseclasses"
 Special Ability = Updates_210830,"added some lines of clarification to the SkillAdjAbility, SkillAdjBaseclass, and the SkillAdjRace instructions"
 \(END)
-

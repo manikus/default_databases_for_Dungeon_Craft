@@ -11,6 +11,7 @@ name = spell_Confusion
 -$VAR rnd;
 -$VAR rnd2;
 -$VAR cls;
+-$VAR exp; // expiration time
 -atk = $IndexOf($AttackerContext());
 -tgt = $IndexOf($TargetContext());
 -cls = $SA_PARAM_GET();
@@ -54,9 +55,11 @@ name = spell_Confusion
 -		$SET_CHARACTER_SA($TargetContext(),"IsConfusedExtended",1);
 -		$SET_CHARACTER_SA($TargetContext(),"CombatRoundStart",1);
 -	};
+-lvl = $GET_CHAR_Lvl(atk,cls);
+-exp = $GET_PARTY_TIME() +# 2 +# lvl;
 -rnd = $RANDOM(10) +# 1;
 -$IF (rnd ==# 1){$SetFriendly(tgt,1);$RETURN;};
--$IF (rnd <=# 6){$SET_CHARACTER_SA($TargetContext(),"IsConfused","Confused");$RETURN;};
+-$IF (rnd <=# 6){$SET_CHARACTER_SA($TargetContext(),"IsConfused",exp);$RETURN;};
 -$IF (rnd ==# 7){$SetFriendly(tgt,1);$RETURN;};
 -$IF (rnd ==# 8){$SetFriendly(tgt,2);$RETURN;};
 -$SetFriendly(tgt,2);

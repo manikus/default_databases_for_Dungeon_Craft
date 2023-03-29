@@ -9,9 +9,18 @@ name = IsEnlarged
 -		$RUN_CHAR_SE_SCRIPTS($CharacterContext(),"Dispel SE");
 -		$SA_REMOVE();
 -	};
-[CharDisplayStatus] = $SET_HOOK_PARAM( 7, "Enlarged");
--$SET_HOOK_PARAM( 6, "");
--$RETURN 1;
+[CharDisplayStatus] = $VAR me; $VAR exp; // time effect expires, gotten from SA that called this one
+-me = $IndexOf($CharacterContext());
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp)
+-	{
+-		$DELETE_CHARACTER_SA($CharacterContext(),"enlarged");
+-		$REMOVE_CHAR_MODIFICATION(me,"SPELL Enlarge *");
+-		$SET_CHAR_SIZE(me,$GET_CHARACTER_SA($CharacterContext(),"mySize"));
+-		$SA_REMOVE();
+-		$RETURN;
+-	};
+-$SET_HOOK_PARAM( 7, "Enlarged"); $SET_HOOK_PARAM( 6, ""); $RETURN 1;
 [Dispel] = $VAR me;
 -me = $IndexOf($CharacterContext());
 -$DELETE_CHARACTER_SA($CharacterContext(),"enlarged");

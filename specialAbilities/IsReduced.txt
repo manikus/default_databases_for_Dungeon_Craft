@@ -9,9 +9,19 @@ name = IsReduced
 -		$RUN_CHAR_SE_SCRIPTS($CharacterContext(),"Dispel SE");
 -		$SA_REMOVE();
 -	};
-[CharDisplayStatus] = $SET_HOOK_PARAM( 7, "Reduced");
--$SET_HOOK_PARAM( 6, "");
--$RETURN 1;
+[CharDisplayStatus] = $VAR me; $VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp)
+-	{
+-		me = $IndexOf($CharacterContext());
+-		$DELETE_CHARACTER_SA($CharacterContext(),"reduced");
+-		$REMOVE_CHAR_MODIFICATION(me,"SPELL Reduce *");
+-		$SET_CHAR_SIZE(me,$GET_CHARACTER_SA($CharacterContext(),"mySize"));
+-		$RUN_CHAR_SE_SCRIPTS($CharacterContext(),"Dispel SE");
+-		$SA_REMOVE();
+-		$RETURN;
+-	};
+-$SET_HOOK_PARAM( 7, "Reduced"); $SET_HOOK_PARAM( 6, ""); $RETURN 1;
 [Dispel] = $VAR me;
 -me = $IndexOf($CharacterContext());
 -$DELETE_CHARACTER_SA($CharacterContext(),"reduced");

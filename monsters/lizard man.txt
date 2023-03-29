@@ -27,9 +27,9 @@ Misc Options = can be held/charmed
 item = Javelin,6
 item = Shield
 item = Trident
-attack = 2,1,0,attacks,
-attack = 2,1,0,attacks,
-attack = 8,1,0,attacks,
+attack = 2,1,0,claws,
+attack = 2,1,0,claws,
+attack = 8,1,0,bites,
 Undead = none
 \(END)
 // MM p62

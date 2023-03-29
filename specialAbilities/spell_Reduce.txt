@@ -33,7 +33,7 @@ name = spell_Reduce
 -		$MODIFY_CHAR_ATTRIBUTE(tgt,"STR",adjStr,"MINUTES",10 *# lvl,"Reduce STR","SPELL Reduce STR");
 -		$MODIFY_CHAR_ATTRIBUTE(tgt,"STRMOD",-#strMod,"MINUTES",10 *# lvl,"Reduce STRMOD","SPELL Reduce STRMOD");
 -	};
--$SET_CHARACTER_SA($TargetContext(),"IsReduced",lvl);
+-$SET_CHARACTER_SA($TargetContext(),"IsReduced",$GET_PARTY_TIME() +# (10 *# lvl));
 -$SET_CHARACTER_SA($TargetContext(),"reduced",1);
 \(END)
 

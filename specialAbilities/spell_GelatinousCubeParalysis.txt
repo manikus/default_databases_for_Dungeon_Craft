@@ -1,0 +1,12 @@
+\(BEGIN)
+name = spell_GelatinousCubeParalysis
+[InvokeSpellOnTarget] = $VAR rndm;
+-$VAR exp; // expiration time
+-rndm = $RANDOM(4) +# $RANDOM(4) +# $RANDOM(4) +# $RANDOM(4) +# $RANDOM(4) +# 5;
+-exp = $GET_PARTY_TIME() +# rndm;
+-$IF ($GET_CHARACTER_SA($TargetContext(),"IsImmuneParalysis") != "-?-?-"){$RETURN;};
+-$IF ($GET_MONSTERTYPE_SA(nm,"monster_ImmuneParalysis") != "-?-?-"){$RETURN;};
+-$IF ($GET_CHARACTER_SA($TargetContext(),"saved")){$RETURN;};
+-$SET_COMBATANT_SA($TargetContext(),"IsAnesthetized",exp);
+\(END)
+

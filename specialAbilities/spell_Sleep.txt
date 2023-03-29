@@ -19,7 +19,7 @@ name = spell_Sleep
 -$IF ($GET_CHARACTER_SA($TargetContext(),"monster_ImmuneSleep") != "-?-?-") {$RETURN;};
 -$IF ($GET_CHARACTER_SA($TargetContext(),"IsSleeping") != "-?-?-") {$RETURN;};
 -$IF (monLvlMon != "-?-?-") {lvl = monLvlMon;}
--$ELSE {bCls = $GetHighestLevelBaseclass(tgt);lvl = $GetBaseclassLevel(tgt,bCls);};
--$IF (lvl <# 5) {$SET_CHARACTER_SA($TargetContext(),"IsSleeping","Sleeping");};
+-$ELSE {bCls = $GetHighestLevelBaseclass(tgt); lvl = $GetBaseclassLevel(tgt,bCls);};
+-$IF (lvl <# 5) {$SET_CHARACTER_SA($TargetContext(),"IsSleeping",$GET_PARTY_TIME() +# 5 *# lvl);};
 \(END)
 

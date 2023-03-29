@@ -29,9 +29,9 @@ penalty = none
 immunity = death magic
 Misc Options = none
 item = none
-attack = 6,1,0,attacks,
-attack = 6,1,0,attacks,
-attack = 12,1,0,attacks,
+attack = 6,1,0,strikes,
+attack = 6,1,0,strikes,
+attack = 12,1,0,gores,
 Undead = none
 \(END)
 // MM p98

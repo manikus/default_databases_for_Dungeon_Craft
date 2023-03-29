@@ -44,14 +44,12 @@ duration units = instantaneous
 target duration = 0
 price = 0
 priority = 500
-spell effect 1 = none
-spell effect 2 = $CHAR_STATUS,0,absolute,target,yes
-activate script 1 = $VAR tgt;tgt \= $IndexOf($TargetContext()); $IF (($GET_CHAR_UNDEAD(tgt) \=\= "") || ($GET_CHAR_UNDEAD(tgt) \=\= "none")){$RETURN 1;};
-activate script 2 = $IF ($GET_CHAR_STATUS($IndexOf($TargetContext())) \=\=# 1){$RETURN 1;};
+spell effect 1 = $CHAR_STATUS,0,absolute,target,yes
+activate script 1 = $IF ($GET_CHAR_STATUS($IndexOf($TargetContext())) \=\=# 1){$RETURN 1;};
 savingThrowScript = 
 savingThrowSucceededScript = 
 savingThrowFailedScript = 
-begin script = 
+begin script = $VAR tgt;tgt \= $IndexOf($TargetContext()); $IF (($GET_CHAR_UNDEAD(tgt) \=\= "") || ($GET_CHAR_UNDEAD(tgt) \=\= "none")){$RETURN 1;};
 end script = 
 \(END)
 

@@ -315,7 +315,7 @@ magic resistance = 15
 size = medium
 morale = 45
 experience point value = 145
-Special Ability = monsterLevel,4
+Special Ability = monsterLevel,3
 Special Ability = elemental_ImmuneFire
 Special Ability = elemental_VulnerableCold
 Special Ability = Summoned,plane
@@ -601,7 +601,7 @@ size = large
 morale = 35
 experience point value = 1400
 Special Ability = IsImmunePoison
-Special Ability = monsterLevel,9
+Special Ability = monsterLevel,4
 Class = Fighter
 Race = Monster
 form = animal + large
@@ -1813,7 +1813,7 @@ penalty = none
 immunity = vorpal weapon
 Misc Options = none
 item = none
-attack = 4,2,0,attacks,monsterParalysis
+attack = 4,2,0,attacks,monsterGelatinousCubeParalysis
 Undead = none
 \(END)
 // MM p43
@@ -3604,9 +3604,9 @@ Misc Options = can be held/charmed
 item = Javelin,6
 item = Shield
 item = Trident
-attack = 2,1,0,attacks,
-attack = 2,1,0,attacks,
-attack = 8,1,0,attacks,
+attack = 2,1,0,claws,
+attack = 2,1,0,claws,
+attack = 8,1,0,bites,
 Undead = none
 \(END)
 // MM p62
@@ -4413,8 +4413,8 @@ penalty = none
 immunity = none
 Misc Options = can be held/charmed
 item = none
-attack = 6,1,0,attacks,monsterBearHug1
-attack = 6,1,0,attacks,monsterBearHug2
+attack = 6,1,0,claws,monsterBearHug1
+attack = 6,1,0,claws,monsterBearHug2
 attack = 6,2,0,bites,
 Undead = none
 \(END)
@@ -5459,9 +5459,9 @@ penalty = none
 immunity = confusion
 Misc Options = can be held/charmed
 item = none
-attack = 4,3,0,attacks,
-attack = 4,3,0,attacks,
-attack = 5,2,0,attacks,
+attack = 4,3,0,claws,
+attack = 4,3,0,claws,
+attack = 5,2,0,bites,
 attack = 1,1,0,gazes,monsterUmberHulkConfusionGaze
 Undead = none
 \(END)
@@ -5498,9 +5498,9 @@ penalty = none
 immunity = death magic
 Misc Options = none
 item = none
-attack = 6,1,0,attacks,
-attack = 6,1,0,attacks,
-attack = 12,1,0,attacks,
+attack = 6,1,0,strikes,
+attack = 6,1,0,strikes,
+attack = 12,1,0,gores,
 Undead = none
 \(END)
 // MM p98
@@ -5717,8 +5717,8 @@ penalty = none
 immunity = vorpal weapon
 Misc Options = can be held/charmed
 item = none
-attack = 6,1,0,attacks,
-attack = 6,1,0,attacks,
+attack = 6,1,0,claws,
+attack = 6,1,0,claws,
 attack = 8,2,0,bites,
 Undead = none
 \(END)
@@ -5788,7 +5788,7 @@ penalty = none
 immunity = none
 Misc Options = can be held/charmed
 item = none
-attack = 4,3,0,attacks,
+attack = 4,3,0,gores,
 Undead = none
 \(END)
 // MM p11
@@ -5948,8 +5948,8 @@ penalty = none
 immunity = none
 Misc Options = can be held/charmed
 item = none
-attack = 6,2,0,attacks,
-attack = 6,2,0,attacks,
+attack = 6,2,0,stomps,
+attack = 6,2,0,stomps,
 Undead = none
 \(END)
 // MM p65
@@ -6086,7 +6086,7 @@ penalty = none
 immunity = none
 Misc Options = can be held/charmed + affected by dispel evil
 item = none
-attack = 6,4,0,attacks,
+attack = 6,4,0,bites,
 attack = 3,1,0,attacks,
 attack = 3,1,0,attacks,
 attack = 3,1,0,attacks,
@@ -6240,5 +6240,7 @@ Special Ability = Updates1_04, "corrected number of javelins"
 Special Ability = Updates1_05,"updated modrons" 
 Special Ability = Updates1_06,"added cat, cheetah, crysmal, dao, djinni, eagle, goat, hybsil, marid, mandragora, wild cat. UPdated galeb duhr." 
 Special Ability = Updates230313,"added mmissing entry for ghost" 
+Special Ability = Updates230317,"changed attack names for Lizard Man, Owlbear, Umber Hulk, Unicorn, White Dragon, Wild Boar, Woolly Mammoth, Xorn" 
+Special Ability = Updates230317,"modified Gelatinous Cube"
 \(END)
 

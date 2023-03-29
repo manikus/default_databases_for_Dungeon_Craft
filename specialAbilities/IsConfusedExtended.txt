@@ -15,7 +15,7 @@ name = IsConfusedExtended
 -		$IF (save <# rnd){$DELETE_COMBATANT_SA($CombatantContext(),"ConfusionSA");$RETURN;};
 -		rnd = $RANDOM(10) +# 1;
 -		$IF (rnd ==# 1){$SetFriendly(com,1);$RETURN;};
--		$IF (rnd <=# 6){$SET_COMBATANT_SA($CombatantContext(),"IsConfused","Confused");$RETURN;};
+-		$IF (rnd <=# 6){$SET_COMBATANT_SA($CombatantContext(),"IsConfused",$GET_PARTY_TIME() +# 12;);$RETURN;};
 -		$IF (rnd ==# 7){$SetFriendly(com,1);$RETURN;};
 -		$IF (rnd ==# 8){$SetFriendly(com,2);$RETURN;};
 -		$SetFriendly(com,2);

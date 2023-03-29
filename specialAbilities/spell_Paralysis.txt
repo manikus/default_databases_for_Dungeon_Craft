@@ -2,7 +2,7 @@
 name = spell_Paralysis
 [InvokeSpellOnTarget] = $VAR atk; // attacker
 -$VAR tgt; // target
--$VAR nm;
+-$VAR nm; // name
 -atk = $IndexOf($AttackerContext());
 -tgt = $IndexOf($TargetContext());
 -nm = $GET_CHAR_NAME(tgt);
@@ -10,6 +10,6 @@ name = spell_Paralysis
 -$IF ($GET_MONSTERTYPE_SA(nm,"monster_ImmuneParalysis") != "-?-?-"){$RETURN;};
 -$IF ($GET_CHARACTER_SA($TargetContext(),"saved")){$RETURN;};
 -$IF ($GET_CHAR_NAME(atk) == "Ghoul" && $GET_CHAR_RACE(tgt) == "Elf"){$RETURN;};
--$SET_COMBATANT_SA($TargetContext(),"IsParalyzed","Paralyzed");
+-$SET_COMBATANT_SA($TargetContext(),"IsParalyzed","");
 \(END)
 

@@ -3,7 +3,7 @@ name = IsSlow
 [Dispel] = $SA_REMOVE();
 [GetAdjMaxMovement] = $VAR expiration;
 -expiration = $SA_PARAM_GET();
--$IF ($GET_PARTY_TIME() >=# expiration){$SA_REMOVE();};
+-$IF ($GET_PARTY_TIME() >=# expiration){$RETURN $SA_REMOVE();};
 -$RETURN $GET_HOOK_PARAM(5) /# 2;
 [GetNumberOfAttacks] = $VAR attackNum;
 -attackNum = $GET_HOOK_PARAM(5);

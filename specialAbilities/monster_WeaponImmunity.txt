@@ -2,55 +2,41 @@
 name = monster_WeaponImmunity
 [ComputeDamage] = $VAR imm;	// value of the monster_WeaponImmunity SA
 -$VAR itm;	// value of the item_MagicalWeapon SA
--$VAR mlv;	// value of the monsterLevel SA if the attacker is a monster
+-$VAR mlv;	// value of the monsterLevel SA
 -$VAR lst;	// list of monster attacks that count as magical - determined by level
 -imm = $GET_COMBATANT_SA($TargetContext(),"monster_WeaponImmunity");
 -itm = $SA_ITEM_GET("item_MagicalWeapon");
+-mlv = $GET_COMBATANT_SA($AttackerContext(),"monsterLevel");
+-$IF (mlv == "-?-?-"){$RETURN;};
 -$IF (itm == "-?-?-"){itm = 0;};
 -$IF (itm ==# 0)
 -	{
--		mlv = $GET_COMBATANT_SA($AttackerContext(),"monsterLevel");
--		$IF (mlv != "-?-?-")
--			{
--				lst = "$0$0$0$0$0$1$1$2$2$3$3";
--				$IF (mlv <# 11){itm = $DelimitedStringSubstring(lst,mlv);}
--				$ELSE {itm = 4;};
--			};
+-		lst = "$0$0$0$0$0$1$1$2$2$3$3";
+-		$IF (mlv <# 11){itm = $DelimitedStringSubstring(lst,mlv);}
+-		$ELSE {itm = 4;};
 -	};
 -$IF (imm >=# itm){$RETURN "0";};
-DoesAttackSucceed = $VAR atk; // attacker
--$VAR itm;	// value of the item_MagicalWeapon SA
--$VAR mlv;	// value of the monsterLevel SA if the attacker is a monster
+DoesAttackSucceed = $VAR itm;	// value of the item_MagicalWeapon SA
+-$VAR mlv;	// value of the attacker monsterLevel SA
 -$VAR lst;	// list of monster attacks that count as magical - determined by level
 -$VAR prm;	// value of the monster_MagicResistance SA
--$VAR nm;	// name of the target monster
--$VAR p5;	// Hook parameter 5
--$VAR p6;	// Hook parameter 6
--p5 = $GET_HOOK_PARAM(5);
--p6 = $GET_HOOK_PARAM(6);
--nm = $GET_CHAR_NAME($IndexOf($TargetContext()));
+-$VAR anm;	// name of the attacker monster
+-$VAR tnm;	// name of the target monster
+-anm = $GET_CHAR_NAME($IndexOf($AttackerContext()));
+-tnm = $GET_CHAR_NAME($IndexOf($TargetContext()));
 -prm = $SA_PARAM_GET();
--$IF ($GET_MONSTERTYPE_SA(nm,"monster_WeaponImmunity") != "-?-?-")
+-mlv = $GET_MONSTERTYPE_SA(anm,"monsterLevel");
+-$IF ($GET_MONSTERTYPE_SA(anm,mlv) == "-?-?-"){$RETURN;};
+-$IF ($GET_MONSTERTYPE_SA(tnm,"monster_WeaponImmunity") == "-?-?-"){$RETURN;};
+-itm = $SA_ITEM_GET("item_MagicalWeapon");
+-$IF ($SA_ITEM_GET("AdjustBonus") != "-?-?-"){itm = $GET_HOOK_PARAM(7);};
+-$IF ($GET_MONSTERTYPE_SA(nm,"vulnSilver") != "-?-?-" && $SA_ITEM_GET("item_SilverWeapon") != "-?-?-"){itm = 5;};
+- $IF (itm == "-?-?-")
 -	{
--		atk = $IndexOf($AttackerContext());
--		itm = $SA_ITEM_GET("item_MagicalWeapon");
--		$IF ($SA_ITEM_GET("AdjustBonus") != "-?-?-"){itm = $GET_HOOK_PARAM(7);};
--		$IF ($GET_MONSTERTYPE_SA(nm,"vulnSilver") != "-?-?-" && $SA_ITEM_GET("item_SilverWeapon") != "-?-?-")
--			{itm = 5;};
-- 		$IF (itm == "-?-?-")
--			{
--				mlv = $GET_MONSTERTYPE_SA($GET_CHAR_NAME(atk),"monsterLevel");
--				$IF (mlv != "-?-?-")
--					{
--						lst = "$0$0$0$0$0$1$1$2$2$3$3";
--						$IF (mlv <# 11)
--							{itm = $DelimitedStringSubstring(lst,mlv);}
--						$ELSE {itm = 4;};
-- 					};
--			};
--		$IF (itm <# prm){$SET_HOOK_PARAM(6,p6 +# 90);};
+-		lst = "$0$0$0$0$0$1$1$2$2$3$3";
+-		$IF (mlv <# 11){itm = $DelimitedStringSubstring(lst,mlv);}
+-		$ELSE {itm = 4;};
 -	};
--$IF (p5 >=# p6){$RETURN "Y";}
--$ELSE {$RETURN "N";};
+-$IF (itm <# prm){$RETURN;};
 \(END)
 

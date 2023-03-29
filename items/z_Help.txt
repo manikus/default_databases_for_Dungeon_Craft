@@ -11,5 +11,8 @@ Special Ability = Update200831,"fixed about two dozen monster spell items to use
 Special Ability = Update200916,"I have added the following items: monsterClericAid, monsterClericCauseFear, monsterClericCommand, monsterClericContinualDarkness, monsterClericContinualLight, monsterClericDarkness, monsterClericFalseSeeing, monsterClericHolyWord, monsterClericLight, monsterClericRegeneration, monsterClericSymbol, monsterClericTrueSeeing, monsterClericUnholyWord, monsterClericWither, monsterDruidDismissEarthElemental, monsterDruidDismissFireElemental, monsterDruidPyrotechnics, monsterMageChainLightning, monsterMageContinualLight, monsterMageDarkness15Radius, monsterMageGeas, monsterMageImprisonment, monsterMageIncendiaryCloud, monsterMageLight, monsterMagePyrotechnics, monsterMageWeb"
 Special Ability = Update201124,"fixed a spelling error for item type and several instances of invalid duration units being listed"
 Special Ability = Update230314,"modified existing magic-user scrolls to check if already known before scribing, added scrolls for the rest of the cleric and magic-user spells"
+Special Ability = Update230317,"added missing spell effect to Necklace of Missiles, fixed typo in monsterClericCauseFear"
+Special Ability = Update230317,"fixed monsterClericCauseFear to make it usable and have charges"
+Special Ability = Update230321,"added missing spell effects to Eyes of Charming, Necklace of Missiles, Potion of Giant Strength, Potion of Invisibility, Potion of Speed"
 \(END)
 

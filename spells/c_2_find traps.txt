@@ -1,4 +1,4 @@
- \(BEGIN)
+\(BEGIN)
 name = Find Traps
 casting sound = sound_Cast.wav
 cast msg = /t is more aware of the surrounding area.

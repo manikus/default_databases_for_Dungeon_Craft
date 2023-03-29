@@ -1,11 +1,10 @@
 \(BEGIN)
-name = IsParalyzed
-[CharDisplayStatus] =$VAR exp; // time effect expires, gotten from SA that called this one
+name = IsAnesthetized
+[CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
 -exp = $SA_PARAM_GET();
 -$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
 -$SET_HOOK_PARAM( 7,"Paralyzed"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
-[Dispel] = $SA_REMOVE();
-[DoesAttackSucceed] = $IF ($GET_COMBATANT_SA($TargetContext(),"IsParalyzed") != "-?-?-")
+[DoesAttackSucceed] = $IF ($GET_COMBATANT_SA($TargetContext(),"IsAnesthetized") != "-?-?-")
 -  {$SET_HOOK_PARAM(6,$GET_HOOK_PARAM(6) -# 30);};
 -$IF ($GET_HOOK_PARAM(5) >=# $GET_HOOK_PARAM(6)){$RETURN "Y";}
 -$ELSE {$RETURN "N";};

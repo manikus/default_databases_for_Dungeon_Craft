@@ -7,12 +7,12 @@ name = spell_HolyWord
 -$IF (evl != "evil"){$RETURN;};
 -tgt = $IndexOf($TargetContext());
 -lvl = $GetHighestLevelBaseclass(tgt);
--rD = $RANDOM(4) +# 1;
--rD = $RANDOM(4) +#$RANDOM(4) +# 2;
--rD = ($RANDOM(4) +# 1) *# 10;
+-rD = $GET_PARTY_TIME() +# $RANDOM(4) +# 1;
+-rS = $GET_PARTY_TIME() +# $RANDOM(4) +# $RANDOM(4) +# 2;
+-rP = $GET_PARTY_TIME() +# (($RANDOM(4) +# 1) *# 10);
 -$IF (lvl ># 11){$RETURN $SET_COMBATANT_SA($TargetContext(),"IsHolyDeafened",rD);};
 -$IF (lvl ># 7){$RETURN $SET_COMBATANT_SA($TargetContext(),"IsHolyStunned",rS);};
--$IF (lvl ># 3){$RETURN $SET_COMBATANT_SA($TargetContext(),"IsParalyzed",rP);};
+-$IF (lvl ># 3){$RETURN $SET_COMBATANT_SA($TargetContext(),"IsHolyParalyzed",rP);};
 -$SET_CHAR_HITPOINTS(tgt,-11); $SET_CHAR_STATUS(tgt,5);
 \(END)
 

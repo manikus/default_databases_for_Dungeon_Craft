@@ -24,8 +24,8 @@ penalty = none
 immunity = none
 Misc Options = can be held/charmed
 item = none
-attack = 6,2,0,attacks,
-attack = 6,2,0,attacks,
+attack = 6,2,0,stomps,
+attack = 6,2,0,stomps,
 Undead = none
 \(END)
 // MM p65

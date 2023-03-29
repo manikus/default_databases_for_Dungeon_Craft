@@ -15793,7 +15793,7 @@ number of charges = 1
 Examine Event ID = 
 Examine Label = 
 recharge rate = never
-spell effect = none
+spell effect = itemPotionInvisibility
 \(END)
 
 \(BEGIN)
@@ -15839,7 +15839,7 @@ number of charges = 1
 Examine Event ID = 
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = itemPotionSpeed
 \(END)
 
 \(BEGIN)
@@ -15880,7 +15880,7 @@ number of charges = 1
 Examine Event ID = 
 Examine Label = 
 recharge rate = never
-spell effect = none
+spell effect = itemPotionGiantStrength
 \(END)
 
 \(BEGIN)
@@ -24174,7 +24174,7 @@ number of charges = 0
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = daily
-spell effect = none
+spell effect = itemEyesCharming
 \(END)
 
 \(BEGIN)
@@ -24235,9 +24235,9 @@ ROF per round = 1
 combat range = 7
 cost = 4000
 hands to carry = 0
+baseclass = assassin
 baseclass = cleric
 baseclass = druid
-baseclass = assassin
 baseclass = fighter
 baseclass = magicUser
 baseclass = paladin
@@ -24265,7 +24265,7 @@ number of charges = 7
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = itemNecklaceMissiles
 \(END)
 
 \(BEGIN)
@@ -24732,7 +24732,7 @@ spell effect = Cause Disease|MonsterCleric
 
 \(BEGIN)
 name = monsterClericCauseFear
-id name = monsterClierCauseFear
+id name = monsterClericCauseFear
 launch sound = none
 hit sound = none
 miss sound = none
@@ -24756,12 +24756,12 @@ readied location = WEAPON
 bundle quantity = 1
 weapon type = SpellCaster
 ammo type = 
-usable = no
+usable = yes
 not magical = no
 scribtable = no
 can drop = yes
 CanHalveJoin = yes
-number of charges = 0
+1number of charges = 0
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
@@ -29730,6 +29730,9 @@ Special Ability = Update200831,"fixed about two dozen monster spell items to use
 Special Ability = Update200916,"I have added the following items: monsterClericAid, monsterClericCauseFear, monsterClericCommand, monsterClericContinualDarkness, monsterClericContinualLight, monsterClericDarkness, monsterClericFalseSeeing, monsterClericHolyWord, monsterClericLight, monsterClericRegeneration, monsterClericSymbol, monsterClericTrueSeeing, monsterClericUnholyWord, monsterClericWither, monsterDruidDismissEarthElemental, monsterDruidDismissFireElemental, monsterDruidPyrotechnics, monsterMageChainLightning, monsterMageContinualLight, monsterMageDarkness15Radius, monsterMageGeas, monsterMageImprisonment, monsterMageIncendiaryCloud, monsterMageLight, monsterMagePyrotechnics, monsterMageWeb"
 Special Ability = Update201124,"fixed a spelling error for item type and several instances of invalid duration units being listed"
 Special Ability = Update230314,"modified existing magic-user scrolls to check if already known before scribing, added scrolls for the rest of the cleric and magic-user spells"
+Special Ability = Update230317,"added missing spell effect to Necklace of Missiles, fixed typo in monsterClericCauseFear"
+Special Ability = Update230317,"fixed monsterClericCauseFear to make it usable and have charges"
+Special Ability = Update230321,"added missing spell effects to Eyes of Charming, Necklace of Missiles, Potion of Giant Strength, Potion of Invisibility, Potion of Speed"
 \(END)
 
 // cleric spell items by level

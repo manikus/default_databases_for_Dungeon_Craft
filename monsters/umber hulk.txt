@@ -25,9 +25,9 @@ penalty = none
 immunity = confusion
 Misc Options = can be held/charmed
 item = none
-attack = 4,3,0,attacks,
-attack = 4,3,0,attacks,
-attack = 5,2,0,attacks,
+attack = 4,3,0,claws,
+attack = 4,3,0,claws,
+attack = 5,2,0,bites,
 attack = 1,1,0,gazes,monsterUmberHulkConfusionGaze
 Undead = none
 \(END)

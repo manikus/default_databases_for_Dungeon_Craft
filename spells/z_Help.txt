@@ -1,4 +1,4 @@
-\(BEGIN)
+BEGIN)
 name = $$Help
 Special Ability = Date,"November 24, 2020"
 Special Ability = Updates1_01,"added Cause Critical Wounds|MonsterCleric, updated many AoE for various spells, corrected misnamed special abilities in multiple cleric and monster spells"
@@ -13,5 +13,9 @@ Special Ability = Updates_1800628,"fixed error in Stinking Cloud|MonterMage"
 Special Ability = Updates_180727,"fixed errors in Fireball|MonsterMage, Silence|MonsterCleric, itemNecklaceMissiles"
 Special Ability = Updates_200916,"I added the following spells: cleric - Aid, Cause Fear, Command, Continual Darkness, Continual Light, Darkness, False Seeing, Holy Word, Light, Regeneration, Remove Fear, Symbol, True Seeing, Unholy Word, Wither; druid - Dismiss Earth Elemental, Dismiss Fire Elemental, Pyrotechnics; magic user - Chain Lightning, Continual Light, Darkness 15' Radius, Geas, Imprisonment, Incendiary Cloud, Light, Pyrotechnics, Web; paladin - Aid, Cause Fear, Command, Continual Darkness, Continual Light, Darkness, Light, Remove Fear; ranger - Continual Light, Darkness 15' Radius, Light, Pyrotechnics, Pyrotechnics, Web"
 Special Ability = Updates_201124,"fixed a duplicated spell error and mispelling of the word Pyrotechnics"
+Special Ability = Updates_230317,"fixed multiple monster spells to have Monster as school"
+Special Ability = Updates_230319,"added missing spell effects for emove Curse, Raise Dead, Remove Curse|Wizard, Mass Charm, Remove Curse|Paladin, Heal|MonsterCleric, Mass Charm|MonsterMage - they appear to have been removed when exporting the spells database previously"
+Special Ability = Updates_230321,"fixed script errors for Heal|MonsterCleric, changed to evel 1 itemPotionInvisibility, itemPotionSpeed, itemEyesCharming, itemNecklaceMissiles, itemPotionGiantStrength"
+Special Ability = Updates_230328,"added monsterGelatinousCubeParalysis"
 \(END)
 

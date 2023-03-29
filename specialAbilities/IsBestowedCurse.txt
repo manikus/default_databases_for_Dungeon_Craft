@@ -1,9 +1,7 @@
 \(BEGIN)
 name = IsBestowedCurse
-[CharDisplayStatus] = $IF ($GET_PARTY_TIME() ># $SA_PARAM_GET()){$SA_REMOVE();};
--$SET_HOOK_PARAM( 7, "Curse Bestowed");
--$SET_HOOK_PARAM( 6, "");
--$RETURN 1;
+[CharDisplayStatus] = $IF ($GET_PARTY_TIME() ># $SA_PARAM_GET())$RETURN $SA_REMOVE();};
+-$SET_HOOK_PARAM( 7, "Cursed"); $SET_HOOK_PARAM( 6, ""); $RETURN 1;
 [Dispel] = $VAR tgt; // target
 -tgt = $IndexOf($TargetContext());
 -$SA_REMOVE();
