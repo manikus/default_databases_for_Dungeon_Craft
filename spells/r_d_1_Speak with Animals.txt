@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Speak with Animals|Ranger
+name = Speak with Animals|RangerDruid
 casting sound = sound_Cast.wav
 cast msg = /t can speak with animals.
 missile sound = none

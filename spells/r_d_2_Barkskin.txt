@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Barkskin|Ranger
+name = Barkskin|RangerDruid
 casting sound = none
 cast msg = /c casts barkskin
 missile sound = none

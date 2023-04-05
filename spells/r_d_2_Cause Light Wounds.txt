@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Cause Light Wounds|Ranger
+name = Cause Light Wounds|RangerDruid
 casting sound = sound_Cast.wav
 cast msg = /c wounds /t.
 missile sound = none

@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Charm Person or Mammal|Ranger
+name = Charm Person or Mammal|RangerDruid
 casting sound = sound_Cast.wav
 cast msg = /c charms /t.
 missile sound = none

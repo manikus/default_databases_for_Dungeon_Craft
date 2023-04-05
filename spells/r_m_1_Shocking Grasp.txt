@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Shocking Grasp|Ranger
+name = Shocking Grasp|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /c shocks /t for /d points of damage.
 missile sound = none

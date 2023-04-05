@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Faerie Fire|Ranger
+name = Faerie Fire|RangerDruid
 casting sound = none
 cast msg = /t is outlined in light.
 missile sound = none

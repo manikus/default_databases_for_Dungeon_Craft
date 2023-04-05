@@ -1,1 +1,2 @@
 // druid level 6
+//	Animal Summoning III, Cause Critical Wounds, Conjure Fire Elemental, Cure Critical Wounds, Dismiss Fire Elemental, Feeblemind

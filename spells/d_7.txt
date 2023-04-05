@@ -1,1 +1,2 @@
 // druid level 7
+//	Confusion, Conjure Earth Elemental, Dismiss Earth Elemental

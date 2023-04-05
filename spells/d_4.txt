@@ -1,1 +1,2 @@
 // druid level 4
+//	Animal Summoning I, Cause Serious Wounds, Cure Serious Wounds, Dispel Magic, Protection from Lightning

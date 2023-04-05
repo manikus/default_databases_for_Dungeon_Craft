@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Web|Ranger
+name = Web|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /c spins a web.
 missile sound = none

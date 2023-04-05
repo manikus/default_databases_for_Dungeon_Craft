@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Entangle|Ranger
+name = Entangle|RangerDruid
 casting sound = sound_Cast.wav
 cast msg = Vines entangle /t
 missile sound = none

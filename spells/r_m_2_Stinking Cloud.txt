@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Stinking Cloud|Ranger
+name = Stinking Cloud|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /t is paralyzed by a wretched stink.
 missile sound = none

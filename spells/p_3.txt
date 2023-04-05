@@ -1,1 +1,2 @@
 // paladin level 3
+//	Cure Blindness, Cure Disease, Dispel Magic, Prayer, Remove Curse

@@ -1566,7 +1566,7 @@ targeting type = self
 level = 2
 casting time = 5
 casting time units = initiative
-duration = 3
+duration = level
 duration units = rounds
 target duration = 0
 price = 0
@@ -3439,6 +3439,7 @@ end script =
 
 // druid spells
 // druid level 1
+//	Detect Magic, Entangle, Faerie Fire, Invisibility to Animals, Shillelagh, Speak with Animals
 \(BEGIN)
 name = Detect Magic|Druid
 casting sound = sound_Cast.wav
@@ -3736,6 +3737,7 @@ end script =
 \(END)
 
 // druid level 2
+//	Barkskin, Cause Light Wounds, Charm Person or Mammal, Cure Light Wounds, Slow Poison
 \(BEGIN)
 name = Barkskin
 casting sound = none
@@ -3992,6 +3994,7 @@ end script =
 \(END)
 
 // druid level 3
+//	Cause Disease, Cure Disease, Hold Animal, Neutralize Poison, Poison, Protection from Fire, Pyrotechnics
 \(BEGIN)
 name = Cause Disease|Druid
 casting sound = sound_Cast.wav
@@ -4353,6 +4356,7 @@ end script =
 \(END)
 
 // druid level 4
+//	Animal Summoning I, Cause Serious Wounds, Cure Serious Wounds, Dispel Magic, Protection from Lightning
 \(BEGIN)
 name = Animal Summoning I
 casting sound = sound_Cast.wav
@@ -4606,6 +4610,7 @@ end script =
 \(END)
 
 // druid level 5
+//	Animal Summoning II, Insect Plague, Sticks to Snakes, Transmute Rock To Mud
 \(BEGIN)
 name = Animal Summoning II
 casting sound = sound_Cast.wav
@@ -4814,6 +4819,7 @@ end script =
 \(END)
 
 // druid level 6
+//	Animal Summoning III, Cause Critical Wounds, Conjure Fire Elemental, Cure Critical Wounds, Dismiss Fire Elemental, Feeblemind
 \(BEGIN)
 name = Animal Summoning III
 casting sound = sound_Cast.wav
@@ -5120,6 +5126,7 @@ end script =
 \(END)
 
 // druid level 7
+//	Confusion, Conjure Earth Elemental, Dismiss Earth Elemental
 \(BEGIN)
 name = Confusion|Druid
 casting sound = none
@@ -9929,6 +9936,7 @@ end script =
 
 // paladin spells
 // paladin level 1
+//	Bless, Cause Fear, Command, Cure Light Wounds, Darkness, Detect Magic, Light, Protection From Evil, Remove Fear, Resist Cold
 \(BEGIN)
 name = Bless|Paladin
 casting sound = sound_Cast.wav
@@ -10433,6 +10441,7 @@ end script =
 \(END)
 
 // paladin level 2
+//	Aid, Continual Darkness, Continual Light, Find Traps, Hold Person, Resist Fire, Silence 15' Radius, Slow Poison, Snake Charm, Spiritual Hammer
 \(BEGIN)
 name = Aid|Paladin
 casting sound = sound_Cast.wav
@@ -10940,6 +10949,7 @@ end script = $VAR num;num \= $GET_COMBATANT_SA($AttackerContext(),"spellSpiritHa
 \(END)
 
 // paladin level 3
+//	Cure Blindness, Cure Disease, Dispel Magic, Prayer, Remove Curse
 \(BEGIN)
 name = Cure Blindness|Paladin
 casting sound = sound_Cast.wav
@@ -11195,6 +11205,7 @@ end script =
 \(END)
 
 // paladin level 4
+//	Cure Serious Wounds, Neutralize Poison, Protection From Evil 10' Radius, Sticks to Snakes
 \(BEGIN)
 name = Cure Serious Wounds|Paladin
 casting sound = sound_Cast.wav
@@ -11507,8 +11518,9 @@ end script =
 
 // ranger spells:
 // ranger druid spells level 1
+//	Detect Magic, Entangle, Faerie Fire, Invisibility to Animals, Shillelagh, Speak with Animals
 \(BEGIN)
-name = Detect Magic|Ranger
+name = Detect Magic|RangerDruid
 casting sound = sound_Cast.wav
 cast msg = /t is detecting magic.
 missile sound = none
@@ -11557,7 +11569,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Entangle|Ranger
+name = Entangle|RangerDruid
 casting sound = sound_Cast.wav
 cast msg = Vines entangle /t
 missile sound = none
@@ -11610,7 +11622,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Faerie Fire|Ranger
+name = Faerie Fire|RangerDruid
 casting sound = none
 cast msg = /t is outlined in light.
 missile sound = none
@@ -11661,7 +11673,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Invisibility to Animals|Ranger
+name = Invisibility to Animals|RangerDruid
 casting sound = none
 cast msg = /t is invisible to animals.
 missile sound = none
@@ -11710,7 +11722,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Shillelagh|Ranger
+name = Shillelagh|RangerDruid
 casting sound = sound_Cast.wav
 cast msg = /c summons a shillelagh.
 missile sound = none
@@ -11759,7 +11771,7 @@ end script = $TAKE_CHAR_ITEM($Myself(), "Shillelagh");
 \(END)
 
 \(BEGIN)
-name = Speak with Animals|Ranger
+name = Speak with Animals|RangerDruid
 casting sound = sound_Cast.wav
 cast msg = /t can speak with animals.
 missile sound = none
@@ -11807,8 +11819,9 @@ end script =
 \(END)
 
 // ranger druid spells level 2
+//	Barkskin, Cause Light Wounds, Charm Person or Mammal, Cure Light Wounds, Flame Blade, Slow Poison
 \(BEGIN)
-name = Barkskin|Ranger
+name = Barkskin|RangerDruid
 casting sound = none
 cast msg = /c casts barkskin
 missile sound = none
@@ -11858,7 +11871,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Cause Light Wounds|Ranger
+name = Cause Light Wounds|RangerDruid
 casting sound = sound_Cast.wav
 cast msg = /c wounds /t.
 missile sound = none
@@ -11908,7 +11921,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Charm Person or Mammal|Ranger
+name = Charm Person or Mammal|RangerDruid
 casting sound = sound_Cast.wav
 cast msg = /c charms /t.
 missile sound = none
@@ -11960,7 +11973,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Cure Light Wounds|Ranger
+name = Cure Light Wounds|RangerDruid
 casting sound = sound_Cast.wav
 cast msg = /c casts Cure Light Wounds on /t
 missile sound = none
@@ -12012,7 +12025,57 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Slow Poison|Ranger
+name = Flame Blade|RangerDruid
+casting sound = sound_Cast.wav
+cast msg = /c summons a fiery blade.
+missile sound = none
+coverage sound = none
+hit sound = none
+linger sound = none
+cast art = spell_cast_Druid.png,210,2,48,48,0,1,4,1,0,0
+missile art = none
+target cover art = none
+target hit art = none
+target linger art = none
+school = Druid
+Cast by = ranger
+can target friend = yes
+can target enemy = yes
+cumulative = yes
+can memorize = yes
+allow scribe = no
+auto scribe = yes
+in combat = yes
+in camp = no
+can be dispelled = yes
+lingers = yes
+linger affects once = no
+save versus = spell
+save result = none
+Special Ability = spell_Attack,1
+Special Ability = DamageMagical,fire
+Special Ability = casterLevel,$ranger$7
+targeting type = 
+target quantity = 
+target range = 
+level = 2
+casting time = 3
+casting time units = initiative
+duration = 4*level
+duration units = rounds
+target duration = 0
+price = 0
+priority = 950
+spell effect 1 = none
+savingThrowScript = 
+savingThrowSucceededScript = 
+savingThrowFailedScript = 
+begin script = $GIVE_CHAR_ITEM($Myself(), "Flame Blade");
+end script = $TAKE_CHAR_ITEM($Myself(), "Flame Blade");
+\(END)
+
+\(BEGIN)
+name = Slow Poison|RangerDruid
 casting sound = sound_Cast.wav
 cast msg = /t feels the poison slow.
 missile sound = none
@@ -12063,8 +12126,9 @@ end script =
 \(END)
 
 // ranger druid spells level 3
+//	Cause Disease, Cure Disease, Hold Animal, Neutralize Poison, Poison, Protection from Fire, Pyrotechnics
 \(BEGIN)
-name = Cause Disease|Ranger
+name = Cause Disease|RangerDruid
 casting sound = sound_Cast.wav
 cast msg = /c diseases /t.
 missile sound = none
@@ -12115,7 +12179,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Cure Disease|Ranger
+name = Cure Disease|RangerDruid
 casting sound = sound_Cast.wav
 cast msg = /t is cured
 missile sound = none
@@ -12165,7 +12229,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Hold Animal|Ranger
+name = Hold Animal|RangerDruid
 casting sound = sound_Cast.wav
 cast msg = /t immobilizes /t.
 missile sound = none
@@ -12217,7 +12281,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Neutralize Poison|Ranger
+name = Neutralize Poison|RangerDruid
 casting sound = sound_Cast.wav
 cast msg = /t is no longer poisoned.
 missile sound = none
@@ -12267,7 +12331,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Poison|Ranger
+name = Poison|RangerDruid
 casting sound = sound_Cast.wav
 cast msg = /t feels ill.
 missile sound = none
@@ -12318,7 +12382,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Protection from Fire|Ranger
+name = Protection from Fire|RangerDruid
 casting sound = sound_Cast.wav
 cast msg = /t is protected from fire
 missile sound = none
@@ -12369,7 +12433,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Pyrotechnics|Ranger
+name = Pyrotechnics|RangerDruid
 casting sound = sound_Cast.wav
 cast msg = /c lights it up.
 missile sound = none
@@ -12424,8 +12488,9 @@ end script =
 \(END)
 
 // ranger mu spells level 1
+//	Burning Hands, Charm Person, Detect Magic, Enlarge, Friends, Light, Magic Missile, Protection From Evil, Protection From Good, Read Magic, Reduce, Shield, Shocking Grasp, Sleep
 \(BEGIN)
-name = Burning Hands|Ranger
+name = Burning Hands|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /c blasts /t with /s for /d points of damage.
 missile sound = sound_Cast.wav
@@ -12476,7 +12541,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Charm Person|Ranger
+name = Charm Person|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /c charms /t.
 missile sound = none
@@ -12528,7 +12593,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Detect Magic|Ranger(Magic-User)
+name = Detect Magic|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /t is detecting magic.
 missile sound = none
@@ -12576,7 +12641,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Enlarge|Ranger
+name = Enlarge|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /t is enlarged.
 missile sound = none
@@ -12628,7 +12693,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Friends|Ranger
+name = Friends|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /t is more charismatic
 missile sound = none
@@ -12676,7 +12741,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Light|Ranger
+name = Light|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /c makes it lighter.
 missile sound = none
@@ -12726,7 +12791,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Magic Missile|Ranger
+name = Magic Missile|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /c blasts /t with /s for /d points of damage
 missile sound = none
@@ -12779,7 +12844,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Protection From Evil|Ranger
+name = Protection From Evil|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /t is protected from evil
 missile sound = none
@@ -12829,7 +12894,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Protection From Good|Ranger
+name = Protection From Good|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /t is protected from good.
 missile sound = none
@@ -12879,7 +12944,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Read Magic|Ranger
+name = Read Magic|RangerMage
 casting sound = sound_Cast.wav
 cast msg = t is able to read magic.
 missile sound = none
@@ -12926,7 +12991,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Reduce|Ranger
+name = Reduce|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /t is reduced.
 missile sound = none
@@ -12978,7 +13043,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Shield|Ranger
+name = Shield|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /t is shielded.
 missile sound = none
@@ -13026,7 +13091,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Shocking Grasp|Ranger
+name = Shocking Grasp|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /c shocks /t for /d points of damage.
 missile sound = none
@@ -13078,7 +13143,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Sleep|Ranger
+name = Sleep|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /t is put to sleep
 missile sound = none
@@ -13132,8 +13197,9 @@ end script =
 \(END)
 
 // ranger  mu spells level 2
+//	Continual Light, Darkness 15' Radius, Detect Invisibility, Invisibility, Knock, Mirror Image, Pyrotechnics, Ray of Enfeeblement, Stinking Cloud, Strength, Web
 \(BEGIN)
-name = Continual Light|Ranger
+name = Continual Light|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /c makes it lighter.
 missile sound = none
@@ -13183,7 +13249,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Darkness 15' Radius|Ranger
+name = Darkness 15' Radius|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /c makes it darker.
 missile sound = none
@@ -13233,7 +13299,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Detect Invisibility|Ranger
+name = Detect Invisibility|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /t can see more clearly
 missile sound = none
@@ -13281,7 +13347,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Invisibility|Ranger
+name = Invisibility|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /t is invisible
 missile sound = none
@@ -13331,7 +13397,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Knock|Ranger
+name = Knock|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /c opens a lock.
 missile sound = none
@@ -13380,7 +13446,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Mirror Image|Ranger
+name = Mirror Image|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /t now has mirror images.
 missile sound = none
@@ -13429,7 +13495,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Pyrotechnics|Ranger Magic User
+name = Pyrotechnics|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /c lights it up.
 missile sound = none
@@ -13484,7 +13550,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Ray of Enfeeblement|Ranger
+name = Ray of Enfeeblement|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /c weakesn /t.
 missile sound = none
@@ -13537,7 +13603,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Stinking Cloud|Ranger
+name = Stinking Cloud|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /t is paralyzed by a wretched stink.
 missile sound = none
@@ -13590,7 +13656,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Strength|Ranger
+name = Strength|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /t feels stronger
 missile sound = none
@@ -13645,7 +13711,7 @@ end script =
 \(END)
 
 \(BEGIN)
-name = Web|Ranger
+name = Web|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /c spins a web.
 missile sound = none
@@ -22115,5 +22181,6 @@ Special Ability = Updates_230317,"fixed multiple monster spells to have Monster 
 Special Ability = Updates_230319,"added missing spell effects for emove Curse, Raise Dead, Remove Curse|Wizard, Mass Charm, Remove Curse|Paladin, Heal|MonsterCleric, Mass Charm|MonsterMage - they appear to have been removed when exporting the spells database previously"
 Special Ability = Updates_230321,"fixed script errors for Heal|MonsterCleric, changed to evel 1 itemPotionInvisibility, itemPotionSpeed, itemEyesCharming, itemNecklaceMissiles, itemPotionGiantStrength"
 Special Ability = Updates_230328,"added monsterGelatinousCubeParalysis"
+Special Ability = Updates_230403,"disambiguation of ranger spell names, header lists for druid, paladin, and ranger spells"
 \(END)
 

@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Invisibility to Animals|Ranger
+name = Invisibility to Animals|RangerDruid
 casting sound = none
 cast msg = /t is invisible to animals.
 missile sound = none

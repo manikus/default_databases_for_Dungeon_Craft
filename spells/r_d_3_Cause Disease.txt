@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Cause Disease|Ranger
+name = Cause Disease|RangerDruid
 casting sound = sound_Cast.wav
 cast msg = /c diseases /t.
 missile sound = none

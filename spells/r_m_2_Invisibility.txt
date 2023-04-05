@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Invisibility|Ranger
+name = Invisibility|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /t is invisible
 missile sound = none

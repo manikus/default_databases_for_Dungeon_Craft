@@ -1,4 +1,4 @@
-(BEGIN)
+\(BEGIN)
 name = Blade Barrier|MonsterCleric
 casting sound = none
 cast msg = /t is cut by blades for /d points of damage.

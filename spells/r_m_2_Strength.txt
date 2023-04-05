@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Strength|Ranger
+name = Strength|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /t feels stronger
 missile sound = none

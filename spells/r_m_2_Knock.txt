@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Knock|Ranger
+name = Knock|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /c opens a lock.
 missile sound = none

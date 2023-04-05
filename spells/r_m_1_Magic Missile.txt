@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Magic Missile|Ranger
+name = Magic Missile|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /c blasts /t with /s for /d points of damage
 missile sound = none

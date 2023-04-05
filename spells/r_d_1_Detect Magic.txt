@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Detect Magic|Ranger
+name = Detect Magic|RangerDruid
 casting sound = sound_Cast.wav
 cast msg = /t is detecting magic.
 missile sound = none

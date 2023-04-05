@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Mirror Image|Ranger
+name = Mirror Image|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /t now has mirror images.
 missile sound = none

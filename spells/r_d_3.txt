@@ -1,1 +1,2 @@
 // ranger druid spells level 3
+//	Cause Disease, Cure Disease, Hold Animal, Neutralize Poison, Poison, Protection from Fire, Pyrotechnics

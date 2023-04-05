@@ -5634,19 +5634,19 @@ name = monster_DragonSavingThrow
 -param = $SA_PARAM_GET();
 -$IF (param == "second")
 -	{
--		$SkillAdj($CharacterContext(), "Save Vs BR", "", "F", "13");
--		$SkillAdj($CharacterContext(), "Save Vs PP", "", "F", "11");
--		$SkillAdj($CharacterContext(), "Save Vs PPDM", "", "F", "13");
--		$SkillAdj($CharacterContext(), "Save Vs RSW", "", "F", "9");
--		$SkillAdj($CharacterContext(), "Save Vs SP", "", "F", "10");
+-		$SkillAdj($CharacterContext(), "Save Vs BR", "", "=", "13");
+-		$SkillAdj($CharacterContext(), "Save Vs PP", "", "=", "11");
+-		$SkillAdj($CharacterContext(), "Save Vs PPDM", "", "=", "13");
+-		$SkillAdj($CharacterContext(), "Save Vs RSW", "", "=", "9");
+-		$SkillAdj($CharacterContext(), "Save Vs SP", "", "=", "10");
 -	};
--$IF (param == "rhitd")
+-$IF (param == "third")
 -	{
--		$SkillAdj($CharacterContext(), "Save Vs BR", "", "F", "11");
--		$SkillAdj($CharacterContext(), "Save Vs PP", "", "F", "9");
--		$SkillAdj($CharacterContext(), "Save Vs PPDM", "", "F", "11");
--		$SkillAdj($CharacterContext(), "Save Vs RSW", "", "F", "7");
--		$SkillAdj($CharacterContext(), "Save Vs SP", "", "F", "8");
+-		$SkillAdj($CharacterContext(), "Save Vs BR", "", "=", "11");
+-		$SkillAdj($CharacterContext(), "Save Vs PP", "", "=", "9");
+-		$SkillAdj($CharacterContext(), "Save Vs PPDM", "", "=", "11");
+-		$SkillAdj($CharacterContext(), "Save Vs RSW", "", "=", "7");
+-		$SkillAdj($CharacterContext(), "Save Vs SP", "", "=", "8");
 -	};
 \(END)
 
@@ -10215,5 +10215,6 @@ Updates210816 = "rewrote and fixed monster_WeaponImmunityType and monster_Weapon
 Updates230226 = "fixed player control issue and ranger initiative in Competing"
 Updates230314 = "modified class_MageScribe to check to see if spell is known before scribing it"
 Updates230328 = "modified the SAs IsBarkskinned, IsBestowedCurse, IsBrave, IsCharmed, IsConfused, IsConfusedExtended, IsDetectingEvil, IsDetectingGood, IsDetectingMagic, IsDispellingEvil, IsDispellingGood, IsEnlarged, IsEntangled0, IsFast, IsHolyDeafened, IsHolyParalyzed, IsHolyStunned, IsParalyzed, IsPraying, IsReduced, IsSilenced, IsSleeping, IsSlow, IsStunned, IsWebbed, monster_WeaponImmunity, spell_Confusion, spell_Enlarge, spell_HolyWord, spell_Paralysis, spell_Prayer, spell_Reduce, spell_Sleep, spell_UnholyWord; added the SAs IsAnesthetized, IsDetectingIllusion, IsDetectingSecretDoors, IsHolyParalyzed, IsKnowingAlignment, IsSeeingAstral, IsSeeingDisplaced, IsSeeingEthereal, IsSeeingInvisible, spell_Enlarge, spell_GelatinousCubeParalysis"
+Updates230405 = "corrected errors in monster_DragonSavingThrow"
 \(END)
 

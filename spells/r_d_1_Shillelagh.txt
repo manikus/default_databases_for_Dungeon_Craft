@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Shillelagh|Ranger
+name = Shillelagh|RangerDruid
 casting sound = sound_Cast.wav
 cast msg = /c summons a shillelagh.
 missile sound = none

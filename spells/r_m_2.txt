@@ -1,1 +1,2 @@
 // ranger  mu spells level 2
+//	Continual Light, Darkness 15' Radius, Detect Invisibility, Invisibility, Knock, Mirror Image, Pyrotechnics, Ray of Enfeeblement, Stinking Cloud, Strength, Web

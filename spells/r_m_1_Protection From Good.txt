@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Protection From Good|Ranger
+name = Protection From Good|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /t is protected from good.
 missile sound = none

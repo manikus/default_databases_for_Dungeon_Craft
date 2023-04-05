@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Poison|Ranger
+name = Poison|RangerDruid
 casting sound = sound_Cast.wav
 cast msg = /t feels ill.
 missile sound = none

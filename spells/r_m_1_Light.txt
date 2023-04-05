@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Light|Ranger
+name = Light|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /c makes it lighter.
 missile sound = none

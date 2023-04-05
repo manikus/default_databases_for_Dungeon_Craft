@@ -1,1 +1,2 @@
 // druid level 2
+//	Barkskin, Cause Light Wounds, Charm Person or Mammal, Cure Light Wounds, Slow Poison

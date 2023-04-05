@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Friends|Ranger
+name = Friends|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /t is more charismatic
 missile sound = none

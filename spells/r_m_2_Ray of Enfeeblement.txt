@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Ray of Enfeeblement|Ranger
+name = Ray of Enfeeblement|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /c weakesn /t.
 missile sound = none

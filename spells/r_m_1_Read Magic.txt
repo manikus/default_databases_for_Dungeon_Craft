@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Read Magic|Ranger
+name = Read Magic|RangerMage
 casting sound = sound_Cast.wav
 cast msg = t is able to read magic.
 missile sound = none

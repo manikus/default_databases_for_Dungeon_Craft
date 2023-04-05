@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Shield|Ranger
+name = Shield|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /t is shielded.
 missile sound = none

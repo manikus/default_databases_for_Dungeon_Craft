@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Protection from Fire|Ranger
+name = Protection from Fire|RangerDruid
 casting sound = sound_Cast.wav
 cast msg = /t is protected from fire
 missile sound = none

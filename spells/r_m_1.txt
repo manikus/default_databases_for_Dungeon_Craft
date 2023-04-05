@@ -1,1 +1,2 @@
 // ranger mu spells level 1
+//	Burning Hands, Charm Person, Detect Magic, Enlarge, Friends, Light, Magic Missile, Protection From Evil, Protection From Good, Read Magic, Reduce, Shield, Shocking Grasp, Sleep

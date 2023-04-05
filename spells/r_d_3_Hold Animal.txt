@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Hold Animal|Ranger
+name = Hold Animal|RangerDruid
 casting sound = sound_Cast.wav
 cast msg = /t immobilizes /t.
 missile sound = none

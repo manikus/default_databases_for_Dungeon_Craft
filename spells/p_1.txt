@@ -1,1 +1,2 @@
 // paladin level 1
+//	Bless, Cause Fear, Command, Cure Light Wounds, Darkness, Detect Magic, Light, Protection From Evil, Remove Fear, Resist Cold

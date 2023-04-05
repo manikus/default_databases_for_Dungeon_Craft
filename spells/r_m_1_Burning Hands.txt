@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Burning Hands|Ranger
+name = Burning Hands|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /c blasts /t with /s for /d points of damage.
 missile sound = sound_Cast.wav

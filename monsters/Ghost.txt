@@ -29,4 +29,5 @@ item = none
 attack = 1,1,0,hits,monsterAge
 Undead = Ghost
 \(END)
+//	MM p43
 

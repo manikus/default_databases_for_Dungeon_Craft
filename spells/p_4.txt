@@ -1,1 +1,2 @@
 // paladin level 4
+//	Cure Serious Wounds, Neutralize Poison, Protection From Evil 10' Radius, Sticks to Snakes

@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Enlarge|Ranger
+name = Enlarge|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /t is enlarged.
 missile sound = none

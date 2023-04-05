@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Sleep|Ranger
+name = Sleep|RangerMage
 casting sound = sound_Cast.wav
 cast msg = /t is put to sleep
 missile sound = none

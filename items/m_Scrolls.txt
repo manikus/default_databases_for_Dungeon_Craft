@@ -888,7 +888,7 @@ spell effect = Cause Fear|Cleric
 \(END)
 
 \(BEGIN)
-name = Scroll| Cause Light Wounds
+name = Scroll|CCause Light Wounds
 id name = Scroll of  Cause Light Wounds
 launch sound = none
 hit sound = none
@@ -966,7 +966,7 @@ spell effect = Command|Cleric
 \(END)
 
 \(BEGIN)
-name = Scroll|Cure Light Wounds
+name = Scroll|CCure Light Wounds
 id name = Scroll of Cure Light Wounds
 launch sound = none
 hit sound = none
@@ -2019,8 +2019,8 @@ spell effect = Remove Curse
 \(END)
 
 \(BEGIN)
-name = Scroll| Serious Wounds
-id name = Scroll of  Serious Wounds
+name = Scroll|Cause Serious Wounds
+id name = Scroll of Cause Serious Wounds
 launch sound = none
 hit sound = none
 miss sound = none
@@ -2054,7 +2054,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect =  Serious Wounds
+spell effect = Cause Serious Wounds
 \(END)
 
 \(BEGIN)
@@ -4008,7 +4008,7 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,magicUser
-Special Ability = scribeSpell,Dispel Magic|Wizard
+Special Ability = scribeSpell,Dispel Magic|Magic User
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -4020,7 +4020,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Dispel Magic|Wizard
+spell effect = Dispel Magic|Magic User
 \(END)
 
 \(BEGIN)
@@ -4090,7 +4090,7 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,magicUser
-Special Ability = scribeSpell,Hold Person|Wizard
+Special Ability = scribeSpell,Hold Person|Magic User
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -4102,7 +4102,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Hold Person|Wizard
+spell effect = Hold Person|Magic User
 \(END)
 
 \(BEGIN)
@@ -4213,7 +4213,7 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,magicUser
-Special Ability = scribeSpell,Protection From Evil 10' Radius|Wizard
+Special Ability = scribeSpell,Protection From Evil 10' Radius|Magic User
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -4225,7 +4225,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Protection From Evil 10' Radius|Wizard
+spell effect = Protection From Evil 10' Radius|Magic User
 \(END)
 
 \(BEGIN)
@@ -4254,7 +4254,7 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,magicUser
-Special Ability = scribeSpell,Protection From Good 10' Radius|Wizard
+Special Ability = scribeSpell,Protection From Good 10' Radius|Magic User
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -4266,7 +4266,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Protection From Good 10' Radius|Wizard
+spell effect = Protection From Good 10' Radius|Magic User
 \(END)
 
 \(BEGIN)
@@ -4377,7 +4377,7 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,magicUser
-Special Ability = scribeSpell,Bestow Curse|Wizard
+Special Ability = scribeSpell,Bestow Curse|Magic User
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -4389,7 +4389,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Bestow Curse|Wizard
+spell effect = Bestow Curse|Magic User
 \(END)
 
 \(BEGIN)
@@ -4746,7 +4746,7 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,magicUser
-Special Ability = scribeSpell,Remove Curse|Wizard
+Special Ability = scribeSpell,Remove Curse|Magic User
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -4758,7 +4758,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Remove Curse|Wizard
+spell effect = Remove Curse|Magic User
 \(END)
 
 \(BEGIN)
@@ -5156,7 +5156,7 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,magicUser
-Special Ability = scribeSpell,Transmute Rock To Mud|Wizard
+Special Ability = scribeSpell,Transmute Rock To Mud|Magic User
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -5168,7 +5168,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Transmute Rock To Mud|Wizard
+spell effect = Transmute Rock To Mud|Magic User
 \(END)
 
 \(BEGIN)
@@ -5197,7 +5197,7 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,magicUser
-Special Ability = scribeSpell,Wall Of Stone|Wizard
+Special Ability = scribeSpell,Wall Of Stone|Magic User
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -5209,7 +5209,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Wall Of Stone|Wizard
+spell effect = Wall Of Stone|Magic User
 \(END)
 
 \(BEGIN)
@@ -5906,7 +5906,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Imprisonment
+spell effect = Imprisonment|Mage
 \(END)
 
 \(BEGIN)
@@ -5989,45 +5989,5 @@ Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
 spell effect = Monster Summoning VII
-\(END)
-
-\(BEGIN)
-name = Scroll|19
-id name = Scroll of Protection From Dragon Breath
-launch sound = none
-hit sound = none
-miss sound = none
-missile sprite = none
-hit sprite = none
-ROF per round = 1
-combat range = 1
-cost = 60
-hands to carry = 1
-baseclass = magicUser
-baseclass = thief
-small/medium damage dice = 1D6 + 0
-large damage dice = 1D6 + 0
-AC base = 0
-AC bonus = 0
-attack bonus = 0
-experience = 0
-encumbrance = 1
-cursed = no
-non lethal = no
-readied location = WEAPON
-bundle quantity = 1
-Special Ability = item_Scroll,magicUser
-weapon type = not weapon
-ammo type = 
-usable = yes
-not magical = no
-scribtable = no
-can drop = yes
-CanHalveJoin = no
-number of charges = 1
-Examine Event ID = 0
-Examine Label = EXAMINE
-recharge rate = never
-spell effect = itemScrollImmuneDragonBreath
 \(END)
 

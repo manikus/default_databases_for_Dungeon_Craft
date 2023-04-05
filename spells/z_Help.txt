@@ -17,5 +17,6 @@ Special Ability = Updates_230317,"fixed multiple monster spells to have Monster 
 Special Ability = Updates_230319,"added missing spell effects for emove Curse, Raise Dead, Remove Curse|Wizard, Mass Charm, Remove Curse|Paladin, Heal|MonsterCleric, Mass Charm|MonsterMage - they appear to have been removed when exporting the spells database previously"
 Special Ability = Updates_230321,"fixed script errors for Heal|MonsterCleric, changed to evel 1 itemPotionInvisibility, itemPotionSpeed, itemEyesCharming, itemNecklaceMissiles, itemPotionGiantStrength"
 Special Ability = Updates_230328,"added monsterGelatinousCubeParalysis"
+Special Ability = Updates_230403,"disambiguation of ranger spell names, header lists for druid, paladin, and ranger spells"
 \(END)
 

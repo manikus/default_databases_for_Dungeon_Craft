@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Neutralize Poison|Ranger
+name = Neutralize Poison|RangerDruid
 casting sound = sound_Cast.wav
 cast msg = /t is no longer poisoned.
 missile sound = none

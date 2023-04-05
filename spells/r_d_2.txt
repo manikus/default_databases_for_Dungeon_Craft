@@ -1,1 +1,2 @@
 // ranger druid spells level 2
+//	Barkskin, Cause Light Wounds, Charm Person or Mammal, Cure Light Wounds, Flame Blade, Slow Poison

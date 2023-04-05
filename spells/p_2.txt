@@ -1,1 +1,2 @@
 // paladin level 2
+//	Aid, Continual Darkness, Continual Light, Find Traps, Hold Person, Resist Fire, Silence 15' Radius, Slow Poison, Snake Charm, Spiritual Hammer

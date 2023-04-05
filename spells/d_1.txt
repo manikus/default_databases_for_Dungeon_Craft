@@ -1,1 +1,2 @@
 // druid level 1
+//	Detect Magic, Entangle, Faerie Fire, Invisibility to Animals, Shillelagh, Speak with Animals
