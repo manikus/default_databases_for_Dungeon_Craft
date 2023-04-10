@@ -37,7 +37,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Hold Monster
 \(END)
 
 \(BEGIN)
@@ -78,7 +78,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Fire Touch
 \(END)
 
 \(BEGIN)
@@ -119,7 +119,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Minor Globe of Invulnerability
 \(END)
 
 \(BEGIN)
@@ -160,7 +160,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Death Spell
 \(END)
 
 \(BEGIN)
@@ -201,7 +201,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Globe of Invulnerability
 \(END)
 
 \(BEGIN)
@@ -242,7 +242,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Stone to Flesh
 \(END)
 
 \(BEGIN)
@@ -283,7 +283,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Delayed Blast Fireball
 \(END)
 
 \(BEGIN)
@@ -324,7 +324,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Monster Summoning I
 \(END)
 
 \(BEGIN)
@@ -365,7 +365,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Power Word, Kill
 \(END)
 
 \(BEGIN)
@@ -393,7 +393,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|9
-Special Ability = scribeSpell,Restoration
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -405,7 +404,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Restoration
 \(END)
 
 \(BEGIN)
@@ -433,7 +432,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|10
-Special Ability = scribeSpell,Resurrection
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -445,7 +443,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Resurrection
 \(END)
 
 \(BEGIN)
@@ -473,7 +471,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|11
-Special Ability = scribeSpell,Destruction
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -485,7 +482,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Destruction
 \(END)
 
 \(BEGIN)
@@ -513,7 +510,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|12
-Special Ability = scribeSpell,Energy Drain
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -525,7 +521,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Energy Drain
 \(END)
 
 \(BEGIN)
@@ -553,7 +549,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|13
-Special Ability = scribeSpell,Blade Barrier
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -565,7 +560,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Blade Barrier
 \(END)
 
 \(BEGIN)
@@ -606,7 +601,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Magic Missile
 \(END)
 
 \(BEGIN)
@@ -647,7 +642,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Mirror Image
 \(END)
 
 \(BEGIN)
@@ -688,7 +683,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Stinking Cloud
 \(END)
 
 \(BEGIN)
@@ -729,7 +724,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Haste
 \(END)
 
 \(BEGIN)
@@ -770,7 +765,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Lightning Bolt
 \(END)
 
 \(BEGIN)
@@ -845,7 +840,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CBless
-Special Ability = scribeSpell,Bless
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -857,7 +851,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Bless
 \(END)
 
 \(BEGIN)
@@ -885,7 +879,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CCause Fear
-Special Ability = scribeSpell,Cause Fear|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -897,7 +890,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Cause Fear|Cleric
 \(END)
 
 \(BEGIN)
@@ -925,7 +918,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CCause Light Wounds
-Special Ability = scribeSpell,Cause Light Wounds
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -937,7 +929,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect =  Cause Light Wounds
 \(END)
 
 \(BEGIN)
@@ -965,7 +957,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CCommand
-Special Ability = scribeSpell,Command|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -977,7 +968,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Command|Cleric
 \(END)
 
 \(BEGIN)
@@ -1005,7 +996,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CCure Light Wounds
-Special Ability = scribeSpell,Cure Light Wounds
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -1017,7 +1007,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Cure Light Wounds
 \(END)
 
 \(BEGIN)
@@ -1045,7 +1035,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CCurse
-Special Ability = scribeSpell,Curse
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -1057,7 +1046,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Curse
 \(END)
 
 \(BEGIN)
@@ -1085,7 +1074,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CDarkness
-Special Ability = scribeSpell,Darkness|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -1097,7 +1085,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Darkness|Cleric
 \(END)
 
 \(BEGIN)
@@ -1125,7 +1113,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CDetect Magic
-Special Ability = scribeSpell,Detect Magic|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -1137,7 +1124,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Detect Magic|Cleric
 \(END)
 
 \(BEGIN)
@@ -1165,7 +1152,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll, Scroll|CLight
-Special Ability = scribeSpell,Light|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -1177,7 +1163,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Light|Cleric
 \(END)
 
 \(BEGIN)
@@ -1205,7 +1191,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CProtection From Evil
-Special Ability = scribeSpell,Protection From Evil|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -1217,7 +1202,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Protection From Evil|Cleric
 \(END)
 
 \(BEGIN)
@@ -1245,7 +1230,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CProtection From Good
-Special Ability = scribeSpell,Protection From Good|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -1257,7 +1241,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Protection From Good|Cleric
 \(END)
 
 \(BEGIN)
@@ -1285,7 +1269,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CRemove Fear
-Special Ability = scribeSpell,Remove Fear|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -1297,7 +1280,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Remove Fear|Cleric
 \(END)
 
 \(BEGIN)
@@ -1325,7 +1308,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CResist Cold
-Special Ability = scribeSpell,Resist Cold
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -1337,7 +1319,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Resist Cold
 \(END)
 
 \(BEGIN)
@@ -1365,7 +1347,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CAid
-Special Ability = scribeSpell,Aid|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -1377,7 +1358,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Aid|Cleric
 \(END)
 
 \(BEGIN)
@@ -1405,7 +1386,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CContinual Darkness
-Special Ability = scribeSpell,Continual Darkness|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -1417,7 +1397,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Continual Darkness|Cleric
 \(END)
 
 \(BEGIN)
@@ -1445,7 +1425,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CContinual Light
-Special Ability = scribeSpell,Continual Light|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -1457,7 +1436,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Continual Light|Cleric
 \(END)
 
 \(BEGIN)
@@ -1485,7 +1464,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CFind Traps
-Special Ability = scribeSpell,Find Traps
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -1497,7 +1475,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Find Traps
 \(END)
 
 \(BEGIN)
@@ -1525,7 +1503,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CHold Person
-Special Ability = scribeSpell,Hold Person
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -1537,7 +1514,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Hold Person
 \(END)
 
 \(BEGIN)
@@ -1565,7 +1542,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CResist Fire
-Special Ability = scribeSpell,Resist Fire
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -1577,7 +1553,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Resist Fire
 \(END)
 
 \(BEGIN)
@@ -1605,7 +1581,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,|CSilence 15' Radius
-Special Ability = scribeSpell,Silence 15' Radius
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -1617,7 +1592,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Silence 15' Radius
 \(END)
 
 \(BEGIN)
@@ -1645,7 +1620,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CSlow Poison
-Special Ability = scribeSpell,Slow Poison
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -1657,7 +1631,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Slow Poison
 \(END)
 
 \(BEGIN)
@@ -1685,7 +1659,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CSnake Charm
-Special Ability = scribeSpell,Snake Charm
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -1697,7 +1670,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Snake Charm
 \(END)
 
 \(BEGIN)
@@ -1725,7 +1698,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CSpiritual Hammer
-Special Ability = scribeSpell,Spiritual Hammer
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -1737,7 +1709,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Spiritual Hammer
 \(END)
 
 \(BEGIN)
@@ -1765,7 +1737,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CBestow Curse
-Special Ability = scribeSpell,Bestow Curse
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -1777,7 +1748,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Bestow Curse
 \(END)
 
 \(BEGIN)
@@ -1805,7 +1776,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CCause Blindness
-Special Ability = scribeSpell,Cause Blindness
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -1817,7 +1787,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Cause Blindness
 \(END)
 
 \(BEGIN)
@@ -1845,7 +1815,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CCause Disease
-Special Ability = scribeSpell,Cause Disease
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -1857,7 +1826,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Cause Disease
 \(END)
 
 \(BEGIN)
@@ -1924,7 +1893,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CCure Disease
-Special Ability = scribeSpell,Cuse Disease
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -1936,7 +1904,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Cure Disease
 \(END)
 
 \(BEGIN)
@@ -1964,7 +1932,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CDispel Magic
-Special Ability = scribeSpell,Dispel Magic|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -1976,7 +1943,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Dispel Magic|Cleric
 \(END)
 
 \(BEGIN)
@@ -2004,7 +1971,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CPrayer
-Special Ability = scribeSpell,Prayer
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -2016,7 +1982,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Prayer
 \(END)
 
 \(BEGIN)
@@ -2044,7 +2010,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CRemove Curse
-Special Ability = scribeSpell,Remove Curse
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -2056,7 +2021,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Remove Curse
 \(END)
 
 \(BEGIN)
@@ -2084,7 +2049,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CCause Serious Wounds
-Special Ability = scribeSpell,Cause Serious Wounds
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -2096,7 +2060,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Cause Serious Wounds
 \(END)
 
 \(BEGIN)
@@ -2124,7 +2088,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CCure Serious Wounds
-Special Ability = scribeSpell,Cure Serious Wounds
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -2136,7 +2099,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Cure Serious Wounds
 \(END)
 
 \(BEGIN)
@@ -2164,7 +2127,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CNeutralize Poison
-Special Ability = scribeSpell,Neutralize Poison
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -2176,7 +2138,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Neutralize Poison
 \(END)
 
 \(BEGIN)
@@ -2204,7 +2166,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CPoison
-Special Ability = scribeSpell,Poison
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -2216,7 +2177,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Poison
 \(END)
 
 \(BEGIN)
@@ -2244,7 +2205,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CProtection From Evil 10' Radius
-Special Ability = scribeSpell,Protection From Evil 10' Radius|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -2256,7 +2216,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Protection From Evil 10' Radius|Cleric
 \(END)
 
 \(BEGIN)
@@ -2284,7 +2244,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CProtection From Good 10' Radius
-Special Ability = scribeSpell,Protection From Good 10' Radius|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -2296,7 +2255,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Protection From Good 10' Radius|Cleric
 \(END)
 
 \(BEGIN)
@@ -2324,7 +2283,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CSticks to Snakes
-Special Ability = scribeSpell,Sticks to Snakes
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -2336,7 +2294,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Sticks to Snakes
 \(END)
 
 \(BEGIN)
@@ -2364,7 +2322,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CCause Critical Wounds
-Special Ability = scribeSpell,Cause Critical Wounds
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -2376,7 +2333,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Cause Critical Wounds
 \(END)
 
 \(BEGIN)
@@ -2404,7 +2361,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CCure Critical Wounds
-Special Ability = scribeSpell,Cure Critical Wounds
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -2416,7 +2372,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Cure Critical Wounds
 \(END)
 
 \(BEGIN)
@@ -2444,7 +2400,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CDispel Evil
-Special Ability = scribeSpell,Dispel Evil
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -2456,7 +2411,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Dispel Evil
 \(END)
 
 \(BEGIN)
@@ -2484,7 +2439,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CDispel Good
-Special Ability = scribeSpell,Dispel Good
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -2496,7 +2450,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Dispel Good
 \(END)
 
 \(BEGIN)
@@ -2524,7 +2478,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CFalse Seeing
-Special Ability = scribeSpell,False Seeing|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -2536,7 +2489,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = False Seeing|Cleric
 \(END)
 
 \(BEGIN)
@@ -2564,7 +2517,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CFlame Strike
-Special Ability = scribeSpell,Flame Strike
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -2576,7 +2528,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Flame Strike
 \(END)
 
 \(BEGIN)
@@ -2604,7 +2556,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CRaise Dead
-Special Ability = scribeSpell,Raise Dead
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -2616,7 +2567,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Raise Dead
 \(END)
 
 \(BEGIN)
@@ -2644,7 +2595,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CSlay Living
-Special Ability = scribeSpell,Slay Living
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -2656,7 +2606,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Slay Living
 \(END)
 
 \(BEGIN)
@@ -2684,7 +2634,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CTrue Seeing
-Special Ability = scribeSpell,True Seeing|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -2696,7 +2645,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = True Seeing|Cleric
 \(END)
 
 \(BEGIN)
@@ -2724,7 +2673,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CHarm
-Special Ability = scribeSpell,Harm
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -2736,7 +2684,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Harm
 \(END)
 
 \(BEGIN)
@@ -2764,7 +2712,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CHeal
-Special Ability = scribeSpell,Heal
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -2776,7 +2723,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Heal
 \(END)
 
 \(BEGIN)
@@ -2804,7 +2751,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CHoly Word
-Special Ability = scribeSpell,Holy Word|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -2816,7 +2762,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Holy Word|Cleric
 \(END)
 
 \(BEGIN)
@@ -2844,7 +2790,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CRegeneration
-Special Ability = scribeSpell,Regeneration|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -2856,7 +2801,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Regeneration|Cleric
 \(END)
 
 \(BEGIN)
@@ -2884,7 +2829,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CSymbol
-Special Ability = scribeSpell,Symbol|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -2896,7 +2840,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Symbol|Cleric
 \(END)
 
 \(BEGIN)
@@ -2924,7 +2868,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CUnholy Word
-Special Ability = scribeSpell,Unholy Word|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -2936,7 +2879,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Unholy Word|Cleric
 \(END)
 
 \(BEGIN)
@@ -2964,7 +2907,6 @@ non lethal = no
 readied location = WEAPON
 bundle quantity = 1
 Special Ability = item_Scroll,Scroll|CWither
-Special Ability = scribeSpell,Wither|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -2976,7 +2918,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Wither|Cleric
 \(END)
 
 // Magic User scrolls
@@ -3018,7 +2960,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Burning Hands
 \(END)
 
 \(BEGIN)
@@ -3059,7 +3001,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Charm Person
 \(END)
 
 \(BEGIN)
@@ -3100,7 +3042,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Detect Magic|MagicUser
 \(END)
 
 \(BEGIN)
@@ -3141,7 +3083,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Enlarge
 \(END)
 
 \(BEGIN)
@@ -3182,7 +3124,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Friends
 \(END)
 
 \(BEGIN)
@@ -3223,7 +3165,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Light|Magic User
 \(END)
 
 \(BEGIN)
@@ -3264,7 +3206,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Protection From Evil|MagicUser
 \(END)
 
 \(BEGIN)
@@ -3305,7 +3247,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect =  none
+spell effect =  Protection From Good|MagicUser
 \(END)
 
 \(BEGIN)
@@ -3346,7 +3288,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect =  none
+spell effect =  Read Magic
 \(END)
 
 \(BEGIN)
@@ -3387,7 +3329,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Reduce
 \(END)
 
 \(BEGIN)
@@ -3428,7 +3370,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Shield
 \(END)
 
 \(BEGIN)
@@ -3469,7 +3411,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Shocking Grasp
 \(END)
 
 \(BEGIN)
@@ -3510,7 +3452,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Sleep
 \(END)
 
 \(BEGIN)
@@ -3551,7 +3493,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Continual Light|Magic User
 \(END)
 
 \(BEGIN)
@@ -3592,7 +3534,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Darkness 15' Radius|Magic User
 \(END)
 
 \(BEGIN)
@@ -3633,7 +3575,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect =  none
+spell effect =  Detect Evil
 \(END)
 
 \(BEGIN)
@@ -3674,7 +3616,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Detect Good
 \(END)
 
 \(BEGIN)
@@ -3715,7 +3657,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Detect Invisibility
 \(END)
 
 \(BEGIN)
@@ -3756,7 +3698,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Invisibility
 \(END)
 
 \(BEGIN)
@@ -3797,7 +3739,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Knock
 \(END)
 
 \(BEGIN)
@@ -3838,7 +3780,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Know Alignment
 \(END)
 
 \(BEGIN)
@@ -3879,7 +3821,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Pyrotechnics|Magic User
 \(END)
 
 \(BEGIN)
@@ -3920,7 +3862,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Ray of Enfeeblement
 \(END)
 
 \(BEGIN)
@@ -3961,7 +3903,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Strength
 \(END)
 
 \(BEGIN)
@@ -4002,7 +3944,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Web|Magic User
 \(END)
 
 \(BEGIN)
@@ -4043,7 +3985,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Blink
 \(END)
 
 \(BEGIN)
@@ -4084,7 +4026,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Dispel Magic|Magic User
 \(END)
 
 \(BEGIN)
@@ -4125,7 +4067,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Fireball
 \(END)
 
 \(BEGIN)
@@ -4166,7 +4108,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Hold Person|Magic User
 \(END)
 
 \(BEGIN)
@@ -4207,7 +4149,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Incendiary Cloud|Magic User
 \(END)
 
 \(BEGIN)
@@ -4248,7 +4190,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Invisibility 10' Radius
 \(END)
 
 \(BEGIN)
@@ -4289,7 +4231,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Protection From Evil 10' Radius|Magic User
 \(END)
 
 \(BEGIN)
@@ -4330,7 +4272,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Protection From Good 10' Radius|Magic User
 \(END)
 
 \(BEGIN)
@@ -4371,7 +4313,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Protection from Normal Missiles
 \(END)
 
 \(BEGIN)
@@ -4412,7 +4354,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Slow
 \(END)
 
 \(BEGIN)
@@ -4453,7 +4395,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Bestow Curse|Magic User
 \(END)
 
 \(BEGIN)
@@ -4494,7 +4436,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Charm Monster
 \(END)
 
 \(BEGIN)
@@ -4535,7 +4477,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Confusion
 \(END)
 
 \(BEGIN)
@@ -4576,7 +4518,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Dimension Door
 \(END)
 
 \(BEGIN)
@@ -4617,7 +4559,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Fear
 \(END)
 
 \(BEGIN)
@@ -4658,7 +4600,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Fire Shield
 \(END)
 
 \(BEGIN)
@@ -4740,7 +4682,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Ice Storm
 \(END)
 
 \(BEGIN)
@@ -4781,7 +4723,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Monster Summoning II
 \(END)
 
 \(BEGIN)
@@ -4822,7 +4764,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Remove Curse|Magic User
 \(END)
 
 \(BEGIN)
@@ -4863,7 +4805,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Cloudkill
 \(END)
 
 \(BEGIN)
@@ -4904,7 +4846,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Cone of Cold
 \(END)
 
 \(BEGIN)
@@ -4945,7 +4887,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Conjure Air Elemental
 \(END)
 
 \(BEGIN)
@@ -4986,7 +4928,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Conjure Earth Elemental
 \(END)
 
 \(BEGIN)
@@ -5027,7 +4969,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Conjure Fire Elemental
 \(END)
 
 \(BEGIN)
@@ -5068,7 +5010,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Conjure Water Elemental
 \(END)
 
 \(BEGIN)
@@ -5109,7 +5051,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Feeblemind
 \(END)
 
 \(BEGIN)
@@ -5150,7 +5092,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Monster Summoning III
 \(END)
 
 \(BEGIN)
@@ -5191,7 +5133,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Protection from Acid
 \(END)
 
 \(BEGIN)
@@ -5232,7 +5174,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Transmute Rock To Mud|Magic User
 \(END)
 
 \(BEGIN)
@@ -5273,7 +5215,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Wall Of Stone|Magic User
 \(END)
 
 \(BEGIN)
@@ -5314,7 +5256,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Chain Lightning|Magic User
 \(END)
 
 \(BEGIN)
@@ -5355,7 +5297,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Disintegrate
 \(END)
 
 \(BEGIN)
@@ -5396,7 +5338,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Flesh to Stone
 \(END)
 
 \(BEGIN)
@@ -5437,7 +5379,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Geas|Magic User
 \(END)
 
 \(BEGIN)
@@ -5478,7 +5420,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Invisible Stalker
 \(END)
 
 \(BEGIN)
@@ -5519,7 +5461,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Monster Summoning IV
 \(END)
 
 \(BEGIN)
@@ -5560,7 +5502,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Power Word, Silence
 \(END)
 
 \(BEGIN)
@@ -5601,7 +5543,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Charm Plants
 \(END)
 
 \(BEGIN)
@@ -5642,7 +5584,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Mass Invisibility
 \(END)
 
 \(BEGIN)
@@ -5683,7 +5625,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Monster Summoning V
 \(END)
 
 \(BEGIN)
@@ -5724,7 +5666,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Power Word, Stun
 \(END)
 
 \(BEGIN)
@@ -5765,7 +5707,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Mass Charm
 \(END)
 
 \(BEGIN)
@@ -5806,7 +5748,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Mind Blank
 \(END)
 
 \(BEGIN)
@@ -5847,7 +5789,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Monster Summoning VI
 \(END)
 
 \(BEGIN)
@@ -5888,7 +5830,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Otto's Irresistible Dance
 \(END)
 
 \(BEGIN)
@@ -5929,7 +5871,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Power Word, Blind
 \(END)
 
 \(BEGIN)
@@ -5970,7 +5912,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Imprisonment|Magic User
 \(END)
 
 \(BEGIN)
@@ -6011,7 +5953,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Meteor Swarm
 \(END)
 
 \(BEGIN)
@@ -6052,6 +5994,6 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = none
+spell effect = Monster Summoning VII
 \(END)
 

@@ -1,12 +1,8 @@
 \(BEGIN)
 name = item_Potion2
-[CanExamineOrWhatever] = $SET_HOOK_PARAM( 5, "DRINK" );
--$SET_HOOK_PARAM( 6, 0 );
--$RETURN "Y";
-[ExamineOrWhatever] = $VAR item;
--$VAR newItem;
--item = "Potion|2";
--newItem = "Empty Bottle";
+[CanExamineOrWhatever] = $SET_HOOK_PARAM( 5, "DRINK" ); $SET_HOOK_PARAM( 6, 0 ); $RETURN "Y";
+[ExamineOrWhatever] = $VAR item; $VAR newItem;
+-item = "Potion|2"; newItem = "Empty Bottle";
 -$IF ($GET_CHAR_Ready($CharacterContext(), "WEAPON", 0) == item)
 -	{
 -		$TAKE_CHAR_ITEM($CharacterContext(),item);

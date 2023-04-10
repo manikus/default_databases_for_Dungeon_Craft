@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Dispel Magic|Wizard
+name = Dispel Magic|Magic User
 casting sound = sound_Cast.wav
 cast msg = /c dispels magical effects.
 missile sound = none

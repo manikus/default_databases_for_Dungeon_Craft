@@ -1,10 +1,11 @@
 \(BEGIN)
 name = $$Help
-Special Ability = Date,"August 30, 2021"
+Special Ability = Date,"April 5, 2023"
 Special Ability = updates1_01,"gave all races except monster a 1 for FindSecretDoorSearching if it was previously 0"
 Special Ability = Updates1_02,"fixed thief racial bonuses for half-elf and half-orc"
 Special Ability = Updates1_03,"fixed incorrect multi-class listing for half-elf"
 Special Ability = Updates171216,"fixed MaxLevel$SYS$ for all races"
 Special Ability = Updates_210830,"added some lines of clarification to the SkillAdjAbility, SkillAdjBaseclass, and the SkillAdjRace instructions"
+Special Ability = Updates_230405,"updated multiclass names to match class database"
 \(END)
 

@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Hold Person|Wizard
+name = Hold Person|Magic User
 casting sound = sound_Cast.wav
 cast msg = /c immobilizes /t.
 missile sound = none

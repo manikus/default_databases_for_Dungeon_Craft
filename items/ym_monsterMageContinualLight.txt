@@ -33,6 +33,6 @@ number of charges = 0
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Continual Light|Mage
+spell effect = Continual Light|Magic User
 \(END)
 

@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Wall Of Stone|Wizard
+name = Wall Of Stone|Magic User
 casting sound = sound_Cast.wav
 cast msg = /c creates a wall of stone.
 missile sound = none

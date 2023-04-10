@@ -1,19 +1,13 @@
 \(BEGIN)
 name = item_Potion3
-[CanExamineOrWhatever] = $SET_HOOK_PARAM( 5, "DRINK" );
--$SET_HOOK_PARAM( 6, 0 );
--$RETURN "Y";
-[ExamineOrWhatever] = $VAR char;
--$VAR item;
--$VAR newItem;
--char = $IndexOf($CharacterContext());
--item = "Potion|3";
--newItem = "Empty Bottle";
+[CanExamineOrWhatever] = $SET_HOOK_PARAM( 5, "DRINK" ); $SET_HOOK_PARAM( 6, 0 ); $RETURN "Y";
+[ExamineOrWhatever] = $VAR chr; $VAR item; $VAR newItem;
+-chr = $IndexOf($CharacterContext()); item = "Potion|3"; newItem = "Empty Bottle";
 -$IF ($GET_CHAR_Ready($CharacterContext(), "WEAPON", 0) == item)
 -	{
 -		$TAKE_CHAR_ITEM($CharacterContext(),item);
 -		$GIVE_CHAR_ITEM($CharacterContext(),newItem);
--		$SET_CHAR_AGE(char, $GET_CHAR_AGE(char) +# 1);
+-		$SET_CHAR_AGE(chr, $GET_CHAR_AGE(chr) +# 1);
 -		$CastSpellOnTarget($CharacterContext(),"itemPotionSpeed");
 -	};
 \(END)

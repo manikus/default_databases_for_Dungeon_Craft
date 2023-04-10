@@ -3,7 +3,7 @@ name = IsSilenced
 [CanCastSpells] = $RETURN "N";
 [CharDisplayStatus] = $VAR exp; // expiration time
 -exp = $SA_PARAM_GET();
--$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$IF ($GET_PARTY_TIME() >=# exp){$SA_REMOVE();};
 -$SET_HOOK_PARAM( 7,"Silenced"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
 [Dispel] = $SA_REMOVE();
 \(END)

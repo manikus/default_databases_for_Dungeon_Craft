@@ -1,6 +1,6 @@
 \(BEGIN)
 name = $$Help
-Date = "March 7, 2020"
+Date = "April 10, 2023"
 Updates1_01 = "fixed spell_HoldAnimal, spell_HoldMonster, spell_HoldPersonCleric and spell_HoldPersonMU, updated/fixed FreeAttack-AttackOver and FreeAttack-CanFreeAttack, updated monster_SpellImmunity, IsImmuneSpells and IsImmuneSpellsMinor, fixed Global_Display to correctly show all character statuses"
 Updates1_02 = "fixed display issue to show dmg done by weapons in party members possession, updated STATUS display to reflect chganges to Damage Event, fixed context issue with spell_NeutralizePoison, all instances of $SET_CHARACTER_SA for IsHugged now $SET_COMBATANT_SA"
 Updates1_02 = "fixed spell_Sleep, changed Competing so that now roll of 20 always hits and roll of 1 always misses, monster_WeaponImmunity changed so that weapons will hit monster but only do damage if of appropriate magical level"
@@ -43,5 +43,6 @@ Updates230226 = "fixed player control issue and ranger initiative in Competing"
 Updates230314 = "modified class_MageScribe to check to see if spell is known before scribing it"
 Updates230328 = "modified the SAs IsBarkskinned, IsBestowedCurse, IsBrave, IsCharmed, IsConfused, IsConfusedExtended, IsDetectingEvil, IsDetectingGood, IsDetectingMagic, IsDispellingEvil, IsDispellingGood, IsEnlarged, IsEntangled0, IsFast, IsHolyDeafened, IsHolyParalyzed, IsHolyStunned, IsParalyzed, IsPraying, IsReduced, IsSilenced, IsSleeping, IsSlow, IsStunned, IsWebbed, monster_WeaponImmunity, spell_Confusion, spell_Enlarge, spell_HolyWord, spell_Paralysis, spell_Prayer, spell_Reduce, spell_Sleep, spell_UnholyWord; added the SAs IsAnesthetized, IsDetectingIllusion, IsDetectingSecretDoors, IsHolyParalyzed, IsKnowingAlignment, IsSeeingAstral, IsSeeingDisplaced, IsSeeingEthereal, IsSeeingInvisible, spell_Enlarge, spell_GelatinousCubeParalysis"
 Updates230405 = "corrected errors in monster_DragonSavingThrow"
+Updates230410 = "major changes to item_Scroll and casterLevel (depending on how the index bug works out, may be doing a lot more on casterLevel); updated CharDisplayStatus scripts for IsAnesthetized, IsBarkskinned, IsBestowedCurse, IsBlessed, IsCharmed, IsConfused, IsCursed, IsDetectingEvil, IsDetectingGood, IsDetectingIllusion, IsDetectingMagic, IsDetectingSecretDoors, IsDispellingGood, IsEntangled0, IsFast, IsHeld, IsHolyDeafened, IsHolyParalyzed, IsHolyStunned, IsImmuneNormalMissiles, IsLichFear, IsLichFear, IsParalyzed, IsPraying, IsSeeingDisplaced, IsSeeingEthereal, IsSeeingInvisible, IsShielded, sSilenced, and IsWebbed; updated item_Potion3 and item_Potion4"
 \(END)
 

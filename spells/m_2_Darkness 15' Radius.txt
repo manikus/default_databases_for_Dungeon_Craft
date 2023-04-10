@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Darkness 15' Radius|Mage
+name = Darkness 15' Radius|Magic User
 casting sound = sound_Cast.wav
 cast msg = /c makes it darker.
 missile sound = none

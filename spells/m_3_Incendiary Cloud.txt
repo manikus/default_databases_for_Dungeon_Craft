@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Incendiary Cloud|Mage
+name = Incendiary Cloud|Magic User
 casting sound = sound_Cast.wav
 cast msg = /c raises a thick smoke cloud.
 missile sound = none

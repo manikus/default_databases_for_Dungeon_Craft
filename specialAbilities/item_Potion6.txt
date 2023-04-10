@@ -1,20 +1,8 @@
 \(BEGIN)
 name = item_Potion6
-[CanExamineOrWhatever] = $SET_HOOK_PARAM( 5, "DRINK" );
--$SET_HOOK_PARAM( 6, 0 );
--$RETURN "Y";
-[ExamineOrWhatever] = $VAR me;
--$VAR item;
--$VAR newItem;
--$VAR age;
--$VAR rnd;
--$VAR result;
--me = $IndexOf($CharacterContext());
--item = "Potion|6";
--newItem = "Empty Bottle";
--rnd = $RANDOM(12) +# 1;
--age = $GET_CHAR_AGE(me);
--result = age -# rnd;
+[CanExamineOrWhatever] = $SET_HOOK_PARAM( 5, "DRINK" ); $SET_HOOK_PARAM( 6, 0 ); $RETURN "Y";
+[ExamineOrWhatever] = $VAR me; $VAR item; $VAR newItem; $VAR age; $VAR rnd; $VAR result;
+-me = $IndexOf($CharacterContext()); item = "Potion|6"; newItem = "Empty Bottle"; rnd = $RANDOM(12) +# 1; age = $GET_CHAR_AGE(me); result = age -# rnd;
 -$IF ($GET_CHAR_Ready($CharacterContext(), "WEAPON", 0) == item)
 -	{
 -		$TAKE_CHAR_ITEM($CharacterContext(),item);

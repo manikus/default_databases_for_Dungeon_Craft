@@ -1,19 +1,20 @@
 \(BEGIN)
 name = casterLevel
-[SpellCasterLevel] = $VAR atk; // attacker
--$VAR nom;
--$VAR list;
+[SpellCasterLevel] = $VAR atk; // the caster
+-$VAR anm; //name of the caster
+-$VAR list; // type and level OR adjustment to level
 -$VAR cls; // class of spell caster
 -$VAR adj; // level modifier
 -$VAR lvl; // level
+-//$DEBUG("casterLevel1");
 -atk = $IndexOf($AttackerContext());
--nom = $GET_CHAR_NAME(atk);
--list = $SA_PARAM_GET();
--cls = $DelimitedStringSubstring(list,0);
--adj = $DelimitedStringSubstring(list,1);
--lvl = $GET_CHAR_Lvl(atk,cls) -# adj;
--$IF (cls == "monster"){$RETURN $GET_MONSTERTYPE_SA(nom,"monsterLevel");};
--$IF (cls == "item"){$RETURN adj;}
--$ELSE {$RETURN lvl;};
+-anm = $GET_CHAR_NAME(atk); list = $SA_PARAM_GET(); cls = $DelimitedStringSubstring(list,0); adj = $DelimitedStringSubstring(list,1);
+-$IF (cls == "item") {lvl = adj;};
+-//$DEBUG("casterLevel2, lvl = "+lvl);
+-$IF (cls == "monster") {lvl = $GET_MONSTERTYPE_SA(anm,"monsterLevel");};
+-//$DEBUG("casterLevel3, lvl = "+lvl);
+-$IF ((cls != "item") && (cls != "monster")) {lvl = $GetBaseclassLevel(atk,cls) -# adj;};
+-//$DEBUG("casterLevel4, atk = "+atk+", cls = "+cls+", lvl = "+lvl+", adj = "+adj);
+-$RETURN lvl;
 \(END)
 

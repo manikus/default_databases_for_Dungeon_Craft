@@ -15578,14 +15578,7 @@ ROF per round = 1
 combat range = 1
 cost = 80
 hands to carry = 1
-baseclass = assassin
-baseclass = cleric
-baseclass = druid
-baseclass = fighter
-baseclass = magicUser
-baseclass = paladin
-baseclass = ranger
-baseclass = thief
+baseclass = all
 small/medium damage dice = 1D6 + 0
 large damage dice = 1D6 + 0
 AC base = 0
@@ -15600,7 +15593,7 @@ Special Ability = item_Potion
 bundle quantity = 1
 weapon type = not weapon
 ammo type = 
-usable = no
+usable = yes
 not magical = no
 scribtable = no
 can drop = yes
@@ -15624,14 +15617,7 @@ ROF per round = 1
 combat range = 1
 cost = 160
 hands to carry = 1
-baseclass = assassin
-baseclass = cleric
-baseclass = druid
-baseclass = fighter
-baseclass = magicUser
-baseclass = paladin
-baseclass = ranger
-baseclass = thief
+baseclass = all
 small/medium damage dice = 1D6 + 0
 large damage dice = 1D6 + 0
 AC base = 0
@@ -15646,7 +15632,7 @@ Special Ability = item_Potion1
 bundle quantity = 1
 weapon type = not weapon
 ammo type = 
-usable = no
+usable = yes
 not magical = no
 scribtable = no
 can drop = yes
@@ -15670,14 +15656,7 @@ ROF per round = 1
 combat range = 1
 cost = 32
 hands to carry = 1
-baseclass = assassin
-baseclass = cleric
-baseclass = druid
-baseclass = fighter
-baseclass = magicUser
-baseclass = paladin
-baseclass = ranger
-baseclass = thief
+baseclass = all
 small/medium damage dice = 1D6 + 0
 large damage dice = 1D6 + 0
 AC base = 0
@@ -15692,7 +15671,7 @@ Special Ability = item_Potion1a
 bundle quantity = 1
 weapon type = not weapon
 ammo type = 
-usable = no
+usable = yes
 not magical = no
 scribtable = no
 can drop = yes
@@ -15716,14 +15695,7 @@ ROF per round = 1
 combat range = 1
 cost = 32
 hands to carry = 1
-baseclass = assassin
-baseclass = cleric
-baseclass = druid
-baseclass = fighter
-baseclass = magicUser
-baseclass = paladin
-baseclass = ranger
-baseclass = thief
+baseclass = all
 small/medium damage dice = 1D6 + 0
 large damage dice = 1D6 + 0
 AC base = 0
@@ -15738,7 +15710,7 @@ Special Ability = item_Potion1b
 bundle quantity = 1
 weapon type = not weapon
 ammo type = 
-usable = no
+usable = yes
 not magical = no
 scribtable = no
 can drop = yes
@@ -15762,14 +15734,7 @@ ROF per round = 1
 combat range = 1
 cost = 100
 hands to carry = 1
-baseclass = cleric
-baseclass = druid
-baseclass = assassin
-baseclass = fighter
-baseclass = magicUser
-baseclass = paladin
-baseclass = ranger
-baseclass = thief
+baseclass = all
 small/medium damage dice = 1D6 + 0
 large damage dice = 1D6 + 0
 AC base = 0
@@ -15784,7 +15749,7 @@ Special Ability = item_Potion2
 bundle quantity = 1
 weapon type = not weapon
 ammo type = 
-usable = no
+usable = yes
 not magical = no
 scribtable = no
 can drop = yes
@@ -15793,7 +15758,7 @@ number of charges = 1
 Examine Event ID = 
 Examine Label = 
 recharge rate = never
-spell effect = itemPotionInvisibility
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -15808,14 +15773,7 @@ ROF per round = 1
 combat range = 1
 cost = 90
 hands to carry = 1
-baseclass = cleric
-baseclass = druid
-baseclass = assassin
-baseclass = fighter
-baseclass = magicUser
-baseclass = paladin
-baseclass = ranger
-baseclass = thief
+baseclass = all
 small/medium damage dice = 1D6 + 0
 large damage dice = 1D6 + 0
 AC base = 0
@@ -15830,7 +15788,7 @@ Special Ability = item_Potion3
 bundle quantity = 1
 weapon type = not weapon
 ammo type = 
-usable = no
+usable = yes
 not magical = no
 scribtable = no
 can drop = yes
@@ -15839,7 +15797,7 @@ number of charges = 1
 Examine Event ID = 
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = itemPotionSpeed
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -15871,7 +15829,7 @@ Special Ability = item_Potion4
 bundle quantity = 1
 weapon type = not weapon
 ammo type = 
-usable = no
+usable = yes
 not magical = no
 scribtable = no
 can drop = yes
@@ -15880,7 +15838,7 @@ number of charges = 1
 Examine Event ID = 
 Examine Label = 
 recharge rate = never
-spell effect = itemPotionGiantStrength
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -15895,14 +15853,7 @@ ROF per round = 1
 combat range = 1
 cost = 20
 hands to carry = 1
-baseclass = assassin
-baseclass = cleric
-baseclass = druid
-baseclass = fighter
-baseclass = magicUser
-baseclass = paladin
-baseclass = ranger
-baseclass = thief
+baseclass = all
 small/medium damage dice = 1D6 + 0
 large damage dice = 1D6 + 0
 AC base = 0
@@ -15917,7 +15868,7 @@ Special Ability = item_Potion5
 bundle quantity = 1
 weapon type = not weapon
 ammo type = 
-usable = no
+usable = yes
 not magical = no
 scribtable = no
 can drop = yes
@@ -15941,14 +15892,7 @@ ROF per round = 1
 combat range = 1
 cost = 2000
 hands to carry = 1
-baseclass = cleric
-baseclass = druid
-baseclass = assassin
-baseclass = fighter
-baseclass = magicUser
-baseclass = paladin
-baseclass = ranger
-baseclass = thief
+baseclass = all
 small/medium damage dice = 1D6 + 0
 large damage dice = 1D6 + 0
 AC base = 0
@@ -15963,7 +15907,7 @@ Special Ability = item_Potion6
 bundle quantity = 1
 weapon type = not weapon
 ammo type = 
-usable = no
+usable = yes
 not magical = no
 scribtable = no
 can drop = yes
@@ -16806,20 +16750,20 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll
 Special Ability = scribeSpell,Hold Monster
 weapon type = not weapon
 ammo type = 
 usable = yes
 not magical = no
-scribtable = no
+scribtable = yes
 can drop = yes
 CanHalveJoin = no
 number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Hold Monster
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -16847,20 +16791,20 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|1
 Special Ability = scribeSpell,Fire Touch
 weapon type = not weapon
 ammo type = 
 usable = yes
 not magical = no
-scribtable = no
+scribtable = yes
 can drop = yes
 CanHalveJoin = no
 number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Fire Touch
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -16888,20 +16832,20 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|2
 Special Ability = scribeSpell,Minor Globe of Invulnerability
 weapon type = not weapon
 ammo type = 
 usable = yes
 not magical = no
-scribtable = no
+scribtable = yes
 can drop = yes
 CanHalveJoin = no
 number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Minor Globe of Invulnerability
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -16929,20 +16873,20 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|3
 Special Ability = scribeSpell,Death Spell
 weapon type = not weapon
 ammo type = 
 usable = yes
 not magical = no
-scribtable = no
+scribtable = yes
 can drop = yes
 CanHalveJoin = no
 number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Death Spell
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -16970,20 +16914,20 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|4
 Special Ability = scribeSpell,Globe of Invulnerability
 weapon type = not weapon
 ammo type = 
 usable = yes
 not magical = no
-scribtable = no
+scribtable = yes
 can drop = yes
 CanHalveJoin = no
 number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Globe of Invulnerability
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -17011,20 +16955,20 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|5
 Special Ability = scribeSpell,Stone to Flesh
 weapon type = not weapon
 ammo type = 
 usable = yes
 not magical = no
-scribtable = no
+scribtable = yes
 can drop = yes
 CanHalveJoin = no
 number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Stone to Flesh
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -17052,20 +16996,20 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|6
 Special Ability = scribeSpell,Delayed Blast Fireball
 weapon type = not weapon
 ammo type = 
 usable = yes
 not magical = no
-scribtable = no
+scribtable = yes
 can drop = yes
 CanHalveJoin = no
 number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Delayed Blast Fireball
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -17093,20 +17037,20 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|7
 Special Ability = scribeSpell,Monster Summoning I
 weapon type = not weapon
 ammo type = 
 usable = yes
 not magical = no
-scribtable = no
+scribtable = yes
 can drop = yes
 CanHalveJoin = no
 number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Monster Summoning I
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -17134,20 +17078,20 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|9
 Special Ability = scribeSpell,Power Word\, Kill
 weapon type = not weapon
 ammo type = 
 usable = yes
 not magical = no
-scribtable = no
+scribtable = yes
 can drop = yes
 CanHalveJoin = no
 number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Power Word, Kill
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -17174,7 +17118,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|9
+Special Ability = scribeSpell,Restoration
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -17186,7 +17131,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Restoration
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -17213,7 +17158,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|10
+Special Ability = scribeSpell,Resurrection
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -17225,7 +17171,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Resurrection
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -17252,7 +17198,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|11
+Special Ability = scribeSpell,Destruction
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -17264,7 +17211,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Destruction
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -17291,7 +17238,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|12
+Special Ability = scribeSpell,Energy Drain
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -17303,7 +17251,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Energy Drain
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -17330,7 +17278,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|13
+Special Ability = scribeSpell,Blade Barrier
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -17342,7 +17291,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Blade Barrier
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -17370,20 +17319,20 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|14
 Special Ability = scribeSpell,Magic Missile
 weapon type = not weapon
 ammo type = 
 usable = yes
 not magical = no
-scribtable = no
+scribtable = yes
 can drop = yes
 CanHalveJoin = no
 number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Magic Missile
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -17411,20 +17360,20 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|15
 Special Ability = scribeSpell,Mirror Image
 weapon type = not weapon
 ammo type = 
 usable = yes
 not magical = no
-scribtable = no
+scribtable = yes
 can drop = yes
 CanHalveJoin = no
 number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Mirror Image
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -17452,20 +17401,20 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|16
 Special Ability = scribeSpell,Stinking Cloud
 weapon type = not weapon
 ammo type = 
 usable = yes
 not magical = no
-scribtable = no
+scribtable = yes
 can drop = yes
 CanHalveJoin = no
 number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Stinking Cloud
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -17493,20 +17442,20 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|17
 Special Ability = scribeSpell,Haste
 weapon type = not weapon
 ammo type = 
 usable = yes
 not magical = no
-scribtable = no
+scribtable = yes
 can drop = yes
 CanHalveJoin = no
 number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Haste
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -17534,20 +17483,20 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|18
 Special Ability = scribeSpell,Lightning Bolt
 weapon type = not weapon
 ammo type = 
 usable = yes
 not magical = no
-scribtable = no
+scribtable = yes
 can drop = yes
 CanHalveJoin = no
 number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Lightning Bolt
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -17562,7 +17511,13 @@ ROF per round = 1
 combat range = 1
 cost = 60
 hands to carry = 1
+baseclass = assassin
+baseclass = cleric
+baseclass = druid
+baseclass = fighter
 baseclass = magicUser
+baseclass = paladin
+baseclass = ranger
 baseclass = thief
 small/medium damage dice = 1D6 + 0
 large damage dice = 1D6 + 0
@@ -17575,7 +17530,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|19
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -17592,7 +17547,7 @@ spell effect = itemScrollImmuneDragonBreath
 
 // Cleric scrolls
 \(BEGIN)
-name = Scroll|Bless
+name = Scroll|CBless
 id name = Scroll of Bless
 launch sound = none
 hit sound = none
@@ -17615,7 +17570,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CBless
+Special Ability = scribeSpell,Bless
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -17627,7 +17583,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Bless
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -17654,7 +17610,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CCause Fear
+Special Ability = scribeSpell,Cause Fear|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -17666,12 +17623,12 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Cause Fear|Cleric
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll| Cause Light Wounds
-id name = Scroll of  Cause Light Wounds
+name = Scroll|CCause Light Wounds
+id name = Scroll of Cause Light Wounds
 launch sound = none
 hit sound = none
 miss sound = none
@@ -17693,7 +17650,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CCause Light Wounds
+Special Ability = scribeSpell,Cause Light Wounds
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -17705,7 +17663,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect =  Cause Light Wounds
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -17732,7 +17690,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CCommand
+Special Ability = scribeSpell,Command|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -17744,11 +17703,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Command|Cleric
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Cure Light Wounds
+name = Scroll|CCure Light Wounds
 id name = Scroll of Cure Light Wounds
 launch sound = none
 hit sound = none
@@ -17771,7 +17730,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CCure Light Wounds
+Special Ability = scribeSpell,Cure Light Wounds
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -17783,11 +17743,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Cure Light Wounds
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Curse
+name = Scroll|CCurse
 id name = Scroll of Curse
 launch sound = none
 hit sound = none
@@ -17810,7 +17770,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CCurse
+Special Ability = scribeSpell,Curse
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -17822,7 +17783,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Curse
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -17849,7 +17810,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CDarkness
+Special Ability = scribeSpell,Darkness|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -17861,12 +17823,12 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Darkness|Cleric
+spell effect = none
 \(END)
 
 \(BEGIN)
 name = Scroll|CDetect Magic
-id name = Scroll of Detect Magic
+id name = Scroll of Detect Magic (Cleric)
 launch sound = none
 hit sound = none
 miss sound = none
@@ -17888,7 +17850,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CDetect Magic
+Special Ability = scribeSpell,Detect Magic|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -17900,7 +17863,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Detect Magic|Cleric
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -17927,7 +17890,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll, Scroll|CLight
+Special Ability = scribeSpell,Light|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -17939,7 +17903,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Light|Cleric
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -17966,7 +17930,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CProtection From Evil
+Special Ability = scribeSpell,Protection From Evil|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -17978,7 +17943,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Protection From Evil|Cleric
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -18005,7 +17970,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CProtection From Good
+Special Ability = scribeSpell,Protection From Good|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -18017,7 +17983,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Protection From Good|Cleric
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -18044,7 +18010,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CRemove Fear
+Special Ability = scribeSpell,Remove Fear|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -18056,11 +18023,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Remove Fear|Cleric
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Resist Cold
+name = Scroll|CResist Cold
 id name = Scroll of Resist Cold
 launch sound = none
 hit sound = none
@@ -18083,7 +18050,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CResist Cold
+Special Ability = scribeSpell,Resist Cold
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -18095,7 +18063,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Resist Cold
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -18122,7 +18090,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CAid
+Special Ability = scribeSpell,Aid|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -18134,7 +18103,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Aid|Cleric
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -18161,7 +18130,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CContinual Darkness
+Special Ability = scribeSpell,Continual Darkness|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -18173,7 +18143,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Continual Darkness|Cleric
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -18200,7 +18170,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CContinual Light
+Special Ability = scribeSpell,Continual Light|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -18212,11 +18183,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Continual Light|Cleric
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Find Traps
+name = Scroll|CFind Traps
 id name = Scroll of Find Traps
 launch sound = none
 hit sound = none
@@ -18239,7 +18210,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CFind Traps
+Special Ability = scribeSpell,Find Traps
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -18251,11 +18223,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Find Traps
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Hold Person
+name = Scroll|CHold Person
 id name = Scroll of Hold Person
 launch sound = none
 hit sound = none
@@ -18278,7 +18250,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CHold Person
+Special Ability = scribeSpell,Hold Person
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -18290,11 +18263,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Hold Person
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Resist Fire
+name = Scroll|CResist Fire
 id name = Scroll of Resist Fire
 launch sound = none
 hit sound = none
@@ -18317,7 +18290,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CResist Fire
+Special Ability = scribeSpell,Resist Fire
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -18329,11 +18303,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Resist Fire
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Silence 15' Radius
+name = Scroll|CSilence 15' Radius
 id name = Scroll of Silence 15' Radius
 launch sound = none
 hit sound = none
@@ -18356,7 +18330,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,|CSilence 15' Radius
+Special Ability = scribeSpell,Silence 15' Radius
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -18368,11 +18343,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Silence 15' Radius
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Slow Poison
+name = Scroll|CSlow Poison
 id name = Scroll of Slow Poison
 launch sound = none
 hit sound = none
@@ -18395,7 +18370,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CSlow Poison
+Special Ability = scribeSpell,Slow Poison
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -18407,11 +18383,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Slow Poison
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Snake Charm
+name = Scroll|CSnake Charm
 id name = Scroll of Snake Charm
 launch sound = none
 hit sound = none
@@ -18434,7 +18410,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CSnake Charm
+Special Ability = scribeSpell,Snake Charm
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -18446,11 +18423,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Snake Charm
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Spiritual Hammer
+name = Scroll|CSpiritual Hammer
 id name = Scroll of Spiritual Hammer
 launch sound = none
 hit sound = none
@@ -18473,7 +18450,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CSpiritual Hammer
+Special Ability = scribeSpell,Spiritual Hammer
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -18485,11 +18463,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Spiritual Hammer
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Bestow Curse
+name = Scroll|CBestow Curse
 id name = Scroll of Bestow Curse
 launch sound = none
 hit sound = none
@@ -18512,7 +18490,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CBestow Curse
+Special Ability = scribeSpell,Bestow Curse
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -18524,11 +18503,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Bestow Curse
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Cause Blindness
+name = Scroll|CCause Blindness
 id name = Scroll of Cause Blindness
 launch sound = none
 hit sound = none
@@ -18551,7 +18530,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CCause Blindness
+Special Ability = scribeSpell,Cause Blindness
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -18563,11 +18543,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Cause Blindness
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Cause Disease
+name = Scroll|CCause Disease
 id name = Scroll of Cause Disease
 launch sound = none
 hit sound = none
@@ -18590,7 +18570,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CCause Disease
+Special Ability = scribeSpell,Cause Disease
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -18602,11 +18583,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Cause Disease
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Cure Blindness
+name = Scroll|CCure Blindness
 id name = Scroll of Cure Blindness
 launch sound = none
 hit sound = none
@@ -18629,7 +18610,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CCure Blindness
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -18645,7 +18626,7 @@ spell effect = Cure Blindness
 \(END)
 
 \(BEGIN)
-name = Scroll|Cure Disease
+name = Scroll|CCure Disease
 id name = Scroll of Cure Disease
 launch sound = none
 hit sound = none
@@ -18668,7 +18649,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CCure Disease
+Special Ability = scribeSpell,Cuse Disease
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -18680,12 +18662,12 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Cure Disease
+spell effect = none
 \(END)
 
 \(BEGIN)
 name = Scroll|CDispel Magic
-id name = Scroll of Dispel Magic
+id name = Scroll of Dispel Magic (Cleric)
 launch sound = none
 hit sound = none
 miss sound = none
@@ -18707,7 +18689,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CDispel Magic
+Special Ability = scribeSpell,Dispel Magic|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -18719,11 +18702,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Dispel Magic|Cleric
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Prayer
+name = Scroll|CPrayer
 id name = Scroll of Prayer
 launch sound = none
 hit sound = none
@@ -18746,7 +18729,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CPrayer
+Special Ability = scribeSpell,Prayer
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -18758,11 +18742,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Prayer
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Remove Curse
+name = Scroll|CRemove Curse
 id name = Scroll of Remove Curse
 launch sound = none
 hit sound = none
@@ -18785,7 +18769,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CRemove Curse
+Special Ability = scribeSpell,Remove Curse
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -18797,12 +18782,12 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Remove Curse
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll| Serious Wounds
-id name = Scroll of  Serious Wounds
+name = Scroll|CCause Serious Wounds
+id name = Scroll of Cause Serious Wounds
 launch sound = none
 hit sound = none
 miss sound = none
@@ -18824,7 +18809,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CCause Serious Wounds
+Special Ability = scribeSpell,Cause Serious Wounds
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -18836,11 +18822,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect =  Serious Wounds
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Cure Serious Wounds
+name = Scroll|CCure Serious Wounds
 id name = Scroll of Cure Serious Wounds
 launch sound = none
 hit sound = none
@@ -18863,7 +18849,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CCure Serious Wounds
+Special Ability = scribeSpell,Cure Serious Wounds
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -18875,11 +18862,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Cure Serious Wounds
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Neutralize Poison
+name = Scroll|CNeutralize Poison
 id name = Scroll of Neutralize Poison
 launch sound = none
 hit sound = none
@@ -18902,7 +18889,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CNeutralize Poison
+Special Ability = scribeSpell,Neutralize Poison
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -18914,11 +18902,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Neutralize Poison
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Poison
+name = Scroll|CPoison
 id name = Scroll of Poison
 launch sound = none
 hit sound = none
@@ -18941,7 +18929,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CPoison
+Special Ability = scribeSpell,Poison
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -18953,12 +18942,12 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Poison
+spell effect = none
 \(END)
 
 \(BEGIN)
 name = Scroll|CProtection From Evil 10' Radius
-id name = Scroll of Protection From Evil 10' Radius
+id name = Scroll of Protection From Evil 10' Radius (Cleric)
 launch sound = none
 hit sound = none
 miss sound = none
@@ -18980,7 +18969,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CProtection From Evil 10' Radius
+Special Ability = scribeSpell,Protection From Evil 10' Radius|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -18992,12 +18982,12 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Protection From Evil 10' Radius|Cleric
+spell effect = none
 \(END)
 
 \(BEGIN)
 name = Scroll|CProtection From Good 10' Radius
-id name = Scroll of Protection From Good 10' Radius
+id name = Scroll of Protection From Good 10' Radius (Cleric)
 launch sound = none
 hit sound = none
 miss sound = none
@@ -19019,7 +19009,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CProtection From Good 10' Radius
+Special Ability = scribeSpell,Protection From Good 10' Radius|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -19031,11 +19022,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Protection From Good 10' Radius|Cleric
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Sticks to Snakes
+name = Scroll|CSticks to Snakes
 id name = Scroll of Sticks to Snakes
 launch sound = none
 hit sound = none
@@ -19058,7 +19049,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CSticks to Snakes
+Special Ability = scribeSpell,Sticks to Snakes
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -19070,11 +19062,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Sticks to Snakes
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Cause Critical Wounds
+name = Scroll|CCause Critical Wounds
 id name = Scroll of Cause Critical Wounds
 launch sound = none
 hit sound = none
@@ -19097,7 +19089,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CCause Critical Wounds
+Special Ability = scribeSpell,Cause Critical Wounds
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -19109,11 +19102,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Cause Critical Wounds
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Cure Critical Wounds
+name = Scroll|CCure Critical Wounds
 id name = Scroll of Cure Critical Wounds
 launch sound = none
 hit sound = none
@@ -19136,7 +19129,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CCure Critical Wounds
+Special Ability = scribeSpell,Cure Critical Wounds
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -19148,11 +19142,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Cure Critical Wounds
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Dispel Evil
+name = Scroll|CDispel Evil
 id name = Scroll of Dispel Evil
 launch sound = none
 hit sound = none
@@ -19175,7 +19169,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CDispel Evil
+Special Ability = scribeSpell,Dispel Evil
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -19187,11 +19182,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Dispel Evil
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Dispel Good
+name = Scroll|CDispel Good
 id name = Scroll of Dispel Good
 launch sound = none
 hit sound = none
@@ -19214,7 +19209,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CDispel Good
+Special Ability = scribeSpell,Dispel Good
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -19226,7 +19222,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Dispel Good
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -19253,7 +19249,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CFalse Seeing
+Special Ability = scribeSpell,False Seeing|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -19265,11 +19262,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = False Seeing|Cleric
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Flame Strike
+name = Scroll|CFlame Strike
 id name = Scroll of Flame Strike
 launch sound = none
 hit sound = none
@@ -19292,7 +19289,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CFlame Strike
+Special Ability = scribeSpell,Flame Strike
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -19304,11 +19302,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Flame Strike
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Raise Dead
+name = Scroll|CRaise Dead
 id name = Scroll of Raise Dead
 launch sound = none
 hit sound = none
@@ -19331,7 +19329,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CRaise Dead
+Special Ability = scribeSpell,Raise Dead
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -19343,11 +19342,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Raise Dead
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Slay Living
+name = Scroll|CSlay Living
 id name = Scroll of Slay Living
 launch sound = none
 hit sound = none
@@ -19370,7 +19369,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CSlay Living
+Special Ability = scribeSpell,Slay Living
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -19382,7 +19382,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Slay Living
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -19409,7 +19409,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CTrue Seeing
+Special Ability = scribeSpell,True Seeing|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -19421,11 +19422,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = True Seeing|Cleric
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Harm
+name = Scroll|CHarm
 id name = Scroll of Harm
 launch sound = none
 hit sound = none
@@ -19448,7 +19449,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CHarm
+Special Ability = scribeSpell,Harm
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -19460,11 +19462,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Harm
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Heal
+name = Scroll|CHeal
 id name = Scroll of Heal
 launch sound = none
 hit sound = none
@@ -19487,7 +19489,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CHeal
+Special Ability = scribeSpell,Heal
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -19499,7 +19502,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Heal
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -19526,7 +19529,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CHoly Word
+Special Ability = scribeSpell,Holy Word|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -19538,7 +19542,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Holy Word|Cleric
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -19565,7 +19569,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CRegeneration
+Special Ability = scribeSpell,Regeneration|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -19577,7 +19582,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Regeneration|Cleric
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -19604,7 +19609,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CSymbol
+Special Ability = scribeSpell,Symbol|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -19616,7 +19622,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Symbol|Cleric
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -19643,7 +19649,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CUnholy Word
+Special Ability = scribeSpell,Unholy Word|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -19655,7 +19662,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Unholy Word|Cleric
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -19682,7 +19689,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = 
+Special Ability = item_Scroll,Scroll|CWither
+Special Ability = scribeSpell,Wither|Cleric
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -19694,12 +19702,12 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Wither|Cleric
+spell effect = none
 \(END)
 
 // Magic User scrolls
 \(BEGIN)
-name = Scroll|Burning Hands
+name = Scroll|MUBurning Hands
 id name = Scroll of Burning Hands
 launch sound = none
 hit sound = none
@@ -19723,20 +19731,20 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUBurning Hands
 Special Ability = scribeSpell,Burning Hands
 weapon type = not weapon
 ammo type = 
 usable = yes
 not magical = no
-scribtable = no
+scribtable = yes
 can drop = yes
 CanHalveJoin = no
 number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Burning Hands
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -19764,25 +19772,25 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUCharm Person
 Special Ability = scribeSpell,Charm Person
 weapon type = not weapon
 ammo type = 
 usable = yes
 not magical = no
-scribtable = no
+scribtable = yes
 can drop = yes
 CanHalveJoin = no
 number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Charm Person
+spell effect = none
 \(END)
 
 \(BEGIN)
 name = Scroll|MUDetect Magic
-id name = Scroll of Detect Magic
+id name = Scroll of Detect Magic (Magic User)
 launch sound = none
 hit sound = none
 miss sound = none
@@ -19805,24 +19813,24 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUDetect Magic
 Special Ability = scribeSpell,Detect Magic|MagicUser
 weapon type = not weapon
 ammo type = 
 usable = yes
 not magical = no
-scribtable = no
+scribtable = yes
 can drop = yes
 CanHalveJoin = no
 number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Detect Magic|MagicUser
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Enlarge
+name = Scroll|MUEnlarge
 id name = Scroll of Enlarge
 launch sound = none
 hit sound = none
@@ -19846,7 +19854,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUEnlarge
 Special Ability = scribeSpell,Enlarge
 weapon type = not weapon
 ammo type = 
@@ -19859,11 +19867,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Enlarge
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Friends
+name = Scroll|MUFriends
 id name = Scroll of Friends
 launch sound = none
 hit sound = none
@@ -19887,7 +19895,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUFriends
 Special Ability = scribeSpell,Friends
 weapon type = not weapon
 ammo type = 
@@ -19900,7 +19908,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Friends
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -19928,8 +19936,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
-Special Ability = scribeSpell,Light|Mage
+Special Ability = item_Scroll,Scroll|MULight
+Special Ability = scribeSpell,Light|Magic User
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -19941,12 +19949,12 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Light|Mage
+spell effect = none
 \(END)
 
 \(BEGIN)
 name = Scroll|MUProtection From Evil
-id name = Scroll of Protection From Evil
+id name = Scroll of Protection From Evil (Magic User)
 launch sound = none
 hit sound = none
 miss sound = none
@@ -19969,7 +19977,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUProtection From Evil
 Special Ability = scribeSpell,Protection From Evil|MagicUser
 weapon type = not weapon
 ammo type = 
@@ -19982,12 +19990,12 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Protection From Evil|MagicUser
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|MU Protection From Good
-id name = Scroll of  Protection From Good
+name = Scroll|MUProtection From Good
+id name = Scroll of  Protection From Good (Magic User)
 launch sound = none
 hit sound = none
 miss sound = none
@@ -20010,7 +20018,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUProtection From Good
 Special Ability = scribeSpell, Protection From Good|MagicUser
 weapon type = not weapon
 ammo type = 
@@ -20023,12 +20031,12 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect =  Protection From Good|MagicUser
+spell effect =  none
 \(END)
 
 \(BEGIN)
-name = Scroll| Read Magic
-id name = Scroll of  Read Magic
+name = Scroll|MURead Magic
+id name = Scroll of Read Magic
 launch sound = none
 hit sound = none
 miss sound = none
@@ -20051,8 +20059,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
-Special Ability = scribeSpell, Read Magic
+Special Ability = item_Scroll,Scroll|MURead Magic
+Special Ability = scribeSpell,Read Magic
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -20064,11 +20072,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect =  Read Magic
+spell effect =  none
 \(END)
 
 \(BEGIN)
-name = Scroll|Reduce
+name = Scroll|MUReduce
 id name = Scroll of Reduce
 launch sound = none
 hit sound = none
@@ -20092,7 +20100,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUReduce
 Special Ability = scribeSpell,Reduce
 weapon type = not weapon
 ammo type = 
@@ -20105,11 +20113,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Reduce
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Shield
+name = Scroll|MUShield
 id name = Scroll of Shield
 launch sound = none
 hit sound = none
@@ -20133,7 +20141,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUShield
 Special Ability = scribeSpell,Shield
 weapon type = not weapon
 ammo type = 
@@ -20146,11 +20154,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Shield
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Shocking Grasp
+name = Scroll|MUShocking Grasp
 id name = Scroll of Shocking Grasp
 launch sound = none
 hit sound = none
@@ -20174,7 +20182,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUShocking Grasp
 Special Ability = scribeSpell,Shocking Grasp
 weapon type = not weapon
 ammo type = 
@@ -20187,11 +20195,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Shocking Grasp
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Sleep
+name = Scroll|MUSleep
 id name = Scroll of Sleep
 launch sound = none
 hit sound = none
@@ -20215,7 +20223,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUSleep
 Special Ability = scribeSpell,Sleep
 weapon type = not weapon
 ammo type = 
@@ -20228,7 +20236,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Sleep
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -20256,8 +20264,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
-Special Ability = scribeSpell,Continual Light|Mage
+Special Ability = item_Scroll,Scroll|MUContinual Light
+Special Ability = scribeSpell,Continual Light|Magic User
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -20269,7 +20277,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Continual Light|Mage
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -20297,8 +20305,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
-Special Ability = scribeSpell,Darkness 15' Radius|Mage
+Special Ability = item_Scroll,Scroll|MUDarkness 15' Radius
+Special Ability = scribeSpell,Darkness 15' Radius|Magic User
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -20310,7 +20318,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Darkness 15' Radius|Mage
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -20351,7 +20359,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect =  Detect Evil
+spell effect =  none
 \(END)
 
 \(BEGIN)
@@ -20379,7 +20387,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUDetect Good
 Special Ability = scribeSpell,Detect Good
 weapon type = not weapon
 ammo type = 
@@ -20392,11 +20400,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Detect Good
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Detect Invisibility
+name = Scroll|MUDetect Invisibility
 id name = Scroll of Detect Invisibility
 launch sound = none
 hit sound = none
@@ -20420,7 +20428,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUDetect Invisibility
 Special Ability = scribeSpell,Detect Invisibility
 weapon type = not weapon
 ammo type = 
@@ -20433,11 +20441,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Detect Invisibility
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Invisibility
+name = Scroll|MUInvisibility
 id name = Scroll of Invisibility
 launch sound = none
 hit sound = none
@@ -20461,7 +20469,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUInvisibility
 Special Ability = scribeSpell,Invisibility
 weapon type = not weapon
 ammo type = 
@@ -20474,11 +20482,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Invisibility
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Knock
+name = Scroll|MUKnock
 id name = Scroll of Knock
 launch sound = none
 hit sound = none
@@ -20502,7 +20510,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUKnock
 Special Ability = scribeSpell,Knock
 weapon type = not weapon
 ammo type = 
@@ -20515,11 +20523,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Knock
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Know Alignment
+name = Scroll|MUKnow Alignment
 id name = Scroll of Know Alignment
 launch sound = none
 hit sound = none
@@ -20543,7 +20551,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUKnow Alignment
 Special Ability = scribeSpell,Know Alignment
 weapon type = not weapon
 ammo type = 
@@ -20556,7 +20564,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Know Alignment
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -20584,8 +20592,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
-Special Ability = scribeSpell,Pyrotechnics|Mage
+Special Ability = item_Scroll,Scroll|MUPyrotechnics
+Special Ability = scribeSpell,Pyrotechnics|Magic User
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -20597,11 +20605,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Pyrotechnics|Mage
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Ray of Enfeeblement
+name = Scroll|MURay of Enfeeblement
 id name = Scroll of Ray of Enfeeblement
 launch sound = none
 hit sound = none
@@ -20625,7 +20633,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MURay of Enfeeblement
 Special Ability = scribeSpell,Ray of Enfeeblement
 weapon type = not weapon
 ammo type = 
@@ -20638,11 +20646,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Ray of Enfeeblement
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Strength
+name = Scroll|MUStrength
 id name = Scroll of Strength
 launch sound = none
 hit sound = none
@@ -20666,7 +20674,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUStrength
 Special Ability = scribeSpell,Strength
 weapon type = not weapon
 ammo type = 
@@ -20679,7 +20687,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Strength
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -20707,8 +20715,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
-Special Ability = scribeSpell,Web|Mage
+Special Ability = item_Scroll,Scroll|MUWeb
+Special Ability = scribeSpell,Web|Magic User
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -20720,11 +20728,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Web|Mage
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Blink
+name = Scroll|MUBlink
 id name = Scroll of Blink
 launch sound = none
 hit sound = none
@@ -20748,7 +20756,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUBlink
 Special Ability = scribeSpell,Blink
 weapon type = not weapon
 ammo type = 
@@ -20761,12 +20769,12 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Blink
+spell effect = none
 \(END)
 
 \(BEGIN)
 name = Scroll|MUDispel Magic
-id name = Scroll of Dispel Magic
+id name = Scroll of Dispel Magic (Mgic User)
 launch sound = none
 hit sound = none
 miss sound = none
@@ -20789,8 +20797,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
-Special Ability = scribeSpell,Dispel Magic|Wizard
+Special Ability = item_Scroll,Scroll|MUDispel Magic
+Special Ability = scribeSpell,Dispel Magic|Magic User
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -20802,11 +20810,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Dispel Magic|Wizard
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Fireball
+name = Scroll|MUFireball
 id name = Scroll of Fireball
 launch sound = none
 hit sound = none
@@ -20830,7 +20838,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUFireball
 Special Ability = scribeSpell,Fireball
 weapon type = not weapon
 ammo type = 
@@ -20843,7 +20851,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Fireball
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -20871,8 +20879,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
-Special Ability = scribeSpell,Hold Person|Wizard
+Special Ability = item_Scroll,Scroll|MUHold Person
+Special Ability = scribeSpell,Hold Person|Magic User
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -20884,7 +20892,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Hold Person|Wizard
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -20912,8 +20920,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
-Special Ability = scribeSpell,Incendiary Cloud|Mage
+Special Ability = item_Scroll,Scroll|MUIncendiary Cloud
+Special Ability = scribeSpell,Incendiary Cloud|Magic User
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -20925,11 +20933,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Incendiary Cloud|Mage
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Invisibility 10' Radius
+name = Scroll|MUInvisibility 10' Radius
 id name = Scroll of Invisibility 10' Radius
 launch sound = none
 hit sound = none
@@ -20953,7 +20961,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUInvisibility 10' Radius
 Special Ability = scribeSpell,Invisibility 10' Radius
 weapon type = not weapon
 ammo type = 
@@ -20966,12 +20974,12 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Invisibility 10' Radius
+spell effect = none
 \(END)
 
 \(BEGIN)
 name = Scroll|MUProtection From Evil 10' Radius
-id name = Scroll of Protection From Evil 10' Radius
+id name = Scroll of Protection From Evil 10' Radius (Magic User)
 launch sound = none
 hit sound = none
 miss sound = none
@@ -20994,8 +21002,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
-Special Ability = scribeSpell,Protection From Evil 10' Radius|Wizard
+Special Ability = item_Scroll,Scroll|MUProtection From Evil 10' Radius
+Special Ability = scribeSpell,Protection From Evil 10' Radius|Magic User
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -21007,12 +21015,12 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Protection From Evil 10' Radius|Wizard
+spell effect = none
 \(END)
 
 \(BEGIN)
 name = Scroll|MUProtection From Good 10' Radius
-id name = Scroll of Protection From Good 10' Radius
+id name = Scroll of Protection From Good 10' Radius (Magic User)
 launch sound = none
 hit sound = none
 miss sound = none
@@ -21035,8 +21043,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
-Special Ability = scribeSpell,Protection From Good 10' Radius|Wizard
+Special Ability = item_Scroll,Scroll|MUProtection From Good 10' Radius
+Special Ability = scribeSpell,Protection From Good 10' Radius|Magic User
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -21048,11 +21056,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Protection From Good 10' Radius|Wizard
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Protection from Normal Missiles
+name = Scroll|MUProtection from Normal Missiles
 id name = Scroll of Protection from Normal Missiles
 launch sound = none
 hit sound = none
@@ -21076,7 +21084,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUProtection from Normal Missiles
 Special Ability = scribeSpell,Protection from Normal Missiles
 weapon type = not weapon
 ammo type = 
@@ -21089,11 +21097,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Protection from Normal Missiles
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Slow
+name = Scroll|MUSlow
 id name = Scroll of Slow
 launch sound = none
 hit sound = none
@@ -21117,7 +21125,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUSlow
 Special Ability = scribeSpell,Slow
 weapon type = not weapon
 ammo type = 
@@ -21130,7 +21138,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Slow
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -21158,8 +21166,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
-Special Ability = scribeSpell,Bestow Curse|Wizard
+Special Ability = item_Scroll,Scroll|MUBestow Curse
+Special Ability = scribeSpell,Bestow Curse|Magic User
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -21171,11 +21179,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Bestow Curse|Wizard
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Charm Monster
+name = Scroll|MUCharm Monster
 id name = Scroll of Charm Monster
 launch sound = none
 hit sound = none
@@ -21199,7 +21207,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUCharm Monster
 Special Ability = scribeSpell,Charm Monster
 weapon type = not weapon
 ammo type = 
@@ -21212,11 +21220,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Charm Monster
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Confusion
+name = Scroll|MUConfusion
 id name = Scroll of Confusion
 launch sound = none
 hit sound = none
@@ -21240,7 +21248,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUConfusion
 Special Ability = scribeSpell,Confusion
 weapon type = not weapon
 ammo type = 
@@ -21253,11 +21261,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Confusion
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Dimension Door
+name = Scroll|MUDimension Door
 id name = Scroll of Dimension Door
 launch sound = none
 hit sound = none
@@ -21281,7 +21289,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUDimension Door
 Special Ability = scribeSpell,Dimension Door
 weapon type = not weapon
 ammo type = 
@@ -21294,11 +21302,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Dimension Door
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Fear
+name = Scroll|MUFear
 id name = Scroll of Fear
 launch sound = none
 hit sound = none
@@ -21322,7 +21330,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUFear
 Special Ability = scribeSpell,Fear
 weapon type = not weapon
 ammo type = 
@@ -21335,11 +21343,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Fear
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Fire Shield
+name = Scroll|MUFire Shield
 id name = Scroll of Fire Shield
 launch sound = none
 hit sound = none
@@ -21363,7 +21371,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUFire Shield
 Special Ability = scribeSpell,Fire Shield
 weapon type = not weapon
 ammo type = 
@@ -21376,11 +21384,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Fire Shield
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Fumble
+name = Scroll|MUFumble
 id name = Scroll of Fumble
 launch sound = none
 hit sound = none
@@ -21404,7 +21412,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUFumble
 Special Ability = scribeSpell,Fumble
 weapon type = not weapon
 ammo type = 
@@ -21421,7 +21429,7 @@ spell effect = Fumble
 \(END)
 
 \(BEGIN)
-name = Scroll|Ice Storm
+name = Scroll|MUIce Storm
 id name = Scroll of Ice Storm
 launch sound = none
 hit sound = none
@@ -21445,7 +21453,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUIce Storm
 Special Ability = scribeSpell,Ice Storm
 weapon type = not weapon
 ammo type = 
@@ -21458,11 +21466,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Ice Storm
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Monster Summoning II
+name = Scroll|MUMonster Summoning II
 id name = Scroll of Monster Summoning II
 launch sound = none
 hit sound = none
@@ -21486,7 +21494,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUMonster Summoning II
 Special Ability = scribeSpell,Monster Summoning II
 weapon type = not weapon
 ammo type = 
@@ -21499,7 +21507,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Monster Summoning II
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -21527,8 +21535,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
-Special Ability = scribeSpell,Remove Curse|Wizard
+Special Ability = item_Scroll,Scroll|MURemove Curse
+Special Ability = scribeSpell,Remove Curse|Magic User
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -21540,11 +21548,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Remove Curse|Wizard
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Cloudkill
+name = Scroll|MUCloudkill
 id name = Scroll of Cloudkill
 launch sound = none
 hit sound = none
@@ -21568,7 +21576,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUCloudkill
 Special Ability = scribeSpell,Cloudkill
 weapon type = not weapon
 ammo type = 
@@ -21581,11 +21589,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Cloudkill
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Cone of Cold
+name = Scroll|MUCone of Cold
 id name = Scroll of Cone of Cold
 launch sound = none
 hit sound = none
@@ -21609,7 +21617,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUCone of Cold
 Special Ability = scribeSpell,Cone of Cold
 weapon type = not weapon
 ammo type = 
@@ -21622,11 +21630,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Cone of Cold
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Conjure Air Elemental
+name = Scroll|MUConjure Air Elemental
 id name = Scroll of Conjure Air Elemental
 launch sound = none
 hit sound = none
@@ -21650,7 +21658,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUConjure Air Elemental
 Special Ability = scribeSpell,Conjure Air Elemental
 weapon type = not weapon
 ammo type = 
@@ -21663,11 +21671,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Conjure Air Elemental
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Conjure Earth Elemental
+name = Scroll|MUConjure Earth Elemental
 id name = Scroll of Conjure Earth Elemental
 launch sound = none
 hit sound = none
@@ -21691,7 +21699,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUConjure Earth Elemental
 Special Ability = scribeSpell,Conjure Earth Elemental
 weapon type = not weapon
 ammo type = 
@@ -21704,11 +21712,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Conjure Earth Elemental
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Conjure Fire Elemental
+name = Scroll|MUConjure Fire Elemental
 id name = Scroll of Conjure Fire Elemental
 launch sound = none
 hit sound = none
@@ -21732,7 +21740,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUConjure Fire Elemental
 Special Ability = scribeSpell,Conjure Fire Elemental
 weapon type = not weapon
 ammo type = 
@@ -21745,11 +21753,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Conjure Fire Elemental
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Conjure Water Elemental
+name = Scroll|MUConjure Water Elemental
 id name = Scroll of Conjure Water Elemental
 launch sound = none
 hit sound = none
@@ -21773,7 +21781,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUConjure Water Elemental
 Special Ability = scribeSpell,Conjure Water Elemental
 weapon type = not weapon
 ammo type = 
@@ -21786,11 +21794,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Conjure Water Elemental
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Feeblemind
+name = Scroll|MUFeeblemind
 id name = Scroll of Feeblemind
 launch sound = none
 hit sound = none
@@ -21814,7 +21822,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUFeeblemind
 Special Ability = scribeSpell,Feeblemind
 weapon type = not weapon
 ammo type = 
@@ -21827,11 +21835,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Feeblemind
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Monster Summoning III
+name = Scroll|MUMonster Summoning III
 id name = Scroll of Monster Summoning III
 launch sound = none
 hit sound = none
@@ -21855,7 +21863,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUMonster Summoning III
 Special Ability = scribeSpell,Monster Summoning III
 weapon type = not weapon
 ammo type = 
@@ -21868,11 +21876,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Monster Summoning III
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Protection from Acid
+name = Scroll|MUProtection from Acid
 id name = Scroll of Protection from Acid
 launch sound = none
 hit sound = none
@@ -21896,7 +21904,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUProtection from Acid
 Special Ability = scribeSpell,Protection from Acid
 weapon type = not weapon
 ammo type = 
@@ -21909,11 +21917,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Protection from Acid
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Transmute Rock To Mud
+name = Scroll|MUTransmute Rock To Mud
 id name = Scroll of Transmute Rock To Mud
 launch sound = none
 hit sound = none
@@ -21937,8 +21945,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
-Special Ability = scribeSpell,Transmute Rock To Mud|Wizard
+Special Ability = item_Scroll,Scroll|MUTransmute Rock To Mud
+Special Ability = scribeSpell,Transmute Rock To Mud|Magic User
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -21950,7 +21958,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Transmute Rock To Mud|Wizard
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -21978,8 +21986,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
-Special Ability = scribeSpell,Wall Of Stone|Wizard
+Special Ability = item_Scroll,Scroll|MUWall Of Stone
+Special Ability = scribeSpell,Wall Of Stone|Magic User
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -21991,7 +21999,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Wall Of Stone|Wizard
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -22019,8 +22027,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
-Special Ability = scribeSpell,Chain Lightning|Mage
+Special Ability = item_Scroll,Scroll|MUChain Lightning
+Special Ability = scribeSpell,Chain Lightning|Magic User
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -22032,11 +22040,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Chain Lightning|Mage
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Disintegrate
+name = Scroll|MUDisintegrate
 id name = Scroll of Disintegrate
 launch sound = none
 hit sound = none
@@ -22060,7 +22068,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUDisintegrate
 Special Ability = scribeSpell,Disintegrate
 weapon type = not weapon
 ammo type = 
@@ -22073,11 +22081,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Disintegrate
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Flesh to Stone
+name = Scroll|MUFlesh to Stone
 id name = Scroll of Flesh to Stone
 launch sound = none
 hit sound = none
@@ -22101,7 +22109,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUFlesh to Stone
 Special Ability = scribeSpell,Flesh to Stone
 weapon type = not weapon
 ammo type = 
@@ -22114,7 +22122,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Flesh to Stone
+spell effect = none
 \(END)
 
 \(BEGIN)
@@ -22142,8 +22150,8 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
-Special Ability = scribeSpell,Geas|Mage
+Special Ability = item_Scroll,Scroll|MUGeas
+Special Ability = scribeSpell,Geas|Magic User
 weapon type = not weapon
 ammo type = 
 usable = yes
@@ -22155,11 +22163,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Geas|Mage
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Invisible Stalker
+name = Scroll|MUInvisible Stalker
 id name = Scroll of Invisible Stalker
 launch sound = none
 hit sound = none
@@ -22183,7 +22191,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUInvisible Stalker
 Special Ability = scribeSpell,Invisible Stalker
 weapon type = not weapon
 ammo type = 
@@ -22196,11 +22204,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Invisible Stalker
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Monster Summoning IV
+name = Scroll|MUMonster Summoning IV
 id name = Scroll of Monster Summoning IV
 launch sound = none
 hit sound = none
@@ -22224,7 +22232,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUMonster Summoning IV
 Special Ability = scribeSpell,Monster Summoning IV
 weapon type = not weapon
 ammo type = 
@@ -22237,11 +22245,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Monster Summoning IV
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Power Word, Silence
+name = Scroll|MUPower Word, Silence
 id name = Scroll of Power Word, Silence
 launch sound = none
 hit sound = none
@@ -22265,7 +22273,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUPower Word, Silence
 Special Ability = scribeSpell,Power Word\, Silence
 weapon type = not weapon
 ammo type = 
@@ -22278,11 +22286,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Power Word, Silence
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Charm Plants
+name = Scroll|MUCharm Plants
 id name = Scroll of Charm Plants
 launch sound = none
 hit sound = none
@@ -22306,7 +22314,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUCharm Plants
 Special Ability = scribeSpell,Charm Plants
 weapon type = not weapon
 ammo type = 
@@ -22319,11 +22327,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Charm Plants
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Mass Invisibility
+name = Scroll|MUMass Invisibility
 id name = Scroll of Mass Invisibility
 launch sound = none
 hit sound = none
@@ -22347,7 +22355,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUMass Invisibility
 Special Ability = scribeSpell,Mass Invisibility
 weapon type = not weapon
 ammo type = 
@@ -22360,11 +22368,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Mass Invisibility
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Monster Summoning V
+name = Scroll|MUMonster Summoning V
 id name = Scroll of Monster Summoning V
 launch sound = none
 hit sound = none
@@ -22388,7 +22396,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,|MUMonster Summoning V
 Special Ability = scribeSpell,Monster Summoning V
 weapon type = not weapon
 ammo type = 
@@ -22401,11 +22409,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Monster Summoning V
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Power Word, Stun
+name = Scroll|MUPower Word, Stun
 id name = Scroll of Power Word, Stun
 launch sound = none
 hit sound = none
@@ -22429,7 +22437,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUPower Word, Stun
 Special Ability = scribeSpell,Power Word\, Stun
 weapon type = not weapon
 ammo type = 
@@ -22442,11 +22450,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Power Word, Stun
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Mass Charm
+name = Scroll|MUMass Charm
 id name = Scroll of Mass Charm
 launch sound = none
 hit sound = none
@@ -22470,7 +22478,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUMass Charm
 Special Ability = scribeSpell,Mass Charm
 weapon type = not weapon
 ammo type = 
@@ -22483,11 +22491,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Mass Charm
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Mind Blank
+name = Scroll|MUMind Blank
 id name = Scroll of Mind Blank
 launch sound = none
 hit sound = none
@@ -22511,7 +22519,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUMind Blank
 Special Ability = scribeSpell,Mind Blank
 weapon type = not weapon
 ammo type = 
@@ -22524,11 +22532,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Mind Blank
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Monster Summoning VI
+name = Scroll|MUMonster Summoning VI
 id name = Scroll of Monster Summoning VI
 launch sound = none
 hit sound = none
@@ -22552,7 +22560,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUMonster Summoning VI
 Special Ability = scribeSpell,Monster Summoning VI
 weapon type = not weapon
 ammo type = 
@@ -22565,11 +22573,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Monster Summoning VI
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Otto's Irresistible Dance
+name = Scroll|MUOtto's Irresistible Dance
 id name = Scroll of Otto's Irresistible Dance
 launch sound = none
 hit sound = none
@@ -22593,7 +22601,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUOtto's Irresistible Dance
 Special Ability = scribeSpell,Otto's Irresistible Dance
 weapon type = not weapon
 ammo type = 
@@ -22606,11 +22614,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Otto's Irresistible Dance
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Power Word, Blind
+name = Scroll|MUPower Word, Blind
 id name = Scroll of Power Word, Blind
 launch sound = none
 hit sound = none
@@ -22634,7 +22642,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUPower Word, Blind
 Special Ability = scribeSpell,Power Word\, Blind
 weapon type = not weapon
 ammo type = 
@@ -22647,11 +22655,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Power Word, Blind
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Imprisonment
+name = Scroll|MUImprisonment
 id name = Scroll of Imprisonment
 launch sound = none
 hit sound = none
@@ -22675,7 +22683,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUImprisonment
 Special Ability = scribeSpell,Imprisonment
 weapon type = not weapon
 ammo type = 
@@ -22688,11 +22696,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Imprisonment
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Meteor Swarm
+name = Scroll|MUMeteor Swarm
 id name = Scroll of Meteor Swarm
 launch sound = none
 hit sound = none
@@ -22716,7 +22724,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUMeteor Swarm
 Special Ability = scribeSpell,Meteor Swarm
 weapon type = not weapon
 ammo type = 
@@ -22729,11 +22737,11 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Meteor Swarm
+spell effect = none
 \(END)
 
 \(BEGIN)
-name = Scroll|Monster Summoning VII
+name = Scroll|MUMonster Summoning VII
 id name = Scroll of Monster Summoning VII
 launch sound = none
 hit sound = none
@@ -22757,7 +22765,7 @@ cursed = no
 non lethal = no
 readied location = WEAPON
 bundle quantity = 1
-Special Ability = item_Scroll,magicUser
+Special Ability = item_Scroll,Scroll|MUMonster Summoning VII
 Special Ability = scribeSpell,Monster Summoning VII
 weapon type = not weapon
 ammo type = 
@@ -22770,47 +22778,7 @@ number of charges = 1
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Monster Summoning VII
-\(END)
-
-\(BEGIN)
-name = Scroll|19
-id name = Scroll of Protection From Dragon Breath
-launch sound = none
-hit sound = none
-miss sound = none
-missile sprite = none
-hit sprite = none
-ROF per round = 1
-combat range = 1
-cost = 60
-hands to carry = 1
-baseclass = magicUser
-baseclass = thief
-small/medium damage dice = 1D6 + 0
-large damage dice = 1D6 + 0
-AC base = 0
-AC bonus = 0
-attack bonus = 0
-experience = 0
-encumbrance = 1
-cursed = no
-non lethal = no
-readied location = WEAPON
-bundle quantity = 1
-Special Ability = item_Scroll,magicUser
-weapon type = not weapon
-ammo type = 
-usable = yes
-not magical = no
-scribtable = no
-can drop = yes
-CanHalveJoin = no
-number of charges = 1
-Examine Event ID = 0
-Examine Label = EXAMINE
-recharge rate = never
-spell effect = itemScrollImmuneDragonBreath
+spell effect = none
 \(END)
 
 // wands
@@ -24761,7 +24729,7 @@ not magical = no
 scribtable = no
 can drop = yes
 CanHalveJoin = yes
-1number of charges = 0
+number of charges = 0
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
@@ -26736,7 +26704,7 @@ number of charges = 0
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Continual Light|Mage
+spell effect = Continual Light|Magic User
 \(END)
 
 n\(BEGIN)
@@ -27706,7 +27674,7 @@ number of charges = 0
 Examine Event ID = 0
 Examine Label = EXAMINE
 recharge rate = never
-spell effect = Light|Mage
+spell effect = Light|Magic User
 \(END)
 
 \(BEGIN)
@@ -29720,7 +29688,7 @@ spell effect = monsterWinterWolfBreathWeapon
 \(BEGIN)
 name = $$Help
 id name = 
-Special Ability = Date,"March 14, 2023"
+Special Ability = Date,"April 10, 2023"
 Special Ability = Updates1_01,"added monsterClericCauseCriticalWounds spellcaster item"
 Special Ability = Updates1_03,"added monsterClericBladeBarrier, monsterClericBless, monsterClericCureCriticalWounds, monsterCureLightWounds, monsterCureASeriousWounds, monsterClericCurse, monsterClericDestruction, monsterClericDispelMagic, monsterClericEnergyDrain, monsterClericFindTraps, monsterClericHarm, monsterClericHeal, monsterClericIronSkin, monsterClericPoison, monsterClericPrayer, monsterCLericProtectionFromEvil, monsterClericResistCold, monsterClericResistFire, monsterDruidEntangle, monsterDruidFaerieFire, monsterMageBestowCurse, monsterMageBurningHands, monsterMageCloudkill, monsterMageConeofCold, monsterMageConfusion, monsterMageDeath, monsterMageDelayedBlastFireball, monsterMageDetectInvisibility, monsterMageDetectMagic, monsterMageDisintegrate, monsterMageDispelMagic, monsterMageEnlarge, monsterMageFear, monsterMageFeeblemind, monsterMageFireShield, monsterMageFireTouch, monsterMageFleshtoStone, monsterMageFumble, monsterMageGlobeofInvulnerability, monsterMageHaste, monsterMageInvisibility, monsterMageKnock, monsterMageLightningBolt, monsterMassCharm, monsterMeteorSwarm, monsterMinorGlobeofInvulnerability, monsterMageMindBlank, monsterMageOttosIrresistibleDance, monsterMagePowerWordKill, monsterMageProtectionfromEvil10Radius, monsterMageRayofEnfeeblement, monsterMageShield, monsterMageShockingGrasp, monsterMageSlow, removed monsterClericSpiritualHammer"
 Special Ability = Updates1_04,"added Gauntlets of Dexterity, Cursed Long Sword -3, Cursed Short Sword -2, Cursed Hammer -2, Cursed Mace -3, Cursed Quarter Staff -3, Cursed Dagger -2, monsterDjinniWhirlwind, monsterMaridWaterJet, monsterRockToMud, monsterWallOfStone"
@@ -29733,103 +29701,6 @@ Special Ability = Update230314,"modified existing magic-user scrolls to check if
 Special Ability = Update230317,"added missing spell effect to Necklace of Missiles, fixed typo in monsterClericCauseFear"
 Special Ability = Update230317,"fixed monsterClericCauseFear to make it usable and have charges"
 Special Ability = Update230321,"added missing spell effects to Eyes of Charming, Necklace of Missiles, Potion of Giant Strength, Potion of Invisibility, Potion of Speed"
+Special Ability = Update230410,"updated ptions of Speed, Giant Strength and Invisibility; all scrolls have been updated and magic user scrolls should be scribable"
 \(END)
-
-// cleric spell items by level
-// level 1
-//	monsterClericBless
-//	monsterClericCauseLightWounds
-//	monsterClericCureLightWounds
-//	monsterClericCurse
-//	monsterClericProtectionfromEvil
-//	monsterClericProtectionFromGood
-//	monsterClericResistCold
-// level 2
-//	monsterClericFindTraps
-//	monsterClericHoldPerson
-//	monsterClericResistFire
-//	monsterClericSilence
-// level 3
-//	monsterClericCauseBlindness
-//	monsterClericCauseDisease
-//	monsterClericDispelMagic
-//	monsterClericPrayer
-// level 4
-//	monsterClericCauseSeriousWounds
-//	monsterClericCureSeriousWounds
-//	monsterClericPoison
-//	monsterClericSticksToSnakes
-// level 5
-//	monsterClericCauseCriticalWounds
-//	monsterClericCureCriticalWounds
-//	monsterClericFlameStrike
-//	monsterClericSlayLiving
-// level 6
-//	monsterClericBladeBarrier
-//	monsterClericHarm
-//	monsterClericHeal
-// level 7
-//	monsterClericDestruction
-//	monsterClericEnergyDrain
-//
-// druid spell items by level
-// level 1
-//	monsterDruidEntangle
-//	monsterDruidFaerieFire
-//
-// magic user spell items by level
-// level 1
-//	monsterMageBurningHands
-//	monsterMageCharmPerson
-//	monsterMageDetectMagic
-//	monsterMageEnlarge
-//	monsterMageMagicMissile
-//	monsterMageReduce
-//	monsterMageShield
-//	monsterMageShockingGrasp
-//	monsterMageSleep
-// level 2
-//	monsterMageDetectInvisibility
-//	monsterMageInvisibility
-//	monsterMageKnock
-//	monsterMageMirrorImage
-//	monsterMageRayofEnfeeblement
-//	monsterMageStinkingCloud
-// level 3
-//	monsterMageDispelMagic
-//	monsterMageFireball
-//	monsterMageHaste
-//	monsterMageHoldPerson
-//	monsterMageLightningBolt
-//	monsterMageProtectionfromEvil10Radius
-//	monsterMageSlow
-// level 4
-//	monsterMageBestowCurse
-//	monsterMageCharmMonster
-//	monsterMageConfusion
-//	monsterMageFear
-//	monsterMageFireShield
-//	monsterMageFumble
-//	monsterMageIceStorm
-//	monsterMageMinGlobeofInvulnerability
-// level 5
-//	monsterMageCloudkill
-//	monsterMageConeofCold
-//	monsterMageFeeblemind
-//	monsterMageFireTouch
-//	monsterMageHoldMonster
-// level 6
-//	monsterMageDeath
-//	monsterMageDisintegrate
-//	monsterMageFleshtoStone
-//	monsterMageGlobeofInvulnerability
-// level 7
-//	monsterMageDelayedBlastFireball
-// level 8
-//	monsterMageMassCharm
-//	monsterMageMindBlank
-//	monsterMageOttosIrresistibleDance
-// level 9
-//	monsterMageMeteorSwarm
-//	monsterMagePowerWordKill
 

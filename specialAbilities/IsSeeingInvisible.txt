@@ -2,7 +2,7 @@
 name = IsSeeingInvisible
 [CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
 -exp = $SA_PARAM_GET();
--$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
+-$IF ($GET_PARTY_TIME() >=# exp){$SA_REMOVE();};
 -$SET_HOOK_PARAM( 7,"Seeing Invisible"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
 \(END)
 

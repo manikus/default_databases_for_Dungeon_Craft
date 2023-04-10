@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Continual Light|Mage
+name = Continual Light|Magic User
 casting sound = sound_Cast.wav
 cast msg = /c makes it lighter.
 missile sound = none

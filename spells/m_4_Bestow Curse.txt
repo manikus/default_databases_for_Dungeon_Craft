@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Bestow Curse|Wizard
+name = Bestow Curse|Magic User
 casting sound = sound_Cast.wav
 cast msg = /c curses /t.
 missile sound = none

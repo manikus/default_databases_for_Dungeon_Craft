@@ -2,10 +2,10 @@
 name = IsLichFear
 [CanAim] = $RETURN "N";
 [CanCastSpells] = $RETURN "N";
-[CharDisplayStatus] = $IF ($GET_PARTY_TIME() ># $SA_PARAM_GET()){$RETURN $SA_REMOVE();};
--$SET_HOOK_PARAM( 7,"Paralyzed with fear");
--$SET_HOOK_PARAM( 6,"");
--$RETURN 1;
+[CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp){$SA_REMOVE();};
+-$SET_HOOK_PARAM( 7,"Paralyzed with fear"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
 [ComputeDamage] = $VAR dmg; $VAR tgt; // target
 -tgt = $IndexOf($TargetContext());
 -$IF ($GET_COMBATANT_SA($TargetContext(),"IsLichFear") != "-?-?-")
@@ -22,7 +22,6 @@ name = IsLichFear
 [GetAdjMaxMovement] = $DELETE_CHARACTER_SA($CharacterContext(),"IsFastBoots");
 -$RETURN 0;
 [GetItemTargetHitBonus] = $RETURN;
-[IsCombatReady] = $IF ($GET_PARTY_TIME() ># $SA_PARAM_GET()){$RETURN $SA_REMOVE();};
--$RETURN "N";
+[IsCombatReady] = $RETURN "N";
 \(END)
 

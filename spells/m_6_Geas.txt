@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Geas|Mage
+name = Geas|Magic User
 casting sound = sound_Cast.wav
 cast msg = /c compels /t.
 missile sound = none

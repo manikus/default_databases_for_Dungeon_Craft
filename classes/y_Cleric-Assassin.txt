@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Cleric/Assassin
+name = Cleric / Assassin
 HitDiceLevelBonus = cleric,Constitution,0,0,-2,-1,-1,-1,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2,2,2
 HitDiceLevelBonus = assassin,Constitution,0,0,-2,-1,-1,-1,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2,2,2
 HitDiceBaseclass = *Average*

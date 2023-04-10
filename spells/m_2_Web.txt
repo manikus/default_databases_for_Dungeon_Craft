@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Web|Mage
+name = Web|Magic User
 casting sound = sound_Cast.wav
 cast msg = /c spins a web.
 missile sound = none

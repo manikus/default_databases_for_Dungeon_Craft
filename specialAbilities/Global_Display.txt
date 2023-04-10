@@ -282,7 +282,7 @@ name = Global_Display
 -$GrPrtLF(" YEARS");
 -$GrPrtLF(alignName);
 -$GrPrtLF($UpCase(class));
--$GrPrint("LEVEL/XP ");
+-$GrPrint("LEVEL / XP ");
 -$GrColor("GREEN");
 -$IF (cbnCount ==# 3)
 -	{

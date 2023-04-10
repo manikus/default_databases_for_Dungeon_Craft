@@ -5,8 +5,8 @@ name = IsHolyDeafened
 -$IF (rdm ==# 1) {$RETURN "N";};
 [CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
 -exp = $SA_PARAM_GET();
--$IF ($GET_PARTY_TIME() >=# exp){$RETURN $SA_REMOVE();};
--$SET_HOOK_PARAM( 7,"Deagened"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
+-$IF ($GET_PARTY_TIME() >=# exp){$SA_REMOVE();};
+-$SET_HOOK_PARAM( 7,"Deafened"); $SET_HOOK_PARAM( 6,""); $RETURN 1;
 [DoesAttackSucceed] = $VAR p5; $VAR p6;
 -p5 = $GET_HOOK_PARAM(5) -# 2;
 -p6 = $GET_HOOK_PARAM(6);

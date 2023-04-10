@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Protection From Good 10' Radius|Wizard
+name = Protection From Good 10' Radius|Magic User
 casting sound = sound_Cast.wav
 cast msg = /t is protected from good.
 missile sound = none

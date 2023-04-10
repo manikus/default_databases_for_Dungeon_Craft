@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Remove Curse|Wizard
+name = Remove Curse|Magic User
 casting sound = sound_Cast.wav
 cast msg = /c lifts the curse from /t.
 missile sound = none

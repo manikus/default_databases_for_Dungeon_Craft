@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Chain Lightning|Mage
+name = Chain Lightning|Magic User
 casting sound = none
 cast msg = /c zaps /t for /d points of damage.
 missile sound = none

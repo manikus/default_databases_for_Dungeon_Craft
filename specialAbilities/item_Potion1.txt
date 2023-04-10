@@ -1,24 +1,16 @@
 \(BEGIN)
 name = item_Potion1
-[CanExamineOrWhatever] = $SET_HOOK_PARAM( 5, "DRINK" );
--$SET_HOOK_PARAM( 6, 0 );
--$RETURN "Y";
-[ExamineOrWhatever] = $VAR char;
--$VAR item;
--$VAR newItem;
--$VAR rndm;
--char = $IndexOf($CharacterContext());
--item = "Potion|1";
--newItem = "Potion|1a";
--rndm = $RANDOM(4) +# $RANDOM(4) +# 4;
+[CanExamineOrWhatever] = $SET_HOOK_PARAM( 5, "DRINK" ); $SET_HOOK_PARAM( 6, 0 ); $RETURN "Y";
+[ExamineOrWhatever] = $VAR chr; $VAR item; $VAR newItem; $VAR rndm;
+-chr = $IndexOf($CharacterContext()); item = "Potion|1"; newItem = "Potion|1a"; rndm = $RANDOM(4) +# $RANDOM(4) +# 4;
 -$IF ($GET_CHAR_Ready($CharacterContext(), "WEAPON", 0) == item)
 -	{
 -		$TAKE_CHAR_ITEM($CharacterContext(),item);
 -		$GIVE_CHAR_ITEM($CharacterContext(),newItem);
--		$SET_CHAR_HITPOINTS(char, $GET_CHAR_HITPOINTS(char) +# rndm);
--		$IF ($GET_CHAR_HITPOINTS(char) ># $GET_CHAR_MAXHITPOINTS(char))
+-		$SET_CHAR_HITPOINTS(chr, $GET_CHAR_HITPOINTS(chr) +# rndm);
+-		$IF ($GET_CHAR_HITPOINTS(chr) ># $GET_CHAR_MAXHITPOINTS(chr))
 -			{
--				$SET_CHAR_HITPOINTS(char,$GET_CHAR_MAXHITPOINTS(char));
+-				$SET_CHAR_HITPOINTS(chr,$GET_CHAR_MAXHITPOINTS(chr));
 -			};
 -	};
 \(END)

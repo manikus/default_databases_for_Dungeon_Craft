@@ -1,6 +1,6 @@
 \(BEGIN)
 name = $$Help
-Special Ability = Date,"August 30, 2021"
+Special Ability = Date,"April 5, 2023"
 Special Ability = Updates1_01,"added class_Druid SA to Druid"
 Special Ability = Updates1_02,"fixed class_MageScribe SA for all multi-class Magic Users"
 Special Ability = Updates1_03,"changed Cleric/Ranger to Ranger/Cleric to resolve display issue"
@@ -14,5 +14,6 @@ Special Ability = Updates170920,"changed name of Ranger/Cleric to /#Cleric/Range
 Special Ability = Updates170921,"added ChangeClassXXX SAs - where XXX is the name of a single class"
 Special Ability = Updates180111,"upated equipment for all classes per FRUA Average equipment"
 Special Ability = Updates210830,"corrected misspelling of Broad Sword and Quarter Staff (thanks Nice2GnomeYe"
+Special Ability = Updates230405,"removed duplicates, changed multiclass names"
 \(END)
 

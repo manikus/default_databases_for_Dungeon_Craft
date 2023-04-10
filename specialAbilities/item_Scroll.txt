@@ -1,7 +1,60 @@
 \(BEGIN)
 name = item_Scroll
-[CanReady] = $VAR me; $VAR cls;
--me = $MyIndex(); cls = $SA_PARAM_GET();
--$IF (($GET_CHAR_Lvl(me,cls) <# 1) || ($GET_CHAR_Lvl(me,"thief")) <# 10){$RETURN "N";};
+[CanExamineOrWhatever] = $SET_HOOK_PARAM( 5, "READ" ); $SET_HOOK_PARAM( 6, 2 ); $RETURN "Y";
+[CanReady] = $VAR me; $VAR cbnList; $VAR class; $VAR cbnCount; $VAR cbn1; $VAR cbn2; $VAR cbn3; $VAR lvl1; $VAR lvl2; $VAR lvl3;
+-me = $IndexOf($CharacterContext()); class = $GET_CHAR_CLASS(me);
+-cbnList = $DAT_Class_Baseclasses(class); cbnCount = $DelimitedStringCount(cbnList);
+-cbn1 = $DelimitedStringSubstring(cbnList,0); cbn2 = $DelimitedStringSubstring(cbnList,1); cbn3 = $DelimitedStringSubstring(cbnList,2);
+-lvl1 = $GetBaseclassLevel(me,cbn1); lvl2 = $GetBaseclassLevel(me,cbn2); lvl3 = $GetBaseclassLevel(me,cbn3);
+-$DEBUG("name = "+$GET_CHAR_NAME(me)+", classes = "+cbn1+", "+cbn2+", levels = "+lvl1+", "+lvl2);
+-$IF (cbnCount ==# 3)
+-	{
+-		$IF ((cbn1 == "magicUser") || (cbn2 == "magicUser") || (cbn3 == "cleric")) {$RETURN "Y";};
+-		$IF ((cbn1 == "magicUser") || (cbn2 == "magicUser") || (cbn3 == "magicUser")) {$RETURN "Y";};
+-	};
+-$IF (cbnCount ==# 2)
+-	{
+-		$IF ((cbn1 == "magicUser") || (cbn2 == "cleric")) {$RETURN "Y";};
+-		$IF ((cbn1 == "magicUser") || (cbn2 == "magicUser")) {$RETURN "Y";};
+-	};
+-$IF (cbnCount ==# 1)
+-	{
+-		$IF (cbn1 == "cleric") {$RETURN "Y";};
+-		$IF (cbn1 == "magicUser") {$RETURN "Y";};
+-	};
+-$IF (cbnCount ==# 3)
+-	{
+-		$IF (((cbn1 || cbn2 || cbn3) != "magicUser") && ((cbn1 || cbn2 || cbn3) == "thief"))
+-			{
+-				$IF ((cbn1 == "thief") && (lvl1 <# 10)) {$RETURN "N";};
+-				$IF ((cbn2 == "thief") && (lvl2 <# 10)) {$RETURN "N";};
+-				$IF ((cbn3 == "thief") && (lvl3 <# 10)) {$RETURN "N";};
+-			};
+-	};
+-$IF (cbnCount ==# 2)
+-	{
+-		$IF (((cbn1 || cbn2) != "magicUser") && ((cbn1 || cbn2) == "thief"))
+-			{
+-				$IF ((cbn1 == "thief") && (lvl1 <# 10)) {$RETURN "N";};
+-				$IF ((cbn2 == "thief") && (lvl2 <# 10)) {$RETURN "N";};
+-			};
+-	};
+-$IF (cbnCount ==# 1)
+-	{
+-		$IF ((cbn1 != "magicUser") && (cbn1 == "thief"))
+-			{
+-				$IF (lvl1 <# 10) {$RETURN "N";};
+-			};
+-	};
+-$RETURN "N";
+[ExamineOrWhatever] = $VAR item; $VAR newItem; $VAR spl;
+-item = $SA_PARAM_GET(); newItem = "Parchment"; spl = $SA_ITEM_GET("scribeSpell");
+-$DEBUG("spell = "+spl);
+-$IF ($GET_CHAR_Ready($CharacterContext(), "WEAPON", 0) == item)
+-	{
+-		$TAKE_CHAR_ITEM($CharacterContext(),item);
+-		$GIVE_CHAR_ITEM($CharacterContext(),newItem);
+-		$CastSpellOnTarget($CharacterContext(),spl);
+-	};
 \(END)
 

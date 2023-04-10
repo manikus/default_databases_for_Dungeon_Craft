@@ -1,6 +1,8 @@
 \(BEGIN)
 name = IsBestowedCurse
-[CharDisplayStatus] = $IF ($GET_PARTY_TIME() ># $SA_PARAM_GET())$RETURN $SA_REMOVE();};
+[CharDisplayStatus] = $VAR exp; // time effect expires, gotten from SA that called this one
+-exp = $SA_PARAM_GET();
+-$IF ($GET_PARTY_TIME() >=# exp){$SA_REMOVE();};
 -$SET_HOOK_PARAM( 7, "Cursed"); $SET_HOOK_PARAM( 6, ""); $RETURN 1;
 [Dispel] = $VAR tgt; // target
 -tgt = $IndexOf($TargetContext());

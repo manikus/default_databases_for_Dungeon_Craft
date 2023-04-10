@@ -1,24 +1,18 @@
 \(BEGIN)
 name = item_Potion5
-[CanExamineOrWhatever] = $SET_HOOK_PARAM( 5, "DRINK" );
--$SET_HOOK_PARAM( 6, 0 );
--$RETURN "Y";
-[ExamineOrWhatever] = $VAR char;
--$VAR item;
--$VAR newItem;
--char = $IndexOf($CharacterContext());
--item = "Potion|5";
--newItem = "Empty Bottle";
+[CanExamineOrWhatever] = $SET_HOOK_PARAM( 5, "DRINK" ); $SET_HOOK_PARAM( 6, 0 ); $RETURN "Y";
+[ExamineOrWhatever] = $VAR chr; $VAR item; $VAR newItem;
+-chr = $IndexOf($CharacterContext()); item = "Potion|5"; newItem = "Empty Bottle";
 -$IF ($GET_CHAR_Ready($CharacterContext(), "WEAPON", 0) == item)
 -	{
 -		$TAKE_CHAR_ITEM($CharacterContext(),item);
 -		$GIVE_CHAR_ITEM($CharacterContext(),newItem);
 -		$IF ($GET_CHARACTER_SA($CharacterContext(), "IsPoisoned") == "-?-?-"){$RETURN;};
 -		$DELETE_CHARACTER_SA($CharacterContext(),"IsPoisoned");
--		$IF ($GET_CHAR_HITPOINTS(char) <=# 0)
+-		$IF ($GET_CHAR_HITPOINTS(chr) <=# 0)
 -			{
--				$SET_CHAR_HITPOINTS(char, "1");
--				$SET_CHAR_STATUS(char, "0");
+-				$SET_CHAR_HITPOINTS(chr, "1");
+-				$SET_CHAR_STATUS(chr, "0");
 -			};
 -	};
 \(END)

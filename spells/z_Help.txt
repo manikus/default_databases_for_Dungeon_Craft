@@ -1,6 +1,6 @@
 BEGIN)
 name = $$Help
-Special Ability = Date,"November 24, 2020"
+Special Ability = Date,"April 10, 2023"
 Special Ability = Updates1_01,"added Cause Critical Wounds|MonsterCleric, updated many AoE for various spells, corrected misnamed special abilities in multiple cleric and monster spells"
 Special Ability = Updates1_02,"updated Sleep spell for rangers, monsters and beholders"
 Special Ability = Updates1_03,"added druidShapeChange, added Blade Barrier|MonsterCleric, Bless|MonsterCleric, Cure Critical Wounds|MonsterCleric, Cure Light Wounds|MonsterCleric, Cure Serious Wounds|MonsterCleric, Curse|MonsterCleric, Destruction|MonsterCleric, Dispel Magic|MonsterCleric, Energy Drain|MonsterCleric, Find Traps|MonsterCleric, Harm|MonsterCleric, Heal|MonsterCleric, Poison|MonsterCleric, Prayer|MonsterCleric, Protection from Evil|MonsterCleric, Protection from Evil 10' Radius|MonsterCleric, Resist Cold|MonsterCleric, Resist Fire|MonsterCleric, Entangle|MonsterDruid, Faerie Fire|MonsterDruid, Bestow Curse|MonsterMage, Burning Hands|MonsterMage, Cloudkill|MonsterMage, Cone of Cold|MonsterMage, Confusion|MonsterMage, Death Spell|MonsterMage, Delayed Blast Fireball|MonsterMage, Detect Invisibility|MonsterMage, Detect Magic|MonsterMage, Disintegrate|MonsterMage, Dispel Magic|MonsterMage, Enlarge|MonsterMage, Feeblemind|MonsterMage, Fire Shield|MonsterMage, Fire Touch|MonsterMage, Fumble|MonsterMage, Globe of Invulnerability|MonsterMage, Haste|MonsterMage, Invisibility|MonsterMage, Iron Skin|MonsterMage, Knock|MonsterMage, Lightning Bolt|MonsterMage, Mass Charm|MonsterMage, Meteor Swarm|MonsterMage, Minor Globe of Invulnerability|MonsterMage, Mind Blank|MonsterMage, Otto's Irresistible Dance|MonsterMage, Power Word, Kill|MonsterMage, Protection from Evil 10' Radius|MonsterMage, Ray of Enfeeblement|MonsterMage, Shield|MonsterMage, Shocking Grasp|MonsterMage, removed Spiritual Hammer|MonsterCleric; fixed Sleep, Sleep|Ranger, Sleep|MonsterBeholder, Sleep|MonsterMage"
@@ -15,8 +15,9 @@ Special Ability = Updates_200916,"I added the following spells: cleric - Aid, Ca
 Special Ability = Updates_201124,"fixed a duplicated spell error and mispelling of the word Pyrotechnics"
 Special Ability = Updates_230317,"fixed multiple monster spells to have Monster as school"
 Special Ability = Updates_230319,"added missing spell effects for emove Curse, Raise Dead, Remove Curse|Wizard, Mass Charm, Remove Curse|Paladin, Heal|MonsterCleric, Mass Charm|MonsterMage - they appear to have been removed when exporting the spells database previously"
-Special Ability = Updates_230321,"fixed script errors for Heal|MonsterCleric, changed to evel 1 itemPotionInvisibility, itemPotionSpeed, itemEyesCharming, itemNecklaceMissiles, itemPotionGiantStrength"
+Special Ability = Updates_230321,"fixed script errors for Heal|MonsterCleric, changed to level 1 itemPotionInvisibility, itemPotionSpeed, itemEyesCharming, itemNecklaceMissiles, itemPotionGiantStrength"
 Special Ability = Updates_230328,"added monsterGelatinousCubeParalysis"
 Special Ability = Updates_230403,"disambiguation of ranger spell names, header lists for druid, paladin, and ranger spells"
+Special Ability = Updates_230410,"updated Bestow Curse|Magic User, Chain Lightning|Magic User, Continual Light|Magic User, Darkness 15' Radius|Magic User, Dispel Magic|Magic User, Geas|Magic User, Hold Person|Magic User, Imprisonment|Magic User, Incendiary Cloud|Magic User, Light|Magic User, Protection From Evil 10' Radius|Magic User, Protection From Good 10' Radius|Magic User, Pyrotechnics|Magic User, Remove Curse|Magic User, Transmute Rock To Mud|Magic User, Wall Of Stone|Magic User, Web|Magic User"
 \(END)
 

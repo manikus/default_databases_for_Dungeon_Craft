@@ -1,5 +1,5 @@
 \(BEGIN)
-name = Imprisonment|Mage
+name = Imprisonment|Magic User
 casting sound = none
 cast msg = /c sends /t into the earth.
 missile sound = none
