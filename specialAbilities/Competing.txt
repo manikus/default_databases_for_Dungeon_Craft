@@ -99,7 +99,7 @@ name = Competing
 -nm = $GET_CHAR_NAME(me);
 -idx1 = $NextCreatureIndex("", 1);
 -idx4 = $NextCreatureIndex("", 4);
--$SET_CHARACTER_SA($CharacterContext(  ),"turnUndead","");
+-$SET_COMBATANT_SA($CharacterContext(  ),"turnUndead","");
 -$IF ($NextCreatureIndex(me -# 1, 4) == me)
 -	{
 -		$SET_CHARACTER_SA($CharacterContext(),"side",1);

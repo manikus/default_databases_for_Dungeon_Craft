@@ -971,7 +971,7 @@ name = Competing
 -nm = $GET_CHAR_NAME(me);
 -idx1 = $NextCreatureIndex("", 1);
 -idx4 = $NextCreatureIndex("", 4);
--$SET_CHARACTER_SA($CharacterContext(  ),"turnUndead","");
+-$SET_COMBATANT_SA($CharacterContext(  ),"turnUndead","");
 -$IF ($NextCreatureIndex(me -# 1, 4) == me)
 -	{
 -		$SET_CHARACTER_SA($CharacterContext(),"side",1);
@@ -10217,5 +10217,6 @@ Updates230314 = "modified class_MageScribe to check to see if spell is known bef
 Updates230328 = "modified the SAs IsBarkskinned, IsBestowedCurse, IsBrave, IsCharmed, IsConfused, IsConfusedExtended, IsDetectingEvil, IsDetectingGood, IsDetectingMagic, IsDispellingEvil, IsDispellingGood, IsEnlarged, IsEntangled0, IsFast, IsHolyDeafened, IsHolyParalyzed, IsHolyStunned, IsParalyzed, IsPraying, IsReduced, IsSilenced, IsSleeping, IsSlow, IsStunned, IsWebbed, monster_WeaponImmunity, spell_Confusion, spell_Enlarge, spell_HolyWord, spell_Paralysis, spell_Prayer, spell_Reduce, spell_Sleep, spell_UnholyWord; added the SAs IsAnesthetized, IsDetectingIllusion, IsDetectingSecretDoors, IsHolyParalyzed, IsKnowingAlignment, IsSeeingAstral, IsSeeingDisplaced, IsSeeingEthereal, IsSeeingInvisible, spell_Enlarge, spell_GelatinousCubeParalysis"
 Updates230405 = "corrected errors in monster_DragonSavingThrow"
 Updates230410 = "major changes to item_Scroll and casterLevel (depending on how the index bug works out, may be doing a lot more on casterLevel); updated CharDisplayStatus scripts for IsAnesthetized, IsBarkskinned, IsBestowedCurse, IsBlessed, IsCharmed, IsConfused, IsCursed, IsDetectingEvil, IsDetectingGood, IsDetectingIllusion, IsDetectingMagic, IsDetectingSecretDoors, IsDispellingGood, IsEntangled0, IsFast, IsHeld, IsHolyDeafened, IsHolyParalyzed, IsHolyStunned, IsImmuneNormalMissiles, IsLichFear, IsLichFear, IsParalyzed, IsPraying, IsSeeingDisplaced, IsSeeingEthereal, IsSeeingInvisible, IsShielded, sSilenced, and IsWebbed; updated item_Potion3 and item_Potion4"
+Updates230410 = "fixed issue in Competing to allow turning of undead"
 \(END)
 
