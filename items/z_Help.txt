@@ -1,7 +1,7 @@
 \(BEGIN)
 name = $$Help
 id name = 
-Special Ability = Date,"April 10, 2023"
+Special Ability = Date,"April 13, 2023"
 Special Ability = Updates1_01,"added monsterClericCauseCriticalWounds spellcaster item"
 Special Ability = Updates1_03,"added monsterClericBladeBarrier, monsterClericBless, monsterClericCureCriticalWounds, monsterCureLightWounds, monsterCureASeriousWounds, monsterClericCurse, monsterClericDestruction, monsterClericDispelMagic, monsterClericEnergyDrain, monsterClericFindTraps, monsterClericHarm, monsterClericHeal, monsterClericIronSkin, monsterClericPoison, monsterClericPrayer, monsterCLericProtectionFromEvil, monsterClericResistCold, monsterClericResistFire, monsterDruidEntangle, monsterDruidFaerieFire, monsterMageBestowCurse, monsterMageBurningHands, monsterMageCloudkill, monsterMageConeofCold, monsterMageConfusion, monsterMageDeath, monsterMageDelayedBlastFireball, monsterMageDetectInvisibility, monsterMageDetectMagic, monsterMageDisintegrate, monsterMageDispelMagic, monsterMageEnlarge, monsterMageFear, monsterMageFeeblemind, monsterMageFireShield, monsterMageFireTouch, monsterMageFleshtoStone, monsterMageFumble, monsterMageGlobeofInvulnerability, monsterMageHaste, monsterMageInvisibility, monsterMageKnock, monsterMageLightningBolt, monsterMassCharm, monsterMeteorSwarm, monsterMinorGlobeofInvulnerability, monsterMageMindBlank, monsterMageOttosIrresistibleDance, monsterMagePowerWordKill, monsterMageProtectionfromEvil10Radius, monsterMageRayofEnfeeblement, monsterMageShield, monsterMageShockingGrasp, monsterMageSlow, removed monsterClericSpiritualHammer"
 Special Ability = Updates1_04,"added Gauntlets of Dexterity, Cursed Long Sword -3, Cursed Short Sword -2, Cursed Hammer -2, Cursed Mace -3, Cursed Quarter Staff -3, Cursed Dagger -2, monsterDjinniWhirlwind, monsterMaridWaterJet, monsterRockToMud, monsterWallOfStone"
@@ -15,5 +15,6 @@ Special Ability = Update230317,"added missing spell effect to Necklace of Missil
 Special Ability = Update230317,"fixed monsterClericCauseFear to make it usable and have charges"
 Special Ability = Update230321,"added missing spell effects to Eyes of Charming, Necklace of Missiles, Potion of Giant Strength, Potion of Invisibility, Potion of Speed"
 Special Ability = Update230410,"updated ptions of Speed, Giant Strength and Invisibility; all scrolls have been updated and magic user scrolls should be scribable"
+Special Ability = Update230413,"fixed potions"
 \(END)
 
